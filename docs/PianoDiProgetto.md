@@ -1,4 +1,4 @@
-# Piano di Progetto 2.0
+# Piano di Progetto
 
 [TOC]
 
