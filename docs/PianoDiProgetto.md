@@ -88,7 +88,7 @@ piannificazione della gestione delle configurazioni
 
 
 
-## 5. Pianificazione del lavorom delle risorse umane e del budget
+## 5. Pianificazione del lavoro delle risorse umane e del budget
 
 ### 5.1 WBS
 
