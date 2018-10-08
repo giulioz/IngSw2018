@@ -44,7 +44,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 ### 2.1 Modello del Processo
 
-Relazione tra le varie fasi del processo
+Per realizzare al meglio il progetto abbiamo pensato di adottare una metodologia di tipo **Agile**, ossia
 
 ### 2.2 Struttura Organizzatinva
 
