@@ -6,7 +6,7 @@
 
 ### 1.1 Overview del progetto
 
-Il progetto che abbiamo intenzione di presentare, la cui realizzazione è prevista nel corso di Ingegneria del Software, svolto durante il Corso di Laurea in Informatica presso l'Università Ca' Foscari di Venezia, tenuto dal professor Agostino Cortesi, nell'a.a. 2018/2019, consiste in una **[applicazione Android][1]** atta ad interfacciarsi con un apposito robot, realizzato con **[Lego Mindstorms EV3][2]**. Il robot sarà in grado di muoversi grazie ad appositi motori e ricevere dati dal mondo esterno mediante diversi tipi di sensori.
+Il progetto che abbiamo intenzione di presentare, la cui realizzazione è prevista nel corso di Ingegneria del Software, svolto durante il Corso di Laurea in Informatica presso l'Università Ca' Foscari di Venezia, tenuto dal professor Agostino Cortesi, nell'a.a. 2018/2019, consiste in una **applicazione Android[^1]** atta ad interfacciarsi con un apposito robot, realizzato con **Lego Mindstorms EV3[^2]**. Il robot sarà in grado di muoversi grazie ad appositi motori e ricevere dati dal mondo esterno mediante diversi tipi di sensori.
 
 *(scrivere nostro progetto)*
 
@@ -26,7 +26,7 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 
 ### 1.3 Evoluzione del progetto
 
-Piani per cambiamenti ipotizzabili e non
+*Piani per cambiamenti ipotizzabili e non*
 
 ### 1.4 Materiale di Riferimento
 
@@ -34,7 +34,11 @@ Piani per cambiamenti ipotizzabili e non
 
 ### 1.5 Definizione e Abbreviazioni
 
+<<<<<<< HEAD
 **[1]: https://developer.android.com/**
+=======
+
+>>>>>>> 4d96e2a53d968a161a27eea0d7d80b82c0983509
 
 ## 2. Organizzazione del Progetto
 
