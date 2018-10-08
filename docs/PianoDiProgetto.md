@@ -26,7 +26,7 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 
 ### 1.3 Evoluzione del progetto
 
-*Piani per cambiamenti ipotizzabili e non*
+Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere quello di 
 
 ### 1.4 Materiale di Riferimento
 
@@ -36,7 +36,9 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 
 ### 1.5 Definizione e Abbreviazioni
 
-- [^1]: Applicazione realizzata per *Android*, sistema operativo dedicato agli smartphone di Google
+- [^1]: Applicazione realizzata per *Android*, sistema operativo dedicato agli smartphone/tablet di Google
+
+- [^2]: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
 
 ## 2. Organizzazione del Progetto
 
