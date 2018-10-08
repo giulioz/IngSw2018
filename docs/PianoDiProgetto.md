@@ -30,15 +30,11 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 
 ### 1.4 Materiale di Riferimento
 
-- [Documentazione ufficiale sviluppo Android][^1]
+- [Documentazione ufficiale sviluppo Android][developer.android.com]
 
 ### 1.5 Definizione e Abbreviazioni
 
-<<<<<<< HEAD
-**[1]: https://developer.android.com/**
-=======
-
->>>>>>> 4d96e2a53d968a161a27eea0d7d80b82c0983509
+- [^1]: Applicazione realizzata per *Android*, sistema operativo dedicato agli smartphone di Google
 
 ## 2. Organizzazione del Progetto
 
@@ -59,7 +55,6 @@ Relazione con le altre entità
 Principal funzioni e attività
 
 Di che natura sono? Chi sarà il responsabile?
-
 
 
 ## 3. Processi gestionali
@@ -127,6 +122,3 @@ Associa ad ogni funzione o attivita il costo relativo
 ### 5.5 Pianificazione
 
 Deadlines e Milestones
-
-[www.ciao.it]: 
-[https://developer.android.com/]: 
