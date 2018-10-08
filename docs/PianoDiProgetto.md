@@ -59,25 +59,20 @@ Relazione con le altre entità
 Per garantire la buona riuscita del progetto, le varie responsabilità saranno suddivise in vari ruoli:
 
 - **Project Manager**
-
-  - <u>Responsabile:</u>
-  - <u>Funzione:</u>
-
+  - <u>Responsabile:</u> Casarin Samuele
+  - <u>Funzione:</u> Pianifica, coordina e supervisiona le attività del team.
 - **Software Architect**
-
-  - <u>Responsabile:</u>
-  - <u>Funzione:</u>
-
+  - <u>Responsabile:</u> Zausa Giulio
+  - <u>Funzione:</u> Produzione della progettazione ad alto livello, includendo standard di codifiche e meccanismi di automazione.
+- **Backup engineer**
+  - <u>Responsabile:</u> Baccega Sandro
+  - <u>Funzione:</u> Supporta il project manager ed è responsabile della validazione.
 - **Test Manager**
-
-  - <u>Responsabile:</u>
-  - <u>Funzione:</u>
-
-- **Developer**
-
-  - <u>Responsabile:</u>
-  - <u>Funzione:</u>
-
+  - <u>Responsabile:</u> Scodeller Giovanni
+  - <u>Funzione:</u> Si occupa di gestire i piani di testing, i test automatici ed è responsabile dei deliverables.
+- **Techincal Staff**
+  - <u>Responsabile:</u> 
+  - <u>Funzione:</u> Conduce l'analisi e lo sviluppo
 
 Di che natura sono? Chi sarà il responsabile?
 
