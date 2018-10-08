@@ -6,7 +6,7 @@
 
 ### 1.1 Overview del progetto
 
-Descrizione di massima del progetto e del prodotto.
+Il progetto che abbiamo intenzione di presentare, la cui realizzazione è prevista nel corso di Ingegneria del Software, svolto durante il Corso di Laurea in Informatica presso l'Università Ca' Foscari di Venezia, tenuto dal professor Agostino Cortesi, nell'a.a. 2018/2019, consiste in una **[applicazione Android][1]** atta ad interfacciarsi con un apposito robot, realizzato con **[Lego Mindstorms][2]**. Il robot sarà in grado di muoversi grazie ad appositi motori e ricevere dati dal mondo esterno mediante diversi tipi di sensori.
 
 ### 1.2 Deliverables del Progetto
 
