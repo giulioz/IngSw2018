@@ -40,21 +40,27 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^2]: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
 
+- [^3]: Agile ...
+
 ## 2. Organizzazione del Progetto
 
 ### 2.1 Modello del Processo
 
-Per realizzare al meglio il progetto abbiamo pensato di adottare una metodologia di tipo **Agile**, ossia
+Per realizzare al meglio il progetto, e per la scarsa disponibiltà di incontrarsi di persona da parte dei componenti del gruppo, abbiamo pensato di adottare una metodologia di tipo **Agile[^3]**, ossia con cicli di sviluppo iterativi a durata costante.
+
+Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assessment del lavoro svolto nel precedente ciclo, mediante una riunione in presenza, seguito da una parte di analisi, sviluppo e testing. Il risultato di uno sprint è una serie di nuove funzionalità o una parte di lavoro fatta, che non corrisponde per forza con un deliverable tra quelli sopra descritti. Alla fine di uno sprint si analizza e verifica il lavoro fatto finora e si pianifica il risultato atteso dal prossimo ciclo.
 
 ### 2.2 Struttura Organizzatinva
 
 È stata scelta una struttura organizzativa di tipo **democratica decentralizzata**. Ogni membro ha la stessa importanza nel progetto, con equa responsabilità e dovra rispettare le scadenze date. Possibili idee aggiuntive verrano valutate durante riunioni del gruppo, se ritenute fattibili ed inerenti al progetto dalla maggioranza del team la proposta verrà accettata.
 
- CHART dell'organizzazione
-
 ### 2.3 Interfacce Organizzative
 
-Relazione con le altre entità
+Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram)*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
+
+Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da *Github*, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^4] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^5]** con le issues e la **Wiki[^6]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
+
+Questi due tool renderanno anche più semplice l'eventuale comunicazione con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti (eventuali tester esterni).
 
 ### 2.4 Responsabilita di progetto
 
@@ -73,15 +79,15 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - <u>Responsabile:</u> Scodeller Giovanni
   - <u>Funzione:</u> Si occupa di gestire i piani di testing, i test automatici ed è responsabile dei deliverables.
 - **Techincal Staff**
-  - <u>Responsabile:</u> 
+  - <u>Responsabile:</u> Scodeller Giovanni, Baccega Sandro, Zausa Giulio, Casarin Samuele
   - <u>Funzione:</u> Conduce l'analisi e lo sviluppo
-
-Di che natura sono? Chi sarà il responsabile?
 
 
 ## 3. Processi gestionali
 
-### 3.1 Obietivi e Priorità
+### 3.1 Obiettivi e Priorità
+
+L'obiettivo è passare l'esame.
 
 ### 3.2 Assunzioni, Dipendeze, Vincoli
 
