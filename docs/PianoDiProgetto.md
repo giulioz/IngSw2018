@@ -48,7 +48,7 @@ Di che natura sono? Chi sarà il responsabile?
 
 ## 3. Processi gestionali
 
-### 3.1 Obbietivi e Priorità
+### 3.1 Obietivi e Priorità
 
 ### 3.2 Assunzioni, Dipendeze, Vincoli
 
