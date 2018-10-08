@@ -14,13 +14,13 @@ Il progetto che abbiamo intenzione di presentare, la cui realizzazione è previs
 
 Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo per stare al passo con gli impegni previsti dal corso:
 
-|        DELIVERABLE        | DESCRIZIONE | DATA CONSEGNA |
-| :-----------------------: | :---------: | :-----------: |
-|     Piano di progetto     |             |               |
-| Documento di Analisi e SP |             |               |
-|                           |             |               |
-|                           |             |               |
-|                           |             |               |
+|          DELIVERABLE           |                  DESCRIZIONE                   | DATA CONSEGNA |
+| :----------------------------: | :--------------------------------------------: | :-----------: |
+|       Piano di progetto        |         Consegna del piano di progetto         |  16/10/2018   |
+|   Documento di Analisi e SP    | Consegna del documento di analisi e specifiche |  02/11/2018   |
+|        Piano di testing        |         Consegna del piano di testing          |  15/11/2018   |
+|   Documentazione di progetto   |   Consegna della documentazione di progetto    |  10/12/2018   |
+| Realizzazione e messa in linea | Rilascio di una versione stabile del software  |  31/01/2018   |
 
 
 
@@ -30,11 +30,11 @@ Piani per cambiamenti ipotizzabili e non
 
 ### 1.4 Materiale di Riferimento
 
-Lista dei documenti cui ci si riferisce nel Piano del Progetto
+- [Documentazione ufficiale sviluppo Android][^1]
 
 ### 1.5 Definizione e Abbreviazioni
 
-
+**[1]: https://developer.android.com/**
 
 ## 2. Organizzazione del Progetto
 
@@ -123,3 +123,6 @@ Associa ad ogni funzione o attivita il costo relativo
 ### 5.5 Pianificazione
 
 Deadlines e Milestones
+
+[www.ciao.it]: 
+[https://developer.android.com/]: 
