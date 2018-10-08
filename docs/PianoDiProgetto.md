@@ -31,6 +31,8 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 ### 1.4 Materiale di Riferimento
 
 - [Documentazione ufficiale sviluppo Android][developer.android.com]
+- [Slide del corso di ingegneria del software 2018/2019][https://www.unive.it/data/insegnamento/89084]
+- [Documentazione ufficiale lego Mindstorm EV3][https://le-www-live-s.legocdn.com/ev3/userguide/1.4.0/ev3_userguide_enus.pdf]
 
 ### 1.5 Definizione e Abbreviazioni
 
@@ -44,7 +46,9 @@ Relazione tra le varie fasi del processo
 
 ### 2.2 Struttura Organizzatinva
 
-Gestione internta, CHART dell'organizzazione
+È stata scelta una struttura organizzativa di tipo **democratica decentralizzata**. Ogni membro ha la stessa importanza nel progetto, con equa responsabilità e dovra rispettare le scadenze date. Possibili idee aggiuntive verrano valutate durante riunioni del gruppo, se ritenute fattibili ed inerenti al progetto dalla maggioranza del team la proposta verrà accettata.
+
+ CHART dell'organizzazione
 
 ### 2.3 Interfacce Organizzative
 
@@ -52,7 +56,28 @@ Relazione con le altre entità
 
 ### 2.4 Responsabilita di progetto
 
-Principal funzioni e attività
+Per garantire la buona riuscita del progetto, le varie responsabilità saranno suddivise in vari ruoli:
+
+- **Project Manager**
+
+  - <u>Responsabile:</u>
+  - <u>Funzione:</u>
+
+- **Software Architect**
+
+  - <u>Responsabile:</u>
+  - <u>Funzione:</u>
+
+- **Test Manager**
+
+  - <u>Responsabile:</u>
+  - <u>Funzione:</u>
+
+- **Developer**
+
+  - <u>Responsabile:</u>
+  - <u>Funzione:</u>
+
 
 Di che natura sono? Chi sarà il responsabile?
 
@@ -122,3 +147,4 @@ Associa ad ogni funzione o attivita il costo relativo
 ### 5.5 Pianificazione
 
 Deadlines e Milestones
+
