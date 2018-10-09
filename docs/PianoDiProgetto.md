@@ -178,13 +178,69 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 5.1 WBS
 
-Il progetto è scomposto in attività e funzioni
+1. PIANIFICAZIONE
 
-Descrizione di ciascuna attività e funzione
+    1.1 Definizione degli obiettivi generali
+
+    1.2 Definizione del piano di progetto
+
+    ​    1.2.1 Analisi dei processi gestionali
+
+    ​    1.2.2 Analisi dei processi tecnici
+
+   ​     1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
+
+    1.3 Definizione del documento di analisi e specifica
+
+2. PROGETTAZIONE
+
+    2.1 Definizione del piano di testing
+
+    2.2 Definizione del documento di progettazione
+
+    ​    2.2.1 Definizione del sistema
+
+        2.2.2 Definizione di (Lego Mindstorm)
+
+​        2.2.3 Definizione dell'applicazione
+
+        2.2.4 Definizione dell'interfaccia grafica​
+
+3. REALIZZAZIONE
+
+    3.1 Apprendimento tecnico
+
+    3.2 Assemblaggio di (Lego Mindstorm)
+
+    3.3 Realizzazione dell'applicazione
+
+        3.3.1 Realizzazione dei componenti logici
+
+        3.3.2 Realizzazione dell'interfaccia grafica
+
+    3.4 Collaudo del sistema
+
+4. DISPIEGAMENTO
+
+    4.1 Realizzazione dei manuali operativi
+
+    4.2 Consegna del sistema
+
+5. REVISIONE
+
+    5.1 Revisione finale
+
+    5.2 Chiusura progetto
 
 ### 5.2 Dipendenze
 
-Relazioni di precedenza tra attività e funzione
+| N | Attività | Durata (in ore) | Dipendenze |
+|------------ | -------------|------------ | -------------|
+| 1 | Defizione degli obiettivi generali | 5 | - |
+| 2 | Analisi dei processi gestionali | 10 | 1 |
+| 3 | Analisi dei processi tecnici | 10 | 1 |
+| 4 | Pianificazione del lavoro, delle risorse umane e del budget | 10 | 1 |
+| 5 | Definizione del documento di analisi e specifica | 10 | 2, 3, 4 |
 
 ### 5.3 Risorse necessarie
 
