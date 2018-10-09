@@ -95,7 +95,16 @@ Fattori esterni
 
 ### 3.3 Gestione dei Rischi
 
-Identificazione, Valutazione, Monitoraggio dei rischi
+|ID | Rischio | Categoria | Probabilità | Impatto |
+|------------ | -------------|------------ |------------ |------------ |
+|**1** | Mancanza di conoscenze | Trascurabile | 60% | Basso |
+|**2** | Malattie ed infortuni | Marginale | 45% | Alto |
+|**3** | Malfunzionamento Lego Mindstorm | Critico | 5% | Alto |
+|**4** | Errata valutazione del carico di lavoro | Critico | 15% | Medio |
+|**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 10% | Alto |
+|**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Alto |
+
+
 
 ### 3.4 Meccanismo di monitoraggio e di controllo
 
