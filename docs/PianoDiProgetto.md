@@ -26,7 +26,7 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 
 ### 1.3 Evoluzione del progetto
 
-Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere quello di 
+Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere uno sviluppo di una versione più "consumer", utilizzando hardware custom invece che Lego Mindstorms, e una applicazione con un'esperienza utente migliorata.
 
 ### 1.4 Materiale di Riferimento
 
