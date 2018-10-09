@@ -118,14 +118,20 @@ Fattori esterni
 |**2** | Malattie ed infortuni | Marginale | 45% | Alto |
 |**3** | Malfunzionamento Lego Mindstorm | Critico | 5% | Alto |
 |**4** | Errata valutazione del carico di lavoro | Critico | 15% | Medio |
-|**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 10% | Alto |
-|**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Alto |
+|**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 20% | Alto |
+|**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Medio |
 
 ![Quadrati rischi](./Quadrati rischi.svg)
 
 ### 3.4 Meccanismo di monitoraggio e di controllo
 
-Meccanismo di reporting, format, flussi di informazione, revisioni
+Ogni componente del gruppo effetuerà in un primo momento un controllo personale del lavoro svolto che verrà poi revisionato insieme al resto del gruppo ove saranno esposte possibili lacune, imprecisioni e correzioni.
+
+Ogni settimana si terrà una riunione dove si discute del lavoro svolto fino a quel punto, se il progetto è in linea con i tempi e sta proseguendo nella direzione corretta.
+
+Il team di sviluppo ha scelto di appogiarsi a Github per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come Telegram o Whatsapp.
+
+
 
 ### 3.5 Pianificazione dello staff
 
