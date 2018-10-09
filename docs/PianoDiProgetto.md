@@ -105,6 +105,8 @@ Fattori esterni
 |**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 10% | Alto |
 |**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Alto |
 
+![Quadrati rischi](./Quadrati rischi.svg)
+
 ### 3.4 Meccanismo di monitoraggio e di controllo
 
 Meccanismo di reporting, format, flussi di informazione, revisioni
@@ -112,8 +114,6 @@ Meccanismo di reporting, format, flussi di informazione, revisioni
 ### 3.5 Pianificazione dello staff
 
 Skill nescessari
-
-
 
 ## 4. Processi Tecnici
 
