@@ -22,8 +22,6 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 |   Documentazione di progetto   |   Consegna della documentazione di progetto    |  10/12/2018   |
 | Realizzazione e messa in linea | Rilascio di una versione stabile del software  |  31/01/2018   |
 
-
-
 ### 1.3 Evoluzione del progetto
 
 Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere uno sviluppo di una versione più "consumer", utilizzando hardware custom invece che Lego Mindstorms, e una applicazione con un'esperienza utente migliorata.
@@ -41,6 +39,8 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 - [^2]: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
 
 - [^3]: Agile ...
+
+
 
 ## 2. Organizzazione del Progetto
 
@@ -83,6 +83,7 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - <u>Funzione:</u> Conduce l'analisi e lo sviluppo
 
 
+
 ## 3. Processi gestionali
 
 ### 3.1 Obiettivi e Priorità
@@ -103,8 +104,6 @@ Fattori esterni
 |**4** | Errata valutazione del carico di lavoro | Critico | 15% | Medio |
 |**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 10% | Alto |
 |**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Alto |
-
-
 
 ### 3.4 Meccanismo di monitoraggio e di controllo
 
