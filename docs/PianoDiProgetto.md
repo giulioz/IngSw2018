@@ -129,7 +129,7 @@ Ogni componente del gruppo effetuerà in un primo momento un controllo personale
 
 Ogni settimana si terrà una riunione dove si discute del lavoro svolto fino a quel punto, se il progetto è in linea con i tempi e sta proseguendo nella direzione corretta.
 
-Il team di sviluppo ha scelto di appogiarsi a Github per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come Telegram o Whatsapp.
+Il team di sviluppo ha scelto di appogiarsi a *Github[^4]* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come *Telegram[^9]*.
 
 
 
