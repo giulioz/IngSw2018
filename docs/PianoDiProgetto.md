@@ -22,11 +22,9 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 |   Documentazione di progetto   |   Consegna della documentazione di progetto    |  10/12/2018   |
 | Realizzazione e messa in linea | Rilascio di una versione stabile del software  |  31/01/2018   |
 
-
-
 ### 1.3 Evoluzione del progetto
 
-Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere quello di *(scrivere nostro progetto)*
+Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere uno sviluppo di una versione più "consumer", utilizzando hardware custom invece che Lego Mindstorms, e una applicazione con un'esperienza utente migliorata.
 
 ### 1.4 Materiale di Riferimento
 
@@ -55,9 +53,6 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 - [^9]: *Telegram*: servizio di messaggistica istantanea basato su cloud, disponibile su molte piattaforme come smartphone, desktop ed anche con un interfaccia web.
 
 - [^10]: *Typora*: software per la creazione di documenti in *Markdown*. 
-
-
-
 
 
 
@@ -104,6 +99,7 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - <u>Funzione:</u> Conduce l'analisi e lo sviluppo
 
 
+
 ## 3. Processi gestionali
 
 ### 3.1 Obiettivi e Priorità
@@ -116,7 +112,16 @@ Fattori esterni
 
 ### 3.3 Gestione dei Rischi
 
-Identificazione, Valutazione, Monitoraggio dei rischi
+|ID | Rischio | Categoria | Probabilità | Impatto |
+|------------ | -------------|------------ |------------ |------------ |
+|**1** | Mancanza di conoscenze | Trascurabile | 60% | Basso |
+|**2** | Malattie ed infortuni | Marginale | 45% | Alto |
+|**3** | Malfunzionamento Lego Mindstorm | Critico | 5% | Alto |
+|**4** | Errata valutazione del carico di lavoro | Critico | 15% | Medio |
+|**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 10% | Alto |
+|**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Alto |
+
+![Quadrati rischi](./Quadrati rischi.svg)
 
 ### 3.4 Meccanismo di monitoraggio e di controllo
 
@@ -125,8 +130,6 @@ Meccanismo di reporting, format, flussi di informazione, revisioni
 ### 3.5 Pianificazione dello staff
 
 Skill nescessari
-
-
 
 ## 4. Processi Tecnici
 
