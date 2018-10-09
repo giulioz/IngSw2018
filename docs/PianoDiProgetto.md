@@ -142,7 +142,7 @@ Skill nescessari
 ### 4.1 Metodi, strumenti e tecniche
 
 - **Strumenti Hardware**:
-- - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
+  - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
   - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo dell'applicazione.
   - *Lego Mindstorms EV3[^2]* fornito dall'universitá.
 - **Strumenti Software**
