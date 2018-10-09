@@ -34,11 +34,27 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 ### 1.5 Definizione e Abbreviazioni
 
-- [^1]: Applicazione realizzata per *Android*, sistema operativo dedicato agli smartphone/tablet di Google
+- [^1]: *Android*: sistema operativo dedicato agli smartphone e tablet sviluppato da Google
 
-- [^2]: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
+- [^2]: *Lego Mindstorms EV3*: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
 
-- [^3]: Agile ...
+- [^3]: *Agile*: insieme di metodi di sviluppo del software contrapposti al *modello a cascata* ed ad altri metodi piú tradizionali, in un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, piú brevemente e frequentemente software funzionante.
+
+- [^4]: *Github*: servizio di hosting gratuito per progetti software che utilizza il software *Git* per un *version-control* molto semplice ed intuitivo, oltre a fornire strumenti per il project management, come le *Kanban* e la *Wiki[^7]*.
+
+- [^5]: *Issues*: su *Github[^4]* , sono un sistema per tener traccia dei vari *todos* e *open items* del progetto.
+
+- [^6]: *Board*: su *Github[^4]* , é un sistema per categorizzare e visualizzare lo stato delle varie *Issues[^5]*.
+
+- [^7]: *Wiki*: su *Github[^4]* , é uno strumento collaborativo per scrivere la documentazione del software.
+
+- [^8]: *Android studio*: un ambiente di sviluppo integrato (IDE) basato sul software di *JetBrains IntelliJ IDEA* esclusivamente per la creazione di applicazioni *Android[^1]* native.
+
+- [^9]: *Telegram*: servizio di messaggistica istantanea basato su cloud, disponibile su molte piattaforme come smartphone, desktop ed anche con un interfaccia web.
+
+- [^10]: *Typora*: software per la creazione di documenti in *Markdown*. 
+
+
 
 
 
@@ -58,7 +74,7 @@ Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assess
 
 Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram)*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
 
-Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da *Github*, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^4] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^5]** con le issues e la **Wiki[^6]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
+Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da *Github*, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^5] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^6]** con le issues e la **Wiki[^7]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
 
 Questi due tool renderanno anche più semplice l'eventuale comunicazione con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti (eventuali tester esterni).
 
@@ -105,6 +121,8 @@ Fattori esterni
 |**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 20% | Alto |
 |**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Medio |
 
+![Quadrati rischi](./Quadrati rischi.svg)
+
 ### 3.4 Meccanismo di monitoraggio e di controllo
 
 Ogni componente del gruppo effetuerà in un primo momento un controllo personale del lavoro svolto che verrà poi revisionato insieme al resto del gruppo ove saranno esposte possibili lacune, imprecisioni e correzioni.
@@ -119,25 +137,39 @@ Il team di sviluppo ha scelto di appogiarsi a Github per lo sviluppo software e 
 
 Skill nescessari
 
-
-
 ## 4. Processi Tecnici
 
 ### 4.1 Metodi, strumenti e tecniche
 
-Sistemi di calcolo, metodi di sviluppo, struttura del team, ecc.
-
-Standard, linee guida, politiche.
+- **Strumenti Hardware**:
+- - Ogni membro del gruppo utilizzerá il proprio notebook personale per lo sviluppo del progetto.
+  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo del progetto.
+- **Strumenti Software**
+  - *Github[^4]*
+  - *Android Studio[^8]*
+  - *Telegram[^9]*
+  - *Typora[^10]*
 
 ### 4.2 Documentazione del Software
 
-Piano di documentazione, che deve includere milestones  e revisioni
+Il progetto sará accompagnato dai seguenti documenti:
+
+- Piano di Progetto
+- Documento di Progettazione
+- Documento di analisi e specifica
+- Piano di Testing
 
 ### 4.3 Funzionalita al supporto del progetto
 
-Pianificazione della qualita
+- **Pianificazione della qualita**
 
-piannificazione della gestione delle configurazioni
+  Faremo molti meeting per verificare che il progetto sta seguendo le specifiche e continueremo ad aggiornare la documentazione man mano che il progetto viene sviluppato, al fine di garantire la qualitá del prodotto finale.
+
+  Ci assicureremo inoltre di garantire che il codice segua degli standard di buona programmazione.
+
+- **Pianificazione di gestione e configuazione**
+
+  *Github[^4]* terrá traccia di tutte le modifiche e prototipi precedenti, il quale renderá molto semplice un eventuale *rollback* nel caso in cui qualcuno per errore modifichi del codice che era giá corretto.
 
 
 
