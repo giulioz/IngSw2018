@@ -38,7 +38,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^2]: *Lego Mindstorms EV3*: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
 
-- [^3]: *Agile*: insieme di metodi di sviluppo del software contrapposti al *modello a cascata* ed ad altri metodi piú tradizionali, in un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, piú brevemente e frequentemente software funzionante.
+- [^3]: *Agile*: insieme di metodi di sviluppo del software focalizzato sull'obiettivo di consegnare al cliente piú brevemente e frequentemente software funzionante. Le caratteristiche principali di Agile sono due: scrivere e revisionare il codice contemporaneamente in modo da minimizzare gli errori e quella di concentrarsi di piú sul mantenere il software funzionante rispetto ad aggiornare la documentazione che lo segue.
 
 - [^4]: *Github*: servizio di hosting gratuito per progetti software che utilizza il software *Git* per un *version-control* molto semplice ed intuitivo, oltre a fornire strumenti per il project management, come le *Kanban* e la *Wiki[^7]*.
 
@@ -72,9 +72,9 @@ Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assess
 
 ### 2.3 Interfacce Organizzative
 
-Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram)*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
+Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram[^9])*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
 
-Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da *Github*, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^5] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^6]** con le issues e la **Wiki[^7]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
+Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da ***Github[^4]***, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^5] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^6]** con le issues e la **Wiki[^7]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
 
 Questi due tool renderanno anche più semplice l'eventuale comunicazione con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti (eventuali tester esterni).
 
@@ -105,9 +105,9 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 ### 3.1 Obiettivi e Priorità
 
 - **Obiettivi**
-  - Sviluppare un'applicazione per Android che si interfaccia con Lego Mindstorm.
+  - Sviluppare due applicativi, un' applicazione android ed uno per il robottino, che si interfaccino a vicenda.
 - **Priorità**
-  - 
+  - Mantenere coesione e colloaborazione tra i membri del gruppo.
 
 ### 3.2 Assunzioni, Dipendeze, Vincoli
 
@@ -115,7 +115,7 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - Il robottino alla fine del progetto farà cose.
   - Verrano rispettate le deadlines.
 - **Dipendenze**
-  - 
+  - Apprendimento di nuovi linguaggi di programmazione e tecniche di sviluppo.
 - **Vincoli**
   - L'applicazione mobile deve essere programmata attraverso Android Studio
 
@@ -138,7 +138,7 @@ Ogni componente del gruppo effetuerà in un primo momento un controllo personale
 
 Ogni settimana si terrà una riunione dove si discute del lavoro svolto fino a quel punto, se il progetto è in linea con i tempi e sta proseguendo nella direzione corretta.
 
-Il team di sviluppo ha scelto di appogiarsi a Github per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come Telegram o Whatsapp.
+Il team di sviluppo ha scelto di appogiarsi a *Github[^4]* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come *Telegram[^9]*.
 
 
 
@@ -153,6 +153,10 @@ Skill nescessari
 - **Strumenti Hardware**
 - - Ogni membro del gruppo utilizzerá il proprio notebook personale per lo sviluppo del progetto.
   - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo del progetto.
+- **Strumenti Hardware**:
+  - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
+  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo dell'applicazione.
+  - *Lego Mindstorms EV3[^2]* fornito dall'universitá.
 - **Strumenti Software**
   - *Github[^4]*
   - *Android Studio[^8]*
@@ -170,15 +174,15 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 4.3 Funzionalita al supporto del progetto
 
-- **Pianificazione della qualita**
+- **Pianificazione della qualitá**
 
-  Faremo molti meeting per verificare che il progetto sta seguendo le specifiche e continueremo ad aggiornare la documentazione man mano che il progetto viene sviluppato, al fine di garantire la qualitá del prodotto finale.
-
-  Ci assicureremo inoltre di garantire che il codice segua degli standard di buona programmazione.
+  Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile[^3]*.
 
 - **Pianificazione di gestione e configuazione**
 
-  *Github[^4]* terrá traccia di tutte le modifiche e prototipi precedenti, il quale renderá molto semplice un eventuale *rollback* nel caso in cui qualcuno per errore modifichi del codice che era giá corretto.
+  Utilizzare *Github[^4]* in modo da: facilitare il lavoro del gruppo in fase di sviluppo / debugging e da tener traccia di tutte le versioni precedenti con facilitá. 
+
+  Assicurarsi di garantire che il codice segua degli standard di buona programmazione.
 
 
 
@@ -186,13 +190,69 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 5.1 WBS
 
-Il progetto è scomposto in attività e funzioni
+1. PIANIFICAZIONE
 
-Descrizione di ciascuna attività e funzione
+    1.1 Definizione degli obiettivi generali
+
+    1.2 Definizione del piano di progetto
+
+    ​    1.2.1 Analisi dei processi gestionali
+
+    ​    1.2.2 Analisi dei processi tecnici
+
+   ​     1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
+
+1.3 Definizione del documento di analisi e specifica
+
+2. PROGETTAZIONE
+
+    2.1 Definizione del piano di testing
+
+    2.2 Definizione del documento di progettazione
+
+    ​    2.2.1 Definizione del sistema
+
+    2.2.2 Definizione di (Lego Mindstorm)
+
+​        2.2.3 Definizione dell'applicazione
+
+   	 2.2.4 Definizione dell'interfaccia grafica
+
+3. REALIZZAZIONE
+
+    3.1 Apprendimento tecnico
+
+    3.2 Assemblaggio di (Lego Mindstorm)
+
+    3.3 Realizzazione dell'applicazione
+
+    ​	3.3.1 Realizzazione dei componenti logici
+    
+    ​	3.3.2 Realizzazione dell'interfaccia grafica
+
+    3.4 Collaudo del sistema
+
+4. DISPIEGAMENTO
+
+    4.1 Realizzazione dei manuali operativi
+
+    4.2 Consegna del sistema
+
+5. REVISIONE
+
+    5.1 Revisione finale
+
+    5.2 Chiusura progetto
 
 ### 5.2 Dipendenze
 
-Relazioni di precedenza tra attività e funzione
+| N | Attività | Durata (in ore) | Dipendenze |
+|------------ | -------------|------------ | -------------|
+| 1 | Defizione degli obiettivi generali | 5 | - |
+| 2 | Analisi dei processi gestionali | 10 | 1 |
+| 3 | Analisi dei processi tecnici | 10 | 1 |
+| 4 | Pianificazione del lavoro, delle risorse umane e del budget | 10 | 1 |
+| 5 | Definizione del documento di analisi e specifica | 10 | 2, 3, 4 |
 
 ### 5.3 Risorse necessarie
 
