@@ -159,15 +159,15 @@ Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide 
 
 - **Strumenti Hardware**
 - - Ogni membro del gruppo utilizzerá il proprio notebook personale per lo sviluppo del progetto.
-  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo del progetto.
+  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android* per lo sviluppo del progetto.
 - **Strumenti Hardware**:
   - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
-  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo dell'applicazione.
-  - *Lego Mindstorms EV3[^2]* fornito dall'universitá.
+  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android* per lo sviluppo dell'applicazione.
+  - *Lego Mindstorms EV3* fornito dall'universitá.
 - **Strumenti Software**
-  - *Github[^4]*
-  - *Android Studio[^8]*
-  - *Telegram[^9]*
+  - *Github*
+  - *Android Studio*
+  - *Telegram*
   - *Typora[^10]*
 
 ### 4.2 Documentazione del Software
@@ -183,11 +183,11 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 - **Pianificazione della qualitá**
 
-  Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile[^3]*.
+  Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile*.
 
 - **Pianificazione di gestione e configuazione**
 
-  Utilizzare *Github[^4]* in modo da: facilitare il lavoro del gruppo in fase di sviluppo / debugging e da tener traccia di tutte le versioni precedenti con facilitá. 
+  Utilizzare *Github* in modo da: facilitare il lavoro del gruppo in fase di sviluppo / debugging e da tener traccia di tutte le versioni precedenti con facilitá. 
 
   Assicurarsi di garantire che il codice segua degli standard di buona programmazione.
 
