@@ -38,7 +38,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^2]: *Lego Mindstorms EV3*: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
 
-- [^3]: *Agile*: insieme di metodi di sviluppo del software contrapposti al *modello a cascata* ed ad altri metodi piú tradizionali, in un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, piú brevemente e frequentemente software funzionante.
+- [^3]: *Agile*: insieme di metodi di sviluppo del software contrapposti al *modello a cascata* ed ad altri metodi piú tradizionali, in un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, piú brevemente e frequentemente software funzionante. L'obiettivo principale di Agile é quello di scrivere e revisionare il codice contemporaneamente in modo da minimizzare gli errori.
 
 - [^4]: *Github*: servizio di hosting gratuito per progetti software che utilizza il software *Git* per un *version-control* molto semplice ed intuitivo, oltre a fornire strumenti per il project management, come le *Kanban* e la *Wiki[^7]*.
 
@@ -72,9 +72,9 @@ Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assess
 
 ### 2.3 Interfacce Organizzative
 
-Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram)*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
+Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram[^9])*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
 
-Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da *Github*, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^5] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^6]** con le issues e la **Wiki[^7]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
+Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da ***Github[^4]***, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^5] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^6]** con le issues e la **Wiki[^7]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
 
 Questi due tool renderanno anche più semplice l'eventuale comunicazione con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti (eventuali tester esterni).
 
@@ -215,7 +215,7 @@ Il progetto sará accompagnato dai seguenti documenti:
     3.3 Realizzazione dell'applicazione
 
         3.3.1 Realizzazione dei componenti logici
-
+    
         3.3.2 Realizzazione dell'interfaccia grafica
 
     3.4 Collaudo del sistema
