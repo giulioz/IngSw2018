@@ -281,11 +281,14 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 5.3 Risorse necessarie
 
-Stima di risorse necessarie, in termini di personale, di tempo di computazione, di hardware particolare, di supporto software
+Le risorse necessarie per la realizzazione del progetto sono:
+- **risorse umane**: i membri del team di sviluppo e testing e i responsabili di gestione progetto;
+- **risorse hardware**: un computer connesso ad Internet per ogni membro del team e un set Lego Mindstorms EV3;
+- **risorse software**: Telegram (comunicazione), GitHub (piattaforma online di gestione delle versioni di software), ...
 
 ### 5.4 Allocazione del budget e delle risorse
 
-Associa ad ogni funzione o attivita il costo relativo
+Lo sviluppo dell’applicazione non richiede alcun tipo di risorsa economica, in quanto i software impiegati per la realizzazione sono a costo zero. Inoltre, anche il set Lego Mindstorms EV3 è stato fornito in comodato d'uso dall'Università Ca' Foscari.
 
 ### 5.5 Pianificazione
 
