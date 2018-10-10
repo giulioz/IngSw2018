@@ -107,7 +107,8 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 - **Obiettivi**
   - Sviluppare due applicativi, un' applicazione android ed uno per il robottino, che si interfaccino a vicenda.
 - **Priorità**
-  - Mantenere coesione e colloaborazione tra i membri del gruppo.
+  - Mantenere coesione e colloaborazione tra i membri del gruppo.ù
+  - Tenere una documentazione stabile e aggiornata.
 
 ### 3.2 Assunzioni, Dipendeze, Vincoli
 
