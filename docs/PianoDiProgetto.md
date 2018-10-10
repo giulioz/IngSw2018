@@ -105,20 +105,24 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 ### 3.1 Obiettivi e Priorità
 
 - **Obiettivi**
-  - Sviluppare due applicativi, un' applicazione android ed uno per il robottino, che si interfaccino a vicenda.
+  - Sviluppare due applicativi, un' applicazione android ed uno per il robottino, che faccia cose.
+  - Realizzare un robot Lego dotato di documentazione per poterlo utilizzare.
 - **Priorità**
-  - Mantenere coesione e colloaborazione tra i membri del gruppo.ù
+  - Mantenere coesione e colloaborazione tra i membri del gruppo.
   - Tenere una documentazione stabile e aggiornata.
 
 ### 3.2 Assunzioni, Dipendeze, Vincoli
 
 - **Assunzioni**
   - Il robottino alla fine del progetto farà cose.
-  - Verrano rispettate le deadlines.
+  - Nessun membro del team abbondonerà il progetto.
+  - L'utente finale deve avere un telefono con sistema operativo Android ed essere in posseso di un Lego Mindstorm EV3.
 - **Dipendenze**
   - Apprendimento di nuovi linguaggi di programmazione e tecniche di sviluppo.
 - **Vincoli**
-  - L'applicazione mobile deve essere programmata attraverso Android Studio
+  - L'applicazione mobile deve essere programmata attraverso Android Studio.
+  - Dover seguire altri corsi universitari e rispettivi esami.
+  - Verrano rispettate le deadlines.
 
 ### 3.3 Gestione dei Rischi
 
@@ -145,7 +149,11 @@ Il team di sviluppo ha scelto di appogiarsi a *Github[^4]* per lo sviluppo softw
 
 ### 3.5 Pianificazione dello staff
 
-Skill nescessari
+il proggetto sarà svolto in linguaggi OOP; in particolare Java verrà utilizzato per lo svilluppo dell'applicazione Android nell'ambiente di sviluppo professionale Android Studio e C++ per la programmazione del robot. 
+
+Verrà utilizzato Github come piattaforma di condivisione, di conseguenza sarà necessario conoscerne le basi ed il suo funzionamento.
+
+Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide online, tutorial e documentazione ufficiale.
 
 ## 4. Processi Tecnici
 
