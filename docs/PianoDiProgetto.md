@@ -66,7 +66,7 @@ Per realizzare al meglio il progetto, e per la scarsa disponibiltà di incontrar
 
 Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assessment del lavoro svolto nel precedente ciclo, mediante una riunione in presenza, seguito da una parte di analisi, sviluppo e testing. Il risultato di uno sprint è una serie di nuove funzionalità o una parte di lavoro fatta, che non corrisponde per forza con un deliverable tra quelli sopra descritti. Alla fine di uno sprint si analizza e verifica il lavoro fatto finora e si pianifica il risultato atteso dal prossimo ciclo.
 
-### 2.2 Struttura Organizzatinva
+### 2.2 Struttura Organizzativa
 
 È stata scelta una struttura organizzativa di tipo **democratica decentralizzata**. Ogni membro ha la stessa importanza nel progetto, con equa responsabilità e dovra rispettare le scadenze date. Possibili idee aggiuntive verrano valutate durante riunioni del gruppo, se ritenute fattibili ed inerenti al progetto dalla maggioranza del team la proposta verrà accettata.
 
@@ -176,7 +176,7 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 - **Pianificazione della qualitá**
 
-  Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile[^3]*.
+  Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile[^3]*.
 
 - **Pianificazione di gestione e configuazione**
 
