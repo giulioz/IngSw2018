@@ -38,7 +38,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^2]: *Lego Mindstorms EV3*: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
 
-- [^3]: *Agile*: insieme di metodi di sviluppo del software contrapposti al *modello a cascata* ed ad altri metodi piú tradizionali, in un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, piú brevemente e frequentemente software funzionante. L'obiettivo principale di Agile é quello di scrivere e revisionare il codice contemporaneamente in modo da minimizzare gli errori.
+- [^3]: *Agile*: insieme di metodi di sviluppo del software focalizzato sull'obiettivo di consegnare al cliente piú brevemente e frequentemente software funzionante. Le caratteristiche principali di Agile sono due: scrivere e revisionare il codice contemporaneamente in modo da minimizzare gli errori e quella di concentrarsi di piú sul mantenere il software funzionante rispetto ad aggiornare la documentazione che lo segue.
 
 - [^4]: *Github*: servizio di hosting gratuito per progetti software che utilizza il software *Git* per un *version-control* molto semplice ed intuitivo, oltre a fornire strumenti per il project management, come le *Kanban* e la *Wiki[^7]*.
 
@@ -162,15 +162,15 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 4.3 Funzionalita al supporto del progetto
 
-- **Pianificazione della qualita**
+- **Pianificazione della qualitá**
 
-  Faremo molti meeting per verificare che il progetto sta seguendo le specifiche e continueremo ad aggiornare la documentazione man mano che il progetto viene sviluppato, al fine di garantire la qualitá del prodotto finale.
-
-  Ci assicureremo inoltre di garantire che il codice segua degli standard di buona programmazione.
+  Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile[^3]*.
 
 - **Pianificazione di gestione e configuazione**
 
-  *Github[^4]* terrá traccia di tutte le modifiche e prototipi precedenti, il quale renderá molto semplice un eventuale *rollback* nel caso in cui qualcuno per errore modifichi del codice che era giá corretto.
+  Utilizzare *Github[^4]* in modo da: facilitare il lavoro del gruppo in fase di sviluppo / debugging e da tener traccia di tutte le versioni precedenti con facilitá. 
+
+  Assicurarsi di garantire che il codice segua degli standard di buona programmazione.
 
 
 
@@ -215,7 +215,7 @@ Il progetto sará accompagnato dai seguenti documenti:
     3.3 Realizzazione dell'applicazione
 
         3.3.1 Realizzazione dei componenti logici
-    
+        
         3.3.2 Realizzazione dell'interfaccia grafica
 
     3.4 Collaudo del sistema
