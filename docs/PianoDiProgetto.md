@@ -127,7 +127,7 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 |------------ | -------------|------------ |------------ |------------ |
 |**1** | Mancanza di conoscenze | Trascurabile | 60% | Basso |
 |**2** | Malattie ed infortuni | Marginale | 45% | Alto |
-|**3** | Malfunzionamento Lego Mindstorm | Critico | 5% | Alto |
+|**3** | Malfunzionamento o perdita Lego Mindstorm | Critico | 5% | Alto |
 |**4** | Errata valutazione del carico di lavoro | Critico | 15% | Medio |
 |**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 20% | Alto |
 |**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Medio |
@@ -266,7 +266,7 @@ Il progetto sará accompagnato dai seguenti documenti:
 | 6 | Definizione del piano di testing | 10 | 5 |
 | 7 | Definizione del sistema | 10 | 6 |
 | 8 | Definizione di (Lego Mindstorms) | 5 | 7 |
-| 9 | Definizione dell'applicazione | 10 | 7 | 
+| 9 | Definizione dell'applicazione | 10 | 7 |
 | 10 | Prototipazione dell'interfaccia grafica | 10 | 7 |
 | 11 | Apprendimento tecnico | 15 | 8, 9, 10 |
 | 12 | Assemblaggio di (Lego Mindstorms) | 5 | 11 |
