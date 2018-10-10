@@ -178,79 +178,104 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 5.1 WBS
 
-1. PIANIFICAZIONE
+1 PIANIFICAZIONE
 
-    1.1 Definizione degli obiettivi generali
+&nbsp;&nbsp;1.1 Definizione degli obiettivi generali
 
-    1.2 Definizione del piano di progetto
+&nbsp;&nbsp;1.2 Definizione del piano di progetto
 
-    ​    1.2.1 Analisi dei processi gestionali
+&nbsp;&nbsp;&nbsp;&nbsp;1.2.1 Analisi dei processi gestionali
 
-    ​    1.2.2 Analisi dei processi tecnici
+&nbsp;&nbsp;&nbsp;&nbsp;1.2.2 Analisi dei processi tecnici
 
-   ​     1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
+&nbsp;&nbsp;&nbsp;&nbsp;1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
 
-    1.3 Definizione del documento di analisi e specifica
+&nbsp;&nbsp;1.3 Definizione del documento di analisi e specifica
 
-2. PROGETTAZIONE
+&nbsp;&nbsp;
 
-    2.1 Definizione del piano di testing
+2 PROGETTAZIONE
 
-    2.2 Definizione del documento di progettazione
+&nbsp;&nbsp;2.1 Definizione del piano di testing
 
-    ​    2.2.1 Definizione del sistema
+&nbsp;&nbsp;2.2 Definizione del documento di progettazione
 
-        2.2.2 Definizione di (Lego Mindstorm)
+&nbsp;&nbsp;&nbsp;&nbsp;2.2.1 Definizione del sistema
 
-​        2.2.3 Definizione dell'applicazione
+&nbsp;&nbsp;&nbsp;&nbsp;2.2.2 Definizione di (Lego Mindstorms)
 
-        2.2.4 Definizione dell'interfaccia grafica​
+&nbsp;&nbsp;&nbsp;&nbsp;2.2.3 Definizione dell'applicazione
 
-3. REALIZZAZIONE
+&nbsp;&nbsp;&nbsp;&nbsp;2.2.4 Prototipazione dell'interfaccia grafica​
 
-    3.1 Apprendimento tecnico
+3 REALIZZAZIONE
 
-    3.2 Assemblaggio di (Lego Mindstorm)
+&nbsp;&nbsp;3.1 Apprendimento tecnico
 
-    3.3 Realizzazione dell'applicazione
+&nbsp;&nbsp;3.2 Realizzazione di (Lego Mindstorm)
 
-        3.3.1 Realizzazione dei componenti logici
+&nbsp;&nbsp;&nbsp;&nbsp;3.2.1 Assemblaggio di (Lego Mindstorms)
 
-        3.3.2 Realizzazione dell'interfaccia grafica
+&nbsp;&nbsp;&nbsp;&nbsp;3.2.2 Programmazione di (Lego Mindstorms)
 
-    3.4 Collaudo del sistema
+&nbsp;&nbsp;3.3 Realizzazione dell'applicazione
 
-4. DISPIEGAMENTO
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.1 Programmazione della logica
 
-    4.1 Realizzazione dei manuali operativi
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.2 Realizzazione dell'interfaccia grafica
 
-    4.2 Consegna del sistema
+&nbsp;&nbsp;3.4 Collaudo del sistema
 
-5. REVISIONE
+4 DISPIEGAMENTO
 
-    5.1 Revisione finale
+&nbsp;&nbsp;4.1 Realizzazione dei manuali operativi
 
-    5.2 Chiusura progetto
+&nbsp;&nbsp;4.2 Consegna del sistema
+
+5 REVISIONE
+
+&nbsp;&nbsp;5.1 Revisione finale
+
+&nbsp;&nbsp;5.2 Chiusura del progetto
 
 ### 5.2 Dipendenze
 
 | N | Attività | Durata (in ore) | Dipendenze |
-|------------ | -------------|------------ | -------------|
+| - | - | - | - |
 | 1 | Defizione degli obiettivi generali | 5 | - |
 | 2 | Analisi dei processi gestionali | 10 | 1 |
 | 3 | Analisi dei processi tecnici | 10 | 1 |
 | 4 | Pianificazione del lavoro, delle risorse umane e del budget | 10 | 1 |
 | 5 | Definizione del documento di analisi e specifica | 10 | 2, 3, 4 |
+| 6 | Definizione del piano di testing | 10 | 5 |
+| 7 | Definizione del sistema | 10 | 6 |
+| 8 | Definizione di (Lego Mindstorms) | 5 | 7 |
+| 9 | Definizione dell'applicazione | 10 | 7 | 
+| 10 | Prototipazione dell'interfaccia grafica | 10 | 7 |
+| 11 | Apprendimento tecnico | 15 | 8, 9, 10 |
+| 12 | Assemblaggio di (Lego Mindstorms) | 5 | 11 |
+| 13 | Programmazione di (Lego Mindstorms) | 15 | 11 |
+| 14 | Programmazione della logica | 15 | 11 |
+| 15 | Realizzazione dell'interfaccia grafica | 10 | 11 |
+| 16 | Collaudo del sistema | 5 | 12, 13, 14, 15 |
+| 17 | Realizzazione dei manuali operativi | 10 | 11 |
+| 18 | Consegna del sistema | 1 | 16, 17 |
+| 19 | Revisione finale | 2 | 18 |
+| 20 | Chiusura del progetto | 1 | 19 |
 
 ### 5.3 Risorse necessarie
 
-Stima di risorse necessarie, in termini di personale, di tempp di computazione, di hardware particolare, di supporto software
+Stima di risorse necessarie, in termini di personale, di tempo di computazione, di hardware particolare, di supporto software
 
-### 5.4 Allocazione del Budget e delle risorse
+### 5.4 Allocazione del budget e delle risorse
 
 Associa ad ogni funzione o attivita il costo relativo
 
 ### 5.5 Pianificazione
 
-Deadlines e Milestones
-
+La pianificazione del progetto è basata sui termini di consegna del progetto e di tutta la relativa documentazione, stabiliti con il professor Cortesi all’interno del corso di Ingegneria del Software 2018/2019:
+- Piano di Progetto: 16/10/2018
+- Documento di Analisi e Specifica: 02/11/2018
+- ­Piano di Testing: 15/11/2018
+- Documento di Progettazione: 10/12/2018
+- Realizzazione e messa in linea: 31/01/2019
