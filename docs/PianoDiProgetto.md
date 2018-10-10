@@ -2,6 +2,7 @@
 
 [TOC]
 
+
 ## 1. Introduzione
 
 ### 1.1 Overview del progetto
@@ -38,7 +39,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^2]: *Lego Mindstorms EV3*: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
 
-- [^3]: *Agile*: insieme di metodi di sviluppo del software contrapposti al *modello a cascata* ed ad altri metodi piú tradizionali, in un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, piú brevemente e frequentemente software funzionante.
+- [^3]: *Agile*: insieme di metodi di sviluppo del software focalizzato sull'obiettivo di consegnare al cliente piú brevemente e frequentemente software funzionante. Le caratteristiche principali di Agile sono due: scrivere e revisionare il codice contemporaneamente in modo da minimizzare gli errori e quella di concentrarsi di piú sul mantenere il software funzionante rispetto ad aggiornare la documentazione che lo segue.
 
 - [^4]: *Github*: servizio di hosting gratuito per progetti software che utilizza il software *Git* per un *version-control* molto semplice ed intuitivo, oltre a fornire strumenti per il project management, come le *Kanban* e la *Wiki[^7]*.
 
@@ -55,9 +56,6 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 - [^10]: *Typora*: software per la creazione di documenti in *Markdown*. 
 
 
-
-
-
 ## 2. Organizzazione del Progetto
 
 ### 2.1 Modello del Processo
@@ -66,15 +64,15 @@ Per realizzare al meglio il progetto, e per la scarsa disponibiltà di incontrar
 
 Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assessment del lavoro svolto nel precedente ciclo, mediante una riunione in presenza, seguito da una parte di analisi, sviluppo e testing. Il risultato di uno sprint è una serie di nuove funzionalità o una parte di lavoro fatta, che non corrisponde per forza con un deliverable tra quelli sopra descritti. Alla fine di uno sprint si analizza e verifica il lavoro fatto finora e si pianifica il risultato atteso dal prossimo ciclo.
 
-### 2.2 Struttura Organizzatinva
+### 2.2 Struttura Organizzativa
 
 È stata scelta una struttura organizzativa di tipo **democratica decentralizzata**. Ogni membro ha la stessa importanza nel progetto, con equa responsabilità e dovra rispettare le scadenze date. Possibili idee aggiuntive verrano valutate durante riunioni del gruppo, se ritenute fattibili ed inerenti al progetto dalla maggioranza del team la proposta verrà accettata.
 
 ### 2.3 Interfacce Organizzative
 
-Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram)*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
+Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram[^9])*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
 
-Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da *Github*, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^5] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^6]** con le issues e la **Wiki[^7]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
+Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da ***Github[^4]***, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^5] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^6]** con le issues e la **Wiki[^7]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
 
 Questi due tool renderanno anche più semplice l'eventuale comunicazione con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti (eventuali tester esterni).
 
@@ -99,16 +97,29 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - <u>Funzione:</u> Conduce l'analisi e lo sviluppo
 
 
-
 ## 3. Processi gestionali
 
 ### 3.1 Obiettivi e Priorità
 
-L'obiettivo è passare l'esame.
+- **Obiettivi**
+  - Sviluppare due applicativi, un' applicazione android ed uno per il robottino, che faccia cose.
+  - Realizzare un robot Lego dotato di documentazione per poterlo utilizzare.
+- **Priorità**
+  - Mantenere coesione e colloaborazione tra i membri del gruppo.
+  - Tenere una documentazione stabile e aggiornata.
 
-### 3.2 Assunzioni, Dipendeze, Vincoli
+### 3.2 Assunzioni, Dipendenze, Vincoli
 
-Fattori esterni
+- **Assunzioni**
+  - Il robottino alla fine del progetto farà cose.
+  - Nessun membro del team abbondonerà il progetto.
+  - L'utente finale deve avere un telefono con sistema operativo Android ed essere in posseso di un Lego Mindstorm EV3.
+- **Dipendenze**
+  - Apprendimento di nuovi linguaggi di programmazione e tecniche di sviluppo.
+- **Vincoli**
+  - L'applicazione mobile deve essere programmata attraverso Android Studio.
+  - Dover seguire altri corsi universitari e rispettivi esami.
+  - Verrano rispettate le deadlines.
 
 ### 3.3 Gestione dei Rischi
 
@@ -129,20 +140,28 @@ Ogni componente del gruppo effetuerà in un primo momento un controllo personale
 
 Ogni settimana si terrà una riunione dove si discute del lavoro svolto fino a quel punto, se il progetto è in linea con i tempi e sta proseguendo nella direzione corretta.
 
-Il team di sviluppo ha scelto di appogiarsi a Github per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come Telegram o Whatsapp.
+Il team di sviluppo ha scelto di appogiarsi a *Github[^4]* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come *Telegram[^9]*.
 
 
 
 ### 3.5 Pianificazione dello staff
 
-Skill nescessari
+il proggetto sarà svolto in linguaggi OOP; in particolare Java verrà utilizzato per lo svilluppo dell'applicazione Android nell'ambiente di sviluppo professionale Android Studio e C++ per la programmazione del robot. 
+
+Verrà utilizzato Github come piattaforma di condivisione, di conseguenza sarà necessario conoscerne le basi ed il suo funzionamento.
+
+Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide online, tutorial e documentazione ufficiale.
+
 
 ## 4. Processi Tecnici
 
 ### 4.1 Metodi, strumenti e tecniche
 
+- **Strumenti Hardware**
+- - Ogni membro del gruppo utilizzerá il proprio notebook personale per lo sviluppo del progetto.
+  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo del progetto.
 - **Strumenti Hardware**:
-- - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
+  - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
   - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo dell'applicazione.
   - *Lego Mindstorms EV3[^2]* fornito dall'universitá.
 - **Strumenti Software**
@@ -162,16 +181,15 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 4.3 Funzionalita al supporto del progetto
 
-- **Pianificazione della qualita**
+- **Pianificazione della qualitá**
 
-  Faremo molti meeting per verificare che il progetto sta seguendo le specifiche e continueremo ad aggiornare la documentazione man mano che il progetto viene sviluppato, al fine di garantire la qualitá del prodotto finale.
-
-  Ci assicureremo inoltre di garantire che il codice segua degli standard di buona programmazione.
+  Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile[^3]*.
 
 - **Pianificazione di gestione e configuazione**
 
-  *Github[^4]* terrá traccia di tutte le modifiche e prototipi precedenti, il quale renderá molto semplice un eventuale *rollback* nel caso in cui qualcuno per errore modifichi del codice che era giá corretto.
+  Utilizzare *Github[^4]* in modo da: facilitare il lavoro del gruppo in fase di sviluppo / debugging e da tener traccia di tutte le versioni precedenti con facilitá. 
 
+  Assicurarsi di garantire che il codice segua degli standard di buona programmazione.
 
 
 ## 5. Pianificazione del lavoro delle risorse umane e del budget
@@ -180,63 +198,61 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 1 PIANIFICAZIONE
 
-&nbsp;&nbsp;1.1 Definizione degli obiettivi generali
+  - 1.1 Definizione degli obiettivi generali
 
-&nbsp;&nbsp;1.2 Definizione del piano di progetto
+  - 1.2 Definizione del piano di progetto
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.2.1 Analisi dei processi gestionali
+    - 1.2.1 Analisi dei processi gestionali
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.2.2 Analisi dei processi tecnici
+    - 1.2.2 Analisi dei processi tecnici
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
+    - 1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
 
-&nbsp;&nbsp;1.3 Definizione del documento di analisi e specifica
-
-&nbsp;&nbsp;
+    - 1.3 Definizione del documento di analisi e specifica
 
 2 PROGETTAZIONE
 
-&nbsp;&nbsp;2.1 Definizione del piano di testing
+  - 2.1 Definizione del piano di testing
 
-&nbsp;&nbsp;2.2 Definizione del documento di progettazione
+  - 2.2 Definizione del documento di progettazione
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.2.1 Definizione del sistema
+    - 2.2.1 Definizione del sistema
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.2.2 Definizione di (Lego Mindstorms)
+    - 2.2.2 Definizione di (Lego Mindstorm)
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.2.3 Definizione dell'applicazione
+    - 2.2.3 Definizione dell'applicazione
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.2.4 Prototipazione dell'interfaccia grafica​
+    - 2.2.4 Prototipazione dell'interfaccia grafica​
 
 3 REALIZZAZIONE
 
-&nbsp;&nbsp;3.1 Apprendimento tecnico
+  - 3.1 Apprendimento tecnico
 
-&nbsp;&nbsp;3.2 Realizzazione di (Lego Mindstorm)
+  - 3.2 Realizzazione di (Lego Mindstorm)
 
-&nbsp;&nbsp;&nbsp;&nbsp;3.2.1 Assemblaggio di (Lego Mindstorms)
+    - 3.2.1 Assemblaggio di (Lego Mindstorms)
 
-&nbsp;&nbsp;&nbsp;&nbsp;3.2.2 Programmazione di (Lego Mindstorms)
+    - 3.2.2 Programmazione di (Lego Mindstorms)
 
-&nbsp;&nbsp;3.3 Realizzazione dell'applicazione
+  - 3.3 Realizzazione dell'applicazione
 
-&nbsp;&nbsp;&nbsp;&nbsp;3.3.1 Programmazione della logica
+    - 3.3.1 Programmazione dell'applicazione
 
-&nbsp;&nbsp;&nbsp;&nbsp;3.3.2 Realizzazione dell'interfaccia grafica
+    - 3.3.2 Realizzazione dell'interfaccia grafica
 
-&nbsp;&nbsp;3.4 Collaudo del sistema
+  - 3.4 Collaudo del sistema
 
 4 DISPIEGAMENTO
 
-&nbsp;&nbsp;4.1 Realizzazione dei manuali operativi
+  - 4.1 Realizzazione del manuale utente
 
-&nbsp;&nbsp;4.2 Consegna del sistema
+  - 4.2 Consegna del sistema
 
 5 REVISIONE
 
-&nbsp;&nbsp;5.1 Revisione finale
+  - 5.1 Revisione finale
 
-&nbsp;&nbsp;5.2 Chiusura del progetto
+  - 5.2 Chiusura del progetto
 
 ### 5.2 Dipendenze
 
@@ -255,10 +271,10 @@ Il progetto sará accompagnato dai seguenti documenti:
 | 11 | Apprendimento tecnico | 15 | 8, 9, 10 |
 | 12 | Assemblaggio di (Lego Mindstorms) | 5 | 11 |
 | 13 | Programmazione di (Lego Mindstorms) | 15 | 11 |
-| 14 | Programmazione della logica | 15 | 11 |
+| 14 | Programmazione dell'applicazione | 15 | 11 |
 | 15 | Realizzazione dell'interfaccia grafica | 10 | 11 |
 | 16 | Collaudo del sistema | 5 | 12, 13, 14, 15 |
-| 17 | Realizzazione dei manuali operativi | 10 | 11 |
+| 17 | Realizzazione del manuale utente | 10 | 11 |
 | 18 | Consegna del sistema | 1 | 16, 17 |
 | 19 | Revisione finale | 2 | 18 |
 | 20 | Chiusura del progetto | 1 | 19 |

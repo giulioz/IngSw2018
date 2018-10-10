@@ -1,0 +1,9 @@
+*.swp
+*.swo
+*.obj
+bin
+lib
+obj
+build
+cmake-*
+.DS_Store
