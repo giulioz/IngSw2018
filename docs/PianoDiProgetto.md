@@ -104,11 +104,20 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 
 ### 3.1 Obiettivi e Priorità
 
-L'obiettivo è passare l'esame.
+- **Obiettivi**
+  - Sviluppare un'applicazione per Android che si interfaccia con Lego Mindstorm.
+- **Priorità**
+  - 
 
 ### 3.2 Assunzioni, Dipendeze, Vincoli
 
-Fattori esterni
+- **Assunzioni**
+  - Il robottino alla fine del progetto farà cose.
+  - Verrano rispettate le deadlines.
+- **Dipendenze**
+  - 
+- **Vincoli**
+  - L'applicazione mobile deve essere programmata attraverso Android Studio
 
 ### 3.3 Gestione dei Rischi
 
@@ -141,7 +150,7 @@ Skill nescessari
 
 ### 4.1 Metodi, strumenti e tecniche
 
-- **Strumenti Hardware**:
+- **Strumenti Hardware**
 - - Ogni membro del gruppo utilizzerá il proprio notebook personale per lo sviluppo del progetto.
   - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android[^1]* per lo sviluppo del progetto.
 - **Strumenti Software**
