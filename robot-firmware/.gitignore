@@ -5,5 +5,7 @@ bin
 lib
 obj
 build
+build-*
 cmake-*
 .DS_Store
+deps
