@@ -157,9 +157,6 @@ Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide 
 
 ### 4.1 Metodi, strumenti e tecniche
 
-- **Strumenti Hardware**
-- - Ogni membro del gruppo utilizzerá il proprio notebook personale per lo sviluppo del progetto.
-  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android* per lo sviluppo del progetto.
 - **Strumenti Hardware**:
   - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
   - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android* per lo sviluppo dell'applicazione.
