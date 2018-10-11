@@ -193,33 +193,33 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 5.1 WBS
 
-1. PIANIFICAZIONE
+1 PIANIFICAZIONE
    - 1.1 Definizione degli obiettivi generali
    - 1.2 Definizione del piano di progetto
      - 1.2.1 Analisi dei processi gestionali
      - 1.2.2 Analisi dei processi tecnici
      - 1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
      - 1.3 Definizione del documento di analisi e specifica
-2. PROGGETTAZIONE
+2 PROGETTAZIONE
    - 2.1 Definizione del piano di testing
    - 2.2 Definizione del documento di progettazione
      - 2.2.1 Definizione del sistema
      - 2.2.2 Definizione di (Lego Mindstorm)
      - 2.2.3 Definizione dell'applicazione
      - 2.2.4 Prototipazione dell'interfaccia grafica
-3. REALIZZAZIONE
+3 REALIZZAZIONE
    - 3.1 Apprendimento tecnico
    - 3.2 Realizzazione di (Lego Mindstorm)
-     - 3.2.1 Assemblaggio di (Lego Mindstorms)
-     - 3.2.2 Programmazione di (Lego Mindstorms)
+     - 3.2.1 Assemblaggio dei componenti hardware
+     - 3.2.2 Programmazione del firmware
    - 3.3 Realizzazione dell'applicazione
      - 3.3.1 Programmazione dell'applicazione
      - 3.3.2 Realizzazione dell'interfaccia grafica
    - 3.4 Collaudo del sistema
-4. DISPIEGAMENTO
+4 DISPIEGAMENTO
    - 4.1 Realizzazione del manuale utente
    - 4.2 Consegna del sistema
-5. REVISIONE
+5 REVISIONE
    - 5.1 Revisione finale
    - 5.2 Chiusura del progetto
 
@@ -240,8 +240,8 @@ Il progetto sará accompagnato dai seguenti documenti:
 | 9 | Definizione dell'applicazione | 10 | 7 |
 | 10 | Prototipazione dell'interfaccia grafica | 10 | 7 |
 | 11 | Apprendimento tecnico | 15 | 8, 9, 10 |
-| 12 | Assemblaggio di (Lego Mindstorms) | 5 | 11 |
-| 13 | Programmazione di (Lego Mindstorms) | 15 | 11 |
+| 12 | Assemblaggio dei componenti hardware | 5 | 11 |
+| 13 | Programmazione del firmware | 15 | 11 |
 | 14 | Programmazione dell'applicazione | 15 | 11 |
 | 15 | Realizzazione dell'interfaccia grafica | 10 | 11 |
 | 16 | Collaudo del sistema | 5 | 12, 13, 14, 15 |
@@ -254,8 +254,8 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 Le risorse necessarie per la realizzazione del progetto sono:
 - **Risorse umane**: i membri del team di sviluppo e testing e i responsabili di gestione progetto;
-- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team e un set *Lego Mindstorms EV3*;
-- **Risorse software**: *Telegram* (comunicazione), *GitHub* (piattaforma online di gestione delle versioni di software), ...
+- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team, un Core Set *Lego Mindstorms EV3*;
+- **Risorse software**: *Telegram* (comunicazione), *GitHub* (gestione delle versioni del progetto), *Typora* (stesura della documentazione), *Latex* (impaginazione della documentazione), gcc (compilazione firmware), CMake (automazione della compilazione), ...
 
 ### 5.4 Allocazione del budget e delle risorse
 
