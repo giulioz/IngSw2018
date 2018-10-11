@@ -53,7 +53,19 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^9]: *Telegram*: servizio di messaggistica istantanea basato su cloud, disponibile su molte piattaforme come smartphone, desktop ed anche con un interfaccia web.
 
-- [^10]: *Typora*: software per la creazione di documenti in *Markdown*. 
+- [^10]: *Typora*: software per la creazione di documenti in *Markdown*.
+
+- [^11]: *CLion*: IDE di Jetbrains dedicato alla scrittura di codice C++.
+
+- [^12]: *Visual Studio Code*: IDE gratuito di Microsoft.
+
+- [^13]: *Adobe Xd*: software gratuito per la realizzazione e il mockup delle interfacce grafiche.
+
+- [^14]: *Docker*: software di virtualizzazione che facilita il lavoro di *cross compiling* e *deployment*.
+
+- [^15]: *Git*: software di *Code versioning* che permette di tenere traccia delle versioni dei file in maniera decentralizzata.
+
+- [^16]: *Continuos Integration*: software per automatizzare il processo di testing automatico, formattazione del codice, validazione e deployment, integrato con Git.
 
 
 ## 2. Organizzazione del Progetto
@@ -93,7 +105,7 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - <u>Responsabile:</u> Scodeller Giovanni
   - <u>Funzione:</u> Si occupa di gestire i piani di testing, i test automatici ed è responsabile dei deliverables.
 - **Techincal Staff**
-  - <u>Responsabile:</u> Scodeller Giovanni, Baccega Sandro, Zausa Giulio, Casarin Samuele
+  - <u>Responsabile:</u> Scodeller Giovanni, Baccega Sandro, Zausa Giulio, Casarin Samuele, Lazzaro Dario
   - <u>Funzione:</u> Conduce l'analisi e lo sviluppo
 
 
@@ -102,11 +114,12 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 ### 3.1 Obiettivi e Priorità
 
 - **Obiettivi**
-  - Sviluppare due applicativi, un' applicazione android ed uno per il robottino, che faccia cose.
+  - Sviluppare due applicativi, un'applicazione android ed un firmware per il robottino, che faccia cose.
   - Realizzare un robot Lego dotato di documentazione per poterlo utilizzare.
 - **Priorità**
-  - Mantenere coesione e colloaborazione tra i membri del gruppo.
+  - Mantenere coesione e collaborazione tra i membri del gruppo.
   - Tenere una documentazione stabile e aggiornata.
+  - Assicurare un'elevata qualità delle funzionalità del prodotto e del codice.
 
 ### 3.2 Assunzioni, Dipendenze, Vincoli
 
@@ -116,10 +129,12 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - L'utente finale deve avere un telefono con sistema operativo Android ed essere in posseso di un *Lego Mindstorm EV3*.
 - **Dipendenze**
   - Apprendimento di nuovi linguaggi di programmazione e tecniche di sviluppo.
+  - Approvvigionamento dell'hardware necessario.
 - **Vincoli**
   - L'applicazione mobile deve essere programmata attraverso **Android Studio[^8]**.
   - Dover seguire altri corsi universitari e rispettivi esami.
   - Verrano rispettate le deadlines.
+  - Dovranno essere usati almeno due sensori.
 
 ### 3.3 Gestione dei Rischi
 
@@ -146,9 +161,9 @@ Il team di sviluppo ha scelto di appogiarsi a *Github* per lo sviluppo software 
 
 ### 3.5 Pianificazione dello staff
 
-il proggetto sarà svolto in linguaggi OOP; in particolare Java verrà utilizzato per lo svilluppo dell'applicazione Android nell'ambiente di sviluppo professionale Android Studio e C++ per la programmazione del robot. 
+Lo staff tecnico verrà diviso in due sezioni: una che seguirà lo sviluppo e l'analisi del robot e una che seguirà l'app Android, questo per l'elevata differenza di software e capacità necessarie per sviluppare le due parti.
 
-Verrà utilizzato Github come piattaforma di condivisione, di conseguenza sarà necessario conoscerne le basi ed il suo funzionamento.
+Lo staff cercherà di lavorare nella maniera più parallela possibile, per accellerare i tempi. Tutti i lavori fatti dal gruppo saranno depositati su un repository su Github, dato che ci permetterà di lavorare su singoli file in parallelo, dove all'occorrenza sarà possibile aprire Issues e fare commenti sul codice e sulla documentazione depositata.
 
 Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide online, tutorial e documentazione ufficiale.
 
@@ -161,11 +176,15 @@ Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide 
   - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
   - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android* per lo sviluppo dell'applicazione.
   - *Lego Mindstorms EV3* fornito dall'universitá.
+  - Eventuali sensori aggiuntivi e dongle USB.
 - **Strumenti Software**
-  - *Github*
-  - *Android Studio*
-  - *Telegram*
+  - *Git[^15]*
+  - *Android Studio[^8]*
   - *Typora[^10]*
+  - *CLion[^11]*
+  - *Visual Studio Code[^12]*
+  - *Adobe Xd[^13]*
+  - *Docker[^14]*
 
 ### 4.2 Documentazione del Software
 
@@ -182,44 +201,44 @@ Il progetto sará accompagnato dai seguenti documenti:
 
   Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile*.
 
-- **Pianificazione di gestione e configuazione**
+- **Pianificazione di Code Version Control e Continuos Integration**
 
-  Utilizzare *Github* in modo da: facilitare il lavoro del gruppo in fase di sviluppo / debugging e da tener traccia di tutte le versioni precedenti con facilitá. 
+  - Utilizzeremo *Github* in modo da: facilitare il lavoro del gruppo in fase di sviluppo / debugging e da tener traccia di tutte le versioni precedenti con facilitá.
 
-  Assicurarsi di garantire che il codice segua degli standard di buona programmazione.
+  - Utilizzeremo strumenti di CI[^16] in modo da assicurare la qualità del codice ed evitare errori di regressione in maniera efficiente.
 
 
 ## 5. Pianificazione del lavoro delle risorse umane e del budget
 
 ### 5.1 WBS
 
-1 PIANIFICAZIONE
+- 1 PIANIFICAZIONE
    - 1.1 Definizione degli obiettivi generali
    - 1.2 Definizione del piano di progetto
      - 1.2.1 Analisi dei processi gestionali
      - 1.2.2 Analisi dei processi tecnici
      - 1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
      - 1.3 Definizione del documento di analisi e specifica
-2 PROGETTAZIONE
-   - 2.1 Definizione del piano di testing
-   - 2.2 Definizione del documento di progettazione
-     - 2.2.1 Definizione del sistema
-     - 2.2.2 Definizione di (Lego Mindstorm)
-     - 2.2.3 Definizione dell'applicazione
-     - 2.2.4 Prototipazione dell'interfaccia grafica
-3 REALIZZAZIONE
+- 2 PROGETTAZIONE
+   - 2.1 Definizione del documento di progettazione
+     - 2.1.1 Analisi e definizione del sistema
+     - 2.1.2 Analisi e definizione della componente Lego Mindstorm
+     - 2.1.3 Analisi e definizione dell'applicazione Android
+     - 2.1.4 Prototipazione dell'interfaccia grafica Android
+   - 2.2 Definizione del piano di testing
+- 3 REALIZZAZIONE
    - 3.1 Apprendimento tecnico
-   - 3.2 Realizzazione di (Lego Mindstorm)
+   - 3.2 Realizzazione della componente Lego Mindstorm
      - 3.2.1 Assemblaggio dei componenti hardware
      - 3.2.2 Programmazione del firmware
    - 3.3 Realizzazione dell'applicazione
-     - 3.3.1 Programmazione dell'applicazione
-     - 3.3.2 Realizzazione dell'interfaccia grafica
+     - 3.3.1 Programmazione della parte Backend
+     - 3.3.2 Programmazione della parte Frontend
    - 3.4 Collaudo del sistema
-4 DISPIEGAMENTO
+- 4 DISPIEGAMENTO
    - 4.1 Realizzazione del manuale utente
    - 4.2 Consegna del sistema
-5 REVISIONE
+- 5 REVISIONE
    - 5.1 Revisione finale
    - 5.2 Chiusura del progetto
 
@@ -254,12 +273,14 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 Le risorse necessarie per la realizzazione del progetto sono:
 - **Risorse umane**: i membri del team di sviluppo e testing e i responsabili di gestione progetto;
-- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team, un Core Set *Lego Mindstorms EV3*;
+- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team, l'hardware necessario per il Lego Mindstorm;
 - **Risorse software**: *Telegram* (comunicazione), *GitHub* (gestione delle versioni del progetto), *Typora* (stesura della documentazione), *Latex* (impaginazione della documentazione), gcc (compilazione firmware), CMake (automazione della compilazione), ...
 
 ### 5.4 Allocazione del budget e delle risorse
 
 Lo sviluppo dell’applicazione non richiede alcun tipo di risorsa economica, in quanto i software impiegati per la realizzazione sono a costo zero. Inoltre, anche il set Lego Mindstorms EV3 è stato fornito in comodato d'uso dall'Università Ca' Foscari.
+
+Eventuali sensori esterni saranno acquistati dai componenti del progetto in maniera volontaria e indipendente, e non saranno contati nel budget del progetto.
 
 ### 5.5 Pianificazione
 
