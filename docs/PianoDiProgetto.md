@@ -97,7 +97,10 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - <u>Funzione:</u> Pianifica, coordina e supervisiona le attività del team.
 - **Software Architect**
   - <u>Responsabile:</u> Zausa Giulio
-  - <u>Funzione:</u> Produzione della progettazione ad alto livello, includendo standard di codifiche e meccanismi di automazione.
+  - <u>Funzione:</u> Produzione della progettazione ad alto livello della parte software, includendo standard di codifiche e meccanismi di automazione.
+- **System Architect**
+  - <u>Responsabile:</u> Lazzaro Dario
+  - <u>Funzione:</u> Produzione della progettazione della parte hardware e del firmware.
 - **Backup engineer**
   - <u>Responsabile:</u> Baccega Sandro
   - <u>Funzione:</u> Supporta il project manager ed è responsabile della validazione.
