@@ -70,9 +70,9 @@ Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assess
 
 ### 2.3 Interfacce Organizzative
 
-Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online *(Telegram[^9])*, dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
+Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online (*Telegram[^9]*), dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
 
-Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da ***Github[^4]***, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le **Issues**[^5] di progetto (che sono lavori da fare, problematiche, bugs e todo), la **Board[^6]** con le issues e la **Wiki[^7]** di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
+Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da **Github[^4]**, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le *Issues[^5]* di progetto (che sono lavori da fare, problematiche, bugs e todo), la *Board[^6]* con le issues e la *Wiki[^7]* di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
 
 Questi due tool renderanno anche più semplice l'eventuale comunicazione con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti (eventuali tester esterni).
 
@@ -113,11 +113,11 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 - **Assunzioni**
   - Il robottino alla fine del progetto farà cose.
   - Nessun membro del team abbondonerà il progetto.
-  - L'utente finale deve avere un telefono con sistema operativo Android ed essere in posseso di un Lego Mindstorm EV3.
+  - L'utente finale deve avere un telefono con sistema operativo Android ed essere in posseso di un *Lego Mindstorm EV3*.
 - **Dipendenze**
   - Apprendimento di nuovi linguaggi di programmazione e tecniche di sviluppo.
 - **Vincoli**
-  - L'applicazione mobile deve essere programmata attraverso Android Studio.
+  - L'applicazione mobile deve essere programmata attraverso **Android Studio[^8]**.
   - Dover seguire altri corsi universitari e rispettivi esami.
   - Verrano rispettate le deadlines.
 
@@ -140,7 +140,7 @@ Ogni componente del gruppo effetuerà in un primo momento un controllo personale
 
 Ogni settimana si terrà una riunione dove si discute del lavoro svolto fino a quel punto, se il progetto è in linea con i tempi e sta proseguendo nella direzione corretta.
 
-Il team di sviluppo ha scelto di appogiarsi a *Github[^4]* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come *Telegram[^9]*.
+Il team di sviluppo ha scelto di appogiarsi a *Github* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come *Telegram*.
 
 
 
@@ -193,63 +193,37 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 5.1 WBS
 
-1 PIANIFICAZIONE
+1. PIANIFICAZIONE
+   - 1.1 Definizione degli obiettivi generali
+   - 1.2 Definizione del piano di progetto
+     - 1.2.1 Analisi dei processi gestionali
+     - 1.2.2 Analisi dei processi tecnici
+     - 1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
+     - 1.3 Definizione del documento di analisi e specifica
+2. PROGGETTAZIONE
+   - 2.1 Definizione del piano di testing
+   - 2.2 Definizione del documento di progettazione
+     - 2.2.1 Definizione del sistema
+     - 2.2.2 Definizione di (Lego Mindstorm)
+     - 2.2.3 Definizione dell'applicazione
+     - 2.2.4 Prototipazione dell'interfaccia grafica
+3. REALIZZAZIONE
+   - 3.1 Apprendimento tecnico
+   - 3.2 Realizzazione di (Lego Mindstorm)
+     - 3.2.1 Assemblaggio di (Lego Mindstorms)
+     - 3.2.2 Programmazione di (Lego Mindstorms)
+   - 3.3 Realizzazione dell'applicazione
+     - 3.3.1 Programmazione dell'applicazione
+     - 3.3.2 Realizzazione dell'interfaccia grafica
+   - 3.4 Collaudo del sistema
+4. DISPIEGAMENTO
+   - 4.1 Realizzazione del manuale utente
+   - 4.2 Consegna del sistema
+5. REVISIONE
+   - 5.1 Revisione finale
+   - 5.2 Chiusura del progetto
 
-  - 1.1 Definizione degli obiettivi generali
 
-  - 1.2 Definizione del piano di progetto
-
-    - 1.2.1 Analisi dei processi gestionali
-
-    - 1.2.2 Analisi dei processi tecnici
-
-    - 1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
-
-    - 1.3 Definizione del documento di analisi e specifica
-
-2 PROGETTAZIONE
-
-  - 2.1 Definizione del piano di testing
-
-  - 2.2 Definizione del documento di progettazione
-
-    - 2.2.1 Definizione del sistema
-
-    - 2.2.2 Definizione di (Lego Mindstorm)
-
-    - 2.2.3 Definizione dell'applicazione
-
-    - 2.2.4 Prototipazione dell'interfaccia grafica​
-
-3 REALIZZAZIONE
-
-  - 3.1 Apprendimento tecnico
-
-  - 3.2 Realizzazione di (Lego Mindstorm)
-
-    - 3.2.1 Assemblaggio di (Lego Mindstorms)
-
-    - 3.2.2 Programmazione di (Lego Mindstorms)
-
-  - 3.3 Realizzazione dell'applicazione
-
-    - 3.3.1 Programmazione dell'applicazione
-
-    - 3.3.2 Realizzazione dell'interfaccia grafica
-
-  - 3.4 Collaudo del sistema
-
-4 DISPIEGAMENTO
-
-  - 4.1 Realizzazione del manuale utente
-
-  - 4.2 Consegna del sistema
-
-5 REVISIONE
-
-  - 5.1 Revisione finale
-
-  - 5.2 Chiusura del progetto
 
 ### 5.2 Dipendenze
 
@@ -279,9 +253,9 @@ Il progetto sará accompagnato dai seguenti documenti:
 ### 5.3 Risorse necessarie
 
 Le risorse necessarie per la realizzazione del progetto sono:
-- **risorse umane**: i membri del team di sviluppo e testing e i responsabili di gestione progetto;
-- **risorse hardware**: un computer connesso ad Internet per ogni membro del team e un set Lego Mindstorms EV3;
-- **risorse software**: Telegram (comunicazione), GitHub (piattaforma online di gestione delle versioni di software), ...
+- **Risorse umane**: i membri del team di sviluppo e testing e i responsabili di gestione progetto;
+- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team e un set *Lego Mindstorms EV3*;
+- **Risorse software**: *Telegram* (comunicazione), *GitHub* (piattaforma online di gestione delle versioni di software), ...
 
 ### 5.4 Allocazione del budget e delle risorse
 
