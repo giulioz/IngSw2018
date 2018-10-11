@@ -274,8 +274,8 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 Le risorse necessarie per la realizzazione del progetto sono:
 - **Risorse umane**: i membri del team di sviluppo e testing e i responsabili di gestione progetto;
-- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team, l'hardware necessario per il Lego Mindstorm;
-- **Risorse software**: *Telegram* (comunicazione), *GitHub* (gestione delle versioni del progetto), *Typora* (stesura della documentazione), *Latex* (impaginazione della documentazione), gcc (compilazione firmware), CMake (automazione della compilazione), ...
+- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team, hardware necessario per il Lego Mindstorm;
+- **Risorse software**: *Telegram* (comunicazione), *Discord* (comunicazione), *GitHub* (gestione delle versioni del progetto), *Typora* (stesura della documentazione), *Latex* (impaginazione della documentazione), *gcc* (compilazione firmware), *CMake* (automazione della compilazione), *VSCode* (programmazione del firmware), *Android Studio* (programmazione dell'applicazione Android).
 
 ### 5.4 Allocazione del budget e delle risorse
 
