@@ -202,7 +202,7 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 - **Pianificazione della qualitá**
 
-  Lavoreremo in 2 coppie che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile*.
+  Lavoreremo in 2 gruppi (uno per il robot e l'altro per l'applicazione) che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile*.
 
 - **Pianificazione di Code Version Control e Continuos Integration**
 
