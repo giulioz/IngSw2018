@@ -249,26 +249,26 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 | N | Attività | Durata (in ore) | Dipendenze |
 | - | - | - | - |
-| 1 | Defizione degli obiettivi generali | 5 | - |
-| 2 | Analisi dei processi gestionali | 10 | 1 |
-| 3 | Analisi dei processi tecnici | 10 | 1 |
-| 4 | Pianificazione del lavoro, delle risorse umane e del budget | 10 | 1 |
-| 5 | Definizione del documento di analisi e specifica | 10 | 2, 3, 4 |
-| 6 | Analisi del sistema | 10 | 5 |
-| 7 | Analisi del componente Lego Mindstorms | 5 | 6 |
-| 8 | Analisi dell'applicazione Android | 10 | 6 |
-| 9 | Prototipazione dell'interfaccia grafica | 10 | 6 |
-| 10 | Definizione del piano di testing | 10 | 7, 8, 9 |
-| 11 | Apprendimento tecnico | 15 | 6 |
-| 12 | Assemblaggio dei componenti hardware | 5 | 11 |
-| 13 | Programmazione del firmware | 15 | 11 |
-| 14 | Programmazione del backend | 15 | 11 |
-| 15 | Programmazione del frontend | 10 | 11 |
-| 16 | Collaudo del sistema | 5 | 12, 13, 14, 15 |
-| 17 | Realizzazione del manuale utente | 10 | 11 |
-| 18 | Consegna del sistema | 1 | 16, 17 |
-| 19 | Revisione finale | 2 | 18 |
-| 20 | Chiusura del progetto | 1 | 19 |
+| A | Defizione degli obiettivi generali | 5 | - |
+| B | Analisi dei processi gestionali | 10 | A |
+| C | Analisi dei processi tecnici | 10 | A |
+| D | Pianificazione del lavoro, delle risorse umane e del budget | 10 | A |
+| E | Definizione del documento di analisi e specifica | 10 | B, C, D |
+| F | Analisi del sistema | 10 | E |
+| G | Analisi del componente Lego Mindstorms | 5 | F |
+| H | Analisi dell'applicazione Android | 10 | F |
+| I | Prototipazione dell'interfaccia grafica | 10 | F |
+| J | Definizione del piano di testing | 10 | G, H, I |
+| K | Apprendimento tecnico | 15 | J |
+| L | Assemblaggio dei componenti hardware | 5 | K |
+| M | Programmazione del firmware | 15 | K |
+| N | Programmazione del backend | 15 | K |
+| O | Programmazione del frontend | 10 | K |
+| P | Collaudo del sistema | 5 | L, M, N, O |
+| Q | Realizzazione del manuale utente | 10 | P |
+| R | Consegna del sistema | 1 | Q |
+| S | Revisione finale | 2 | R |
+| T | Chiusura del progetto | 1 | S |
 
 ### 5.3 Risorse necessarie
 
