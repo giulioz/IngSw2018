@@ -121,9 +121,10 @@ Per garantire il successo del progetto, le varie responsabilità saranno suddivi
   - Sviluppare due applicativi:
     - Applicazione Android in grado di informare l'utente di determinati eventi e consultare dati storici.
     - Firmware per EV3 in grado di rilevare dati dai sensori, elaborarli ed inviarli a richiesta all'app Android.
-  - Realizzare un robot Lego per contenere i sensori.
+  - Realizzare un robot Lego il quale, attraverso l'uso di alcuni sensori in sua dotazione, riesca ad effettuare programmate operazioni.
 - **Priorità**
   - Mantenere coesione e collaborazione tra i membri del gruppo.
+  - Riuscire ad ottenere un livello coerente tra i vari membri del gruppo.
   - Tenere una documentazione stabile e aggiornata.
   - Assicurare un'elevata qualità delle funzionalità del prodotto e del codice.
 
@@ -160,6 +161,7 @@ Per garantire il successo del progetto, le varie responsabilità saranno suddivi
 Ogni componente del gruppo effetuerà in un primo momento un controllo personale del lavoro svolto che verrà poi revisionato insieme al resto del gruppo, dove saranno esposte possibili lacune, imprecisioni e correzioni possibili.
 
 Ogni settimana si terrà una riunione dove si discute del lavoro svolto fino a quel punto, se il progetto è in linea con i tempi e sta proseguendo nella direzione corretta.
+Se dovessero sorgere problematiche dovute a possibili ritardi derivanti, per esempio, a difficoltà tecniche i membri possono cambiare momentaneamente i propri compiti per cercare di arginare rapidamente il problema.
 
 Il team di sviluppo ha scelto di appogiarsi a *Github* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti, nel caso occorressero, verrano utilizzate applicazioni di messagistica come *Telegram*.
 
@@ -204,7 +206,10 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 - **Pianificazione della qualitá**
 
-  Lavoreremo in 2 gruppi (uno per il robot e l'altro per l'applicazione) che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneranno la documentazione, come previsto dalla metodologia *Agile*.
+  Lavoreremo in 2 gruppi (uno per il robot e l'altro per l'applicazione) i quali scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori).
+  Solamente dopo i dovuti testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile*.
+
+  Non considereremo i vari membri dei gruppi formatisi come valori assoluti, pensando infatti che possibili scambi per consultazioni o aggiornamenti saranno frequenti.
 
 - **Pianificazione di Code Version Control e Continuos Integration**
 
