@@ -7,13 +7,13 @@
 
 ### 1.1 Overview del progetto
 
-Il progetto che abbiamo intenzione di presentare, la cui realizzazione è prevista nel corso di Ingegneria del Software, svolto durante il Corso di Laurea in Informatica presso l'Università Ca' Foscari di Venezia, tenuto dal professor Agostino Cortesi, nell'a.a. 2018/2019, consiste in una **applicazione Android[^1]** atta ad interfacciarsi con un apposito robot, realizzato con **Lego Mindstorms EV3[^2]**. Il robot sarà in grado di muoversi grazie ad appositi motori e ricevere dati dal mondo esterno mediante diversi tipi di sensori.
+Il nostro progetto consiste nella progettazione e realizzazione, prevista nel corso di Ingegneria del Software del Corso di Laurea in Informatica tenuto nell'a.a. 2018/2019 dal prof. Agostino Cortesi, di un sistema Smart Home, composto principalmente da un robot, realizzato con il set **Lego Mindstorms EV3[^2]**, ed un'**applicazione Android[^1]** di interfaccia remota del robot.
 
-Il progetto che realizzeremo sarà una soluzione per Smart Home, che utilizzerà vari sensori per raccogliere dati in tempo reale ed informare l'utente di conseguenza, utilizzando lo smartphone come sistema di notifica. In particolare, i dati che andremo a raccogliere consentiranno di verificare intrusioni e rilevare parametri ambientali (temperatura e umidità).
+In particolare, il robot sarà in grado di raccogliere dati in tempo reale, grazie a diversi sensori incorporati allo scopo di rilevare intrusioni e misurare alcune variabili ambientali (come temperatura e umidità), inviandoli successivamente ad uno smartphone Android provvisto dell'applicazione per avvisare l'utente.
 
 ### 1.2 Deliverables del Progetto
 
-Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo per stare al passo con gli impegni previsti dal corso:
+Il progetto prevede una serie di elaborati da consegnare entro i tempi stabiliti, qui sotto riportati:
 
 |          DELIVERABLE           |                  DESCRIZIONE                   | DATA CONSEGNA |
 | :----------------------------: | :--------------------------------------------: | :-----------: |
@@ -25,7 +25,7 @@ Il progetto prevede vari elaborati da consegnare, programmati nel seguente modo 
 
 ### 1.3 Evoluzione del progetto
 
-Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere uno sviluppo di una versione più "consumer", utilizzando hardware custom invece che Lego Mindstorms, e una applicazione con un'esperienza utente migliorata.
+Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere quello di sviluppare una versione maggiormente orientata al consumo, utilizzando hardware personalizzato anzichè il set Lego Mindstorms ed un'applicazione volta a migliorare l'esperienza utente.
 
 ### 1.4 Materiale di Riferimento
 
@@ -37,7 +37,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^1]: *Android*: sistema operativo dedicato agli smartphone e tablet sviluppato da Google
 
-- [^2]: *Lego Mindstorms EV3*: Kit di sviluppo realizzato da Lego per realizzare robot, composto da vari sensori e motori da collegare ad una unità centrale (EV3), programmabile e dotata di Bluetooth e USB
+- [^2]: *Lego Mindstorms EV3*: Kit di sviluppo realizzato da Lego per l'assemblaggio e programmazione di robot, composto da vari sensori e motori da collegare ad un'unità centrale (EV3), dotata di porte USB e Bluetooth.
 
 - [^3]: *Agile*: insieme di metodi di sviluppo del software focalizzato sull'obiettivo di consegnare al cliente piú brevemente e frequentemente software funzionante. Le caratteristiche principali di Agile sono due: scrivere e revisionare il codice contemporaneamente in modo da minimizzare gli errori e quella di concentrarsi di piú sul mantenere il software funzionante rispetto ad aggiornare la documentazione che lo segue.
 
@@ -51,7 +51,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^8]: *Android studio*: un ambiente di sviluppo integrato (IDE) basato sul software di *JetBrains IntelliJ IDEA* esclusivamente per la creazione di applicazioni *Android[^1]* native.
 
-- [^9]: *Telegram*: servizio di messaggistica istantanea basato su cloud, disponibile su molte piattaforme come smartphone, desktop ed anche con un interfaccia web.
+- [^9]: *Telegram*: servizio di messaggistica istantanea basato su cloud, disponibile su molte piattaforme quali smartphone, desktop e Web.
 
 - [^10]: *Typora*: software per la creazione di documenti in *Markdown*.
 
@@ -63,9 +63,9 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 - [^14]: *Docker*: software di virtualizzazione che facilita il lavoro di *cross compiling* e *deployment*.
 
-- [^15]: *Git*: software di *Code versioning* che permette di tenere traccia delle versioni dei file in maniera decentralizzata.
+- [^15]: *Git*: software di *code versioning* che permette di tenere traccia delle versioni dei file sorgenti in maniera decentralizzata.
 
-- [^16]: *Continuos Integration*: software per automatizzare il processo di testing automatico, formattazione del codice, validazione e deployment, integrato con Git.
+- [^16]: *Continuos Integration*: un software per automatizzare il processo di testing automatico, formattazione del codice, validazione e deployment, integrato con Git.
 
 
 
@@ -73,25 +73,25 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 ### 2.1 Modello del Processo
 
-Per realizzare al meglio il progetto, e per la scarsa disponibiltà di incontrarsi di persona da parte dei componenti del gruppo, abbiamo pensato di adottare una metodologia di tipo **Agile[^3]**, ossia con cicli di sviluppo iterativi a durata costante.
+Per realizzare al meglio il progetto, a cui si aggiunge la scarsa disponibilità di ritrovarsi di persona da parte dei componenti del gruppo, adotteremo una metodologia di gestione progetto di tipo **Agile[^3]**, la cui filosofia prevede l'esecuzione di cicli di sviluppo iterativi di durata costante.
 
-Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assessment del lavoro svolto nel precedente ciclo, mediante una riunione in presenza, seguito da una parte di analisi, sviluppo e testing. Il risultato di uno sprint è una serie di nuove funzionalità o una parte di lavoro fatta, che non corrisponde per forza con un deliverable tra quelli sopra descritti. Alla fine di uno sprint si analizza e verifica il lavoro fatto finora e si pianifica il risultato atteso dal prossimo ciclo.
+Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assessment del lavoro svolto del ciclo precedente mediante una riunione in presenza, seguito da una parte di analisi, sviluppo e testing. Il risultato di uno sprint è una serie di nuove funzionalità o una parte di lavoro compiuta, che non necessariamente corrisponde ad un deliverable tra quelli sopra descritti. Al termine di uno sprint si analizza e verifica il lavoro fatto finora e si pianifica il risultato atteso dal ciclo successivo.
 
 ### 2.2 Struttura Organizzativa
 
-È stata scelta una struttura organizzativa di tipo **democratica decentralizzata**. Ogni membro ha la stessa importanza nel progetto, con equa responsabilità e dovra rispettare le scadenze date. Possibili idee aggiuntive verrano valutate durante riunioni del gruppo, se ritenute fattibili ed inerenti al progetto dalla maggioranza del team la proposta verrà accettata.
+È stata scelta una struttura organizzativa di tipo **democratica decentralizzata**: ogni membro ha la stessa importanza nel progetto, con equa responsabilità e dovrà rispettare le scadenze assegnate. Ulteriori proposte di funzionalità verranno valutate durante riunioni di gruppo; se una proposta dovesse essere ritenuta fattibile ed inerente al progetto dalla maggioranza del team, la proposta verrà accettata.
 
 ### 2.3 Interfacce Organizzative
 
-Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online (*Telegram[^9]*), dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità. Inoltre, sono previste riunioni in teleconferenza per riallineamento.
+Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online (*Telegram[^9]*), dove potremmo prendere decisioni, organizzare le attività e gli incontri e ci aiuteremo in caso di necessità. Inoltre, sono previste riunioni in teleconferenza per riallineamento.
 
-Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da **Github[^4]**, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le *Issues[^5]* di progetto (che sono lavori da fare, problematiche, bugs e todo), la *Board[^6]* con le issues e la *Wiki[^7]* di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
+Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da **Github[^4]**, il quale ci servirà per mantenere il controllo delle versioni (quindi, rendendo non necessaria la figura del Software Librarian), le *Issues[^5]* di progetto (Todo, bugs e altri problemi), la *Board[^6]* con le issues e la *Wiki[^7]* di progetto (dove manterremo la documentazione necessaria ai vari componenti del team di progetto).
 
-Questi due tool renderanno anche più semplice l'eventuale comunicazione con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti (eventuali tester esterni).
+Questi due strumenti renderanno più semplice anche l'eventuale comunicazione con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti (eventuali tester esterni).
 
 ### 2.4 Responsabilita di progetto
 
-Per garantire la buona riuscita del progetto, le varie responsabilità saranno suddivise in vari ruoli:
+Per garantire il successo del progetto, le varie responsabilità saranno suddivise per ruoli come seguente:
 
 - **Project Manager**
   - <u>Responsabile:</u> Casarin Samuele
@@ -108,8 +108,8 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 - **Test Manager**
   - <u>Responsabile:</u> Baccega Sandro
   - <u>Funzione:</u> Si occupa di gestire i piani di testing, i test automatici ed è responsabile dei deliverables.
-- **Techincal Staff**
-  - <u>Responsabile:</u> Scodeller Giovanni, Baccega Sandro, Zausa Giulio, Casarin Samuele, Lazzaro Dario
+- **Technical Staff**
+  - <u>Responsabile:</u> Baccega Sandro, Casarin Samuele, Lazzaro Dario, Scodeller Giovanni, Zausa Giulio
   - <u>Funzione:</u> Conduce l'analisi e lo sviluppo.
 
 
