@@ -9,7 +9,7 @@
 
 Il progetto che abbiamo intenzione di presentare, la cui realizzazione è prevista nel corso di Ingegneria del Software, svolto durante il Corso di Laurea in Informatica presso l'Università Ca' Foscari di Venezia, tenuto dal professor Agostino Cortesi, nell'a.a. 2018/2019, consiste in una **applicazione Android[^1]** atta ad interfacciarsi con un apposito robot, realizzato con **Lego Mindstorms EV3[^2]**. Il robot sarà in grado di muoversi grazie ad appositi motori e ricevere dati dal mondo esterno mediante diversi tipi di sensori.
 
-*(scrivere nostro progetto)*
+Il progetto che realizzeremo sarà una soluzione per Smart Home, che utilizzerà vari sensori per raccogliere dati in tempo reale ed informare l'utente di conseguenza, utilizzando lo smartphone come sistema di notifica. In particolare, i dati che andremo a raccogliere consentiranno di verificare intrusioni e rilevare parametri ambientali (temperatura e umidità).
 
 ### 1.2 Deliverables del Progetto
 
@@ -68,6 +68,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 - [^16]: *Continuos Integration*: software per automatizzare il processo di testing automatico, formattazione del codice, validazione e deployment, integrato con Git.
 
 
+
 ## 2. Organizzazione del Progetto
 
 ### 2.1 Modello del Processo
@@ -82,7 +83,7 @@ Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assess
 
 ### 2.3 Interfacce Organizzative
 
-Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online (*Telegram[^9]*), dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità.
+Per favorire una migliore comunicazione tra i componenti del gruppo, abbiamo deciso di utilizzare un sistema di chat online (*Telegram[^9]*), dove potremmo prendere decisioni, organizzare le attività e gli incontri, e ci aiuteremo in caso di necessità. Inoltre, sono previste riunioni in teleconferenza per riallineamento.
 
 Il progetto verrà reso pubblico e gestito mediante la piattaforma online fornita da **Github[^4]**, il quale ci servirà per mantenere il controllo delle versioni (rendendo non necessaria, quindi, la figura del Software Librarian), le *Issues[^5]* di progetto (che sono lavori da fare, problematiche, bugs e todo), la *Board[^6]* con le issues e la *Wiki[^7]* di progetto (dove terremo la documentazione necessaria ai vari componenti del team di progetto).
 
@@ -97,19 +98,19 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
   - <u>Funzione:</u> Pianifica, coordina e supervisiona le attività del team.
 - **Software Architect**
   - <u>Responsabile:</u> Zausa Giulio
-  - <u>Funzione:</u> Produzione della progettazione ad alto livello della parte software, includendo standard di codifiche e meccanismi di automazione.
-- **System Architect**
+  - <u>Funzione:</u> Progetta ad alto livello la parte software, includendo standard di codifiche e meccanismi di automazione.
+- **Product Manager**
+  - <u>Responsabile:</u> Scodeller Giovanni
+  - <u>Funzione:</u> È responsabile di mantere le relazioni con il cliente e di verificare l'aderenza del prodotto con le specifiche.
+- **Backup Engineer**
   - <u>Responsabile:</u> Lazzaro Dario
-  - <u>Funzione:</u> Produzione della progettazione della parte hardware e del firmware.
-- **Backup engineer**
-  - <u>Responsabile:</u> Baccega Sandro
   - <u>Funzione:</u> Supporta il project manager ed è responsabile della validazione.
 - **Test Manager**
-  - <u>Responsabile:</u> Scodeller Giovanni
+  - <u>Responsabile:</u> Baccega Sandro
   - <u>Funzione:</u> Si occupa di gestire i piani di testing, i test automatici ed è responsabile dei deliverables.
 - **Techincal Staff**
   - <u>Responsabile:</u> Scodeller Giovanni, Baccega Sandro, Zausa Giulio, Casarin Samuele, Lazzaro Dario
-  - <u>Funzione:</u> Conduce l'analisi e lo sviluppo
+  - <u>Funzione:</u> Conduce l'analisi e lo sviluppo.
 
 
 ## 3. Processi gestionali
@@ -117,8 +118,10 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 ### 3.1 Obiettivi e Priorità
 
 - **Obiettivi**
-  - Sviluppare due applicativi, un'applicazione android ed un firmware per il robottino, che faccia cose.
-  - Realizzare un robot Lego dotato di documentazione per poterlo utilizzare.
+  - Sviluppare due applicativi:
+    - Applicazione Android in grado di informare l'utente di determinati eventi e consultare dati storici.
+    - Firmware per EV3 in grado di rilevare dati dai sensori, elaborarli ed inviarli a richiesta all'app Android.
+  - Realizzare un robot Lego per contenere i sensori.
 - **Priorità**
   - Mantenere coesione e collaborazione tra i membri del gruppo.
   - Tenere una documentazione stabile e aggiornata.
@@ -127,9 +130,9 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 ### 3.2 Assunzioni, Dipendenze, Vincoli
 
 - **Assunzioni**
-  - Il robottino alla fine del progetto farà cose.
+  - Alla fine del progetto, il robot realizzerà gli obbiettivi preposti in maniera affidabile.
   - Nessun membro del team abbondonerà il progetto.
-  - L'utente finale deve avere un telefono con sistema operativo Android ed essere in posseso di un *Lego Mindstorm EV3*.
+  - L'utente finale deve avere un telefono con sistema operativo Android ed essere in possesso di un *Lego Mindstorm EV3*.
 - **Dipendenze**
   - Apprendimento di nuovi linguaggi di programmazione e tecniche di sviluppo.
   - Approvvigionamento dell'hardware necessario.
@@ -154,13 +157,11 @@ Per garantire la buona riuscita del progetto, le varie responsabilità saranno s
 
 ### 3.4 Meccanismo di monitoraggio e di controllo
 
-Ogni componente del gruppo effetuerà in un primo momento un controllo personale del lavoro svolto che verrà poi revisionato insieme al resto del gruppo ove saranno esposte possibili lacune, imprecisioni e correzioni.
+Ogni componente del gruppo effetuerà in un primo momento un controllo personale del lavoro svolto che verrà poi revisionato insieme al resto del gruppo, dove saranno esposte possibili lacune, imprecisioni e correzioni possibili.
 
 Ogni settimana si terrà una riunione dove si discute del lavoro svolto fino a quel punto, se il progetto è in linea con i tempi e sta proseguendo nella direzione corretta.
 
-Il team di sviluppo ha scelto di appogiarsi a *Github* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti nel caso occorresero verrano utilizzate applicazioni di messagistica come *Telegram*.
-
-
+Il team di sviluppo ha scelto di appogiarsi a *Github* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti, nel caso occorressero, verrano utilizzate applicazioni di messagistica come *Telegram*.
 
 ### 3.5 Pianificazione dello staff
 
@@ -171,14 +172,15 @@ Lo staff cercherà di lavorare nella maniera più parallela possibile, per accel
 Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide online, tutorial e documentazione ufficiale.
 
 
+
 ## 4. Processi Tecnici
 
 ### 4.1 Metodi, strumenti e tecniche
 
 - **Strumenti Hardware**:
-  - Ogni membro del gruppo utilizzerá il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
-  - Ogni membro del gruppo avrá a disposizione il proprio smartphone *Android* per lo sviluppo dell'applicazione.
-  - *Lego Mindstorms EV3* fornito dall'universitá.
+  - Ogni membro del gruppo utilizzerà il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
+  - Ogni membro del gruppo avrà a disposizione il proprio smartphone *Android* per lo sviluppo dell'applicazione.
+  - *Lego Mindstorms EV3* fornito dall'università.
   - Eventuali sensori aggiuntivi e dongle USB.
 - **Strumenti Software**
   - *Git[^15]*
@@ -202,7 +204,7 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 - **Pianificazione della qualitá**
 
-  Lavoreremo in 2 gruppi (uno per il robot e l'altro per l'applicazione) che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile*.
+  Lavoreremo in 2 gruppi (uno per il robot e l'altro per l'applicazione) che scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori) e solo dopo il dovuto testing aggiorneranno la documentazione, come previsto dalla metodologia *Agile*.
 
 - **Pianificazione di Code Version Control e Continuos Integration**
 
@@ -215,21 +217,21 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 ### 5.1 WBS
 
-- 1 PIANIFICAZIONE
+- **1 PIANIFICAZIONE**
    - 1.1 Definizione degli obiettivi generali
    - 1.2 Definizione del piano di progetto
      - 1.2.1 Analisi dei processi gestionali
      - 1.2.2 Analisi dei processi tecnici
      - 1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
    - 1.3 Definizione del documento di analisi e specifica
-- 2 PROGETTAZIONE
+- **2 PROGETTAZIONE**
    - 2.1 Definizione del documento di progettazione
      - 2.1.1 Analisi del sistema
      - 2.1.2 Analisi del componente Lego Mindstorms
      - 2.1.3 Analisi dell'applicazione Android
      - 2.1.4 Prototipazione dell'interfaccia grafica
    - 2.2 Definizione del piano di testing
-- 3 REALIZZAZIONE
+- **3 REALIZZAZIONE**
    - 3.1 Apprendimento tecnico
    - 3.2 Realizzazione del componente Lego Mindstorms
      - 3.2.1 Assemblaggio dei componenti hardware
@@ -238,10 +240,10 @@ Il progetto sará accompagnato dai seguenti documenti:
      - 3.3.1 Programmazione del backend
      - 3.3.2 Programmazione del frontend
    - 3.4 Collaudo del sistema
-- 4 DISPIEGAMENTO
+- **4 DISPIEGAMENTO**
    - 4.1 Realizzazione del manuale utente
    - 4.2 Consegna del sistema
-- 5 REVISIONE
+- **5 REVISIONE**
    - 5.1 Revisione finale
    - 5.2 Chiusura del progetto
 
@@ -249,7 +251,7 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 | N | Attività | Durata (in ore) | Dipendenze |
 | - | - | - | - |
-| A | Defizione degli obiettivi generali | 5 | - |
+| A | Definizione degli obiettivi generali | 5 | - |
 | B | Analisi dei processi gestionali | 10 | A |
 | C | Analisi dei processi tecnici | 10 | A |
 | D | Pianificazione del lavoro, delle risorse umane e del budget | 10 | A |
@@ -274,7 +276,7 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 Le risorse necessarie per la realizzazione del progetto sono:
 - **Risorse umane**: i membri del team di sviluppo e testing e i responsabili di gestione progetto;
-- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team, hardware necessario per il Lego Mindstorm;
+- **Risorse hardware**: un computer connesso ad Internet per ogni membro del team, hardware necessario per il robot;
 - **Risorse software**: *Telegram* (comunicazione), *Discord* (comunicazione), *GitHub* (gestione delle versioni del progetto), *Typora* (stesura della documentazione), *Latex* (impaginazione della documentazione), *gcc* (compilazione firmware), *CMake* (automazione della compilazione), *VSCode* (programmazione del firmware), *Android Studio* (programmazione dell'applicazione Android).
 
 ### 5.4 Allocazione del budget e delle risorse

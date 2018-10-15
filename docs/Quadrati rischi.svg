@@ -1,1 +1,231 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 768 768"><defs><style>.a{clip-path:url(#b);}.b{fill:rgba(255,235,0,0.8);}.b,.d,.e,.f{stroke:#000;}.c{font-size:21px;font-family:Roboto-Black, Roboto, sans-serif;font-weight:800;}.d{fill:rgba(216,33,33,0.8);}.e{fill:rgba(0,255,59,0.8);}.f,.i{fill:none;}.f{stroke-width:2px;}.g{font-size:25px;font-family:Roboto-Bold, Roboto;font-weight:700;}.h{stroke:none;}.j{fill:#fff;}</style><clipPath id="b"><rect width="768" height="768"/></clipPath></defs><g id="a" class="a"><rect class="j" width="768" height="768"/><g transform="translate(-26.5 27)"><g transform="translate(128)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g><text class="c" transform="translate(65 72)"><tspan x="-35.653" y="0">Risk #3</tspan></text></g><g transform="translate(256)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g><text class="c" transform="translate(65 72)"><tspan x="-35.653" y="0">Risk #5</tspan></text></g><g transform="translate(384)"><g class="d"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g><text class="c" transform="translate(65 72)"><tspan x="-35.653" y="0">Risk #2</tspan></text></g><g transform="translate(512)"><g class="d"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(640)"><g class="d"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(128 128)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(256 128)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(384 128)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(512 128)"><g class="d"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(640 128)"><g class="d"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(128 256)"><g class="e"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g><text class="c" transform="translate(65 72)"><tspan x="-35.653" y="0">Risk #4</tspan></text></g><g transform="translate(256 256)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(384 256)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(512 256)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(640 256)"><g class="d"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(128 384)"><g class="e"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(256 384)"><g class="e"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(384 384)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(512 384)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(640 384)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(128 512)"><g class="e"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(256 512)"><g class="e"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(384 512)"><g class="e"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g><text class="c" transform="translate(64 72)"><tspan x="-35.653" y="0">Risk #1</tspan></text></g><g transform="translate(512 512)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(640 512)"><g class="b"><rect class="h" width="128" height="128"/><rect class="i" x="0.5" y="0.5" width="127" height="127"/></g></g><g transform="translate(0 -2.5)"><line class="f" x2="575" transform="translate(160.5 681.5)"/><line class="f" x2="12" y2="7" transform="translate(723 674.5)"/><line class="f" y1="7" x2="12" transform="translate(723 681.5)"/></g><g transform="translate(-592.5 768.5) rotate(-90)"><line class="f" x2="575" transform="translate(160.5 681.5)"/><line class="f" x2="12" y2="7" transform="translate(723 674.5)"/><line class="f" y1="7" x2="12" transform="translate(723 681.5)"/></g><text class="g" transform="translate(76.5 320.5) rotate(-90)"><tspan x="-53.271" y="0">IMPATTO</tspan></text><text class="g" transform="translate(448 709)"><tspan x="-78.326" y="0">PROBABILITÀ</tspan></text></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 768 768">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Web_1920_1);
+      }
+
+      .cls-2 {
+        fill: rgba(255,235,0,0.8);
+      }
+
+      .cls-2, .cls-4, .cls-5, .cls-6 {
+        stroke: #000;
+      }
+
+      .cls-3 {
+        font-size: 21px;
+        font-family: Roboto-Black, Roboto;
+        font-weight: 800;
+      }
+
+      .cls-4 {
+        fill: rgba(216,33,33,0.8);
+      }
+
+      .cls-5 {
+        fill: rgba(0,255,59,0.8);
+      }
+
+      .cls-6, .cls-9 {
+        fill: none;
+      }
+
+      .cls-6 {
+        stroke-width: 2px;
+      }
+
+      .cls-7 {
+        font-size: 25px;
+        font-family: Roboto-Bold, Roboto;
+        font-weight: 700;
+      }
+
+      .cls-8 {
+        stroke: none;
+      }
+
+      .cls-10 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="768" height="768"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-1">
+    <rect class="cls-10" width="768" height="768"/>
+    <g id="Group_29" data-name="Group 29" transform="translate(-26.5 27)">
+      <g id="Group_26" data-name="Group 26">
+        <g id="Group_1" data-name="Group 1" transform="translate(128)">
+          <g id="Rectangle_1" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+          <text id="Risk_3" data-name="Risk #3" class="cls-3" transform="translate(64 71)"><tspan x="-35.653" y="0">Risk #3</tspan></text>
+        </g>
+        <g id="Group_2" data-name="Group 2" transform="translate(256)">
+          <g id="Rectangle_1-2" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+          <text id="Risk_5" data-name="Risk #5" class="cls-3" transform="translate(64 71)"><tspan x="-35.653" y="0">Risk #5</tspan></text>
+        </g>
+        <g id="Group_3" data-name="Group 3" transform="translate(384)">
+          <g id="Rectangle_1-3" data-name="Rectangle 1" class="cls-4">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+          <text id="Risk_2" data-name="Risk #2" class="cls-3" transform="translate(64 71)"><tspan x="-35.653" y="0">Risk #2</tspan></text>
+        </g>
+        <g id="Group_4" data-name="Group 4" transform="translate(512)">
+          <g id="Rectangle_1-4" data-name="Rectangle 1" class="cls-4">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_5" data-name="Group 5" transform="translate(640)">
+          <g id="Rectangle_1-5" data-name="Rectangle 1" class="cls-4">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_6" data-name="Group 6" transform="translate(128 128)">
+          <g id="Rectangle_1-6" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_7" data-name="Group 7" transform="translate(256 128)">
+          <g id="Rectangle_1-7" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_8" data-name="Group 8" transform="translate(384 128)">
+          <g id="Rectangle_1-8" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_9" data-name="Group 9" transform="translate(512 128)">
+          <g id="Rectangle_1-9" data-name="Rectangle 1" class="cls-4">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_10" data-name="Group 10" transform="translate(640 128)">
+          <g id="Rectangle_1-10" data-name="Rectangle 1" class="cls-4">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_11" data-name="Group 11" transform="translate(128 256)">
+          <g id="Rectangle_1-11" data-name="Rectangle 1" class="cls-5">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+          <text id="Risk_4" data-name="Risk #4" class="cls-3" transform="translate(64 71)"><tspan x="-35.653" y="0">Risk #4</tspan></text>
+        </g>
+        <g id="Group_12" data-name="Group 12" transform="translate(256 256)">
+          <g id="Rectangle_1-12" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+          <text id="Risk_6" data-name="Risk #6" class="cls-3" transform="translate(64 71)"><tspan x="-35.653" y="0">Risk #6</tspan></text>
+        </g>
+        <g id="Group_13" data-name="Group 13" transform="translate(384 256)">
+          <g id="Rectangle_1-13" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_14" data-name="Group 14" transform="translate(512 256)">
+          <g id="Rectangle_1-14" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_15" data-name="Group 15" transform="translate(640 256)">
+          <g id="Rectangle_1-15" data-name="Rectangle 1" class="cls-4">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_16" data-name="Group 16" transform="translate(128 384)">
+          <g id="Rectangle_1-16" data-name="Rectangle 1" class="cls-5">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_17" data-name="Group 17" transform="translate(256 384)">
+          <g id="Rectangle_1-17" data-name="Rectangle 1" class="cls-5">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_18" data-name="Group 18" transform="translate(384 384)">
+          <g id="Rectangle_1-18" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_19" data-name="Group 19" transform="translate(512 384)">
+          <g id="Rectangle_1-19" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_20" data-name="Group 20" transform="translate(640 384)">
+          <g id="Rectangle_1-20" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_21" data-name="Group 21" transform="translate(128 512)">
+          <g id="Rectangle_1-21" data-name="Rectangle 1" class="cls-5">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_22" data-name="Group 22" transform="translate(256 512)">
+          <g id="Rectangle_1-22" data-name="Rectangle 1" class="cls-5">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_23" data-name="Group 23" transform="translate(384 512)">
+          <g id="Rectangle_1-23" data-name="Rectangle 1" class="cls-5">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+          <text id="Risk_1" data-name="Risk #1" class="cls-3" transform="translate(64 71)"><tspan x="-35.653" y="0">Risk #1</tspan></text>
+        </g>
+        <g id="Group_24" data-name="Group 24" transform="translate(512 512)">
+          <g id="Rectangle_1-24" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+        <g id="Group_25" data-name="Group 25" transform="translate(640 512)">
+          <g id="Rectangle_1-25" data-name="Rectangle 1" class="cls-2">
+            <rect class="cls-8" width="128" height="128"/>
+            <rect class="cls-9" x="0.5" y="0.5" width="127" height="127"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_27" data-name="Group 27" transform="translate(0 -2.5)">
+        <line id="Line_1" data-name="Line 1" class="cls-6" x2="575" transform="translate(160.5 681.5)"/>
+        <line id="Line_2" data-name="Line 2" class="cls-6" x2="12" y2="7" transform="translate(723 674.5)"/>
+        <line id="Line_3" data-name="Line 3" class="cls-6" y1="7" x2="12" transform="translate(723 681.5)"/>
+      </g>
+      <g id="Group_28" data-name="Group 28" transform="translate(-592.5 768.5) rotate(-90)">
+        <line id="Line_1-2" data-name="Line 1" class="cls-6" x2="575" transform="translate(160.5 681.5)"/>
+        <line id="Line_2-2" data-name="Line 2" class="cls-6" x2="12" y2="7" transform="translate(723 674.5)"/>
+        <line id="Line_3-2" data-name="Line 3" class="cls-6" y1="7" x2="12" transform="translate(723 681.5)"/>
+      </g>
+      <text id="IMPATTO" class="cls-7" transform="translate(76.5 320.5) rotate(-90)"><tspan x="-53.271" y="0">IMPATTO</tspan></text>
+      <text id="PROBABILITÀ" class="cls-7" transform="translate(448 709)"><tspan x="-78.326" y="0">PROBABILITÀ</tspan></text>
+    </g>
+  </g>
+</svg>
