@@ -26,13 +26,13 @@ Il progetto prevede una serie di elaborati da consegnare entro i tempi stabiliti
 
 ### 1.3 Evoluzione del progetto
 
-Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere quello di sviluppare una versione maggiormente orientata al consumo, utilizzando hardware personalizzato anzichè il set Lego Mindstorms ed un'applicazione volta a migliorare l'esperienza utente.
+Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, non pronto per la produzione o l'uso commerciale. Un possibile sviluppo del progetto potrebbe essere quello di sviluppare una versione maggiormente orientata al consumo, utilizzando hardware personalizzato anzichè il set Lego Mindstorms EV3 ed un'applicazione volta a migliorare l'esperienza utente.
 
 ### 1.4 Materiale di Riferimento
 
 - [Documentazione ufficiale sviluppo Android][developer.android.com]
 - [Slide del corso di ingegneria del software 2018/2019][https://www.unive.it/data/insegnamento/89084]
-- [Documentazione ufficiale lego Mindstorm EV3][https://le-www-live-s.legocdn.com/ev3/userguide/1.4.0/ev3_userguide_enus.pdf]
+- [Documentazione ufficiale di Lego Mindstorms EV3][https://le-www-live-s.legocdn.com/ev3/userguide/1.4.0/ev3_userguide_enus.pdf]
 
 ### 1.5 Definizione e Abbreviazioni
 
@@ -123,7 +123,7 @@ Per garantire il successo del progetto, le varie responsabilità saranno suddivi
   - Sviluppare due applicazioni:
     - L'applicazione Android in grado di informare l'utente di determinati eventi e consultare dati storici.
     - Il firmware per EV3 in grado di rilevare dati dai sensori, elaborarli ed inviarli a richiesta all'applicazione Android.
-  - Assemblare un robot con il set Lego Mindstorm EV3, il quale, attraverso l'uso di alcuni sensori in dotazione, riesce a svolgere operazioni programmate.
+  - Assemblare un robot con il set Lego Mindstorms EV3, il quale, attraverso l'uso di alcuni sensori in dotazione, riesce a svolgere operazioni programmate.
 - **Priorità**
   - Mantenere coesione e collaborazione tra i membri del gruppo.
   - Mantenere aggiornata la documentazione.
@@ -134,7 +134,7 @@ Per garantire il successo del progetto, le varie responsabilità saranno suddivi
 - **Assunzioni**
   - Alla fine del progetto, il robot realizzerà gli obbiettivi preposti in maniera affidabile.
   - Nessun membro del team abbondonerà il progetto.
-  - L'utente finale deve avere uno smartphone Android ed essere in possesso del set *Lego Mindstorm EV3*.
+  - L'utente finale deve avere uno smartphone Android ed essere in possesso del set *Lego Mindstorms EV3*.
 - **Dipendenze**
   - Apprendimento di nuovi linguaggi di programmazione e tecniche di sviluppo.
   - Approvvigionamento dell'hardware necessario.
@@ -150,7 +150,7 @@ Per garantire il successo del progetto, le varie responsabilità saranno suddivi
 |------------ | -------------|------------ |------------ |------------ |
 |**1** | Mancanza di conoscenze | Trascurabile | 60% | Basso |
 |**2** | Malattie ed infortuni | Marginale | 45% | Alto |
-|**3** | Malfunzionamento o perdita Lego Mindstorm | Critico | 5% | Alto |
+|**3** | Malfunzionamento o perdita robot | Critico | 5% | Alto |
 |**4** | Errata valutazione del carico di lavoro | Critico | 15% | Medio |
 |**5** | Mancante interazione tra i membri del gruppo | Catastrofico | 20% | Alto |
 |**6** | Errata valutazione della fattibiltà del progetto | Critico | 20% | Medio |
@@ -184,7 +184,7 @@ In caso di lacune di conoscenza degli strumenti di progetto da parte dei membri 
 - **Strumenti Hardware**:
   - Ogni membro del gruppo utilizzerà il proprio notebook personale (*Windows*/*Linux*/*Mac*) per lo sviluppo del progetto.
   - Ogni membro del gruppo avrà a disposizione il proprio smartphone *Android* per lo sviluppo dell'applicazione.
-  - *Lego Mindstorms EV3* fornito dall'università.
+  - Un set *Lego Mindstorms EV3* fornito dall'università.
   - Eventuali sensori aggiuntivi e dongle USB.
 - **Strumenti Software**
   - *Git[^15]*
@@ -226,22 +226,22 @@ In ogni caso, ogni gruppo rimarrà aperto a possibili scambi per consultazioni e
 ### 5.1 WBS
 
 - **1 PIANIFICAZIONE**
-   - 1.1 Definizione degli obiettivi generali
-   - 1.2 Definizione del piano di progetto
+   - 1.1 Definizione degli obbiettivi generali
+   - 1.2 Definizione del Piano di Progetto
      - 1.2.1 Analisi dei processi gestionali
      - 1.2.2 Analisi dei processi tecnici
      - 1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
-   - 1.3 Definizione del documento di analisi e specifica
+   - 1.3 Definizione del Documento di Analisi e Specifica
 - **2 PROGETTAZIONE**
-   - 2.1 Definizione del documento di progettazione
+   - 2.1 Definizione del Documento di Progettazione
      - 2.1.1 Analisi del sistema
-     - 2.1.2 Analisi del componente Lego Mindstorms
+     - 2.1.2 Analisi del robot
      - 2.1.3 Analisi dell'applicazione Android
      - 2.1.4 Prototipazione dell'interfaccia grafica
-   - 2.2 Definizione del piano di testing
+   - 2.2 Definizione del Piano di Testing
 - **3 REALIZZAZIONE**
    - 3.1 Apprendimento tecnico
-   - 3.2 Realizzazione del componente Lego Mindstorms
+   - 3.2 Realizzazione del robot
      - 3.2.1 Assemblaggio dei componenti hardware
      - 3.2.2 Programmazione del firmware
    - 3.3 Realizzazione dell'applicazione Android
@@ -259,16 +259,16 @@ In ogni caso, ogni gruppo rimarrà aperto a possibili scambi per consultazioni e
 
 | N | Attività | Durata (in ore) | Dipendenze |
 | - | - | - | - |
-| A | Definizione degli obiettivi generali | 5 | - |
+| A | Definizione degli obbiettivi generali | 5 | - |
 | B | Analisi dei processi gestionali | 10 | A |
 | C | Analisi dei processi tecnici | 10 | A |
 | D | Pianificazione del lavoro, delle risorse umane e del budget | 10 | A |
-| E | Definizione del documento di analisi e specifica | 10 | B, C, D |
+| E | Definizione del Documento di Analisi e Specifica | 10 | B, C, D |
 | F | Analisi del sistema | 10 | E |
-| G | Analisi del componente Lego Mindstorms | 5 | F |
+| G | Analisi del robot | 5 | F |
 | H | Analisi dell'applicazione Android | 10 | F |
 | I | Prototipazione dell'interfaccia grafica | 10 | F |
-| J | Definizione del piano di testing | 10 | G, H, I |
+| J | Definizione del Piano di Testing | 10 | G, H, I |
 | K | Apprendimento tecnico | 15 | J |
 | L | Assemblaggio dei componenti hardware | 5 | K |
 | M | Programmazione del firmware | 15 | K |
