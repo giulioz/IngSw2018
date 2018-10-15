@@ -3,6 +3,7 @@
 [TOC]
 
 
+
 ## 1. Introduzione
 
 ### 1.1 Overview del progetto
@@ -73,7 +74,7 @@ Il progetto, ai fini dell'esame, é finalizzato alla consegna di un prototipo, n
 
 ### 2.1 Modello del Processo
 
-Per realizzare al meglio il progetto, a cui si aggiunge la scarsa disponibilità di ritrovarsi di persona da parte dei componenti del gruppo, adotteremo una metodologia di gestione progetto di tipo **Agile[^3]**, la cui filosofia prevede l'esecuzione di cicli di sviluppo iterativi di durata costante.
+Per realizzare al meglio il progetto, a cui si aggiunge la scarsa disponibilità di ritrovarsi di persona da parte dei componenti del gruppo, adotteremo una metodologia di gestione progetto di tipo **Agile[^3]**, i cui principi prevedono l'esecuzione di cicli di sviluppo iterativi di durata costante.
 
 Ogni ciclo (che chiameremo anche *sprint*) prevede una fase di planning e assessment del lavoro svolto del ciclo precedente mediante una riunione in presenza, seguito da una parte di analisi, sviluppo e testing. Il risultato di uno sprint è una serie di nuove funzionalità o una parte di lavoro compiuta, che non necessariamente corrisponde ad un deliverable tra quelli sopra descritti. Al termine di uno sprint si analizza e verifica il lavoro fatto finora e si pianifica il risultato atteso dal ciclo successivo.
 
@@ -113,35 +114,35 @@ Per garantire il successo del progetto, le varie responsabilità saranno suddivi
   - <u>Funzione:</u> Conduce l'analisi e lo sviluppo.
 
 
+
 ## 3. Processi gestionali
 
 ### 3.1 Obiettivi e Priorità
 
 - **Obiettivi**
-  - Sviluppare due applicativi:
-    - Applicazione Android in grado di informare l'utente di determinati eventi e consultare dati storici.
-    - Firmware per EV3 in grado di rilevare dati dai sensori, elaborarli ed inviarli a richiesta all'app Android.
-  - Realizzare un robot Lego il quale, attraverso l'uso di alcuni sensori in sua dotazione, riesca ad effettuare programmate operazioni.
+  - Sviluppare due applicazioni:
+    - L'applicazione Android in grado di informare l'utente di determinati eventi e consultare dati storici.
+    - Il firmware per EV3 in grado di rilevare dati dai sensori, elaborarli ed inviarli a richiesta all'applicazione Android.
+  - Assemblare un robot con il set Lego Mindstorm EV3, il quale, attraverso l'uso di alcuni sensori in dotazione, riesce a svolgere operazioni programmate.
 - **Priorità**
   - Mantenere coesione e collaborazione tra i membri del gruppo.
-  - Riuscire ad ottenere un livello coerente tra i vari membri del gruppo.
-  - Tenere una documentazione stabile e aggiornata.
-  - Assicurare un'elevata qualità delle funzionalità del prodotto e del codice.
+  - Mantenere aggiornata la documentazione.
+  - Assicurare una buona qualità del codice.
 
 ### 3.2 Assunzioni, Dipendenze, Vincoli
 
 - **Assunzioni**
   - Alla fine del progetto, il robot realizzerà gli obbiettivi preposti in maniera affidabile.
   - Nessun membro del team abbondonerà il progetto.
-  - L'utente finale deve avere un telefono con sistema operativo Android ed essere in possesso di un *Lego Mindstorm EV3*.
+  - L'utente finale deve avere uno smartphone Android ed essere in possesso del set *Lego Mindstorm EV3*.
 - **Dipendenze**
   - Apprendimento di nuovi linguaggi di programmazione e tecniche di sviluppo.
   - Approvvigionamento dell'hardware necessario.
 - **Vincoli**
   - L'applicazione mobile deve essere programmata attraverso **Android Studio[^8]**.
-  - Dover seguire altri corsi universitari e rispettivi esami.
-  - Verrano rispettate le deadlines.
-  - Dovranno essere usati almeno due sensori.
+  - Dover seguire altri corsi universitari e studiare per rispettivi esami.
+  - Devono essere rispettate le date di scadenza.
+  - Per l'assemblaggio del robot, dovranno essere impiegati almeno due sensori del set Lego Mindstorms EV3.
 
 ### 3.3 Gestione dei Rischi
 
@@ -158,20 +159,21 @@ Per garantire il successo del progetto, le varie responsabilità saranno suddivi
 
 ### 3.4 Meccanismo di monitoraggio e di controllo
 
-Ogni componente del gruppo effetuerà in un primo momento un controllo personale del lavoro svolto che verrà poi revisionato insieme al resto del gruppo, dove saranno esposte possibili lacune, imprecisioni e correzioni possibili.
+Ogni componente del gruppo effettuerà in un primo momento un controllo personale del lavoro svolto che verrà poi revisionato insieme al resto del gruppo, dove saranno esposte possibili lacune, imprecisioni e proposte eventuali correzioni e integrazioni.
 
-Ogni settimana si terrà una riunione dove si discute del lavoro svolto fino a quel punto, se il progetto è in linea con i tempi e sta proseguendo nella direzione corretta.
-Se dovessero sorgere problematiche dovute a possibili ritardi derivanti, per esempio, a difficoltà tecniche i membri possono cambiare momentaneamente i propri compiti per cercare di arginare rapidamente il problema.
+Ogni settimana si terrà una riunione per verificare lo stato di avanzamento del progetto.
+Se dovessero sorgere problematiche dovute a possibili ritardi derivanti, ad esempio, a difficoltà tecniche, i membri, previo accordo, potranno intervenire per colmare ildecidere di cambiare momentaneamente i propri compiti per risolvere il problema.
+I membri del team, previo accordo, avranno la possibilità di sospendere i propri compiti per intervenire in quelli che, a causa di difficoltà tecniche, potrebbero causare ritardi al progetto.
 
-Il team di sviluppo ha scelto di appogiarsi a *Github* per lo sviluppo software e l'organizzazione dei documenti. Per un rapido scambio di informazioni e comunicazioni urgenti, nel caso occorressero, verrano utilizzate applicazioni di messagistica come *Telegram*.
+Il team di sviluppo ha scelto di appoggiarsi a *Github* per lo sviluppo del software e l'organizzazione dei documenti. Per un rapido scambio di informazioni ed eventuali comunicazioni urgenti verrà impiegata l'applicazione di messaggistica istantanea *Telegram*.
 
 ### 3.5 Pianificazione dello staff
 
-Lo staff tecnico verrà diviso in due sezioni: una che seguirà lo sviluppo e l'analisi del robot e una che seguirà l'app Android, questo per l'elevata differenza di software e capacità necessarie per sviluppare le due parti.
+Lo staff tecnico verrà diviso in due sezioni: una che seguirà lo sviluppo del robot e l'altra che seguirà lo sviluppo dell'applicazione Android. Questa divisione è stata pianificata per distribuire in modo equo tra i membri del team la quantità di codice e le conoscenze necessarie per sviluppare ciascuna delle due parti.
 
-Lo staff cercherà di lavorare nella maniera più parallela possibile, per accellerare i tempi. Tutti i lavori fatti dal gruppo saranno depositati su un repository su Github, dato che ci permetterà di lavorare su singoli file in parallelo, dove all'occorrenza sarà possibile aprire Issues e fare commenti sul codice e sulla documentazione depositata.
+Lo staff cercherà di lavorare nel modo più parallelo possibile al fine di accellerare i tempi di sviluppo. Tutti i lavori svolti dal gruppo saranno raccolti su una repository di Github, dato che questo strumento ci permetterà di lavorare su singoli file in parallelo, dove sarà possibile, all'occorrenza, aprire Issues e scrivere commenti riguardo il codice e la documentazione.
 
-Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide online, tutorial e documentazione ufficiale.
+In caso di lacune di conoscenza degli strumenti di progetto da parte dei membri del team, queste potranno essere colmate attraverso le documentazioni ufficiali, guide online e tutorial.
 
 
 
@@ -195,7 +197,7 @@ Nel caso di lacune nelle conoscenze del gruppo verrano colmate attraverso guide 
 
 ### 4.2 Documentazione del Software
 
-Il progetto sará accompagnato dai seguenti documenti:
+Il progetto sarà accompagnato dai seguenti documenti:
 
 - Piano di Progetto
 - Documento di Progettazione
@@ -206,16 +208,17 @@ Il progetto sará accompagnato dai seguenti documenti:
 
 - **Pianificazione della qualitá**
 
-  Lavoreremo in 2 gruppi (uno per il robot e l'altro per l'applicazione) i quali scriveranno e revisioneranno il codice contemporaneamente (in modo da minimizzare gli errori).
-  Solamente dopo i dovuti testing aggiorneremo la documentazione, come previsto dalla metodologia *Agile*.
+Il team lavorerà in due gruppi, uno che si occuperà dello sviluppo del robot e l'altro dello sviluppo dell'applicazione Android, i quali scriveranno e revisioneranno il codice in modo parallelo, in modo da minimizzare gli errori.
+La documentazione verrà aggiornata solamente dopo l'attività di testing, come previsto dai principi della metodologia *Agile*.
 
-  Non considereremo i vari membri dei gruppi formatisi come valori assoluti, pensando infatti che possibili scambi per consultazioni o aggiornamenti saranno frequenti.
+In ogni caso, ogni gruppo rimarrà aperto a possibili scambi per consultazioni e aggiornamenti frequenti con gli altri gruppi.
 
 - **Pianificazione di Code Version Control e Continuos Integration**
 
-  - Utilizzeremo *Github* in modo da: facilitare il lavoro del gruppo in fase di sviluppo / debugging e da tener traccia di tutte le versioni precedenti con facilitá.
+  - Utilizzeremo *Github* in modo da facilitare il lavoro del gruppo in fase di sviluppo / testing e tener traccia di tutte le versioni precedenti con facilità.
 
   - Utilizzeremo strumenti di CI[^16] in modo da assicurare la qualità del codice ed evitare errori di regressione in maniera efficiente.
+
 
 
 ## 5. Pianificazione del lavoro delle risorse umane e del budget
