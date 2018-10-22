@@ -1,0 +1,21 @@
+NOTE APP DogeDroid:
+
+#define sistema Lego_EV3
+
+1) Spegnere il sistema:
+	- pulsantone ON/OFF per accendere, spegnere allarme;
+	- programmare per ora e data accensione e spegnimento allarme (calendario eventi);
+	- disabilitare automaticamente quando sente prossimità telefono;
+	- timeout spegnimento prima di notifica log;
+	- timeout per uscire di casa e non avere notifica log (come 30 secondi ti timeout);
+
+2) Ricevere notifiche dal sistema:
+	- log con cronologia delle intrusioni passate con relativa foto;
+	- notifica istantanea in caso di intrusione, con rilevamento persone (o oggenti moventi);
+	
+
+3) Comandare il sistema:
+	- set comandi per girare e impostare;
+
+4) Vedere l'output dei sensori del sistema:
+	- visualizzare a schermo (quindi su smartphone) lo stato corrente della ripresa del sensore video.
