@@ -9,5 +9,14 @@
 	"license": "proprietary",
 	"dependencies": {
 		"vibe-d": "~master"
-	}
+	},
+	"libs": [
+		"RoboF"
+	],
+	"lflags": [
+		"-L../robot-firmware/build"
+	],
+	"dflags": [
+		"-march=arm"
+	]
 }

@@ -18,6 +18,11 @@ void moveToPosition(large_motor motor, int position, int speed = 30)
   motor.set_command(motor.stop_action_brake);
 }
 
+void interopTest()
+{
+  cout << "test";
+}
+
 int main(int argc, char **argv)
 {
   large_motor motor(OUTPUT_D);

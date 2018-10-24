@@ -7,6 +7,7 @@ cmake_minimum_required(VERSION 3.0)
 project(RoboF)
 
 add_subdirectory(deps/ev3dev-lang-cpp)
+add_subdirectory(deps/opencv)
 
 file(GLOB SOURCES src/*.cpp src/*/*.cpp)
 file(GLOB INCLUDE_DIRS include/*)
@@ -17,10 +18,11 @@ include_directories(
         ${ev3dev-lang-cpp_SOURCE_DIR}
 )
 
-add_executable(RoboF ${SOURCES} ${INCLUDES})
+add_library(RoboF ${SOURCES} ${INCLUDES})
 target_link_libraries(
         RoboF
         stdc++
         m
         ev3dev::ev3dev
+        ${OpenCV_LIBS}
 )
