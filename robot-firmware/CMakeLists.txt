@@ -6,8 +6,8 @@ set(EV3DEV_PLATFORM "EV3")
 cmake_minimum_required(VERSION 3.0)
 project(RoboF)
 
+find_package(OpenCV REQUIRED)
 add_subdirectory(deps/ev3dev-lang-cpp)
-add_subdirectory(deps/opencv)
 
 file(GLOB SOURCES src/*.cpp src/*/*.cpp)
 file(GLOB INCLUDE_DIRS include/*)
