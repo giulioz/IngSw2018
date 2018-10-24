@@ -1,3 +1,6 @@
 [submodule "robot-firmware/deps/ev3dev-lang-cpp"]
 	path = robot-firmware/deps/ev3dev-lang-cpp
 	url = https://github.com/ddemidov/ev3dev-lang-cpp
+[submodule "robot-firmware/deps/opencv"]
+	path = robot-firmware/deps/opencv
+	url = https://github.com/opencv/opencv.git
