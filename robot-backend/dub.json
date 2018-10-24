@@ -1,0 +1,13 @@
+{
+	"name": "robot-backend",
+	"authors": [
+		"Giulio Zausa",
+		"Giovanni Scodeller"
+	],
+	"description": "Server for WatchDoge",
+	"copyright": "Copyright © 2018, DogeDroid",
+	"license": "proprietary",
+	"dependencies": {
+		"vibe-d": "~master"
+	}
+}
