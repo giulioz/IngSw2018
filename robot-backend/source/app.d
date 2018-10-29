@@ -1,10 +1,6 @@
 import vibe.vibe;
 
-extern (C++) void interopTest();
-
 void main() {
-	interopTest();
-
 	listenHTTP(":8080", &handleRequest);
 	runApplication();
 }
