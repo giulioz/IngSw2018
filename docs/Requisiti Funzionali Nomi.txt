@@ -1,0 +1,31 @@
+Requisiti Funzionali
+
+NOMI:
+
+1. Accopiamento robot
+
+-> Primo avvio
+
+2. Visualizzazione ambiente
+
+3. Rilevamento Intrusi
+
+4. Log Notifiche
+
+6. Suono allarme
+
+7. Pin di conferma disaccoppiamento
+
+---
+
+1. Primo Avvio
+
+2. Aperto menù
+
+3. Visualizzazione lista Log
+
+4. Programmazione e spegnimento
+
+5. Comandare fotocamera da applicazione
+
+6. Visualizzazione video intruso
