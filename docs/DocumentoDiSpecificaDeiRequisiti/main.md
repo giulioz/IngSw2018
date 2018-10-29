@@ -22,6 +22,8 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 ## 1.2 Descrizione del Documento
 
+### Da cambiare la descrizione dei campi
+
 |          |               |
 |----------|:-------------:|
 |**Nome**|Nome del requisito funzionale|
@@ -147,5 +149,16 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 ## 3.4 Evoluzione del sistema
 
 ## 3.5 Specifica dei Requisiti
+
+### Da cambiare la descrizione dei campi
+
+|          |               |
+|----------|:-------------:|
+|**ID**|Codice univoco della specifica dei requisiti|
+|**Input**|Azione che l'utente deve compiere sul sistema|
+|**Output**|Il dispositivo mostra cosa produce come output in seguito all'input dato dall'utente|
+|**Pre-condizioni**|Descrive le condizioni che sono necessarie affinché l'utente possa compiere una determinata azione|
+|**Post-condizioni**|Descrive che cosa ha a disposizione l'utente dopo l'azione che ha compiuto sul dispositivo|
+|**Requisiti non funzionali**|La specifica di un requisito può essere associato ad un particolare requisito non funzionale|
 
 # 4 Appendici
