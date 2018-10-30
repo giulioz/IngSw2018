@@ -312,19 +312,87 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 ## 3.3 Definizione dei Requisiti non Funzionali
 
+### 3.0 Introduzione
 
+(Da cambiare il testo di descrizione)
+
+I requisiti non funzionali sono proprità di comportamento del prodotto.
+
+Si dividono in:
+- Requisiti di prodotto: specificano come il prodotto deve comportarsi;
+- Requisiti di processo: sono i requisiti che sono la conseguenza di scelte organizzative;
+- Requisiti esterni: requisiti che dipendono da fattori esterni all'app, come le leggi.
+
+&nbsp;
+
+(Da cambiare descrizione tabella)
+Si utilizza la segeuente tabella riassuntiva per descivere i requisiti (NFR: not functional requirement):
+
+&nbsp;
+
+|          |               |
+|----------|:-------------:|
+|**Codice**|Codice identificativo univoco del NFR|
+|**Nome**|Nome assegnato al NFR|
+|**Descrizione**|Descrizione del NFR|
+|**Obiettivo**|Cosa mira a risolvere il NFR|
+|**Dipendenze**|Da cosa viene "causato" il NFR|
+
+&nbsp;
 
 #### 3.3.1 Requisiti di Prodotto
 
+(Da rileggere per la questione Sonar)
 
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-1|
+|**Nome**|Buone condizioni di luce|
+|**Descrizione**|Avere una buona fonte di luce in prossimità dei sensori, così da permettere un'ottimale analisi da parte del ROBOT dell'ambiente, permetterà di ottenere una migliore esperienza d'uso per l'utente. Se questo requisito dovesse mancare il sensore Sonar offrirà comunque le funzioni basilari al sistema|
+|**Obiettivo**|Correta visualizzazione mediante Sensore Visivo|
+|**Dipendenze**|Garantire tutte le funzionalità dell'applicazione|
+
+&nbsp;
+
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-2|
+|**Nome**|Buona connessione di rete|
+|**Descrizione**|Necessario un collegamento veloce con smartphone e ROBOT per permettere un'esperienza ottimale in grado di offrire tutte le funzionalità precedentemente descritte|
+|**Obiettivo**|Risolvere eventuali problemi di comunicazioni|
+|**Dipendenze**||
 
 #### 3.3.2 Requisiti di Processo
 
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-3|
+|**Nome**|Sviluppo applicazione mediante Android Studio|
+|**Descrizione**|L'applicazione è stata pensata per funzionare su dispositivi Android: si è quindi deciso di utilizzare l'ambiente di sviluppo integrato Android Studio, offerto da Google e disponibile gratuitamente sotto licenzo Apache 2.0|
+|**Obiettivo**|Offrire una Companion App pensata come parte integrante del sistema d'allarme|
+|**Dipendenze**|Necessità di un controllo remoto del Sistema d'allarme da parte dell'utente|
 
+&nbsp;
+
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-4|
+|**Nome**|Sviluppo codice in Java|
+|**Descrizione**|L'applicazione, presente su smartphone, verrà scritta e sviluppata in Java: linguaggio di programmazione conosciuto da tutti i membri del gruppo|
+|**Obiettivo**|Sviluppo applicazione|
+|**Dipendenze**||
+
+(AGGIUNGERE REQUISITI DI PROCESSO PER ROBOT)
 
 #### 3.3.3 Requisiti Esterni
 
-
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-5|
+|**Nome**|Privacy|
+|**Descrizione**|L'utente dovrà essere a conoscenza ed accettare le richieste amministrative per l'utilizzo del sistema d'allarme, sia per la parte relativa all'applicazione smartphone che quella relativa al ROBOT|
+|**Obiettivo**|Implementazione di un sistema infomativo con necessità di conferma da parte dell'utente|
+|**Dipendenze**||
 
 ## 3.4 Evoluzione del sistema
 
@@ -341,6 +409,8 @@ In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che co
 | **Post-condizioni**          | Robot pronto per l'accoppiamento         |
 | **Requisiti non funzionali** |                                          |
 
+&nbsp;
+
 |          |               |
 |:---------|:--------------|
 |**ID**|FRS2|
@@ -349,6 +419,8 @@ In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che co
 |**Pre-condizioni**|L'allarme deve essere innescato|
 |**Post-condizioni**|Esegue le azioni conseguenti alla scoperta dell'intruso|
 |**Requisiti non funzionali**||
+
+&nbsp;
 
 |                              |                                                              |
 | ---------------------------- | ------------------------------------------------------------ |
@@ -359,6 +431,8 @@ In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che co
 | **Post-condizioni**          |                                                              |
 | **Requisiti non funzionali** |                                                              |
 
+&nbsp;
+
 |                              |                                                              |
 | ---------------------------- | ------------------------------------------------------------ |
 | **ID**                       | FRS5                                                         |
@@ -367,6 +441,8 @@ In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che co
 | **Pre-condizioni**           | É necessario avere un Robot pronto per l'accoppiamento       |
 | **Post-condizioni**          | L'applicazione puó essere usata                              |
 | **Requisiti non funzionali** |                                                              |
+
+&nbsp;
 
 |                              |                                        |
 | ---------------------------- | -------------------------------------- |
@@ -377,6 +453,8 @@ In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che co
 | **Post-condizioni**          |                                        |
 | **Requisiti non funzionali** |                                        |
 
+&nbsp;
+
 |                              |                                                        |
 | ---------------------------- | ------------------------------------------------------ |
 | **ID**                       | FRS7                                                   |
@@ -386,6 +464,8 @@ In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che co
 | **Post-condizioni**          | Andarsene via di casa tranquillo                       |
 | **Requisiti non funzionali** |                                                        |
 
+&nbsp;
+
 |                              |                                                              |
 | ---------------------------- | ------------------------------------------------------------ |
 | **ID**                       | FRS8                                                         |
@@ -394,6 +474,8 @@ In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che co
 | **Pre-condizioni**           | L'allarme deve essersi innescato almeno una volta            |
 | **Post-condizioni**          | Puó cancellare intrusioni dalla storico, qualora non le ritenga piú utili |
 | **Requisiti non funzionali** |                                                              |
+
+&nbsp;
 
 |                              |                                                 |
 | ---------------------------- | ----------------------------------------------- |
