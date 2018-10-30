@@ -211,7 +211,7 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 ### ROBOT
 
-|          |               |
+|          |  |
 |----------|:-------------:|
 |**Nome**|Accoppiamento ROBOT|
 |**ID**|FR1|
@@ -219,11 +219,11 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 |**Motivazione**|Possibilità di visualizzare informazioni e comandare l'apparato a distanza, grazie ad una rete di collegamento|
 |**Influisce**|Funzionalità principale del sistema d'allarme|
 |**Specifica**|FRS1|
-||
+
 
 &nbsp;
 
-|          |               |
+|          |  |
 |----------|:-------------:|
 |**Nome**|Rilevamento Intrusi|
 |**ID**|FR2|
@@ -245,9 +245,9 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 &nbsp;
 
-|          |               |
+|          |  |
 |----------|:-------------:|
-|**Nome**|PIN conferma disaccoppiamento|
+|**Nome**|PIN disinnesco|
 |**ID**|FR4|
 |**Descrizione**|Immissione da parte di un utente qualificato a disattivare le funzioni d'allarme del ROBOT mediante un sistema di riconoscimento a PIN|
 |**Motivazione**|Possibilità, da parte dell'utente, di disattivare il sistema senza l'utilizzo di uno smartphone|
@@ -266,15 +266,13 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 |**Motivazione**|Permettere il funzionamento del sistema mediante un accoppiamento con il ROBOT|
 |**Influisce**|Successivi utilizzi dell'applicazione permetteranno il riconoscimento automatico del ROBOT precedentemente accoppiato|
 |**Specifica**|FRS5|
-||
-
 &nbsp;
 
 |          |               |
 |----------|:-------------:|
 |**Nome**|Settings' MENU|
 |**ID**|FR6|
-|**Descrizione**|Eseguendo un TAP sull'apposito campo dei Settings sarà possibile vedere le informazioni sullo stato del colegamento ed, eventualmente, cambiare le direttive|
+|**Descrizione**|Eseguendo un TAP sull'apposito campo dei Settings sarà possibile vedere le informazioni sullo stato del collegamento ed, eventualmente, cambiare le direttive|
 |**Motivazione**|Dare la possibilità all'utente di poter scegliere le preferenze del comportamente del ROBOT|
 |**Influisce**|Visualizzazione del MENU delle Impostazioni|
 |**Specifica**|FRS6|
@@ -320,13 +318,88 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 ### Da cambiare la descrizione dei campi
 
+|                              |                                          |
+| ---------------------------- | ---------------------------------------- |
+| **ID**                       | FRS1                                     |
+| **Input**                    |                                          |
+| **Output**                   | PIN d'accoppiamento                      |
+| **Pre-condizioni**           | Avere un Robot con il programma caricato |
+| **Post-condizioni**          | Robot pronto per l'accoppiamento         |
+| **Requisiti non funzionali** |                                          |
+
+
+
 |          |               |
-|----------|:-------------:|
-|**ID**|Codice univoco della specifica dei requisiti|
-|**Input**|Azione che l'utente deve compiere sul sistema|
-|**Output**|Il dispositivo mostra cosa produce come output in seguito all'input dato dall'utente|
-|**Pre-condizioni**|Descrive le condizioni che sono necessarie affinché l'utente possa compiere una determinata azione|
-|**Post-condizioni**|Descrive che cosa ha a disposizione l'utente dopo l'azione che ha compiuto sul dispositivo|
-|**Requisiti non funzionali**|La specifica di un requisito può essere associato ad un particolare requisito non funzionale|
+|:---------|:--------------|
+|**ID**|FRS2|
+|**Input**|Un intruso entra nel campo visivo del Robot|
+|**Output**|Il Robot emette un suono d'allarme ed invia una notifica all'utente|
+|**Pre-condizioni**|L'allarme deve essere innescato|
+|**Post-condizioni**|Esegue le azioni conseguenti alla scoperta dell'intruso|
+|**Requisiti non funzionali**||
+
+|                              |                                                              |
+| ---------------------------- | ------------------------------------------------------------ |
+| **ID**                       | FRS4                                                         |
+| **Input**                    | Inserimento del PIN di disinnesco                            |
+| **Output**                   | Il disinnesco dell'allarme senza dover ricorrere all'applicazione |
+| **Pre-condizioni**           | L'allarme deve essere innescato                              |
+| **Post-condizioni**          |                                                              |
+| **Requisiti non funzionali** |                                                              |
+
+
+
+|                              |                                                              |
+| ---------------------------- | ------------------------------------------------------------ |
+| **ID**                       | FRS5                                                         |
+| **Input**                    | Inserimento di un PIN di accoppiamento, scelta di un PIN di disinnesco offline |
+| **Output**                   |                                                              |
+| **Pre-condizioni**           | É necessario avere un Robot pronto per l'accoppiamento       |
+| **Post-condizioni**          | L'applicazione puó essere usata                              |
+| **Requisiti non funzionali** |                                                              |
+
+
+
+|                              |                                        |
+| ---------------------------- | -------------------------------------- |
+| **ID**                       | FRS6                                   |
+| **Input**                    |                                        |
+| **Output**                   | Scelta delle impostazioni per il Robot |
+| **Pre-condizioni**           | L'applicazione deve essere operativa   |
+| **Post-condizioni**          |                                        |
+| **Requisiti non funzionali** |                                        |
+
+
+
+|                              |                                                        |
+| ---------------------------- | ------------------------------------------------------ |
+| **ID**                       | FRS7                                                   |
+| **Input**                    |                                                        |
+| **Output**                   | Innesco e disinnesco automatico e manuale dell'allarme |
+| **Pre-condizioni**           | L'applicazione deve essere operativa                   |
+| **Post-condizioni**          | Andarsene via di casa tranquillo                       |
+| **Requisiti non funzionali** |                                                        |
+
+
+
+|                              |                                                              |
+| ---------------------------- | ------------------------------------------------------------ |
+| **ID**                       | FRS8                                                         |
+| **Input**                    |                                                              |
+| **Output**                   | Uno storico di tutte le intrusioni avvenute con foto allegate |
+| **Pre-condizioni**           | L'allarme deve essersi innescato almeno una volta            |
+| **Post-condizioni**          | Puó cancellare intrusioni dalla storico, qualora non le ritenga piú utili |
+| **Requisiti non funzionali** |                                                              |
+
+
+
+|                              |                                                 |
+| ---------------------------- | ----------------------------------------------- |
+| **ID**                       | FRS9                                            |
+| **Input**                    | Cliccare sull'apposito pulsante                 |
+| **Output**                   | Uno stream di immagini in diretta dal robot     |
+| **Pre-condizioni**           | Il Robot deve essere acceso                     |
+| **Post-condizioni**          | Possibilitá di muovere la webcam in tempo reale |
+| **Requisiti non funzionali** |                                                 |
 
 # 4 Appendici
