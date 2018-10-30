@@ -312,7 +312,29 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 ## 3.3 Definizione dei Requisiti non Funzionali
 
+
+
+#### 3.3.1 Requisiti di Prodotto
+
+------
+
+
+
+#### 3.3.2 Requisiti di Processo
+
+------
+
+
+
+#### 3.3.3 Requisiti Esterni
+
+------
+
+
+
 ## 3.4 Evoluzione del sistema
+
+In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che comunicano con l'applicazione in modo da fornire un controllo da remoto di vari aspetti della casa, come temperatura o consumi energetici.
 
 ## 3.5 Specifica dei Requisiti
 
@@ -324,8 +346,6 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 | **Pre-condizioni**           | Avere un Robot con il programma caricato |
 | **Post-condizioni**          | Robot pronto per l'accoppiamento         |
 | **Requisiti non funzionali** |                                          |
-
-
 
 |          |               |
 |:---------|:--------------|
