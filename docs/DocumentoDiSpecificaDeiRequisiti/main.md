@@ -316,8 +316,6 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 ## 3.5 Specifica dei Requisiti
 
-### Da cambiare la descrizione dei campi
-
 |                              |                                          |
 | ---------------------------- | ---------------------------------------- |
 | **ID**                       | FRS1                                     |
@@ -347,8 +345,6 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 | **Post-condizioni**          |                                                              |
 | **Requisiti non funzionali** |                                                              |
 
-
-
 |                              |                                                              |
 | ---------------------------- | ------------------------------------------------------------ |
 | **ID**                       | FRS5                                                         |
@@ -357,8 +353,6 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 | **Pre-condizioni**           | É necessario avere un Robot pronto per l'accoppiamento       |
 | **Post-condizioni**          | L'applicazione puó essere usata                              |
 | **Requisiti non funzionali** |                                                              |
-
-
 
 |                              |                                        |
 | ---------------------------- | -------------------------------------- |
@@ -369,8 +363,6 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 | **Post-condizioni**          |                                        |
 | **Requisiti non funzionali** |                                        |
 
-
-
 |                              |                                                        |
 | ---------------------------- | ------------------------------------------------------ |
 | **ID**                       | FRS7                                                   |
@@ -380,8 +372,6 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 | **Post-condizioni**          | Andarsene via di casa tranquillo                       |
 | **Requisiti non funzionali** |                                                        |
 
-
-
 |                              |                                                              |
 | ---------------------------- | ------------------------------------------------------------ |
 | **ID**                       | FRS8                                                         |
@@ -390,8 +380,6 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 | **Pre-condizioni**           | L'allarme deve essersi innescato almeno una volta            |
 | **Post-condizioni**          | Puó cancellare intrusioni dalla storico, qualora non le ritenga piú utili |
 | **Requisiti non funzionali** |                                                              |
-
-
 
 |                              |                                                 |
 | ---------------------------- | ----------------------------------------------- |
