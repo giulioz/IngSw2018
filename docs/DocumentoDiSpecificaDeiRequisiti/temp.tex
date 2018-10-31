@@ -1,0 +1,1779 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\hypertarget{watchdoge}{%
+\section{WatchDoge}\label{watchdoge}}
+
+\hypertarget{documento-di-analisi-e-specifica}{%
+\subsection{Documento di Analisi e
+Specifica}\label{documento-di-analisi-e-specifica}}
+
+\hypertarget{versione-1.0---2-novembre-2018}{%
+\subsubsection{Versione 1.0 - 2 novembre
+2018}\label{versione-1.0---2-novembre-2018}}
+
+\textbf{Team DogeDroid} - Dario Lazzaro - Giovanni Scodeller - Giulio
+Zausa - Samuele Casarin - Sandro Baccega
+
+{[}TOC{]}
+
+\hypertarget{introduzione}{%
+\section{1 Introduzione}\label{introduzione}}
+
+\hypertarget{funzionalituxe0-generali-del-sistema}{%
+\subsection{1.1 Funzionalità Generali del
+Sistema}\label{funzionalituxe0-generali-del-sistema}}
+
+L'obbiettivo del progetto è lo sviluppo di un sistema antifurto
+destinato all'uso domestico. Tale sistema sarà composto principalmente
+da due sottosistemi: - un robot che, quando abilitato, rileva le
+intrusioni all'interno dell'ambiente domestico (entro certi limiti) e le
+invia all'applicazione Android; - un'applicazione Android che
+abilita/disabilita il robot su decisione dell'utente e notifica l'utente
+riguardo le segnalazioni ricevute dal robot.
+
+\hypertarget{descrizione-del-documento}{%
+\subsection{1.2 Descrizione del
+Documento}\label{descrizione-del-documento}}
+
+\hypertarget{da-cambiare-la-descrizione-dei-campi}{%
+\subsubsection{Da cambiare la descrizione dei
+campi}\label{da-cambiare-la-descrizione-dei-campi}}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Nome del requisito funzionale
+\\
+
+\textbf{ID}
+ & 
+Codice univoco del requisito funzionale
+\\
+
+\textbf{Descrizione}
+ & 
+Descrizione del requisito funzionale
+\\
+
+\textbf{Motivazione}
+ & 
+Descrive il perché abbiamo deciso di includere questo requisito
+funzionale
+\\
+
+\textbf{Influisce}
+ & 
+Indica se questo requisito funzionale influisce sul sistema
+\\
+
+\textbf{Specifica}
+ & 
+Indica la specifica dei requisiti funzionali
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\hypertarget{glossario}{%
+\section{2 Glossario}\label{glossario}}
+
+\hypertarget{watchdoge-1}{%
+\section{3 WatchDoge}\label{watchdoge-1}}
+
+\hypertarget{modelli-del-sistema}{%
+\subsection{3.1 Modelli del Sistema}\label{modelli-del-sistema}}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-01
+\\
+
+\textbf{Nome}
+ & 
+Abilita Accoppiamento
+\\
+
+\textbf{Scopo}
+ & 
+Associare il robot ad un dispositivo Android per permetterne il
+controllo all'utente.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+-
+\\
+
+\textbf{Trigger}
+ & 
+Pressione del pulsante \emph{Abilita accoppiamento} (robot)
+\\
+
+\textbf{Descrizione}
+ & 
+Il robot accetta richieste di accoppiamento per un certo tempo.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+Il robot è accoppiato con un dispositivo Android, oppure non è
+accoppiato
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-02
+\\
+
+\textbf{Nome}
+ & 
+Visualizza Codice per Accoppiamento
+\\
+
+\textbf{Scopo}
+ & 
+Mitigare la presa di controllo indesiderata del robot da parte di
+qualcun altro diverso dall'utente.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-01
+\\
+
+\textbf{Trigger}
+ & 
+Il robot riceve una richiesta di accoppiamento.
+\\
+
+\textbf{Descrizione}
+ & 
+Il robot visualizza un codice con cui il dispositivo che ha inviato la
+richiesta di accoppiamento deve rispondere per poter completare la
+procedura di accoppiamento.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+Il successo della verifica garantisce che il dispositivo che ha inviato
+la richiesta di accoppiamento è effettivamente quello dell'utente.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-03
+\\
+
+\textbf{Nome}
+ & 
+Accoppia Robot
+\\
+
+\textbf{Scopo}
+ & 
+Associare il dispositivo Android al robot per permetterne il controllo
+all'utente.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+Connessione alla stessa rete del robot, UC-01
+\\
+
+\textbf{Trigger}
+ & 
+Primo avvio dell'applicazione Android e pressione del pulsante
+\emph{Accoppia robot} (applicazione Android)
+\\
+
+\textbf{Descrizione}
+ & 
+L'applicazione Android cerca robot presenti nella stessa rete dello
+smartphone entro un certo tempo. Al termine, l'applicazione Android
+visualizza la lista di robot trovati, permettendo all'utente di
+selezionare quello da associare.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+Il dispositivo Android è accoppiato con il robot
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-04
+\\
+
+\textbf{Nome}
+ & 
+Inserisci Codice per Accoppiamento
+\\
+
+\textbf{Scopo}
+ & 
+Mitigare la presa di controllo indesiderata del robot da parte di
+qualcun altro diverso dall'utente.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Selezione di un robot da associare
+\\
+
+\textbf{Descrizione}
+ & 
+L'utente inserisce il codice di accoppiamento visualizzato dal robot e
+lo inserisce in un apposito campo. Successivamente, l'applicazione
+Android invia il codice al robot per la verifica.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+Il successo della verifica garantisce che il dispositivo che ha inviato
+la richiesta di accoppiamento al robot è effettivamente quello
+dell'utente.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-05
+\\
+
+\textbf{Nome}
+ & 
+Visualizza Stato Robot
+\\
+
+\textbf{Scopo}
+ & 
+Consentire all'utente di visualizzare in tempo reale le informazioni
+relative al robot.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Aprire l'applicazione Android
+\\
+
+\textbf{Descrizione}
+ & 
+L'utente visualizza in tempo reale se l'antifurto è abilitato oppure no
+e la sua programmazione attraverso un'apposita interfaccia
+grafica.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+L'utente è al corrente dello stato del robot.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-06
+\\
+
+\textbf{Nome}
+ & 
+Abilita/Disabita Robot
+\\
+
+\textbf{Scopo}
+ & 
+Consentire all'utente di attivare/disattivare la funzione di antifurto
+del robot.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Pressione del pulsante \emph{ON/OFF} (applicazione Android)
+\\
+
+\textbf{Descrizione}
+ & 
+L'utente cambia lo stato del robot ad attivo/disattivo.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+Il robot è attivo/disattivo.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-07
+\\
+
+\textbf{Nome}
+ & 
+Imposta Programmazione
+\\
+
+\textbf{Scopo}
+ & 
+Consentire all'utente di decidere quando il robot deve
+attivarsi/disattivarsi automaticamente in determinate fasce
+orarie.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Pressione del pulsante \emph{Programma}
+\\
+
+\textbf{Descrizione}
+ & 
+L'utente abilita/disabilita la modalità automatica attraverso un
+interrutore e imposta le fasce orarie di attivazione del robot
+attraverso una tabella oraria settimanale.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+Il robot è configurato in modalità automatica per attivarsi negli orari
+stabiliti dall'utente.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-08
+\\
+
+\textbf{Nome}
+ & 
+Controllo Remoto
+\\
+
+\textbf{Scopo}
+ & 
+Consentire all'utente di guardare in tempo reale le immagini catturate
+dal robot e spostare la visuale.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Pressione del pulsante \emph{Controllo remoto}
+\\
+
+\textbf{Descrizione}
+ & 
+L'utente può connettersi da remoto al robot e visualizza le immagini
+catturate dalla fotocamera incorporata; inoltre, attraverso dei pulsanti
+direzionali, può spostare la visuale della fotocamera in base all'angolo
+di rotazione.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+L'utente acquisisce una panoramica istantanea dell'ambiente dove è
+disposto il robot.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-09
+\\
+
+\textbf{Nome}
+ & 
+Cambia Stato Robot
+\\
+
+\textbf{Scopo}
+ & 
+Attivare/disattivare/configurare una o più funzioni del robot.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Una richiesta proveniente dall'applicazione Android
+\\
+
+\textbf{Descrizione}
+ & 
+Attraverso l'interfaccia grafica, l'utente invia una richiesta al robot
+per cambiare il suo stato.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+Lo stato del robot viene cambiato a seconda della richiesta
+inviata.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-10
+\\
+
+\textbf{Nome}
+ & 
+Ottieni Stato Robot
+\\
+
+\textbf{Scopo}
+ & 
+Consentire all'applicazione Android di riportare le informazioni
+relative alle funzioni del robot.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Una richiesta proveniente dall'applicazione Android
+\\
+
+\textbf{Descrizione}
+ & 
+L'applicazione Android invia una richiesta al robot per ottenere il suo
+stato.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+L'applicazione Android ottiene lo stato del robot a seconda della
+richiesta inviata.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-11
+\\
+
+\textbf{Nome}
+ & 
+Visualizza Storico Segnalazioni
+\\
+
+\textbf{Scopo}
+ & 
+Consentire all'utente di avere un archivio delle segnalazioni di
+intrusioni rilevate dal robot.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Pressione del pulsante \emph{Storico} (applicazione Android)
+\\
+
+\textbf{Descrizione}
+ & 
+L'applicazione Android visualizza la lista delle ultime
+segnalazioni.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+L'utente ha una visione generale delle segnalazioni rilevate dal
+robot.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-12
+\\
+
+\textbf{Nome}
+ & 
+Visualizza Notifica Segnalazione
+\\
+
+\textbf{Scopo}
+ & 
+Consentire all'utente di ricevere immediatamente una segnalazione di
+intrusione.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+Ricezione di una segnalazione dal robot
+\\
+
+\textbf{Descrizione}
+ & 
+L'applicazione Android mostra una notifica con lo scopo di avvertire
+l'utente di un'intrusione rilevata dal robot. Inoltre, alla notifica
+viene allegata un'immagine dell'intruso.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+L'utente può essere informato immediatamente quando viene rilevata
+un'intrusione.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-13
+\\
+
+\textbf{Nome}
+ & 
+Innesca Antifurto
+\\
+
+\textbf{Scopo}
+ & 
+Mitigare le intrusioni all'interno dell'ambiente del robot.
+\\
+
+\textbf{Attori}
+ & 
+Intruso
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-03
+\\
+
+\textbf{Trigger}
+ & 
+La fotocamera del robot rileva del movimento all'interno
+dell'ambiente
+\\
+
+\textbf{Descrizione}
+ & 
+Il robot invia una segnalazione di intrusione al dispositivo accoppiato
+ed emette un suono d'allarme.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+L'intruso viene rilevato e la sua presenza viene segnalata
+all'utente.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+UC-14
+\\
+
+\textbf{Nome}
+ & 
+Scatta Fotografia Intruso
+\\
+
+\textbf{Scopo}
+ & 
+Fornire all'utente un'immagine dell'intruso per tentare la sua
+identificazione.
+\\
+
+\textbf{Attori}
+ & 
+Utente
+\\
+
+\textbf{Precondizioni}
+ & 
+UC-13
+\\
+
+\textbf{Trigger}
+ & 
+La fotocamera del robot rileva del movimento all'interno
+dell'ambiente
+\\
+
+\textbf{Descrizione}
+ & 
+Il robot invia un immagine dalla fotocamera puntata nella direzione in
+cui ha rilevato del movimento, dove probabilmente è presente
+l'intruso.
+\\
+
+\textbf{Alternative}
+ & 
+-
+\\
+
+\textbf{Postcondizioni}
+ & 
+L'utente potrebbe avere una prova per identificare l'intruso.
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\hypertarget{definizione-dei-requisiti-funzionali}{%
+\subsection{3.2 Definizione dei Requisiti
+Funzionali}\label{definizione-dei-requisiti-funzionali}}
+
+\hypertarget{robot}{%
+\subsubsection{ROBOT}\label{robot}}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Accoppiamento ROBOT
+\\
+
+\textbf{ID}
+ & 
+FR1
+\\
+
+\textbf{Descrizione}
+ & 
+Si collega il dispositivo ROBOT allo smartphone del proprietario
+\\
+
+\textbf{Motivazione}
+ & 
+Possibilità di visualizzare informazioni e comandare l'apparato a
+distanza, grazie ad una rete di collegamento
+\\
+
+\textbf{Influisce}
+ & 
+Funzionalità principale del sistema d'allarme
+\\
+
+\textbf{Specifica}
+ & 
+FRS1
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Rilevamento Intrusi
+\\
+
+\textbf{ID}
+ & 
+FR2
+\\
+
+\textbf{Descrizione}
+ & 
+Se dovesse avvenire un movimento nell'ambiente il dispositivo Lego se ne
+accorgerà
+\\
+
+\textbf{Motivazione}
+ & 
+Riuscire ad individuare eventuali intrusi da segnalare
+\\
+
+\textbf{Influisce}
+ & 
+Notifiche da segnalare all'utilzzatore
+\\
+
+\textbf{Specifica}
+ & 
+FRS2
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Suono Allarme
+\\
+
+\textbf{ID}
+ & 
+FR3
+\\
+
+\textbf{Descrizione}
+ & 
+Se dovesse avvenire un movimento nell'ambiente e nessun utente
+qualificato ne darà il consenso, il sistema ROBOT comincerà ad emettere
+un suono di allarme
+\\
+
+\textbf{Motivazione}
+ & 
+Scoraggiare eventuali entrusi a compire atti illeciti
+\\
+
+\textbf{Influisce}
+ & 
+Utilizzo autoparlanti Lego per emissione suono allarme
+\\
+
+\textbf{Specifica}
+ & 
+
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+PIN disinnesco
+\\
+
+\textbf{ID}
+ & 
+FR4
+\\
+
+\textbf{Descrizione}
+ & 
+Immissione da parte di un utente qualificato a disattivare le funzioni
+d'allarme del ROBOT mediante un sistema di riconoscimento a PIN
+\\
+
+\textbf{Motivazione}
+ & 
+Possibilità, da parte dell'utente, di disattivare il sistema senza
+l'utilizzo di uno smartphone
+\\
+
+\textbf{Influisce}
+ & 
+Pressione tasti del sistema ROBOT per cambiare il suo stato da Attivo a
+Disattivo
+\\
+
+\textbf{Specifica}
+ & 
+FRS4
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\hypertarget{applicazione}{%
+\subsubsection{APPLICAZIONE}\label{applicazione}}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Primo Avvio
+\\
+
+\textbf{ID}
+ & 
+FR5
+\\
+
+\textbf{Descrizione}
+ & 
+Dopo aver installato l'applicazione e lanciata, viene chiesto all'utente
+di effettuare una primo paired (accoppiamento) con il ROBOT
+\\
+
+\textbf{Motivazione}
+ & 
+Permettere il funzionamento del sistema mediante un accoppiamento con il
+ROBOT
+\\
+
+\textbf{Influisce}
+ & 
+Successivi utilizzi dell'applicazione permetteranno il riconoscimento
+automatico del ROBOT precedentemente accoppiato
+\\
+
+\textbf{Specifica}
+ & 
+FRS5
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Settings' MENU
+\\
+
+\textbf{ID}
+ & 
+FR6
+\\
+
+\textbf{Descrizione}
+ & 
+Eseguendo un TAP sull'apposito campo dei Settings sarà possibile vedere
+le informazioni sullo stato del collegamento ed, eventualmente, cambiare
+le direttive
+\\
+
+\textbf{Motivazione}
+ & 
+Dare la possibilità all'utente di poter scegliere le preferenze del
+comportamente del ROBOT
+\\
+
+\textbf{Influisce}
+ & 
+Visualizzazione del MENU delle Impostazioni
+\\
+
+\textbf{Specifica}
+ & 
+FRS6
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Spegnimento e configurazione calendario programmato
+\\
+
+\textbf{ID}
+ & 
+FR7
+\\
+
+\textbf{Descrizione}
+ & 
+Possibilità di spegnere il sistema d'allarme da remoto. Si da, inoltre,
+la possibilità all'utente di impostare un calendario per la
+programmazione automatica delle accensioni e degli spegnimenti
+\\
+
+\textbf{Motivazione}
+ & 
+Avere pieno controllo sul sistema d'allarme, potendolo bloccare quando
+non più necessario
+\\
+
+\textbf{Influisce}
+ & 
+Spegnimento del sistema d'allarme
+\\
+
+\textbf{Specifica}
+ & 
+FRS7
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Visualizzazione LOG d'avviso
+\\
+
+\textbf{ID}
+ & 
+FR8
+\\
+
+\textbf{Descrizione}
+ & 
+L'applicazione notificherà eventuali intrusioni mediante un sistema di
+LOG a comparsa
+\\
+
+\textbf{Motivazione}
+ & 
+Dare all'utente la consapevolezza di eventuali intromissioni di entità
+terze in ambienti dove è stato installato il sistema d'allarme
+\\
+
+\textbf{Influisce}
+ & 
+Notifiche a video su smartphone
+\\
+
+\textbf{Specifica}
+ & 
+FRS8
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Nome}
+ & 
+Spostamento remoto campo visivo del sistema d'allarme
+\\
+
+\textbf{ID}
+ & 
+FR9
+\\
+
+\textbf{Descrizione}
+ & 
+Dare la possibilità all'utente, mediante un'apposita sezione
+dell'applicazione, di effettuare uno spostamento remoto del campo visivo
+del ROBOT
+\\
+
+\textbf{Motivazione}
+ & 
+Capacità, da parte dell'utente, di avere pieno controllo sulla scelta
+della porzione dell'ambiente dove focalizzarsi per le funzioni di
+sicurezza
+\\
+
+\textbf{Influisce}
+ & 
+Mediante pressione di tasti si avrà lo spostamento della
+telecamera
+\\
+
+\textbf{Specifica}
+ & 
+FRS9
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\hypertarget{definizione-dei-requisiti-non-funzionali}{%
+\subsection{3.3 Definizione dei Requisiti non
+Funzionali}\label{definizione-dei-requisiti-non-funzionali}}
+
+\hypertarget{introduzione-1}{%
+\subsubsection{3.0 Introduzione}\label{introduzione-1}}
+
+(Da cambiare il testo di descrizione)
+
+I requisiti non funzionali sono proprità di comportamento del prodotto.
+
+Si dividono in: - Requisiti di prodotto: specificano come il prodotto
+deve comportarsi; - Requisiti di processo: sono i requisiti che sono la
+conseguenza di scelte organizzative; - Requisiti esterni: requisiti che
+dipendono da fattori esterni all'app, come le leggi.
+
+~
+
+(Da cambiare descrizione tabella) Si utilizza la segeuente tabella
+riassuntiva per descivere i requisiti (NFR: not functional requirement):
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Codice} & Codice identificativo univoco del NFR\\
+\textbf{Nome} & Nome assegnato al NFR\\
+\textbf{Descrizione} & Descrizione del NFR\\
+\textbf{Obiettivo} & Cosa mira a risolvere il NFR\\
+\textbf{Dipendenze} & Da cosa viene ``causato'' il NFR\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\hypertarget{requisiti-di-prodotto}{%
+\paragraph{3.3.1 Requisiti di Prodotto}\label{requisiti-di-prodotto}}
+
+(Da rileggere per la questione Sonar)
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+NFR-1
+\\
+
+\textbf{Nome}
+ & 
+Buone condizioni di luce
+\\
+
+\textbf{Descrizione}
+ & 
+Avere una buona fonte di luce in prossimità dei sensori, così da
+permettere un'ottimale analisi da parte del ROBOT dell'ambiente,
+permetterà di ottenere una migliore esperienza d'uso per l'utente. Se
+questo requisito dovesse mancare il sensore Sonar offrirà comunque le
+funzioni basilari al sistema
+\\
+
+\textbf{Obiettivo}
+ & 
+Correta visualizzazione mediante Sensore Visivo
+\\
+
+\textbf{Dipendenze}
+ & 
+Garantire tutte le funzionalità dell'applicazione
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+NFR-2
+\\
+
+\textbf{Nome}
+ & 
+Buona connessione di rete
+\\
+
+\textbf{Descrizione}
+ & 
+Necessario un collegamento veloce con smartphone e ROBOT per permettere
+un'esperienza ottimale in grado di offrire tutte le funzionalità
+precedentemente descritte
+\\
+
+\textbf{Obiettivo}
+ & 
+Risolvere eventuali problemi di comunicazioni
+\\
+
+\textbf{Dipendenze}
+ & 
+
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\hypertarget{requisiti-di-processo}{%
+\paragraph{3.3.2 Requisiti di Processo}\label{requisiti-di-processo}}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+NFR-3
+\\
+
+\textbf{Nome}
+ & 
+Sviluppo applicazione mediante Android Studio
+\\
+
+\textbf{Descrizione}
+ & 
+L'applicazione è stata pensata per funzionare su dispositivi Android: si
+è quindi deciso di utilizzare l'ambiente di sviluppo integrato Android
+Studio, offerto da Google e disponibile gratuitamente sotto licenzo
+Apache 2.0
+\\
+
+\textbf{Obiettivo}
+ & 
+Offrire una Companion App pensata come parte integrante del sistema
+d'allarme
+\\
+
+\textbf{Dipendenze}
+ & 
+Necessità di un controllo remoto del Sistema d'allarme da parte
+dell'utente
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+NFR-4
+\\
+
+\textbf{Nome}
+ & 
+Sviluppo codice in Java
+\\
+
+\textbf{Descrizione}
+ & 
+L'applicazione, presente su smartphone, verrà scritta e sviluppata in
+Java: linguaggio di programmazione conosciuto da tutti i membri del
+gruppo
+\\
+
+\textbf{Obiettivo}
+ & 
+Sviluppo applicazione
+\\
+
+\textbf{Dipendenze}
+ & 
+
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+(AGGIUNGERE REQUISITI DI PROCESSO PER ROBOT)
+
+\hypertarget{requisiti-esterni}{%
+\paragraph{3.3.3 Requisiti Esterni}\label{requisiti-esterni}}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{Codice}
+ & 
+NFR-5
+\\
+
+\textbf{Nome}
+ & 
+Privacy
+\\
+
+\textbf{Descrizione}
+ & 
+L'utente dovrà essere a conoscenza ed accettare le richieste
+amministrative per l'utilizzo del sistema d'allarme, sia per la parte
+relativa all'applicazione smartphone che quella relativa al ROBOT
+\\
+
+\textbf{Obiettivo}
+ & 
+Implementazione di un sistema infomativo con necessità di conferma da
+parte dell'utente
+\\
+
+\textbf{Dipendenze}
+ & 
+
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+\hypertarget{evoluzione-del-sistema}{%
+\subsection{3.4 Evoluzione del sistema}\label{evoluzione-del-sistema}}
+
+In futuro, questo sistema potrebbe diventare un ecosistema di
+dispositivi che comunicano con l'applicazione in modo da fornire un
+controllo da remoto di vari aspetti della casa, come temperatura o
+consumi energetici.
+
+\hypertarget{specifica-dei-requisiti}{%
+\subsection{3.5 Specifica dei Requisiti}\label{specifica-dei-requisiti}}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{ID} & FRS1\\
+\textbf{Input} &\\
+\textbf{Output} & PIN d'accoppiamento\\
+\textbf{Pre-condizioni} & Avere un Robot con il programma
+caricato\\
+\textbf{Post-condizioni} & Robot pronto per
+l'accoppiamento\\
+\textbf{Requisiti non funzionali} &\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+
+\textbf{ID}
+ & \begin{minipage}[t]{0.56\columnwidth}\raggedright
+FRS2
+\\
+
+\textbf{Input}
+ & \begin{minipage}[t]{0.56\columnwidth}\raggedright
+Un intruso entra nel campo visivo del Robot
+\\
+
+\textbf{Output}
+ & \begin{minipage}[t]{0.56\columnwidth}\raggedright
+Il Robot emette un suono d'allarme ed invia una notifica
+all'utente
+\\
+
+\textbf{Pre-condizioni}
+ & \begin{minipage}[t]{0.56\columnwidth}\raggedright
+L'allarme deve essere innescato
+\\
+
+\textbf{Post-condizioni}
+ & \begin{minipage}[t]{0.56\columnwidth}\raggedright
+Esegue le azioni conseguenti alla scoperta dell'intruso
+\\
+
+\textbf{Requisiti non funzionali}
+ & \begin{minipage}[t]{0.56\columnwidth}\raggedright
+
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{ID} & FRS4\\
+\textbf{Input} & Inserimento del PIN di disinnesco\\
+\textbf{Output} & Il disinnesco dell'allarme senza dover ricorrere
+all'applicazione\\
+\textbf{Pre-condizioni} & L'allarme deve essere innescato\\
+\textbf{Post-condizioni} &\\
+\textbf{Requisiti non funzionali} &\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{ID}
+ & 
+FRS5
+\\
+\textbf{Input}
+ & 
+Inserimento di un PIN di accoppiamento, scelta di un PIN di disinnesco
+offline
+\\
+\textbf{Output}
+ & 
+
+\\
+\textbf{Pre-condizioni}
+ & 
+É necessario avere un Robot pronto per l'accoppiamento
+\\
+\textbf{Post-condizioni}
+ & 
+L'applicazione puó essere usata
+\\
+\textbf{Requisiti non funzionali}
+ & 
+
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{ID} & FRS6\\
+\textbf{Input} &\\
+\textbf{Output} & Scelta delle impostazioni per il Robot\\
+\textbf{Pre-condizioni} & L'applicazione deve essere
+operativa\\
+\textbf{Post-condizioni} &\\
+\textbf{Requisiti non funzionali} &\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{ID} & FRS7\\
+\textbf{Input} &\\
+\textbf{Output} & Innesco e disinnesco automatico e manuale
+dell'allarme\\
+\textbf{Pre-condizioni} & L'applicazione deve essere
+operativa\\
+\textbf{Post-condizioni} & Andarsene via di casa
+tranquillo\\
+\textbf{Requisiti non funzionali} &\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{ID}
+ & 
+FRS8
+\\
+\textbf{Input}
+ & 
+
+\\
+\textbf{Output}
+ & 
+Uno storico di tutte le intrusioni avvenute con foto allegate
+\\
+\textbf{Pre-condizioni}
+ & 
+L'allarme deve essersi innescato almeno una volta
+\\
+\textbf{Post-condizioni}
+ & 
+Puó cancellare intrusioni dalla storico, qualora non le ritenga piú
+utili
+\\
+\textbf{Requisiti non funzionali}
+ & 
+
+\\
+\hline
+\end{tabular}
+\end{figure}
+
+~
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{ID} & FRS9\\
+\textbf{Input} & Cliccare sull'apposito pulsante\\
+\textbf{Output} & Uno stream di immagini in diretta dal
+robot\\
+\textbf{Pre-condizioni} & Il Robot deve essere acceso\\
+\textbf{Post-condizioni} & Possibilitá di muovere la webcam in tempo
+reale\\
+\textbf{Requisiti non funzionali} &\\
+\hline
+\end{tabular}
+\end{figure}
+
+\hypertarget{appendici}{%
+\section{4 Appendici}\label{appendici}}
+
+\end{document}
