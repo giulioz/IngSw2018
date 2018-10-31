@@ -211,7 +211,7 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 ### ROBOT
 
-|          |               |
+|          |  |
 |----------|:-------------:|
 |**Nome**|Accoppiamento ROBOT|
 |**ID**|FR1|
@@ -219,11 +219,11 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 |**Motivazione**|Possibilità di visualizzare informazioni e comandare l'apparato a distanza, grazie ad una rete di collegamento|
 |**Influisce**|Funzionalità principale del sistema d'allarme|
 |**Specifica**|FRS1|
-||
+
 
 &nbsp;
 
-|          |               |
+|          |  |
 |----------|:-------------:|
 |**Nome**|Rilevamento Intrusi|
 |**ID**|FR2|
@@ -245,9 +245,9 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 &nbsp;
 
-|          |               |
+|          |  |
 |----------|:-------------:|
-|**Nome**|PIN conferma disaccoppiamento|
+|**Nome**|PIN disinnesco|
 |**ID**|FR4|
 |**Descrizione**|Immissione da parte di un utente qualificato a disattivare le funzioni d'allarme del ROBOT mediante un sistema di riconoscimento a PIN|
 |**Motivazione**|Possibilità, da parte dell'utente, di disattivare il sistema senza l'utilizzo di uno smartphone|
@@ -266,15 +266,13 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 |**Motivazione**|Permettere il funzionamento del sistema mediante un accoppiamento con il ROBOT|
 |**Influisce**|Successivi utilizzi dell'applicazione permetteranno il riconoscimento automatico del ROBOT precedentemente accoppiato|
 |**Specifica**|FRS5|
-||
-
 &nbsp;
 
 |          |               |
 |----------|:-------------:|
 |**Nome**|Settings' MENU|
 |**ID**|FR6|
-|**Descrizione**|Eseguendo un TAP sull'apposito campo dei Settings sarà possibile vedere le informazioni sullo stato del colegamento ed, eventualmente, cambiare le direttive|
+|**Descrizione**|Eseguendo un TAP sull'apposito campo dei Settings sarà possibile vedere le informazioni sullo stato del collegamento ed, eventualmente, cambiare le direttive|
 |**Motivazione**|Dare la possibilità all'utente di poter scegliere le preferenze del comportamente del ROBOT|
 |**Influisce**|Visualizzazione del MENU delle Impostazioni|
 |**Specifica**|FRS6|
@@ -314,19 +312,178 @@ Tale sistema sarà composto principalmente da due sottosistemi:
 
 ## 3.3 Definizione dei Requisiti non Funzionali
 
-## 3.4 Evoluzione del sistema
+### 3.0 Introduzione
 
-## 3.5 Specifica dei Requisiti
+(Da cambiare il testo di descrizione)
 
-### Da cambiare la descrizione dei campi
+I requisiti non funzionali sono proprità di comportamento del prodotto.
+
+Si dividono in:
+- Requisiti di prodotto: specificano come il prodotto deve comportarsi;
+- Requisiti di processo: sono i requisiti che sono la conseguenza di scelte organizzative;
+- Requisiti esterni: requisiti che dipendono da fattori esterni all'app, come le leggi.
+
+&nbsp;
+
+(Da cambiare descrizione tabella)
+Si utilizza la segeuente tabella riassuntiva per descivere i requisiti (NFR: not functional requirement):
+
+&nbsp;
 
 |          |               |
 |----------|:-------------:|
-|**ID**|Codice univoco della specifica dei requisiti|
-|**Input**|Azione che l'utente deve compiere sul sistema|
-|**Output**|Il dispositivo mostra cosa produce come output in seguito all'input dato dall'utente|
-|**Pre-condizioni**|Descrive le condizioni che sono necessarie affinché l'utente possa compiere una determinata azione|
-|**Post-condizioni**|Descrive che cosa ha a disposizione l'utente dopo l'azione che ha compiuto sul dispositivo|
-|**Requisiti non funzionali**|La specifica di un requisito può essere associato ad un particolare requisito non funzionale|
+|**Codice**|Codice identificativo univoco del NFR|
+|**Nome**|Nome assegnato al NFR|
+|**Descrizione**|Descrizione del NFR|
+|**Obiettivo**|Cosa mira a risolvere il NFR|
+|**Dipendenze**|Da cosa viene "causato" il NFR|
+
+&nbsp;
+
+#### 3.3.1 Requisiti di Prodotto
+
+(Da rileggere per la questione Sonar)
+
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-1|
+|**Nome**|Buone condizioni di luce|
+|**Descrizione**|Avere una buona fonte di luce in prossimità dei sensori, così da permettere un'ottimale analisi da parte del ROBOT dell'ambiente, permetterà di ottenere una migliore esperienza d'uso per l'utente. Se questo requisito dovesse mancare il sensore Sonar offrirà comunque le funzioni basilari al sistema|
+|**Obiettivo**|Correta visualizzazione mediante Sensore Visivo|
+|**Dipendenze**|Garantire tutte le funzionalità dell'applicazione|
+
+&nbsp;
+
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-2|
+|**Nome**|Buona connessione di rete|
+|**Descrizione**|Necessario un collegamento veloce con smartphone e ROBOT per permettere un'esperienza ottimale in grado di offrire tutte le funzionalità precedentemente descritte|
+|**Obiettivo**|Risolvere eventuali problemi di comunicazioni|
+|**Dipendenze**||
+
+#### 3.3.2 Requisiti di Processo
+
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-3|
+|**Nome**|Sviluppo applicazione mediante Android Studio|
+|**Descrizione**|L'applicazione è stata pensata per funzionare su dispositivi Android: si è quindi deciso di utilizzare l'ambiente di sviluppo integrato Android Studio, offerto da Google e disponibile gratuitamente sotto licenzo Apache 2.0|
+|**Obiettivo**|Offrire una Companion App pensata come parte integrante del sistema d'allarme|
+|**Dipendenze**|Necessità di un controllo remoto del Sistema d'allarme da parte dell'utente|
+
+&nbsp;
+
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-4|
+|**Nome**|Sviluppo codice in Java|
+|**Descrizione**|L'applicazione, presente su smartphone, verrà scritta e sviluppata in Java: linguaggio di programmazione conosciuto da tutti i membri del gruppo|
+|**Obiettivo**|Sviluppo applicazione|
+|**Dipendenze**||
+
+(AGGIUNGERE REQUISITI DI PROCESSO PER ROBOT)
+
+#### 3.3.3 Requisiti Esterni
+
+|          |               |
+|----------|:-------------:|
+|**Codice**|NFR-5|
+|**Nome**|Privacy|
+|**Descrizione**|L'utente dovrà essere a conoscenza ed accettare le richieste amministrative per l'utilizzo del sistema d'allarme, sia per la parte relativa all'applicazione smartphone che quella relativa al ROBOT|
+|**Obiettivo**|Implementazione di un sistema infomativo con necessità di conferma da parte dell'utente|
+|**Dipendenze**||
+
+## 3.4 Evoluzione del sistema
+
+In futuro, questo sistema potrebbe diventare un ecosistema di dispositivi che comunicano con l'applicazione in modo da fornire un controllo da remoto di vari aspetti della casa, come temperatura o consumi energetici.
+
+## 3.5 Specifica dei Requisiti
+
+|                              |                                          |
+| ---------------------------- | ---------------------------------------- |
+| **ID**                       | FRS1                                     |
+| **Input**                    |                                          |
+| **Output**                   | PIN d'accoppiamento                      |
+| **Pre-condizioni**           | Avere un Robot con il programma caricato |
+| **Post-condizioni**          | Robot pronto per l'accoppiamento         |
+| **Requisiti non funzionali** |                                          |
+
+&nbsp;
+
+|          |               |
+|:---------|:--------------|
+|**ID**|FRS2|
+|**Input**|Un intruso entra nel campo visivo del Robot|
+|**Output**|Il Robot emette un suono d'allarme ed invia una notifica all'utente|
+|**Pre-condizioni**|L'allarme deve essere innescato|
+|**Post-condizioni**|Esegue le azioni conseguenti alla scoperta dell'intruso|
+|**Requisiti non funzionali**||
+
+&nbsp;
+
+|                              |                                                              |
+| ---------------------------- | ------------------------------------------------------------ |
+| **ID**                       | FRS4                                                         |
+| **Input**                    | Inserimento del PIN di disinnesco                            |
+| **Output**                   | Il disinnesco dell'allarme senza dover ricorrere all'applicazione |
+| **Pre-condizioni**           | L'allarme deve essere innescato                              |
+| **Post-condizioni**          |                                                              |
+| **Requisiti non funzionali** |                                                              |
+
+&nbsp;
+
+|                              |                                                              |
+| ---------------------------- | ------------------------------------------------------------ |
+| **ID**                       | FRS5                                                         |
+| **Input**                    | Inserimento di un PIN di accoppiamento, scelta di un PIN di disinnesco offline |
+| **Output**                   |                                                              |
+| **Pre-condizioni**           | É necessario avere un Robot pronto per l'accoppiamento       |
+| **Post-condizioni**          | L'applicazione puó essere usata                              |
+| **Requisiti non funzionali** |                                                              |
+
+&nbsp;
+
+|                              |                                        |
+| ---------------------------- | -------------------------------------- |
+| **ID**                       | FRS6                                   |
+| **Input**                    |                                        |
+| **Output**                   | Scelta delle impostazioni per il Robot |
+| **Pre-condizioni**           | L'applicazione deve essere operativa   |
+| **Post-condizioni**          |                                        |
+| **Requisiti non funzionali** |                                        |
+
+&nbsp;
+
+|                              |                                                        |
+| ---------------------------- | ------------------------------------------------------ |
+| **ID**                       | FRS7                                                   |
+| **Input**                    |                                                        |
+| **Output**                   | Innesco e disinnesco automatico e manuale dell'allarme |
+| **Pre-condizioni**           | L'applicazione deve essere operativa                   |
+| **Post-condizioni**          | Andarsene via di casa tranquillo                       |
+| **Requisiti non funzionali** |                                                        |
+
+&nbsp;
+
+|                              |                                                              |
+| ---------------------------- | ------------------------------------------------------------ |
+| **ID**                       | FRS8                                                         |
+| **Input**                    |                                                              |
+| **Output**                   | Uno storico di tutte le intrusioni avvenute con foto allegate |
+| **Pre-condizioni**           | L'allarme deve essersi innescato almeno una volta            |
+| **Post-condizioni**          | Puó cancellare intrusioni dalla storico, qualora non le ritenga piú utili |
+| **Requisiti non funzionali** |                                                              |
+
+&nbsp;
+
+|                              |                                                 |
+| ---------------------------- | ----------------------------------------------- |
+| **ID**                       | FRS9                                            |
+| **Input**                    | Cliccare sull'apposito pulsante                 |
+| **Output**                   | Uno stream di immagini in diretta dal robot     |
+| **Pre-condizioni**           | Il Robot deve essere acceso                     |
+| **Post-condizioni**          | Possibilitá di muovere la webcam in tempo reale |
+| **Requisiti non funzionali** |                                                 |
 
 # 4 Appendici
