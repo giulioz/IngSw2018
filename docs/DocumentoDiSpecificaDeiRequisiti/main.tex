@@ -1,74 +1,70 @@
 \documentclass{article}
-  \usepackage[a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
-  \title{Piano di Progetto}
-  \usepackage[T1]{fontenc}
-  %\usepackage{lmodern}
-  \usepackage[utf8]{inputenc}
-  \usepackage[italian]{babel}
-  \usepackage{amsmath}
-  \usepackage{graphicx}
-  \usepackage{booktabs}
-  \usepackage{longtable}
-  \usepackage{wrapfig}
-  \usepackage{mdframed}
-  \usepackage{tcolorbox}
-  \usepackage{xcolor}
-  \usepackage{hyperref}
-  \definecolor{ProcessBlue}{HTML}{00B0F0}
-  
-  %% HEADER
-  \usepackage[sfdefault,lf]{carlito}
-  %% The 'lf' option for lining figures
-  %% The 'sfdefault' option to make the base font sans serif
-  \usepackage[parfill]{parskip}
-  \renewcommand*\oldstylenums[1]{\carlitoOsF #1}
-  \usepackage{fancyhdr}
-  %\usepackage{natbib}
-  %\usepackage{authblk}
-  \setlength{\headheight}{41pt}
-  
-  \fancyhead[L]{Piano di Progetto}
-  \fancyhead[R]{
-  \includegraphics[width=4cm]{gfx/logo.pdf}
-  }
-  \pagestyle{fancy}
-  \fancypagestyle{plain}{%
-  \fancyhf{} % clear all header and footer fields
-  \fancyfoot[C]{\sffamily\fontsize{9pt}{9pt}\selectfont\thepage} % except the center
-  \renewcommand{\headrulewidth}{0pt}
-  \renewcommand{\footrulewidth}{0pt}}
-  %\pagestyle{plain}
-  
-  \makeatletter
-  
-  \newcommand{\spacedlowsmallcaps}[1]{\textbf{#1}}
-  \newcommand{\titleColor}{}
-  \makeatother
-  
-  \usepackage{graphicx}
-  \usepackage[absolute]{textpos}
-  
-  \begin{document}
-  \thispagestyle{empty}
-  \setlength{\TPHorizModule}{1mm}
-  \setlength{\TPVertModule}{1mm}
-  
-  \begingroup
+    \usepackage[a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+    \title{Piano di Progetto}
+    \usepackage[T1]{fontenc}
+    %\usepackage{lmodern}
+    \usepackage[utf8]{inputenc}
+    \usepackage[italian]{babel}
+    \usepackage{amsmath}
+    \usepackage{booktabs}
+    \usepackage{longtable}
+    \usepackage{wrapfig}
+    \usepackage{mdframed}
+    \usepackage{hyperref}
+    \usepackage{adjustbox}
+    \usepackage{lastpage}
+    
+    %% HEADER
+    \usepackage[sfdefault,lf]{carlito}
+    %% The 'lf' option for lining figures
+    %% The 'sfdefault' option to make the base font sans serif
+    \usepackage[parfill]{parskip}
+    \renewcommand*\oldstylenums[1]{\carlitoOsF #1}
+    \usepackage{fancyhdr}
+    %\usepackage{natbib}
+    %\usepackage{authblk}
+    \setlength{\headheight}{41pt}
+    
+    \fancyhead[L]{WatchDoge: Documento di Specifica dei Requisiti}
+    \fancyhead[R]{
+    \includegraphics[width=4cm]{gfx/logo.pdf}
+    }
+    \fancyfoot[C]{\sffamily\fontsize{9pt}{9pt}\selectfont{\thepage/\pageref{LastPage}}}
+    \pagestyle{fancy}
+    
+    \makeatletter
+    
+    \newcommand{\spacedlowsmallcaps}[1]{\textbf{#1}}
+    \newcommand{\titleColor}{}
+    \makeatother
+    
+    \usepackage{graphicx}
+    \usepackage[absolute]{textpos}
+    \usepackage[table]{xcolor}
+    \definecolor{lightgray}{gray}{0.9}
+    
+    \begin{document}
+    \rowcolors{1}{}{lightgray}
+    \thispagestyle{empty}
+    \setlength{\TPHorizModule}{1mm}
+    \setlength{\TPVertModule}{1mm}
+    
+    \begingroup
     \fontsize{11pt}{11pt}\selectfont
     \linespread{1.05}
-  
+    
     \begin{textblock}{50}(0,0)
     \noindent \includegraphics{gfx/00_cafoscari}
     \noindent \end{textblock}
     ~
     \begin{textblock}{143}(47,42)
-  
+    
     \noindent {\LARGE{}Progetto per\\Ingegneria del Software \emph{(CT0090)}}\\
     \vspace{30pt}
     
     %\vspace{30pt}
-  
-  
+    
+    
     \noindent %
     \begin{minipage}[t]{1\columnwidth}%
     \leavevmode
@@ -78,667 +74,788 @@
     \includegraphics[width=12cm]{gfx/logo.pdf}
     \vspace{10pt}
     
-    Piano di Progetto \\
-    \LARGE{Versione 1.0 - 16 ottobre 2018}
+    WatchDoge:
+    Documento di Specifica dei Requisiti \\
+    \LARGE{Versione 1.0 - 2 novembre 2018}
     \end{minipage}
-  
+    
     \vspace{150pt}
-  
-  
+    
+    
     \noindent {\large{}\spacedlowsmallcaps{{\large{}Redazione}}}{\large \par}
-  \begin{itemize}
-  \item   Dario Lazzaro
-  \item   Giovanni Scodeller
-  \item   Giulio Zausa
-  \item   Samuele Casarin
-  \item   Sandro Baccega
-  \end{itemize}
-  
+    \begin{itemize}
+    \item   Dario Lazzaro
+    \item   Giovanni Scodeller
+    \item   Giulio Zausa
+    \item   Samuele Casarin
+    \item   Sandro Baccega
+    \end{itemize}
+    
     \vspace{20pt}
-  
-  
+    
+    
     \noindent {\large{}\spacedlowsmallcaps{{\large{}Approvazione}}}{\large \par}
-  \begin{itemize}
-  \item   Dario Lazzaro
-  \item   Samuele Casarin
-  \item   Sandro Baccega
-  \end{itemize}
+    \begin{itemize}
+    \item   Dario Lazzaro
+    \item   Samuele Casarin
+    \item   Sandro Baccega
+    \end{itemize}
     \end{textblock}
-  \endgroup
-  \pagebreak
-  
-  %
-  %	inizio roba vera e propria
-  %
-  
-  \tableofcontents
-  
-  \pagebreak
-  
-  \section{Introduzione}
-  
-  \subsection{Overview del progetto}
-  
-  Il nostro progetto consiste nella progettazione e realizzazione, prevista nel corso di Ingegneria del Software del Corso di Laurea in Informatica tenuto nell'a.a. 2018/2019 dal prof. Agostino Cortesi, di un sistema Smart Home, composto principalmente da un robot, realizzato con il set \textbf{Lego Mindstorms EV3\footnote{\emph{Lego Mindstorms EV3}: Kit di
-    sviluppo realizzato da Lego per realizzare robot, composto da vari
-    sensori e motori da collegare ad una unità centrale (EV3),
-    programmabile e dotata di Bluetooth e USB}}, ed un'\textbf{applicazione Android\footnote{\emph{Android}: sistema
-    operativo dedicato agli smartphone e tablet sviluppato da Google}} di interfaccia remota del robot.
-  
-  In particolare, il robot sarà in grado di raccogliere dati in tempo reale, grazie a diversi sensori incorporati allo scopo di rilevare intrusioni e misurare alcune variabili ambientali (come temperatura e umidità), inviandoli successivamente ad uno smartphone Android provvisto dell'applicazione per avvisare l'utente.
-  
-  \subsection{Deliverables del Progetto}
-  
-  Il progetto prevede una serie di elaborati da consegnare entro i tempi stabiliti, qui sotto riportati:
-  
-  \begin{longtable}[]{@{}ccc@{}}
-  \toprule
-  \begin{minipage}[b]{0.31\columnwidth}\centering
-  DELIVERABLE\strut
-  \end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\centering
-  DESCRIZIONE\strut
-  \end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
-  DATA CONSEGNA\strut
-  \end{minipage}\tabularnewline
-  \midrule
-  \endhead
-  \begin{minipage}[t]{0.31\columnwidth}\centering
-  Piano di progetto\strut
-  \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\centering
-  Consegna del piano di progetto\strut
-  \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-  16/10/2018\strut
-  \end{minipage}\tabularnewline
-  \begin{minipage}[t]{0.31\columnwidth}\centering
-  Documento di Analisi e SP\strut
-  \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\centering
-  Consegna del documento di analisi e specifiche\strut
-  \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-  02/11/2018\strut
-  \end{minipage}\tabularnewline
-  \begin{minipage}[t]{0.31\columnwidth}\centering
-  Piano di testing\strut
-  \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\centering
-  Consegna del piano di testing\strut
-  \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-  15/11/2018\strut
-  \end{minipage}\tabularnewline
-  \begin{minipage}[t]{0.31\columnwidth}\centering
-  Documentazione di progetto\strut
-  \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\centering
-  Consegna della documentazione di progetto\strut
-  \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-  10/12/2018\strut
-  \end{minipage}\tabularnewline
-  \begin{minipage}[t]{0.31\columnwidth}\centering
-  Realizzazione e messa in linea\strut
-  \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\centering
-  Rilascio di una versione stabile del software\strut
-  \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
-  31/01/2018\strut
-  \end{minipage}\tabularnewline
-  \bottomrule
-  \end{longtable}
-  
-  \subsection{Evoluzione del progetto}
-  
-  Il progetto, ai fini dell'esame, é finalizzato alla consegna di un
-  prototipo, non pronto per la produzione o l'uso commerciale. Un
-  possibile sviluppo del progetto potrebbe essere uno sviluppo di una
-  versione più ``consumer'', utilizzando hardware custom invece che Lego
-  Mindstorms, e una applicazione con un'esperienza utente migliorata.
-  
-  \subsection{Materiale di Riferimento}
-  
-  \begin{itemize}
-  \item \href{http://developer.android.com}{Documentazione ufficiale sviluppo}
-  \item \href{https://www.unive.it/data/insegnamento/89084}{Slide del corso di ingegneria del software}
-  \item \href{https://le-www-live-s.legocdn.com/ev3/userguide/1.4.0/ev3\_userguide\_enus.pdf}{Documentazione ufficiale Lego Mindstorms EV3}
-  \end{itemize}
-  
-  \section{Organizzazione del Progetto}
-  
-  \subsection{Modello del Processo}
-  
-  Per realizzare al meglio il progetto, data la scarsa disponibiltà di
-  incontrarsi di persona da parte dei componenti del gruppo, adotteremo una metodologia di gestione progetto di tipo \textbf{Agile\footnote{\emph{Agile}:
-    insieme di metodi di sviluppo del software focalizzato sull'obiettivo
-    di consegnare al cliente piú brevemente e frequentemente software
-    funzionante. Le caratteristiche principali di Agile sono due: scrivere
-    e revisionare il codice contemporaneamente in modo da minimizzare gli
-    errori e quella di concentrarsi di piú sul mantenere il software
-    funzionante rispetto ad aggiornare la documentazione che lo segue.}},
-  ossia con cicli di sviluppo iterativi di durata costante.
-  
-  Ogni ciclo (che chiameremo anche \emph{sprint}) prevede una fase di
-  planning e assessment del lavoro svolto nel precedente ciclo, mediante
-  una riunione in presenza, seguito da una parte di analisi, sviluppo e
-  testing. Il risultato di uno sprint è una serie di nuove funzionalità o
-  una parte di lavoro fatta, che non corrisponde per forza con un
-  deliverable tra quelli sopra descritti. Al termine di uno sprint si
-  analizza e verifica il lavoro fatto finora e si pianifica il risultato
-  atteso dal prossimo ciclo.
-  
-  \subsection{Struttura Organizzativa}
-  
-  È stata scelta una struttura organizzativa di tipo \textbf{democratica
-  decentralizzata}: ogni membro ha la stessa importanza nel progetto, con
-  equa responsabilità e dovrà rispettare le scadenze assegnate. Ulteriori proposte di funzionalità verranno valutate durante riunioni di gruppo; se una proposta dovesse essere ritenuta fattibile ed inerente al progetto dalla maggioranza del team, la proposta verrà accettata.
-  
-  \subsection{Interfacce Organizzative}
-  
-  Per favorire una migliore comunicazione tra i componenti del gruppo,
-  abbiamo deciso di utilizzare un sistema di chat online
-  (\emph{Telegram\footnote{\emph{Telegram}: servizio di messaggistica
-    istantanea basato su cloud, disponibile su molte piattaforme come
-    smartphone, desktop e web.}}), dove potremmo
-  prendere decisioni, organizzare le attività e gli incontri, e ci
-  aiuteremo in caso di necessità. Inoltre, sono previste riunioni in
-  teleconferenza per riallineamento.
-  
-  Il progetto verrà reso pubblico e gestito mediante la piattaforma online
-  fornita da \textbf{Github\footnote{\emph{Github}: servizio di hosting
-    gratuito per progetti software che utilizza il software \emph{Git} per
-    un \emph{version-control} molto semplice ed intuitivo, oltre a fornire
-    strumenti per il project management, come le \emph{Kanban} e la
-    \emph{Wiki}.}}, il quale ci servirà per mantenere il
-  controllo delle versioni (rendendo non necessaria, quindi, la figura del
-  Software Librarian), le \emph{Issues\footnote{\emph{Issues}: su
-    \emph{Github} , sono un sistema per tener traccia dei vari
-    \emph{todos} e \emph{open items} del progetto.}} di progetto (che sono
-  lavori da fare, problematiche, bugs e todo), la \emph{Board\footnote{\emph{Board}:
-    su \emph{Github} , é un sistema per categorizzare e
-    visualizzare lo stato delle varie \emph{Issues}.}} con le
-  issues e la \emph{Wiki\footnote{\emph{Wiki}: su \emph{Github}
-    , é uno strumento collaborativo per scrivere la documentazione del
-    software.}} di progetto (dove terremo la documentazione necessaria ai
-  vari componenti del team di progetto).
-  
-  Questi due tool renderanno anche più semplice l'eventuale comunicazione
-  con i committenti (Agostino Cortesi e Alvise Spanò) e con terze parti
-  (eventuali tester esterni).
-  
-  \subsection{Responsabilita di
-  progetto}
-  
-  Per garantire la buona riuscita del progetto, le varie responsabilità
-  saranno suddivise in vari ruoli:
-  
-  \begin{itemize}
-  \item
-    \textbf{Project Manager}
-  
+    \endgroup
+    \pagebreak
+    
+    %
+    %	inizio roba vera e propria
+    %
+    
+    \tableofcontents
+    
+    \pagebreak
+      
+    \section{Introduzione}
+    
+    \subsection{Scopo del documento}
+    
+    Il documento ha lo scopo di descrivere in modo dettagliato:
     \begin{itemize}
-    \item
-      \textbf{Responsabile:} Casarin Samuele
-    \item
-      \textit{Funzione: }Pianifica, coordina e supervisiona le attività del team.
+    \item il funzionamento del sistema che andremo a realizzare;
+    \item le modalità d’uso;
+    \item il modo in cui l’utente può interagire con il sistema.
     \end{itemize}
-  \item
-    \textbf{Software Architect}
-  
+    
+    Valuteremo, inoltre, i requisiti funzionali e non funzionali che il sistema dovrà rispettare, procedendo con:
     \begin{itemize}
-    \item
-      \textbf{Responsabile:} Zausa Giulio
-    \item
-      \textit{Funzione: }Progetta ad alto livello la parte software, includendo
-      standard di codifiche e meccanismi di automazione.
+    \item lo studio di fattibilità (interno al gruppo);
+    \item l’analisi dei requisiti e la loro definizione;
+    \item fornire la specifica dei requisiti;
+    \item la convalida e la verifica del tutto.
     \end{itemize}
-  \item
-    \textbf{Product Manager}
-  
+    
+    \vspace{10pt}
+    \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=12cm]{cazzate.png}
+    \end{figure}
+    
+    \subsection{Descrizione del documento}
+    
+    Il documento è organizzato in otto paragrafi che trattano i seguenti argomenti:
+    
+    \begin{enumerate}
+    \item \textbf{Introduzione:} descrizione iniziale del documento e dei suoi sottopunti.
+    \item \textbf{Glossario:} è un elenco dettagliato dei termini di uso tecnico utilizzati nel documento.
+    \item \textbf{Modelli di sistema:} mostra la descrizione della struttura vera e propria dell’app Android e il Doge attraverso l’utilizzo degli use case del linguaggio UML2.
+    \item \textbf{Definizione dei requisiti funzionali:} descrizione dei servizi che il sistema dovrà necessariamente fornire, nel momento in cui l’applicazione verrà rilasciata.
+    \item \textbf{Definizione dei requisiti non funzionali:} descrizione dei vincoli del sistema e del processo di sviluppo.
+    \item \textbf{Evoluzione del sistema:} i servizi e le modifiche che potranno essere apportate al sistema (applicazione e doge) in futuro.
+    \item \textbf{Specifica dei requisiti:} spiegazione nel dettaglio dei requisiti funzionali.
+    \end{enumerate}
+    
+    \subsection{Funzionalità di progetto}
+    
+    L'obiettivo del progetto è lo sviluppo di un sistema anti intrusione destinato all'uso domestico.
+    Tale sistema sarà composto principalmente da due sottosistemi:
     \begin{itemize}
-    \item
-      \textbf{Responsabile:} Scodeller Giovanni
-    \item
-      \textit{Funzione: }È responsabile di mantere le relazioni con il cliente e di
-      verificare l'aderenza del prodotto con le specifiche.
+    \item un \textbf{dispositivo} \textit{(Doge)} connesso ad Internet che, quando abilitato, rileva le intrusioni all'interno dell'ambiente domestico (entro certi limiti), notificando l'utente tramite l'applicazione Android;
+    \item un'\textbf{applicazione Android} (WatchDoge) che abilita/disabilita Doge su decisione dell'utente e notifica l'utente riguardo le segnalazioni ricevute da Doge.
     \end{itemize}
-  \item
-    \textbf{Backup Engineer}
-  
-    \begin{itemize}
-    \item
-      \textbf{Responsabile:} Lazzaro Dario
-    \item
-      \textit{Funzione: }Supporta il project manager ed è responsabile della
-      validazione.
-    \end{itemize}
-  \item
-    \textbf{Test Manager}
-  
-    \begin{itemize}
-    \item
-      \textbf{Responsabile:} Baccega Sandro
-    \item
-      \textit{Funzione: }Si occupa di gestire i piani di testing, i test automatici
-      ed è responsabile dei deliverables.
-    \end{itemize}
-  \item
-    \textbf{Technical Staff}
-  
-    \begin{itemize}
-    \item
-      \textbf{Responsabile:} Baccega Sandro, Casarin Samuele, Lazzaro Dario, Scodeller Giovanni, Zausa Giulio
-    \item
-      \textit{Funzione: }Conduce l'analisi e lo sviluppo.
-    \end{itemize}
-  \end{itemize}
-  
-  \section{Processi gestionali}
-  
-  \subsection{Obiettivi e Priorità}
-  
-  \begin{itemize}
-  \item
-    \textbf{Obiettivi}
-  
-    \begin{itemize}
-    \item
-      Sviluppare due applicativi:
-  
-      \begin{itemize}
-      \item
-        Una applicazione Android in grado di informare l'utente di determinati eventi e consultare dati storici.
-      \item
-        Un firmware per EV3 in grado di rilevare dati dai sensori, elaborarli ed inviarli a richiesta all'app Android.
-      \end{itemize}
-    \item
-      Assemblare un robot Lego per contenere i sensori.
-    \end{itemize}
-  \item
-    \textbf{Priorità}
-  
-    \begin{itemize}
-    \item
-      Mantenere coesione e collaborazione tra i membri del gruppo.
-    \item
-      Riuscire ad ottenere un livello di conoscenze apprese e collaborazione coerente tra i vari membri del gruppo.
-    \item
-      Tenere una documentazione valida ed aggiornata.
-    \item
-      Assicurare un'elevata qualità delle funzionalità del prodotto e del
-      codice.
-    \end{itemize}
-  \end{itemize}
-  
-  \subsection{Assunzioni, Dipendenze,
-  Vincoli}
-  
-  \begin{itemize}
-  \item
-    \textbf{Assunzioni}
-  
-    \begin{itemize}
-    \item
-      Alla fine del progetto, il robot realizzerà gli obbiettivi preposti
-      in maniera affidabile.
-    \item
-      Nessun membro del team abbondonerà il progetto.
-    \item
-      L'utente finale deve avere uno smartphone con sistema operativo Android ed essere in possesso di un kit \emph{Lego Mindstorms EV3}.
-    \end{itemize}
-  \item
-    \textbf{Dipendenze}
-  
-    \begin{itemize}
-    \item
-      Apprendimento di nuovi linguaggi di programmazione e tecniche di
-      sviluppo.
-    \item
-      Approvvigionamento dell'hardware necessario.
-    \end{itemize}
-  \item
-    \textbf{Vincoli}
-  
-    \begin{itemize}
-    \item
-      L'applicazione mobile deve essere programmata attraverso
-      \textbf{Android Studio\footnote{\emph{Android studio}: un ambiente
-        di sviluppo integrato (IDE) basato sul software di \emph{JetBrains
-        IntelliJ IDEA} esclusivamente per la creazione di applicazioni
-        \emph{Android} native.}}.
-    \item
-      Dover seguire altri corsi universitari e studiare per rispettivi esami.
-    \item
-      Devono essere rispettate le date di scadenza.
-    \item
-      Per l'assemblaggio del robot, dovranno essere impiegati almeno due sensori del set Lego Mindstorms EV3.
-    \end{itemize}
-  \end{itemize}
-  
-  \subsection{Gestione dei Rischi}
-  
-  \begin{longtable}[]{@{}lllll@{}}
-  \toprule
-  ID & Rischio & Categoria & Probabilità & Impatto\tabularnewline
-  \midrule
-  \endhead
-  \textbf{1} & Mancanza di conoscenze & Trascurabile & 60\% &
-  Basso\tabularnewline
-  \textbf{2} & Malattie ed infortuni & Marginale & 45\% &
-  Alto\tabularnewline
-  \textbf{3} & Malfunzionamento o perdita Lego Mindstorms & Critico & 5\% &
-  Alto\tabularnewline
-  \textbf{4} & Errata valutazione del carico di lavoro & Critico & 15\% &
-  Medio\tabularnewline
-  \textbf{5} & Mancante interazione tra i membri del gruppo & Catastrofico
-  & 20\% & Alto\tabularnewline
-  \textbf{6} & Errata valutazione della fattibiltà del progetto & Critico
-  & 20\% & Medio\tabularnewline
-  \bottomrule
-  \end{longtable}
-  
-  
-  %\vspace{5pt}
-  \begin{figure}[htbp]
-  \centering
-  \includegraphics[width=11cm]{gfx/Quadrati_rischi.pdf}
-  \caption{Piano dei rischi}
-  \end{figure}
-  %\vspace{5pt}
-  
-  \subsection{Meccanismo di monitoraggio e di
-  controllo}
-  
-  Ogni componente del gruppo effettuerà in un primo momento un controllo
-  personale del lavoro svolto che verrà poi revisionato insieme al resto
-  del gruppo, dove saranno esposte possibili lacune, imprecisioni e
-  correzioni possibili.
-  
-  Ogni settimana si terrà una riunione dove si discute del lavoro svolto
-  fino a quel punto, se il progetto è in linea con i tempi e sta
-  proseguendo nella direzione corretta. Se dovessero sorgere problematiche dovute a possibili ritardi derivanti, per esempio, a difficoltà tecniche i membri possono cambiare momentaneamente i propri compiti per cercare di arginare rapidamente il problema.
-  
-  Il team di sviluppo ha scelto di appoggiarsi a \emph{Github} per lo sviluppo del software e l'organizzazione dei documenti. Per un rapido scambio di informazioni ed eventuali comunicazioni urgenti verrà impiegata l'applicazione di messaggistica istantanea \emph{Telegram}.
-  
-  \subsection{Pianificazione dello
-  staff}
-  
-  Lo staff tecnico verrà diviso in due sezioni: una che seguirà lo
-  sviluppo e l'analisi del robot e una che seguirà l'app Android, questo
-  per l'elevata differenza di software e capacità necessarie per
-  sviluppare le due parti.
-  
-  Lo staff cercherà di lavorare nella maniera più parallela possibile, al fine di accellerare i tempi. Tutti i lavori fatti dal gruppo verranno depositati su un repository su Github, dato che ci permetterà di lavorare su singoli file in parallelo, dove all'occorrenza sarà possibile aprire Issues e fare commenti sul codice e sulla documentazione depositata.
-  
-  In caso di lacune di conoscenza degli strumenti di progetto da parte dei membri del team, potranno essere colmate attraverso le documentazioni ufficiali, guide online e tutorial.
-  
-  \section{Processi Tecnici}
-  
-  \subsection{Metodi, strumenti e
-  tecniche}
-  
-  \begin{itemize}
-  \item
-    \textbf{Strumenti Hardware}:
-  
-    \begin{itemize}
-    \item
-      Ogni membro del gruppo utilizzerà il proprio notebook personale
-      (\emph{Windows}/\emph{Linux}/\emph{Mac}) per lo sviluppo del
-      progetto.
-    \item
-      Ogni membro del gruppo avrà a disposizione il proprio smartphone
-      \emph{Android} per lo sviluppo dell'applicazione.
-    \item
-      Il gruppo avrà a disposizione un kit \emph{Lego Mindstorms EV3} fornito dall'università.
-    \item
-      Eventuali sensori aggiuntivi e dongle USB.
-    \end{itemize}
-  \item
-    \textbf{Strumenti Software}
-  
-    \begin{itemize}
-    \item
-      \emph{Git\footnote{\emph{Git}: software di \emph{code versioning}
-        che permette di tenere traccia delle versioni dei file in maniera
-        decentralizzata.}}
-    \item
-      \emph{Android Studio\footnote{\emph{Android studio}: un ambiente di
-        sviluppo integrato (IDE) basato sul software di \emph{JetBrains
-        IntelliJ IDEA} esclusivamente per la creazione di applicazioni
-        \emph{Android} native.}}
-    \item
-      \emph{Typora\footnote{\emph{Typora}: software per la creazione di
-        documenti in \emph{Markdown}.}}
-    \item
-      \emph{CLion\footnote{\emph{CLion}: IDE di Jetbrains dedicato alla
-        scrittura di codice C++.}}
-    \item
-      \emph{Visual Studio Code\footnote{\emph{Visual Studio Code}: IDE
-        gratuito di Microsoft.}}
-    \item
-      \emph{Adobe Xd\footnote{\emph{Adobe Xd}: software gratuito per la
-        realizzazione e il mockup delle interfacce grafiche.}}
-    \item
-      \emph{Docker\footnote{\emph{Docker}: software di virtualizzazione
-        che facilita il lavoro di \emph{cross compiling} e
-        \emph{deployment}.}}
-    \end{itemize}
-  \end{itemize}
-  
-  \subsection{Documentazione del Software}
-  
-  Il progetto sará accompagnato dai seguenti documenti:
-  
-  \begin{itemize}
-  \item
-    Piano di Progetto
-  \item
-    Documento di Progettazione
-  \item
-    Documento di analisi e specifica
-  \item
-    Piano di Testing
-  \end{itemize}
-  
-  \subsection{Funzionalita al supporto del
-  progetto}
-  
-  \begin{itemize}
-  \item
-    \textbf{Pianificazione della qualitá}
-  
-     Il team lavorerà in due gruppi, uno che si occuperà dello sviluppo del robot e l'altro dello sviluppo dell'applicazione Android, i quali scriveranno e revisioneranno il codice in modo parallelo, in modo da minimizzare gli errori.
-
-La documentazione verrà aggiornata solamente dopo l'attività di testing, come previsto dai principi della metodologia \textit{Agile}.
-
-   Non considereremo i vari membri dei gruppi formatisi come valori assoluti, pensando infatti che possibili scambi per consultazioni o aggiornamenti saranno frequenti.
-  \item
-    \textbf{Pianificazione di Code Version Control e Continuos
-    Integration}
-  
-    \begin{itemize}
-    \item
-      Utilizzeremo \emph{Github} in modo da: facilitare il lavoro del
-      gruppo in fase di sviluppo / debugging e da tener traccia di tutte
-      le versioni precedenti con facilitá.
-    \item
-      Utilizzeremo strumenti di CI\footnote{\emph{Continuos Integration}:
-        software per automatizzare il processo di testing automatico,
-        formattazione del codice, validazione e deployment, integrato con
-        Git.} in modo da assicurare la qualità del codice ed evitare
-      errori di regressione in maniera efficiente.
-    \end{itemize}
-  \end{itemize}
-  
-  \section{Pianificazione del lavoro delle risorse umane e del
-  budget}
-  
-  \subsection{WBS}
-  
-  \begin{itemize}
-  \item
-    \textbf{1 PIANIFICAZIONE}
-  
-    \begin{itemize}
-    \item
-      1.1 Definizione degli obiettivi generali
-    \item
-      1.2 Definizione del Piano di Progetto
-  
-      \begin{itemize}
-      \item
-        1.2.1 Analisi dei processi gestionali
-      \item
-        1.2.2 Analisi dei processi tecnici
-      \item
-        1.2.3 Pianificazione del lavoro, delle risorse umane e del budget
-      \end{itemize}
-    \item
-      1.3 Definizione del Documento di Analisi e Specifica
-    \end{itemize}
-  \item
-    \textbf{2 PROGETTAZIONE}
-  
-    \begin{itemize}
-    \item
-      2.1 Definizione del Documento di Progettazione
-  
-      \begin{itemize}
-      \item
-        2.1.1 Analisi del sistema
-      \item
-        2.1.2 Analisi del componente Lego Mindstorms
-      \item
-        2.1.3 Analisi dell'applicazione Android
-      \item
-        2.1.4 Prototipazione dell'interfaccia grafica
-      \end{itemize}
-    \item
-      2.2 Definizione del Piano di Testing
-    \end{itemize}
-  \item
-    \textbf{3 REALIZZAZIONE}
-  
-    \begin{itemize}
-    \item
-      3.1 Apprendimento tecnico
-    \item
-      3.2 Realizzazione del componente Lego Mindstorms
-  
-      \begin{itemize}
-      \item
-        3.2.1 Assemblaggio dei componenti hardware
-      \item
-        3.2.2 Programmazione del firmware
-      \end{itemize}
-    \item
-      3.3 Realizzazione dell'applicazione Android
-  
-      \begin{itemize}
-      \item
-        3.3.1 Programmazione del backend
-      \item
-        3.3.2 Programmazione del frontend
-      \end{itemize}
-    \item
-      3.4 Collaudo del sistema
-    \end{itemize}
-  \item
-    \textbf{4 DISPIEGAMENTO}
-  
-    \begin{itemize}
-    \item
-      4.1 Realizzazione del manuale utente
-    \item
-      4.2 Consegna del sistema
-    \end{itemize}
-  \item
-    \textbf{5 REVISIONE}
-  
-    \begin{itemize}
-    \item
-      5.1 Revisione finale
-    \item
-      5.2 Chiusura del progetto
-    \end{itemize}
-  \end{itemize}
-  
-  
-  \subsection{Dipendenze}
-  
-  \begin{longtable}[]{@{}llll@{}}
-  \toprule
-  N & Attività & Durata (in ore) & Dipendenze\tabularnewline
-  \midrule
-  \endhead
-  A & Definizione degli obiettivi generali & 5 & -\tabularnewline
-  B & Analisi dei processi gestionali & 10 & A\tabularnewline
-  C & Analisi dei processi tecnici & 10 & A\tabularnewline
-  D & Pianificazione del lavoro, delle risorse umane e del budget & 10 &
-  A\tabularnewline
-  E & Definizione del documento di analisi e specifica & 10 & B, C,
-  D\tabularnewline
-  F & Analisi del sistema & 10 & E\tabularnewline
-  G & Analisi del componente Lego Mindstorms & 5 & F\tabularnewline
-  H & Analisi dell'applicazione Android & 10 & F\tabularnewline
-  I & Prototipazione dell'interfaccia grafica & 10 & F\tabularnewline
-  J & Definizione del piano di testing & 10 & G, H, I\tabularnewline
-  K & Apprendimento tecnico & 15 & J\tabularnewline
-  L & Assemblaggio dei componenti hardware & 5 & K\tabularnewline
-  M & Programmazione del firmware & 15 & K\tabularnewline
-  N & Programmazione del backend & 15 & K\tabularnewline
-  O & Programmazione del frontend & 10 & K\tabularnewline
-  P & Collaudo del sistema & 5 & L, M, N, O\tabularnewline
-  Q & Realizzazione del manuale utente & 10 & P\tabularnewline
-  R & Consegna del sistema & 1 & Q\tabularnewline
-  S & Revisione finale & 2 & R\tabularnewline
-  T & Chiusura del progetto & 1 & S\tabularnewline
-  \bottomrule
-  \end{longtable}
-  
-  \begin{figure}[htbp]
-  \centering
-  \includegraphics[trim={0 4cm 0 4cm},clip,width=16cm]{Gantt.pdf}
-  \caption{Diagramma di Gantt}
-  \end{figure}
-  
-  \begin{figure}[htbp]
-  \centering
-  \includegraphics[trim={0 4cm 0 4cm},clip,width=16cm]{PERT.pdf}
-  \caption{Diagramma di Pert}
-  \end{figure}
-  
-  
-  \subsection{Risorse necessarie}
-  
-  Le risorse necessarie per la realizzazione del progetto sono: -
-  
-  \begin{itemize}
-  \item \textbf{Risorse umane}: i membri del team di sviluppo e testing e i responsabili di gestione progetto;
-  \item \textbf{Risorse hardware}: un computer connesso ad Internet per ogni membro del team, hardware necessario per il robot;
-  \item \textbf{Risorse software}: \emph{Telegram} (comunicazione), \emph{Discord} (comunicazione), \emph{GitHub} (gestione delle versioni del progetto), \emph{Typora} (stesura della documentazione), \emph{Latex} (impaginazione della documentazione), \emph{gcc} (compilazione firmware), \emph{CMake} (automazione della compilazione), \emph{VSCode} (programmazione del firmware), \emph{Android Studio} (programmazione dell'applicazione Android).
-  \end{itemize}
-  
-  \subsection{Allocazione del budget e delle
-  risorse}
-  
-  Lo sviluppo dell'applicazione non richiede alcun tipo di risorsa
-  economica, in quanto i software impiegati per la realizzazione sono a
-  costo zero. Inoltre, anche il set Lego Mindstorms EV3 è stato fornito in
-  comodato d'uso dall'Università Ca' Foscari.
-  
-  Eventuali sensori esterni saranno acquistati dai componenti del progetto
-  in maniera volontaria e indipendente e non saranno considerati nel
-  budget di progetto.
-  
-  \subsection{Pianificazione}
-  
-  La pianificazione del progetto è basata sui termini di consegna del
-  progetto e di tutta la relativa documentazione, stabiliti con il
-  professor Cortesi all'interno del corso di Ingegneria del Software
-  2018/2019:
-  \begin{itemize}
-  \item Piano di Progetto: 16/10/2018
-  \item Documento di Analisi e Specifica: 02/11/2018
-  \item Piano di Testing: 15/11/2018
-  \item Documento di Progettazione: 10/12/2018
-  \item Realizzazione e messa in linea: 31/01/2019
-  \end{itemize}
-  
-  
-  
-  \end{document}
-  
+    
+    Questo sistema andrà a realizzare una componente specifica dei sistemi \textit{Smart Home}, ovvero la rilevazione di intrusioni, permettendo però di avere delle funzionalità aggiuntive, come la configurabilità e la possibilità di tenere traccia dello storico degli avvenimenti.
+    
+    \section{Glossario}
+    
+    \begin{figure}[htbp]
+    \centering
+    \begin{tabular}{l p{12cm}}
+    \textbf{WatchDoge} & Il nome scelto per l'applicazione Android. \\
+    \textbf{Doge} & Il nome scelto per il dispositivo. \\
+    \textbf{Android} & Sistema operativo per dispositivi mobili sviluppato da Google Inc. e basato sul kernel Linux. \\
+    \textbf{Accoppiamento} & L'azione di associazione di uno smartphone con un dispositivo (Doge). \\
+    \textbf{EV3} & Hardware realizzato da Lego composto da una unità centrale (su cui gira il kernel Linux) e sensori di rilevazione. \\
+    \textbf{Smart Home} & Categoria di apparecchi atti ad automatizzare processi di gestione della casa, mediante nuove tecnologie ed internet. \\
+    \textbf{Anti intrusione} & Sistema atto a rilevare e prevenire accessi non autorizzati in determinati spazi. \\
+    \end{tabular}
+    \end{figure}
+    
+    \section{Modelli del Sistema}
+    
+    In questa sezione verranno elencati i casi d’uso del sistema.
+    Attraverso l’analisi di ognuno di essi, che si compone di una breve descrizione (Tabella 1) e di un diagramma \textit{UML}, si vogliono mostrare i diversi scenari in cui un determinato attore interagisce con il sistema.
+    
+    \begin{figure}[htbp]
+    \centering
+    \begin{tabular}{|c|l|}
+    \hline
+    \textbf{Codice} & \textit{Codice univoco del caso d'uso} \\ \hline
+    \textbf{Nome} & \textit{Nome del caso d'uso} \\ \hline
+    \textbf{Scopo} & \textit{Descrive il problema che il caso d'uso si pone di risolvere} \\ \hline
+    \textbf{Attori} & \textit{I soggetti (non necessariamente persone) coinvolti nel caso d'uso} \\ \hline
+    \textbf{Precondizioni} & \textit{Indica quali requisiti devono essere soddisfatti all'istante dell'applicazione del caso d'uso} \\ \hline
+    \textbf{Trigger} & \textit{Indica quale evento deve verificarsi per l'applicazione del caso d'uso} \\ \hline
+    \textbf{Descrizione} & \textit{Spiegazione ad alto livello del modo in cui il caso d'uso raggiunge il suo scopo} \\ \hline
+    \textbf{Alternative} & \textit{Insieme di casi d'uso che permettono di raggiungere lo stesso scopo} \\ \hline
+    \textbf{Postcondizioni} & \textit{Indica le conseguenze dell'applicazione del caso d'uso} \\ \hline
+    \end{tabular}
+    \caption{Template di base per la descrizione dei casi d’uso}
+    \end{figure}
+    
+    \begin{figure}[htbp]
+    \begin{adjustbox}{center}
+    \includegraphics[width=20cm]{UC-Diagram.pdf}
+    \end{adjustbox}
+    \caption{Diagramma UML dei vari casi d'uso}
+    \end{figure}
+    
+    \pagebreak
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-01 \\
+    \textbf{Nome} & Abilita Accoppiamento \\
+    \textbf{Scopo} & Associare il Doge ad un dispositivo Android per permetterne il controllo all'utente. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & - \\
+    \textbf{Trigger} & Pressione del pulsante \emph{Abilita accoppiamento} (Doge) \\
+    \textbf{Descrizione} & Il Doge accetta richieste di accoppiamento per un certo tempo. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & Il Doge è accoppiato con un dispositivo Android, oppure non è accoppiato \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-02 \\
+    \textbf{Nome} & Visualizza Codice per Accoppiamento \\
+    \textbf{Scopo} & Mitigare la presa di controllo indesiderata del Doge da parte di qualcun altro diverso dall'utente. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-01 \\
+    \textbf{Trigger} & Il Doge riceve una richiesta di accoppiamento. \\
+    \textbf{Descrizione} & Il Doge visualizza un codice con cui il dispositivo che ha inviato la richiesta di accoppiamento deve rispondere per poter completare la
+    procedura di accoppiamento. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & Il successo della verifica garantisce che il dispositivo che ha inviato la richiesta di accoppiamento è effettivamente quello dell'utente. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-03 \\
+    \textbf{Nome} & Accoppia Doge \\
+    \textbf{Scopo} & Associare il dispositivo Android al Doge per permetterne il controllo all'utente. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & Connessione alla stessa rete del Doge, UC-01 \\
+    \textbf{Trigger} & Primo avvio dell'applicazione Android e pressione del pulsante \emph{Accoppia Doge} (applicazione Android) \\
+    \textbf{Descrizione} & L'applicazione Android cerca Doge presenti nella stessa rete dello smartphone entro un certo tempo. Al termine, l'applicazione Android
+    visualizza la lista di Doge trovati, permettendo all'utente di
+    selezionare quello da associare. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & Il dispositivo Android è accoppiato con il Doge \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-04 \\
+    \textbf{Nome} & Inserisci Codice per Accoppiamento \\
+    \textbf{Scopo} & Mitigare la presa di controllo indesiderata del Doge da parte di qualcun altro diverso dall'utente. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Selezione di un Doge da associare \\
+    \textbf{Descrizione} & L'utente inserisce il codice di accoppiamento visualizzato dal Doge e lo inserisce in un apposito campo. Successivamente, l'applicazione
+    Android invia il codice al Doge per la verifica. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & Il successo della verifica garantisce che il dispositivo che ha inviato la richiesta di accoppiamento al Doge è effettivamente quello
+    dell'utente. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-05 \\
+    \textbf{Nome} & Visualizza Stato Doge \\
+    \textbf{Scopo} & Consentire all'utente di visualizzare in tempo reale le informazioni relative al Doge. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Aprire l'applicazione Android \\
+    \textbf{Descrizione} & L'utente visualizza in tempo reale se l'antifurto è abilitato oppure no e la sua programmazione attraverso un'apposita interfaccia
+    grafica. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & L'utente è al corrente dello stato del Doge. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-06 \\
+    \textbf{Nome} & Abilita/Disabita Doge \\
+    \textbf{Scopo} & Consentire all'utente di attivare/disattivare la funzione di antifurto del Doge. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Pressione del pulsante \emph{ON/OFF} (applicazione Android) \\
+    \textbf{Descrizione} & L'utente cambia lo stato del Doge ad attivo/disattivo. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & Il Doge è attivo/disattivo. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-07 \\
+    \textbf{Nome} & Imposta Programmazione \\
+    \textbf{Scopo} & Consentire all'utente di decidere quando il Doge deve attivarsi/disattivarsi automaticamente in determinate fasce
+    orarie. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Pressione del pulsante \emph{Programma} \\
+    \textbf{Descrizione} & L'utente abilita/disabilita la modalità automatica attraverso un interrutore e imposta le fasce orarie di attivazione del Doge
+    attraverso una tabella oraria settimanale. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & Il Doge è configurato in modalità automatica per attivarsi negli orari stabiliti dall'utente. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-08 \\
+    \textbf{Nome} & Controllo Remoto \\
+    \textbf{Scopo} & Consentire all'utente di guardare in tempo reale le immagini catturate dal Doge e spostare la visuale. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Pressione del pulsante \emph{Controllo remoto} \\
+    \textbf{Descrizione} & L'utente può connettersi da remoto al Doge e visualizza le immagini catturate dalla fotocamera incorporata; inoltre, attraverso dei pulsanti
+    direzionali, può spostare la visuale della fotocamera in base all'angolo
+    di rotazione. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & L'utente acquisisce una panoramica istantanea dell'ambiente dove è disposto il Doge. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-09 \\
+    \textbf{Nome} & Cambia Stato Doge \\
+    \textbf{Scopo} & Attivare/disattivare/configurare una o più funzioni del Doge. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Una richiesta proveniente dall'applicazione Android \\
+    \textbf{Descrizione} & Attraverso l'interfaccia grafica, l'utente invia una richiesta al Doge per cambiare il suo stato. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & Lo stato del Doge viene cambiato a seconda della richiesta inviata. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-10 \\
+    \textbf{Nome} & Ottieni Stato Doge \\
+    \textbf{Scopo} & Consentire all'applicazione Android di riportare le informazioni relative alle funzioni del Doge. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Una richiesta proveniente dall'applicazione Android \\
+    \textbf{Descrizione} & L'applicazione Android invia una richiesta al Doge per ottenere il suo stato. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & L'applicazione Android ottiene lo stato del Doge a seconda della richiesta inviata. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-11 \\
+    \textbf{Nome} & Visualizza Storico Segnalazioni \\
+    \textbf{Scopo} & Consentire all'utente di avere un archivio delle segnalazioni di intrusioni rilevate dal Doge. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Pressione del pulsante \emph{Storico} (applicazione Android) \\
+    \textbf{Descrizione} & L'applicazione Android visualizza la lista delle ultime segnalazioni. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & L'utente ha una visione generale delle segnalazioni rilevate dal Doge. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-12 \\
+    \textbf{Nome} & Visualizza Notifica Segnalazione \\
+    \textbf{Scopo} & Consentire all'utente di ricevere immediatamente una segnalazione di intrusione. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & Ricezione di una segnalazione dal Doge \\
+    \textbf{Descrizione} & L'applicazione Android mostra una notifica con lo scopo di avvertire l'utente di un'intrusione rilevata dal Doge. Inoltre, alla notifica
+    viene allegata un'immagine dell'intruso. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & L'utente può essere informato immediatamente quando viene rilevata un'intrusione. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-13 \\
+    \textbf{Nome} & Innesca Antifurto \\
+    \textbf{Scopo} & Mitigare le intrusioni all'interno dell'ambiente del Doge. \\
+    \textbf{Attori} & Intruso \\
+    \textbf{Precondizioni} & UC-03 \\
+    \textbf{Trigger} & La fotocamera del Doge rileva del movimento all'interno dell'ambiente \\
+    \textbf{Descrizione} & Il Doge invia una segnalazione di intrusione al dispositivo accoppiato ed emette un suono d'allarme. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & L'intruso viene rilevato e la sua presenza viene segnalata all'utente. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & UC-14 \\
+    \textbf{Nome} & Scatta Fotografia Intruso \\
+    \textbf{Scopo} & Fornire all'utente un'immagine dell'intruso per tentare la sua identificazione. \\
+    \textbf{Attori} & Utente \\
+    \textbf{Precondizioni} & UC-13 \\
+    \textbf{Trigger} & La fotocamera del Doge rileva del movimento all'interno dell'ambiente \\
+    \textbf{Descrizione} & Il Doge invia un immagine dalla fotocamera puntata nella direzione in cui ha rilevato del movimento, dove probabilmente è presente
+    l'intruso. \\
+    \textbf{Alternative} & - \\
+    \textbf{Postcondizioni} & L'utente potrebbe avere una prova per identificare l'intruso. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \subsection{Definizione dei Requisiti Funzionali}
+    
+    \subsubsection{Doge}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Accoppia Doge \\
+    \textbf{ID} & FR-01 \\
+    \textbf{Descrizione} & Doge deve connettersi allo smartphone del proprietario. \\
+    \textbf{Motivazione} & Possibilità di visualizzare informazioni e comandare l'apparato a distanza, grazie ad una connessione via rete. \\
+    \textbf{Influisce} & Funzionalità principale del sistema d'antifurto. \\
+    \textbf{Specifica} & FRS-01 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Rileva Intrusi \\
+    \textbf{ID} & FR-02 \\
+    \textbf{Descrizione} & Doge deve accorgersi di movimenti all'interno dell'ambiente. \\
+    \textbf{Motivazione} & Individuare eventuali intrusi. \\
+    \textbf{Influisce} & Invio di una segnalazione all'utente. \\
+    \textbf{Specifica} & FRS-02 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Emette Suono d'Allarme \\
+    \textbf{ID} & FR-03 \\
+    \textbf{Descrizione} & Doge deve emettere un suono d'allarme se rileva dei movimenti all'interno dell'ambiente e nessun utente qualificato lo disattiva per tempo. \\
+    \textbf{Motivazione} & Scoraggiare gli intrusi a compiere degli atti illeciti. \\
+    \textbf{Influisce} & Uso degli altoparlanti di EV3 per l'emissione del suono d'allarme. \\
+    \textbf{Specifica} & FRS-03 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Disattivazione Antifurto con Codice PIN \\
+    \textbf{ID} & FR-04 \\
+    \textbf{Descrizione} & Doge consente l'immissione di un codice PIN da parte di un utente qualificato per disattivare l'antifurto. \\
+    \textbf{Motivazione} & Dare la possibilità ad un utente di disattivare il sistema senza l'utilizzo di uno smartphone. \\
+    \textbf{Influisce} & Pressione dei tasti di Doge per cambiare il suo stato da Attivo a Disattivo. \\
+    \textbf{Specifica} & FRS-04 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \subsubsection{Applicazione Android}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Primo Avvio \\
+    \textbf{ID} & FR-05 \\
+    \textbf{Descrizione} & Dopo aver installato e lanciato l'applicazione, questa deve richiedere all'utente di effettuare il primo accoppiamento con Doge. \\
+    \textbf{Motivazione} & Permettere il controllo di Doge mediante l'accoppiamento. \\
+    \textbf{Influisce} & I successivi utilizzi dell'applicazione permetteranno il riconoscimento automatico del Doge precedentemente accoppiato. \\
+    \textbf{Specifica} & FRS-05 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Menù Impostazioni \\
+    \textbf{ID} & FR-06 \\
+    \textbf{Descrizione} & Eseguendo un tap sull'icona relativa a Impostazioni, sarà possibile visualizzare le informazioni sullo stato dell'accoppiamento con Doge e cambiare le impostazioni di Doge. \\
+    \textbf{Motivazione} & Dare la possibilità all'utente di decidere la modalità di funzionamento di Doge. \\
+    \textbf{Influisce} & Visualizzazione del Menù Impostazioni. \\
+    \textbf{Specifica} & FRS-06 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Attivazione/Disattivazione Remota Antifurto e Configurazione Calendario Programmato \\
+    \textbf{ID} & FR-07 \\
+    \textbf{Descrizione} & La funzione antifurto di Doge deve poter essere disattivata da remoto. Inoltre, l'utente può impostare un calendario per la programmazione di attivazione e disattivazione automatica dell'antifurto. \\
+    \textbf{Motivazione} & Controllo avanzato dell'antifurto, in particolare includendo la possibilità di disattivarlo da qualsiasi luogo e istante. \\
+    \textbf{Influisce} & Disattivazione dell'antifurto. \\
+    \textbf{Specifica} & FRS-07 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Notifiche Segnalazioni \\
+    \textbf{ID} & FR-08 \\
+    \textbf{Descrizione} & L'applicazione deve far comparire una notifica al verificarsi di un'intrusione. \\
+    \textbf{Motivazione} & L'applicazione deve segnalare un'intrusione non appena viene ricevuta e in modo indipendente dall'attività che l'utente sta svolgendo sullo stesso smartphone. \\
+    \textbf{Influisce} & Notifiche sullo smartphone. \\
+    \textbf{Specifica} & FRS-08 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Nome} & Spostamento Remoto della Visuale della Fotocamera \\
+    \textbf{ID} & FR-09 \\
+    \textbf{Descrizione} & L'applicazione deve poter effettuare lo spostamento remoto della visuale della fotocamera di Doge controllato dall'utente. \\
+    \textbf{Motivazione} & Fornire all'utente una maggiore libertà di controllo e decisione riguardo l'ambiente di Doge \\
+    \textbf{Influisce} & Pressione di tasti per lo spostamento della visuale della fotocamera. \\
+    \textbf{Specifica} & FRS-09 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \subsection{Definizione dei Requisiti non Funzionali}
+    
+    \subsubsection{Introduzione}
+    
+    In questa sezione verranno definiti e descritti i requisiti non funzionali del sistema (NFR: Non-Functional Requirements), cioè i vincoli a cui l’applicazione deve conformarsi nell'esecuzione delle operazioni.
+    Tali requisiti sono divisi in tre categorie:
+    \begin{enumerate}
+        \item Di prodotto
+        \item Di processo
+        \item Esterni
+    \end{enumerate}
+    
+    I requisiti non funzionali verranno descritti attraverso una tabella come la seguente:
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & Codice identificativo univoco del NFR\\
+    \textbf{Nome} & Nome assegnato al NFR\\
+    \textbf{Descrizione} & Descrizione del NFR\\
+    \textbf{Obiettivo} & Il problema che il NFR deve risolvere\\
+    \textbf{Dipendenze} & Da cosa viene ``causato'' il NFR\\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \subsubsection{Requisiti di Prodotto}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-01 \\
+    \textbf{Nome} & Buone Condizioni di Luce \\
+    \textbf{Descrizione} & Avere una buona fonte di luce in prossimità dei sensori, così da permettere un'ottimale analisi da parte di Doge dell'ambiente, il che permetterà di ottenere una migliore esperienza per l'utente. Se questo requisito dovesse venire a mancare, il sensore Sonar offrirà comunque le funzioni di base al sistema. \\
+    \textbf{Obiettivo} & Corretta visualizzazione mediante fotocamera. \\
+    \textbf{Dipendenze} & Garantire tutte le funzionalità dell'applicazione. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-02 \\
+    \textbf{Nome} & Buona Connessione ad Internet \\
+    \textbf{Descrizione} & E' preferibile avere una connessione veloce tra smartphone e Doge per offrire all'utente tutte le funzionalità all'utente in modo ottimale \\
+    \textbf{Obiettivo} & Risolvere eventuali problemi di comunicazione. \\
+    \textbf{Dipendenze} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-03 \\
+    \textbf{Nome} & Companion App Nativa per il Controllo Remoto \\
+    \textbf{Descrizione} & La sezione dell'applicazione Android che soddisfa i requisiti di controllo remoto di Doge sarà una Companion App (un'applicazione separata utilizzata insieme all'applicazione principale) compilata nativamente. \\
+    \textbf{Obiettivo} & Soluzione ottimizzata per il controllo remoto di Doge. \\
+    \textbf{Dipendenze} & Possibilità del controllo remoto del sistema antifurto da parte dell'utente. \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-04 \\
+    \textbf{Nome} & Compatibilità dell'applicazione Android \\
+    \textbf{Descrizione} & L'applicazione deve essere compatibile per sistemi Android di versione >= 5.0 (vedi https://developer.android.com/about/versions/android-5.0) \\
+    \textbf{Obiettivo} & Sviluppare un'applicazione all'avanguardia tecnologica, ma che allo stesso tempo sia disponibile ad un ampio pubblico di dispositivi Android. \\
+    \textbf{Dipendenze} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-05 \\
+    \textbf{Nome} & Componenti Hardware di Doge \\
+    \textbf{Descrizione} & Doge verrà realizzato a partire dalla piattaforma hardware Lego Mindstorms EV3. \\
+    \textbf{Obiettivo} & Assemblare Doge. \\
+    \textbf{Dipendenze} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \subsubsection{Requisiti di Processo}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-06 \\
+    \textbf{Nome} & Ambiente di Sviluppo \\
+    \textbf{Descrizione} & L'ambiente di sviluppo per l'applicazione Android sarà Android Studio. \\
+    \textbf{Obiettivo} & Sviluppare l'applicazione Android con un ambiente di sviluppo dedicato. \\
+    \textbf{Dipendenze} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-07 \\
+    \textbf{Nome} & Sviluppo Applicazione Android \\
+    \textbf{Descrizione} & Il codice dell'applicazione Android deve essere scritto in linguaggio Java, poiché tale linguaggio di programmazione è conosciuto da tutti i membri del gruppo. \\
+    \textbf{Obiettivo} & Sviluppo dell'applicazione Android. \\
+    \textbf{Dipendenze} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-08 \\
+    \textbf{Nome} & Sviluppo Firmware di Doge \\
+    \textbf{Descrizione} & Il firmware di Doge sarà montato su Debian (una particolare distribuzione di Linux) per le gestione delle componenti a basso livello e il codice deve essere scritto in linguaggio C++. \\
+    \textbf{Dipendenze} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \subsection{Requisiti Esterni}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Codice} & NFR-09 \\
+    \textbf{Nome} & Privacy \\
+    \textbf{Descrizione} & L'utente deve essere a conoscenza ed accettare le richieste amministrative per l'utilizzo del sistema antifurto, sia per quanto riguarda l'applicazione Android che per quanto riguarda Doge. \\
+    \textbf{Obiettivo} & Implementazione di un sistema informativo con necessità di conferma da parte dell'utente. \\
+    \textbf{Dipendenze} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \subsection{Evoluzione del sistema}
+    
+    Per un'eventuale produzione in serie e lancio del prodotto sul mercato sarà necessario riprogettare le componenti hardware di Doge per passare dalla piattaforma Lego Mindstorms EV3, usata al fine di realizzazione di un prototipo, ad una piattaforma hardware dedicata e più prestante.
+    
+    Inoltre, questo sistema potrebbe diventare un ecosistema di dispositivi che comunicano con l'applicazione in modo da fornire un controllo remoto di varie variabili ambientali, come temperatura e consumi energetici.
+    
+    \subsection{Specifica dei Requisiti}
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & FRS-01\\
+    \textbf{Input} &\\
+    \textbf{Output} & Codice PIN per l'accoppiamento.\\
+    \textbf{Precondizioni} & Avere un Doge con il firmware caricato.\\
+    \textbf{Postcondizioni} & Doge pronto per l'accoppiamento.\\
+    \textbf{Requisiti non funzionali} &\\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & FRS-02 \\
+    \textbf{Input} & Un intruso entra nel campo visivo di Doge. \\
+    \textbf{Output} & Il Doge emette un suono d'allarme ed invia una notifica di segnalazione all'utente. \\
+    \textbf{Precondizioni} & L'antifurto deve essere attivo. \\
+    \textbf{Postcondizioni} & Esegue le azioni conseguenti alla rilevazione di un'intrusione. \\
+    \textbf{Requisiti non funzionali} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & FRS-04 \\
+    \textbf{Input} & Inserimento del codice PIN di disattivazione.\\
+    \textbf{Output} & La disattivazione dell'antifurto senza dover ricorrere all'applicazione Android.\\
+    \textbf{Precondizioni} & L'antifurto deve essere attivo.\\
+    \textbf{Postcondizioni} &\\
+    \textbf{Requisiti non funzionali} &\\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & FRS-05 \\
+    \textbf{Input} & Inserimento di un codice PIN per l'accoppiamento, scelta di un codice PIN di disattivazione offline. \\
+    \textbf{Output} &  \\
+    \textbf{Precondizioni} & Doge pronto per l'accoppiamento. \\
+    \textbf{Postcondizioni} & Doge può essere controllato dall'applicazione Android. \\
+    \textbf{Requisiti non funzionali} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & FRS-06\\
+    \textbf{Input} &\\
+    \textbf{Output} & Scelta delle impostazioni per Doge.\\
+    \textbf{Precondizioni} & L'applicazione deve essere operativa.\\
+    \textbf{Postcondizioni} &\\
+    \textbf{Requisiti non funzionali} &\\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & FRS-07\\
+    \textbf{Input} &\\
+    \textbf{Output} & Attivazione/Disattivazione manuale e automatica dell'antifurto.\\
+    \textbf{Precondizioni} & L'applicazione deve essere operativa.\\
+    \textbf{Postcondizioni} & "Andarsene via di casa tranquillo."\\
+    \textbf{Requisiti non funzionali} &\\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & FRS-08 \\
+    \textbf{Input} &  \\
+    \textbf{Output} & Storico delle segnalazioni di intrusione con foto allegate. \\
+    \textbf{Precondizioni} & L'allarme deve essere stato innescato almeno una volta. \\
+    \textbf{Postcondizioni} & L'utente può rivedere lo storico delle segnalazioni e può cancellarle  qualora non le ritenga più utili. \\
+    \textbf{Requisiti non funzionali} &  \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    ~
+    
+    \begin{adjustbox}{center}
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & FRS-09\\
+    \textbf{Input} & Tap sul pulsante di avvio stream.\\
+    \textbf{Output} & Uno stream di immagini in diretta da Doge.\\
+    \textbf{Precondizioni} & Il Doge deve essere acceso.\\
+    \textbf{Postcondizioni} & Visione delle immagini provenienti dalla fotocamera e possibilità per l'utente di muovere la visuale della fotocamera in tempo reale.\\
+    \textbf{Requisiti non funzionali} &\\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    
+    \end{document}
+    

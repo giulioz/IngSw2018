@@ -1,6 +1,6 @@
 # HACK
 set(CMAKE_C_COMPILER "arm-linux-gnueabi-gcc")
-set(CMAKE_CXX_COMPILER "arm-linux-gnueabi-gcc")
+set(CMAKE_CXX_COMPILER "arm-linux-gnueabi-g++")
 set(EV3DEV_PLATFORM "EV3")
 
 cmake_minimum_required(VERSION 3.0)
