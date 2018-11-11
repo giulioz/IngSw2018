@@ -1,9 +1,9 @@
-[submodule "robot-firmware/deps/ev3dev-lang-cpp"]
-	path = robot-firmware/deps/ev3dev-lang-cpp
+[submodule "firmware/deps/ev3dev-lang-cpp"]
+	path = firmware/deps/ev3dev-lang-cpp
 	url = https://github.com/ddemidov/ev3dev-lang-cpp
-[submodule "robot-firmware/deps/mongoose"]
-	path = robot-firmware/deps/mongoose
+[submodule "firmware/deps/mongoose"]
+	path = firmware/deps/mongoose
 	url = https://github.com/cesanta/mongoose.git
-[submodule "robot-firmware/deps/opencv"]
-	path = robot-firmware/deps/opencv
+[submodule "firmware/deps/opencv"]
+	path = firmware/deps/opencv
 	url = https://github.com/opencv/opencv.git
