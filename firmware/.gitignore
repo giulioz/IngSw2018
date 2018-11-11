@@ -8,3 +8,5 @@ build
 build-*
 cmake-*
 .DS_Store
+robot_build
+mock_build
