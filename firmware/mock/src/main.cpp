@@ -1,6 +1,6 @@
 #include "WebServer.hpp"
 
 int main() {
-  WebServer webServer;
+  WebServer webServer("0.0.0.0:8000");
   webServer.start();
 }
