@@ -1,5 +1,6 @@
-#include "Pairing.hpp"
+#include "WebServer.hpp"
 
 int main() {
-  a();
+  WebServer webServer;
+  webServer.start();
 }
