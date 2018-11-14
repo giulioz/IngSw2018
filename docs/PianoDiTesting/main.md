@@ -2,7 +2,18 @@
 
 ## 1 Introduzione
 
-...
+Il seguente documento contiene le informazioni relative alla pianificazione del processo di testing per il progetto WatchDoge. Tale processo ha lo scopo di verifica e validazione dei requisiti di progetto e verrà eseguito dal team di progetto durante e in seguito alla fase di sviluppo.
+
+La struttura del documento è la seguente:
+- **Strategia di Testing**: in questa sezione sono definite le procedure adottate per il processo di testing in ognuno degli elementi considerati;
+- **Tracciabilità dei Requisiti**: in questa sezione sono definite le associazioni tra ciascuna specifica dei requisiti di progetto (vedi *Documento di spefica dei requisiti*, sezione 3.5) e il metodo di testing e la condizione per cui il test risulta essere soddisfatto;
+- **Elementi di Testing**: in questa sezione sono riportati gli elementi soggetti al processo di testing;
+- **Schedule di Testing**: in questa sezione è visualizzato lo schema di allocazione temporale delle risorse di progetto impiegate per il processo di testing;
+- **Procedure di Registrazione dei Test**: in questa sezione sono definite le modalità con cui i risultati del processo di testing vengono raccolti ed archiviati;
+- **Requisiti Hardware e Software**: in questa sezione sono definiti i requisiti in termini di hardware e software che devono essere soddisfatti per l'esecuzione del processo di testing;
+- **Vincoli**:  in questa sezione sono definiti i vincoli da rispettare al fine che lo stesso processo di testing possa essere considerato attendibile.
+
+Per una completa comprensione del presente documento e del progetto WatchDoge, fare riferimento anche ai documenti *Piano di Progetto* e *Documento di Specifica dei Requisiti*.
 
 ## 2 Strategia di Testing
 
@@ -50,6 +61,5 @@ Travis
 
 ## 8 Vincoli
 
-Quali sono gli eventuali vincoli (es. data di consegna del progetto) del processo di testing?
+Il processo di testing verrà effettuato durante e in seguito l'attività di sviluppo del progetto e dovrà terminare entro 5 giorni prima della data di scadenza (entro il 26 gennaio 2019), al fine di verificare e validare tutti i requisiti di progetto entro i limiti di tempo e riducendo il più possibile la probabilità di errori durante la fase di produzione.
 
-Data di consegna della prima versione del Piano di Testing e del rilascio della prima versione del progetto con la documentazione completa.
