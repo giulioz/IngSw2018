@@ -25,20 +25,20 @@ In questo modo la valutazione della corretezza dei moduli implementati partirà 
 
 Quando le due unità (Robot ed Applicazione) avranno un numero di componenti implementate tali da poter avere una vera e propria dipendenza l'uno dall'altro uniremo questi due percorsi, in modo tale da poter effettuare test riconducibili ed un utilizzo sempre più simile rispetto a quello di un utente finale.
 
-Potremo suddividere varie fasi per i test:
+Suddivideremo il processo di Testing in tre fasi:
 
-1) Inizialmente si darà priorità al corretto funzionamento delle specifiche del Robot: essendo gran parte dell'applicazione dipendente a comportamenti basilari della macchina è necessaria la certezza del loro corretto funionamento.
+1) Inizialmente si darà priorità al corretto funzionamento delle specifiche del Robot: essendo gran parte dell'applicazione dipendente a comportamenti basilari della macchina è necessario ottenere un certo grado di sicurezza sul loro corretto funionamento.
 2) Potremo quindi poi cominciare la vera e propria fase di Testing relativa all'applicazione, testando quindi le funzionalità implementative non strettamente dipendenti a funzionalità raggiunte dalla parte Robot.
+Non potendo avere a disposizione in questa fase tutte le implementazioni delle funzioni che potrebbero essere necessarie per l'analisi di correttezza dei moduli implementati potremo ricorrere all'utilizzo di funzioni dummies.
 Per queste due fasi iniziali utilizzeremo per lo più un approccio di test a White-Box: effettuando test dettagliati che andranno a valutare la struttura della macchina e dell'app, per aver così una certezza sulla correttezza della parte software sviluppata.
 
 3) Una volta raggiunte funzionalità tali che nessitano una sempre più grande interoperabilità dei due moduli del progetto, Robot ed applicazione, sarà necessario effettuare testare in contemporanea tra queste due parti.
 In questa fase si darà, inoltre, molto spazio ad un approccio di test a Black-Box: simulando le possibili azione che un utente finale andrà a compiere.
 
 Il modello di Testing che si andrà ad eseguire dovrà, inolte, rispettare le seguenti condizioni:
-- Incremental Testing: i test vengono effettuati all'aggiunta di nuove unità.
-- Stress Testing: i test vengono effettuati per verificare che il sistema sopporti il carico massimo definito in fase di progettazione (pro: adatto per sistemi distribuiti). (OK)
-
-Analisi Statica: verificare la corrispondenza tra un sistema software e la sua specifica senza eseguire il codice. (OK) (?)
+- incremental Testing: i test vengono effettuati all'aggiunta di nuove unità;
+- stress Testing: i test vengono effettuati per verificare che il sistema sopporti il carico massimo definito in fase di progettazione (tipo di test necessario per sistemi distribuiti);
+- analisi statica: verificare la corrispondenza tra un sistema software e la sua specifica senza eseguire il codice.
 
 ## 3 Tracciabilità dei requisiti
 
@@ -62,11 +62,15 @@ Tutti i Test descritti di seguito devono essere riproducibili e rispettare nel m
 
 ## 4 Elementi di Testing
 
-Quali sono gli elementi (hw e sw) soggetti al processo di testing?
+Gli elementi sottoposti ai vari test durante il periodo di debugging saranno principalmente tutte le componenti presenti nel Robot e nell'applicazione.
 
-Singole componenti del robot, assemblaggio del robot, applicazione Android
+E' quindi possibile distinguire fra test specifici che si andranno ad effettuare per la parte macchina (Robot) e la parte applicativa (applicazione).
 
+Prove specifiche finalizzate a scoprire e risolvere eventuali problematiche che potrebbero presentarsi nel Robot riguarderanno:
+- il corretto funzionamento dei singoli componenti forniti in bundle con il sistema Lego EV3;
+- la parte firmware che andremo a sviluppare sulla macchina.
 
+Un'ulteriore tipologia di test specifici da effettuare riguarderanno i singoli componenti (e quindi eventuali moduli, suddivisi per tipologie di basso ed alto livello) dell'applicazione Android.
 
 ## 5 Schedule di Testing
 
