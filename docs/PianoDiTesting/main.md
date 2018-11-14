@@ -10,7 +10,7 @@ In questa sezione vengono definite le strategie adottate per il processo di veri
 
 - Incremental Testing: i test vengono effettuati all'aggiunta di nuove unità. (OK)
 
-- Top-Down Testing: vengono testate prima le unità complesse e poi le unità elementari (pro: adatta per lo sviluppo top-down, individua rapidamente errori architetturali; contro: richiede la conoscenza completa della struttura del sistema, difficile sviluppare gli "stub", ovvero simulatori di modulo). (OK)
+- Bottom-Up Testing: vengono testate prima le unità elementari e poi le unità complesse (pro: adatta per lo sviluppo bottom-up, appropriato per sistemi object-oriented, richiede solo una conoscenza parziale della struttura del sistema, facile sviluppare gli "stub"; contro: non individua rapidamente errori architetturali). (OK)
 
 - Stress Testing: i test vengono effettuati per verificare che il sistema sopporti il carico massimo definito in fase di progettazione (pro: adatto per sistemi distribuiti). (OK)
 
