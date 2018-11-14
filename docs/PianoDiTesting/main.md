@@ -19,15 +19,26 @@ Per una completa comprensione del presente documento e del progetto WatchDoge, f
 
 In questa sezione vengono definite le strategie adottate per il processo di verifica e validazione dei requisiti di progetto.
 
-- Incremental Testing: i test vengono effettuati all'aggiunta di nuove unità. (OK)
+Suddivideremo inizialmente due percorsi di Testing separati: uno per il Robot ed uno per l'applicazione che dovrà poi interfacciarsi con quest'ultimo.
+Utilizzeremo un tipo di testing basato sull'approccio Bottom-Up: si andranno da prima a collaudare i moduli di basso livello presenti nella nostra gerarchio di sviluppo, crescendo poi di livello continuando con lo sviluppo.
+In questo modo la valutazione della corretezza dei moduli implementati partirà dalle parti più piccole (e fondamenteli) fino ad arrivare a moduli sempre di più alto livello.
 
-- Bottom-Up Testing: vengono testate prima le unità elementari e poi le unità complesse (pro: adatta per lo sviluppo bottom-up, appropriato per sistemi object-oriented, richiede solo una conoscenza parziale della struttura del sistema, facile sviluppare gli "stub"; contro: non individua rapidamente errori architetturali). (OK)
+Quando le due unità (Robot ed Applicazione) avranno un numero di componenti implementate tali da poter avere una vera e propria dipendenza l'uno dall'altro uniremo questi due percorsi, in modo tale da poter effettuare test riconducibili ed un utilizzo sempre più simile rispetto a quello di un utente finale.
 
+Potremo suddividere varie fasi per i test:
+
+1) Inizialmente si darà priorità al corretto funzionamento delle specifiche del Robot: essendo gran parte dell'applicazione dipendente a comportamenti basilari della macchina è necessaria la certezza del loro corretto funionamento.
+2) Potremo quindi poi cominciare la vera e propria fase di Testing relativa all'applicazione, testando quindi le funzionalità implementative non strettamente dipendenti a funzionalità raggiunte dalla parte Robot.
+Per queste due fasi iniziali utilizzeremo per lo più un approccio di test a White-Box: effettuando test dettagliati che andranno a valutare la struttura della macchina e dell'app, per aver così una certezza sulla correttezza della parte software sviluppata.
+
+3) Una volta raggiunte funzionalità tali che nessitano una sempre più grande interoperabilità dei due moduli del progetto, Robot ed applicazione, sarà necessario effettuare testare in contemporanea tra queste due parti.
+In questa fase si darà, inoltre, molto spazio ad un approccio di test a Black-Box: simulando le possibili azione che un utente finale andrà a compiere.
+
+Il modello di Testing che si andrà ad eseguire dovrà, inolte, rispettare le seguenti condizioni:
+- Incremental Testing: i test vengono effettuati all'aggiunta di nuove unità.
 - Stress Testing: i test vengono effettuati per verificare che il sistema sopporti il carico massimo definito in fase di progettazione (pro: adatto per sistemi distribuiti). (OK)
 
-Black-box testing: i casi di test sono basati esclusivamente sulla specifica del sistema, a mio avviso CONSIGLIATO. (OK)
-
-Analisi Statica: verificare la corrispondenza tra un sistema software e la sua specifica senza eseguire il codice. (OK)
+Analisi Statica: verificare la corrispondenza tra un sistema software e la sua specifica senza eseguire il codice. (OK) (?)
 
 ## 3 Tracciabilità dei requisiti
 
@@ -40,6 +51,8 @@ Quali sono le condizioni per cui i requisiti di progetto possono definirsi verif
 Quali sono gli elementi (hw e sw) soggetti al processo di testing?
 
 Singole componenti del robot, assemblaggio del robot, applicazione Android
+
+
 
 ## 5 Schedule di Testing
 
