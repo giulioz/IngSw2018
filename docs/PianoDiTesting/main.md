@@ -42,9 +42,23 @@ Analisi Statica: verificare la corrispondenza tra un sistema software e la sua s
 
 ## 3 Tracciabilità dei requisiti
 
-Quali sono le condizioni per cui i requisiti di progetto possono definirsi verificati (nel singolo) e validi (nell'insieme)?
+Gli identificatori utilizzati la creazione della tabella sono gli stessi descritti nel documento di specifica dei requisiti.
 
-[ Tabella di associazione tra ogni specifica dei requisiti (definita nel Documento di Progettazione, sezione <...>), con ID e Nome della specifica, e la condizione per cui il test risulta superato in Test (unico, oppure Alpha e Beta, oppure ...) ]
+Tutti i Test descritti di seguito devono essere riproducibili e rispettare nel modo più veritiero gli output descritti. 
+
+| ID Requisito | Nome Requisito                         | Test Alpha                                                   | Test Beta                                                    |
+| ------------ | :------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| FRS-01       | Associazione con codice Pin            | Si verifica quando il Doge riconosce il Pin inviato dal telefono. | Si verifica quando il Doge ed il telefono si associano correttamente. |
+| FRS-02       | Rilevazione di un intruso              | Il Doge riesce a vedere l'ambiente attraverso la telecamera. | Il Doge riesce a rilevare un oggetto in movimento.           |
+| FRS-03       | Notificazione acustica dell'intrusione | Il Doge emette un suono acustico.                            | Alla rilevazione di un movimento emette un suono acustico    |
+| FRS-04       | Disattivazione antifurto               | Il Doge si spegne attraverso un segnale.                     | Il Doge si spegne tramite una sequenza di tasti.             |
+| FRS-05       | Primo avvio                            | L'operazione è verificata se al tap l'applicazione si avvia correttamente. | L'operazione è verificata se gli utenti riescono ad aprire l'applicazione correttamente. |
+| FRS-06       | Utilizzo menù                          | Controllo del menù, apertura e primo utilizzo.               | Utilizzo stressante dell'applicazione.                       |
+| FRS-07       | Programmazione Doge                    | Controllo delle funzionalità programmabili.                  | Inserimento di tutte le possibili combinazioni programmabili. |
+| FRS-08       | Sistema di notifica                    | L'applicazione crea notifiche.                               | Le notifiche vengono create con informazioni inviate dal robot. |
+| FRS-09       | Spostamento manuale Doge               | Il Doge riesce a muoversi su un asse.                        | Il Doge riesce a muoversi attraverso dei segnali.            |
+
+
 
 ## 4 Elementi di Testing
 
@@ -56,9 +70,17 @@ Singole componenti del robot, assemblaggio del robot, applicazione Android
 
 ## 5 Schedule di Testing
 
-Come sono distribuiti il tempo e le risorse per l'esecuzione del processo di testing?
-
-[ Tabella per la schedulazione di tempo e risorse ]
+| Nome Requisito                         | Tipo test | Tester | Data | Esito |
+| -------------------------------------- | --------- | ------ | ---- | ----- |
+| Associazione con codice Pin            |           |        |      |       |
+| Rilevazione di un intruso              |           |        |      |       |
+| Notificazione acustica dell'intrusione |           |        |      |       |
+| Disattivazione antifurto               |           |        |      |       |
+| Primo avvio                            |           |        |      |       |
+| Utilizzo menù                          |           |        |      |       |
+| Programmazione Doge                    |           |        |      |       |
+| Sistema di notifica                    |           |        |      |       |
+| Spostamento manuale Doge               |           |        |      |       |
 
 ## 6 Procedure di Registrazione dei Test
 
