@@ -38,15 +38,27 @@ Come sono distribuiti il tempo e le risorse per l'esecuzione del processo di tes
 
 ## 6 Procedure di Registrazione dei Test
 
-Come verranno registrati i risultati del processo di testing?
+Per eseguire e registrare molti test ci avvaleremo di un software chiamato *Travis CI*, un software gratuito messo a disposizione su *Github* per il testing del software.
 
-Travis
+Dopo una configurazione iniziale, Travis inizierá a testare ogni commit che verrá pushato sulla repository del progetto di Github ed a tenerne traccia automaticamente dell'esito.
+
+Sará possibile accedere ai vari esiti dei testing effettuati da Travis tramite un apposita sezione su Github.
+
+Per il resto del codice per cui Travis non é configurato sfrutteremo la *Schedule del Testing* (Punto 5.) per tener traccia di tutti i dati necessari al testing: descrizione feature, tester, data ed esito.
 
 ## 7 Requisiti Hardware e Software
+Per eseguire i vari testing useremo questi strumenti:
 
-Quali sono gli strumenti (hw e sw) richiesti per l'esecuzione del processo di testing?
+- Hardware:
 
-Travis
+    - Smartphone personali dei componenti del gruppo per testare l'applicazione Android
+    - Robot EV3 per testarne il programma 
+
+
+- Software:
+    - Emulatore di smartphone Android (disponibile nativamente su Android Studio)
+    - Travis CI (disponibile su Github)
+
 
 ## 8 Vincoli
 
