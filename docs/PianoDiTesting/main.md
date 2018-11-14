@@ -72,15 +72,24 @@ Singole componenti del robot, assemblaggio del robot, applicazione Android
 
 | Nome Requisito                         | Tipo test | Tester | Data | Esito |
 | -------------------------------------- | --------- | ------ | ---- | ----- |
-| Associazione con codice Pin            |           |        |      |       |
-| Rilevazione di un intruso              |           |        |      |       |
-| Notificazione acustica dell'intrusione |           |        |      |       |
-| Disattivazione antifurto               |           |        |      |       |
-| Primo avvio                            |           |        |      |       |
-| Utilizzo menù                          |           |        |      |       |
-| Programmazione Doge                    |           |        |      |       |
-| Sistema di notifica                    |           |        |      |       |
-| Spostamento manuale Doge               |           |        |      |       |
+| Associazione con codice Pin            | Alfa      |        |      |       |
+| Rilevazione di un intruso              | Alfa      |        |      |       |
+| Notificazione acustica dell'intrusione | Alfa      |        |      |       |
+| Disattivazione antifurto               | Alfa      |        |      |       |
+| Primo avvio                            | Alfa      |        |      |       |
+| Utilizzo menù                          | Alfa      |        |      |       |
+| Programmazione Doge                    | Alfa      |        |      |       |
+| Sistema di notifica                    | Alfa      |        |      |       |
+| Spostamento manuale Doge               | Alfa      |        |      |       |
+| Associazione con codice Pin            | Beta      |        |      |       |
+| Rilevazione di un intruso              | Beta      |        |      |       |
+| Notificazione acustica dell'intrusione | Beta      |        |      |       |
+| Disattivazione antifurto               | Beta      |        |      |       |
+| Primo avvio                            | Beta      |        |      |       |
+| Utilizzo menù                          | Beta      |        |      |       |
+| Programmazione Doge                    | Beta      |        |      |       |
+| Sistema di notifica                    | Beta      |        |      |       |
+| Spostamento manuale Doge               | Beta      |        |      |       |
 
 ## 6 Procedure di Registrazione dei Test
 
