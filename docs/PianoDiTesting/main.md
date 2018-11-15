@@ -25,12 +25,10 @@ Quando le due macro-componenti (Robot ed applicazione) avranno raggiunto singola
 
 Suddivideremo il processo di testing in tre fasi:
 
-1) Inizialmente, sarà data priorità al corretto funzionamento delle specifiche del Robot: essendo gran parte dell'applicazione dipendente a comportamenti basilari della macchina, è necessario ottenere un certo grado di sicurezza sul corretto funzionamento di quest'ultima.
-2) In seguito, potremo cominciare la fase di testing relativa all'applicazione Android.
-Non potendo avere a disposizione in questa fase l'implementazione completa delle funzionalità utili per l'interazione con il Robot, ricorreremo anche all'utilizzo di dummy objects.
-
+1) inizialmente, sarà data priorità al corretto funzionamento delle specifiche del Robot: essendo gran parte dell'applicazione dipendente a comportamenti basilari della macchina, è necessario ottenere un certo grado di sicurezza sul corretto funzionamento di quest'ultima.
+2) in seguito, potremo cominciare la fase di testing relativa all'applicazione Android; non potendo avere a disposizione in questa fase l'implementazione completa delle funzionalità utili per l'interazione con il Robot, ricorreremo anche all'utilizzo di dummy objects.
 Per queste due prime fasi, adotteremo per lo più la strategia di testing White-Box, per avere così una certa garanzia di correttezza della parte software sviluppata indipendentemente.
-3) Una volta raggiunto un buon punto di stabilità per lo sviluppo singolo del Robot e dell'applicazione, sarà possibile e necessario verificare che l'interazione tra le due macro-componenti sia quella desiderata e, probabilmente, la stessa ottenuta dai test eseguiti con dummy objects.
+3) una volta raggiunto un buon punto di stabilità per lo sviluppo singolo del Robot e dell'applicazione, sarà possibile e necessario verificare che l'interazione tra le due macro-componenti sia quella desiderata e, probabilmente, la stessa ottenuta dai test eseguiti con dummy objects.
 In quest'ultima fase si adotterà maggiormente la strategia di testing Black-Box, ovvero simulando le possibili azioni che un utente finale potrà compiere.
 
 Altre strategie di testing che adotteremo sono le seguenti:
