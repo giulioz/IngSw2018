@@ -1,7 +1,7 @@
 #include "HTTP/WebServer.hpp"
 
 static void wrapperHandler(struct mg_connection *nc, int ev, void *p) {
-  WebServer *_this = static_cast<WebServer *>(nc->user_data);
+  WebServer *_this = static_cast<WebServer *>(nc->mgr->user_data);
   _this->handler(nc, ev, p);
 }
 
@@ -26,7 +26,7 @@ void WebServer::handler(struct mg_connection *c, int ev, void *p) {
   if (ev == MG_EV_HTTP_REQUEST) {
     struct http_message *hm = static_cast<struct http_message *>(p);
 
-    for (auto &&route : routes) {
+    for (auto route : routes) {
       if (route->match(hm->uri.p)) {
         route->handle();
         break;
