@@ -1,4 +1,4 @@
-#include "WebServer.hpp"
+#include "HTTP/WebServer.hpp"
 
 static void wrapperHandler(struct mg_connection *nc, int ev, void *p) {
   WebServer *_this = static_cast<WebServer *>(nc->user_data);
@@ -22,8 +22,15 @@ void WebServer::start() {
   }
 }
 
-void WebServer::handler(struct mg_connection *nc, int ev, void *p) {
+void WebServer::handler(struct mg_connection *c, int ev, void *p) {
   if (ev == MG_EV_HTTP_REQUEST) {
-    mg_serve_http(nc, (struct http_message *)p, httpServerOpts);
+    struct http_message *hm = static_cast<struct http_message *>(p);
+
+    mg_send_head(c, 200, hm->message.len, "Content-Type: text/plain");
+    mg_printf(c, "%.*s", (int)hm->message.len, hm->message.p);
   }
+}
+
+void WebServer::get(const char *path) {
+  
 }

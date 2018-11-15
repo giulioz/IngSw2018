@@ -1,4 +1,6 @@
+#include <vector>
 #include <mongoose.h>
+#include "HTTP/Route.hpp"
 
 #pragma once
 
@@ -8,9 +10,13 @@ class WebServer {
   struct mg_mgr mgr;
   struct mg_connection *nc;
 
+  std::vector<Route> routes;
+
+  void handler(struct mg_connection *nc, int ev, void *p);
+
  public:
   WebServer(const char *address);
   ~WebServer();
   void start();
-  void handler(struct mg_connection *nc, int ev, void *p);
+  void get(const char *path);
 };
