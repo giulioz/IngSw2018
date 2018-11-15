@@ -10,13 +10,14 @@ class WebServer {
   struct mg_mgr mgr;
   struct mg_connection *nc;
 
-  std::vector<Route> routes;
+  std::vector<Route*> routes;
 
-  void handler(struct mg_connection *nc, int ev, void *p);
 
  public:
   WebServer(const char *address);
   ~WebServer();
   void start();
-  void get(const char *path);
+  void handler(struct mg_connection *nc, int ev, void *p);
+
+  void addRoute(Route *route);
 };

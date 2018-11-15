@@ -5,6 +5,8 @@ Route::Route(const char *path) { this->path = path; }
 
 Route::~Route() {}
 
+static bool _match(const char *path, const char *toMatch);
+
 static bool _matchParam(const char *path, const char *toMatch) {
   while (*toMatch != '/' && *toMatch) {
     toMatch++;

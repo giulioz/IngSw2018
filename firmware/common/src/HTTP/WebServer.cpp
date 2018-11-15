@@ -26,11 +26,18 @@ void WebServer::handler(struct mg_connection *c, int ev, void *p) {
   if (ev == MG_EV_HTTP_REQUEST) {
     struct http_message *hm = static_cast<struct http_message *>(p);
 
-    mg_send_head(c, 200, hm->message.len, "Content-Type: text/plain");
-    mg_printf(c, "%.*s", (int)hm->message.len, hm->message.p);
+    for (auto &&route : routes) {
+      if (route->match(hm->uri.p)) {
+        route->handle();
+        break;
+      }
+    }
+
+    mg_send_head(c, 404, hm->message.len, "Content-Type: text/plain");
+    mg_printf(c, "Not found.");
   }
 }
 
-void WebServer::get(const char *path) {
-  
+void WebServer::addRoute(Route *route) {
+  this->routes.push_back(route);
 }
