@@ -17,34 +17,32 @@ Per una completa comprensione del presente documento e del progetto WatchDoge, f
 
 ## 2 Strategia di Testing
 
-In questa sezione vengono definite le strategie adottate per il processo di verifica e validazione dei requisiti di progetto.
+Seguiremo due percorsi di testing separati: uno per il Robot ed uno per l'applicazione Android.
+Adotteremo una strategia di testing basata sull'approccio Bottom-Up: si andranno dapprima a collaudare i moduli di basso livello presenti nella nostra gerarchio di sviluppo, crescendo poi di livello proseguendo con lo sviluppo.
+In questo modo, la verifica dei moduli implementati partirà dalle unità elementari fino ad arrivare a moduli sempre di più complessi.
 
-Suddivideremo inizialmente due percorsi di Testing separati: uno per il Robot ed uno per l'applicazione che dovrà poi interfacciarsi con quest'ultimo.
-Utilizzeremo un tipo di testing basato sull'approccio Bottom-Up: si andranno da prima a collaudare i moduli di basso livello presenti nella nostra gerarchio di sviluppo, crescendo poi di livello continuando con lo sviluppo.
-In questo modo la valutazione della corretezza dei moduli implementati partirà dalle parti più piccole (e fondamenteli) fino ad arrivare a moduli sempre di più alto livello.
+Quando le due macro-componenti (Robot ed applicazione) avranno raggiunto singolarmente una discreta stabilità, uniremo i due percorsi di testing, in modo tale da poter effettuare test basati sull'interazione tra di esse.
 
-Quando le due unità (Robot ed Applicazione) avranno un numero di componenti implementate tali da poter avere una vera e propria dipendenza l'uno dall'altro uniremo questi due percorsi, in modo tale da poter effettuare test riconducibili ed un utilizzo sempre più simile rispetto a quello di un utente finale.
+Suddivideremo il processo di testing in tre fasi:
 
-Suddivideremo il processo di Testing in tre fasi:
+1) Inizialmente, sarà data priorità al corretto funzionamento delle specifiche del Robot: essendo gran parte dell'applicazione dipendente a comportamenti basilari della macchina, è necessario ottenere un certo grado di sicurezza sul corretto funzionamento di quest'ultima.
+2) In seguito, potremo cominciare la fase di testing relativa all'applicazione Android.
+Non potendo avere a disposizione in questa fase l'implementazione completa delle funzionalità utili per l'interazione con il Robot, ricorreremo anche all'utilizzo di dummy objects.
 
-1) Inizialmente si darà priorità al corretto funzionamento delle specifiche del Robot: essendo gran parte dell'applicazione dipendente a comportamenti basilari della macchina è necessario ottenere un certo grado di sicurezza sul loro corretto funionamento.
-2) Potremo quindi poi cominciare la vera e propria fase di Testing relativa all'applicazione, testando quindi le funzionalità implementative non strettamente dipendenti a funzionalità raggiunte dalla parte Robot.
-Non potendo avere a disposizione in questa fase tutte le implementazioni delle funzioni che potrebbero essere necessarie per l'analisi di correttezza dei moduli implementati potremo ricorrere all'utilizzo di funzioni dummies.
-Per queste due fasi iniziali utilizzeremo per lo più un approccio di test a White-Box: effettuando test dettagliati che andranno a valutare la struttura della macchina e dell'app, per aver così una certezza sulla correttezza della parte software sviluppata.
+Per queste due prime fasi, adotteremo per lo più la strategia di testing White-Box, per avere così una certa garanzia di correttezza della parte software sviluppata indipendentemente.
+3) Una volta raggiunto un buon punto di stabilità per lo sviluppo singolo del Robot e dell'applicazione, sarà possibile e necessario verificare che l'interazione tra le due macro-componenti sia quella desiderata e, probabilmente, la stessa ottenuta dai test eseguiti con dummy objects.
+In quest'ultima fase si adotterà maggiormente la strategia di testing Black-Box, ovvero simulando le possibili azioni che un utente finale potrà compiere.
 
-3) Una volta raggiunte funzionalità tali che nessitano una sempre più grande interoperabilità dei due moduli del progetto, Robot ed applicazione, sarà necessario effettuare testare in contemporanea tra queste due parti.
-In questa fase si darà, inoltre, molto spazio ad un approccio di test a Black-Box: simulando le possibili azione che un utente finale andrà a compiere.
-
-Il modello di Testing che si andrà ad eseguire dovrà, inolte, rispettare le seguenti condizioni:
-- incremental Testing: i test vengono effettuati all'aggiunta di nuove unità;
-- stress Testing: i test vengono effettuati per verificare che il sistema sopporti il carico massimo definito in fase di progettazione (tipo di test necessario per sistemi distribuiti);
-- analisi statica: verificare la corrispondenza tra un sistema software e la sua specifica senza eseguire il codice.
+Altre strategie di testing che adotteremo sono le seguenti:
+- Incremental Testing: i test vengono effettuati all'aggiunta di nuove unità;
+- Stress Testing: i test vengono effettuati per verificare che il sistema sopporti il carico massimo definito in fase di progettazione (tipo di test necessario per sistemi distribuiti);
+- Analisi Statica: verificare la corrispondenza tra un sistema software e la sua specifica senza eseguire il codice.
 
 ## 3 Tracciabilità dei requisiti
 
-Gli identificatori utilizzati la creazione della tabella sono gli stessi descritti nel documento di specifica dei requisiti.
+Gli identificatori utilizzati per la creazione della tabella sono definiti nel Documento di Specifica dei Requisiti, sezione 3.5.
 
-Tutti i Test descritti di seguito devono essere riproducibili e rispettare nel modo più veritiero gli output descritti. 
+Tutti i test cases descritti di seguito devono essere riproducibili e rispettare i risultati previsti.
 
 | ID Requisito | Nome Requisito                         | Test Alpha                                                   | Test Beta                                                    |
 | ------------ | :------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -64,13 +62,10 @@ Tutti i Test descritti di seguito devono essere riproducibili e rispettare nel m
 
 Gli elementi sottoposti ai vari test durante il periodo di debugging saranno principalmente tutte le componenti presenti nel Robot e nell'applicazione.
 
-E' quindi possibile distinguire fra test specifici che si andranno ad effettuare per la parte macchina (Robot) e la parte applicativa (applicazione).
-
 Prove specifiche finalizzate a scoprire e risolvere eventuali problematiche che potrebbero presentarsi nel Robot riguarderanno:
-- il corretto funzionamento dei singoli componenti forniti in bundle con il sistema Lego EV3;
-- la parte firmware che andremo a sviluppare sulla macchina.
-
-Un'ulteriore tipologia di test specifici da effettuare riguarderanno i singoli componenti (e quindi eventuali moduli, suddivisi per tipologie di basso ed alto livello) dell'applicazione Android.
+- i singoli componenti forniti nel set Lego Mindstorm EV3;
+- il firmware del Robot;
+- le unità, a partire da quelle elementari alle più complesse, dell'applicazione Android.
 
 ## 5 Schedule di Testing
 
@@ -97,29 +92,26 @@ Un'ulteriore tipologia di test specifici da effettuare riguarderanno i singoli c
 
 ## 6 Procedure di Registrazione dei Test
 
-Per eseguire e registrare molti test ci avvaleremo di un software chiamato *Travis CI*, un software gratuito messo a disposizione su *Github* per il testing del software.
+Per eseguire ed archiviare il risultato dei test ci avvaleremo di *Travis CI*, uno strumento software gratuito messo a disposizione su *Github* per il testing del software.
 
-Dopo una configurazione iniziale, Travis inizierá a testare ogni commit che verrá pushato sulla repository del progetto di Github ed a tenerne traccia automaticamente dell'esito.
+Dopo la configurazione iniziale, *Travis CI* verificherà ogni unità pushata sulla repository remota del progetto su Github, tenendo traccia dell'esito automaticamente.
 
-Sará possibile accedere ai vari esiti dei testing effettuati da Travis tramite un apposita sezione su Github.
+Sarà possibile accedere agli esiti dei test effettuati da *Travis CI* tramite un'apposita sezione su Github.
 
-Per il resto del codice per cui Travis non é configurato sfrutteremo la *Schedule del Testing* (Punto 5.) per tener traccia di tutti i dati necessari al testing: descrizione feature, tester, data ed esito.
+Per tutto il codice per cui *Travis CI* non è configurato, sfrutteremo il modello definito nella sezione 5 *Schedule di Testing* per documentare il processo di testing: descrizione della funzionalità, nome del tester, data di testing ed esito.
 
 ## 7 Requisiti Hardware e Software
-Per eseguire i vari testing useremo questi strumenti:
+
+Per eseguire i vari test, useremo questi strumenti:
 
 - Hardware:
-
-    - Smartphone personali dei componenti del gruppo per testare l'applicazione Android
-    - Robot EV3 per testarne il programma 
-
+    - Smartphone personali dei componenti del gruppo per verificare l'applicazione Android
+    - Robot EV3 per verificare il programma
 
 - Software:
     - Emulatore di smartphone Android (disponibile nativamente su Android Studio)
-    - Travis CI (disponibile su Github)
-
+    - *Travis CI* (disponibile su Github)
 
 ## 8 Vincoli
 
 Il processo di testing verrà effettuato durante e in seguito l'attività di sviluppo del progetto e dovrà terminare entro 5 giorni prima della data di scadenza (entro il 26 gennaio 2019), al fine di verificare e validare tutti i requisiti di progetto entro i limiti di tempo e riducendo il più possibile la probabilità di errori durante la fase di produzione.
-
