@@ -6,7 +6,6 @@
 
 class WebServer {
  private:
-  struct mg_serve_http_opts httpServerOpts;
   struct mg_mgr mgr;
   struct mg_connection *nc;
 

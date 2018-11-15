@@ -1,19 +1,25 @@
+#include "HTTP/Response.hpp"
 #include "HTTP/Route.hpp"
 #include "HTTP/WebServer.hpp"
 
+#include <mongoose.h>
 #include <stdio.h>
 
-class TestRoute : public Route {
+class ErrorRoute : public Route {
  public:
-  TestRoute() : Route("/test") {}
+  ErrorRoute() : Route("") {}
 
-  void handle() { printf("test lol\n"); }
+  void handle(Response *res) {
+    mg_printf(res->connection, "%s",
+              "HTTP/1.0 404 Not Found\r\n"
+              "Content-Length: 0\r\n\r\n");
+  }
 };
 
 int main() {
-  TestRoute testRoute;
+  ErrorRoute errorRoute;
 
   WebServer webServer("0.0.0.0:8000");
-  webServer.addRoute(static_cast<Route*>(&testRoute));
+  webServer.addRoute(static_cast<Route *>(&errorRoute));
   webServer.start();
 }

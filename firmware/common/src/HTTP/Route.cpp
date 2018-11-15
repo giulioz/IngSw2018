@@ -35,4 +35,4 @@ static bool _match(const char *path, const char *toMatch) {
 
 bool Route::match(const char *path) { return _match(path, this->path); }
 
-void Route::handle() {}
+void Route::handle(Response *response) {}

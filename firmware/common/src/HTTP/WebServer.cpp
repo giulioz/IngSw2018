@@ -10,8 +10,6 @@ WebServer::WebServer(const char *address) {
   nc = mg_bind(&mgr, address, wrapperHandler);
 
   mg_set_protocol_http_websocket(nc);
-  httpServerOpts.document_root = ".";
-  httpServerOpts.enable_directory_listing = "yes";
 }
 
 WebServer::~WebServer() { mg_mgr_free(&mgr); }
@@ -28,13 +26,11 @@ void WebServer::handler(struct mg_connection *c, int ev, void *p) {
 
     for (auto route : routes) {
       if (route->match(hm->uri.p)) {
-        route->handle();
+        Response response(c);
+        route->handle(&response);
         break;
       }
     }
-
-    mg_send_head(c, 404, hm->message.len, "Content-Type: text/plain");
-    mg_printf(c, "Not found.");
   }
 }
 

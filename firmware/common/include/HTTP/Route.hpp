@@ -1,3 +1,5 @@
+#include "HTTP/Response.hpp"
+
 #pragma once
 
 class Route {
@@ -9,5 +11,5 @@ class Route {
   virtual ~Route();
 
   bool match(const char *path);
-  virtual void handle() = 0;
+  virtual void handle(Response* response) = 0;
 };
