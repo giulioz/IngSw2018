@@ -1,0 +1,318 @@
+\documentclass{article}
+\usepackage[a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\title{Piano di Progetto}
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\usepackage{adjustbox}
+\usepackage{lastpage}
+
+%% HEADER
+\usepackage[sfdefault,lf]{carlito}
+%% The 'lf' option for lining figures
+%% The 'sfdefault' option to make the base font sans serif
+\usepackage[parfill]{parskip}
+\renewcommand*\oldstylenums[1]{\carlitoOsF #1}
+\usepackage{fancyhdr}
+%\usepackage{natbib}
+%\usepackage{authblk}
+\setlength{\headheight}{41pt}
+
+\fancyhead[L]{WatchDoge: Piano di Testing}
+\fancyhead[R]{
+\includegraphics[width=4cm]{gfx/logo.pdf}
+}
+\fancyfoot[C]{\sffamily\fontsize{9pt}{9pt}\selectfont{\thepage/\pageref{LastPage}}}
+\pagestyle{fancy}
+
+\makeatletter
+
+\newcommand{\spacedlowsmallcaps}[1]{\textbf{#1}}
+\newcommand{\titleColor}{}
+\makeatother
+
+\usepackage{graphicx}
+\usepackage[absolute]{textpos}
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{gray}{0.9}
+
+\begin{document}
+\rowcolors{1}{}{lightgray}
+\thispagestyle{empty}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+\begingroup
+\fontsize{11pt}{11pt}\selectfont
+\linespread{1.05}
+
+\begin{textblock}{50}(0,0)
+\noindent \includegraphics{gfx/00_cafoscari}
+\noindent \end{textblock}
+~
+\begin{textblock}{143}(47,42)
+
+\noindent {\LARGE{}Progetto per\\Ingegneria del Software \emph{(CT0090)}}\\
+\vspace{30pt}
+
+%\vspace{30pt}
+
+
+\noindent %
+\begin{minipage}[t]{1\columnwidth}%
+\leavevmode
+\titleColor
+\raggedright
+\Huge
+\includegraphics[width=12cm]{gfx/logo.pdf}
+\vspace{10pt}
+
+WatchDoge:
+Piano di Testing \\
+\LARGE{Versione 1.0 - 15 novembre 2018}
+\end{minipage}
+
+\vspace{150pt}
+
+
+\noindent {\large{}\spacedlowsmallcaps{{\large{}Redazione}}}{\large \par}
+\begin{itemize}
+\item   Dario Lazzaro
+\item   Giovanni Scodeller
+\item   Giulio Zausa
+\item   Samuele Casarin
+\item   Sandro Baccega
+\end{itemize}
+
+\vspace{20pt}
+
+
+\noindent {\large{}\spacedlowsmallcaps{{\large{}Approvazione}}}{\large \par}
+\begin{itemize}
+\item   Dario Lazzaro
+\item   Samuele Casarin
+\item   Sandro Baccega
+\end{itemize}
+\end{textblock}
+\endgroup
+\pagebreak
+
+%
+%	inizio roba vera e propria
+%
+
+\tableofcontents
+
+\pagebreak
+  
+\section{Introduzione}
+
+Il seguente documento contiene le informazioni relative alla
+pianificazione del processo di testing per il progetto WatchDoge. Tale
+processo ha lo scopo di verifica e validazione dei requisiti di progetto
+e verrà eseguito dal team di progetto durante e in seguito alla fase di
+sviluppo.
+
+La struttura del documento è la seguente:
+\begin{itemize}
+\item \textbf{Strategia di Testing}: in questa sezione sono definite le procedure adottate per il processo di testing in ognuno degli elementi considerati;
+\item \textbf{Tracciabilità dei Requisiti}: in questa sezione sono definite le associazioni tra ciascuna specifica dei requisiti di progetto (vedi \emph{Documento di spefica dei requisiti}, sezione 3.5) e il metodo di testing e la condizione per cui il test risulta essere soddisfatto;
+\item \textbf{Elementi di Testing}: in questa sezione sono riportati gli elementi soggetti al processo di testing;
+\item \textbf{Schedule di Testing}: in questa sezione è visualizzato lo schema di allocazione temporale delle risorse di progetto impiegate per il processo di testing;
+\item \textbf{Procedure di Registrazione dei Test}: in questa sezione sono definite le modalità con cui i risultati del processo ditesting vengono raccolti ed archiviati;
+\item \textbf{Requisiti Hardware e Software}: in questa sezione sono definiti i requisiti in termini di hardware e software che devono essere soddisfatti per l'esecuzione del processo di testing;
+\item \textbf{Vincoli}: in questa sezione sono definiti i vincoli da rispettare al fine che lo stesso processo di testing possa essere considerato attendibile.
+\end{itemize}
+
+Per una completa comprensione del presente documento e del progetto
+WatchDoge, fare riferimento anche ai documenti \emph{Piano di Progetto}
+e \emph{Documento di Specifica dei Requisiti}.
+
+\section{Strategia di Testing}
+
+Seguiremo due percorsi di testing separati: uno per il Robot ed uno per
+l'applicazione Android. Adotteremo una strategia di testing basata
+sull'approccio \textbf{Bottom-Up}: si andranno dapprima a collaudare i moduli di
+basso livello presenti nella nostra gerarchia di astrazione, crescendo poi
+di livello proseguendo con lo sviluppo. In questo modo, la verifica dei
+moduli implementati partirà dalle unità elementari fino ad arrivare a
+moduli sempre di più complessi.
+
+Quando le due macro-componenti (Robot ed applicazione) avranno raggiunto
+singolarmente una discreta stabilità, uniremo i due percorsi di testing,
+in modo tale da poter effettuare test basati sull'interazione tra di
+esse.
+
+Suddivideremo il processo di testing in tre fasi:
+
+\begin{enumerate}
+\item
+  Inizialmente, sarà data priorità al corretto funzionamento delle
+  specifiche del \textbf{Robot}: essendo gran parte dell'applicazione dipendente
+  a comportamenti basilari della macchina, è necessario ottenere un
+  certo grado di sicurezza sul corretto funzionamento di quest'ultima.
+\item
+  In seguito, potremo cominciare la fase di testing relativa
+  all'applicazione \textbf{Android}; non potendo avere a disposizione in questa
+  fase l'implementazione completa delle funzionalità utili per
+  l'interazione con il Robot, ricorreremo anche all'utilizzo di dummy
+  objects. Per queste due prime fasi, adotteremo per lo più la strategia
+  di testing \textbf{White-Box}, per avere così una certa garanzia di correttezza
+  della parte software sviluppata indipendentemente.
+\item
+  Una volta raggiunto un buon punto di stabilità per lo sviluppo singolo
+  del Robot e dell'applicazione, sarà possibile e necessario verificare
+  che \textbf{l'interazione tra le due macro-componenti} sia quella desiderata e,
+  probabilmente, la stessa ottenuta dai test eseguiti con dummy objects.
+  In quest'ultima fase si adotterà maggiormente la strategia di testing
+  \textbf{Black-Box}, ovvero simulando le possibili azioni che un utente finale
+  potrà compiere.
+\end{enumerate}
+
+Altre strategie di testing che adotteremo sono le seguenti:
+\begin{itemize}
+\item \textbf{Incremental Testing: }i test vengono effettuati all'aggiunta di nuove unità, per evitare la regressione sulle unità precedentemente sviluppate;
+\item \textbf{Stress Testing: }i test vengono effettuati per verificare che il
+sistema sopporti il carico massimo definito in fase di progettazione
+(tipo di test necessario per sistemi distribuiti);
+\item \textbf{Analisi Statica:}
+verificare la corrispondenza tra un sistema software e la sua specifica
+senza eseguire il codice, utilizzando software che ne verifichino il contenuto in maniera statica.
+\end{itemize}
+
+\section{Tracciabilità dei
+requisiti}
+
+Gli identificatori utilizzati per la creazione della tabella sono
+definiti nel Documento di Specifica dei Requisiti, sezione 3.5.
+
+Tutti i test cases descritti di seguito devono essere riproducibili e
+rispettare i risultati previsti.
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{| c | p{4cm} p{4cm} p{4cm} |}
+\hline
+\textbf{ID Requisito} & \textbf{Nome Requisito} & \textbf{Test Alpha} & \textbf{Test Beta} \\ \hline
+FRS-01 & Associazione con codice Pin & Si verifica quando il Doge riconosce il Pin inviato dal telefono. & Si verifica quando il Doge ed il telefono si associano
+correttamente. \\ \hline
+FRS-02 & Rilevazione di un intruso & Il Doge riesce a vedere l'ambiente attraverso la telecamera. & Il Doge riesce a rilevare un oggetto in movimento. \\ \hline
+FRS-03 & Notificazione acustica dell'intrusione & Il Doge emette un suono acustico. & Alla rilevazione di un movimento emette un suono acustico \\ \hline
+FRS-04 & Disattivazione antifurto & Il Doge si spegne attraverso un segnale. & Il Doge si spegne tramite una sequenza di tasti. \\ \hline
+FRS-05 & Primo avvio & L'operazione è verificata se al tap l'applicazione si avvia
+correttamente. & L'operazione è verificata se gli utenti riescono ad aprire
+l'applicazione correttamente. \\ \hline
+FRS-06 & Utilizzo menù & Controllo del menù, apertura e primo utilizzo. & Utilizzo stressante dell'applicazione. \\ \hline
+FRS-07 & Programmazione Doge & Controllo delle funzionalità programmabili. & Inserimento di tutte le possibili combinazioni programmabili. \\ \hline
+FRS-08 & Sistema di notifica & L'applicazione crea notifiche. & Le notifiche vengono create con informazioni inviate dal robot. \\ \hline
+FRS-09 & Spostamento manuale Doge & Il Doge riesce a muoversi su un asse. & Il Doge riesce a muoversi attraverso dei segnali. \\
+\hline
+\end{tabular}
+\end{figure}
+
+\section{Elementi di Testing}
+
+Gli elementi sottoposti ai vari test durante il periodo di debugging
+saranno principalmente tutte le componenti presenti nel Robot e
+nell'applicazione.
+
+Prove specifiche finalizzate a scoprire e risolvere eventuali
+problematiche che potrebbero presentarsi nel Robot riguarderanno:
+\begin{itemize}
+    \item I singoli componenti forniti nel set \textbf{Lego Mindstorm EV3};
+    \item Il \textbf{firmware} del Robot;
+    \item Le unità, a partire da quelle elementari alle più complesse,
+dell'applicazione \textbf{Android}.
+\end{itemize}
+
+\section{Schedule di Testing}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+Nome Requisito & Tipo test & Tester & Data & Esito\tabularnewline
+\midrule
+\endhead
+Associazione con codice Pin & Alfa & & &\tabularnewline
+Rilevazione di un intruso & Alfa & & &\tabularnewline
+Notificazione acustica dell'intrusione & Alfa & & &\tabularnewline
+Disattivazione antifurto & Alfa & & &\tabularnewline
+Primo avvio & Alfa & & &\tabularnewline
+Utilizzo menù & Alfa & & &\tabularnewline
+Programmazione Doge & Alfa & & &\tabularnewline
+Sistema di notifica & Alfa & & &\tabularnewline
+Spostamento manuale Doge & Alfa & & &\tabularnewline
+Associazione con codice Pin & Beta & & &\tabularnewline
+Rilevazione di un intruso & Beta & & &\tabularnewline
+Notificazione acustica dell'intrusione & Beta & & &\tabularnewline
+Disattivazione antifurto & Beta & & &\tabularnewline
+Primo avvio & Beta & & &\tabularnewline
+Utilizzo menù & Beta & & &\tabularnewline
+Programmazione Doge & Beta & & &\tabularnewline
+Sistema di notifica & Beta & & &\tabularnewline
+Spostamento manuale Doge & Beta & & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+\section{Procedure di Registrazione dei
+Test}
+
+Per eseguire ed archiviare il risultato dei test ci avvaleremo di
+\emph{Travis CI}, uno strumento software gratuito messo a disposizione
+su \emph{Github} per il testing del software.
+
+Dopo la configurazione iniziale, \emph{Travis CI} verificherà ogni commit della repository remota del progetto su Github, eseguendo dei test automatici e tenendo traccia dell'esito automaticamente.
+
+Sarà possibile accedere agli esiti dei test effettuati da \emph{Travis
+CI} tramite un'apposita sezione su Github.
+
+Per tutto il codice per cui \emph{Travis CI} non è configurato,
+sfrutteremo il modello definito nella sezione 5 \emph{Schedule di
+Testing} per documentare il processo di testing: descrizione della
+funzionalità, nome del tester, data di testing ed esito.
+
+\section{Requisiti Hardware e
+Software}
+
+Per eseguire i vari test, useremo questi strumenti:
+
+\begin{itemize}
+\item
+  \textbf{Hardware:}
+
+  \begin{itemize}
+  \item
+    Smartphone personali dei componenti del gruppo per verificare
+    l'applicazione Android
+  \item
+    Robot EV3 per verificare il programma
+  \end{itemize}
+\item
+  \textbf{Software:}
+
+  \begin{itemize}
+  \item
+    Emulatore di smartphone Android (disponibile nativamente su Android
+    Studio)
+  \item
+    \emph{Travis CI} (disponibile su Github)
+  \end{itemize}
+\end{itemize}
+
+\section{Vincoli}
+
+Il processo di testing verrà effettuato durante e in seguito l'attività
+di sviluppo del progetto e dovrà terminare entro 5 giorni prima della
+data di scadenza (entro il 26 gennaio 2019), al fine di verificare e
+validare tutti i requisiti di progetto entro i limiti di tempo e
+riducendo il più possibile la probabilità di errori durante la fase di
+produzione.
+
+
+\end{document}
