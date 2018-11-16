@@ -1,6 +1,6 @@
-#include "HTTP/Response.hpp"
-
 #pragma once
+
+#include "HTTP/Response.hpp"
 
 class Route {
  private:

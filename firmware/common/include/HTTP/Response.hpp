@@ -1,6 +1,6 @@
-#include <mongoose.h>
-
 #pragma once
+
+#include <mongoose.h>
 
 class Response {
  private:

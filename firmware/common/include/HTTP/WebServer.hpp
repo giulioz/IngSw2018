@@ -1,9 +1,9 @@
+#pragma once
+
 #include <vector>
 #include <mongoose.h>
 #include "HTTP/Route.hpp"
 #include "HTTP/NotFoundRoute.hpp"
-
-#pragma once
 
 class WebServer {
  private:

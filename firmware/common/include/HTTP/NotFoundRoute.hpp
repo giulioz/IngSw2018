@@ -1,3 +1,5 @@
+#pragma once
+
 #include "HTTP/Response.hpp"
 #include "HTTP/Route.hpp"
 
