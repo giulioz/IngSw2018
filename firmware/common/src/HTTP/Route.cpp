@@ -1,7 +1,10 @@
 #include "HTTP/Route.hpp"
 #include <string>
 
-Route::Route(const char *path) { this->path = path; }
+Route::Route(const char *path, const char *method) {
+  this->path = path;
+  this->method = method;
+}
 
 Route::~Route() {}
 
@@ -33,6 +36,9 @@ static bool _match(const char *path, const char *toMatch) {
   }
 }
 
-bool Route::match(const char *path) { return _match(path, this->path); }
+bool Route::match(const char *path, const char *method) {
+  return (_match(path, this->path) || strcmp("*", this->method) == 0) &&
+         (strcmp(method, this->method) == 0 || strcmp("*", this->method) == 0);
+}
 
 void Route::handle(Response *response) {}

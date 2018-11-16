@@ -7,9 +7,11 @@ static void wrapperHandler(struct mg_connection *nc, int ev, void *p) {
 
 WebServer::WebServer(const char *address) {
   mg_mgr_init(&mgr, this);
-  nc = mg_bind(&mgr, address, wrapperHandler);
+  this->nc = mg_bind(&mgr, address, wrapperHandler);
 
-  mg_set_protocol_http_websocket(nc);
+  mg_set_protocol_http_websocket(this->nc);
+
+  this->addRoute(static_cast<Route *>(&this->notFoundRoute));
 }
 
 WebServer::~WebServer() { mg_mgr_free(&mgr); }
@@ -25,7 +27,7 @@ void WebServer::handler(struct mg_connection *c, int ev, void *p) {
     struct http_message *hm = static_cast<struct http_message *>(p);
 
     for (auto route : routes) {
-      if (route->match(hm->uri.p)) {
+      if (route->match(hm->uri.p, hm->method.p)) {
         Response response(c);
         route->handle(&response);
         break;
@@ -34,6 +36,4 @@ void WebServer::handler(struct mg_connection *c, int ev, void *p) {
   }
 }
 
-void WebServer::addRoute(Route *route) {
-  this->routes.push_back(route);
-}
+void WebServer::addRoute(Route *route) { this->routes.push_back(route); }
