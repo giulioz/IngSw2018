@@ -5,7 +5,7 @@ static void wrapperHandler(struct mg_connection *nc, int ev, void *p) {
   _this->handler(nc, ev, p);
 }
 
-WebServer::WebServer(const char *address) {
+WebServer::WebServer(const char *address) : Router("") {
   mg_mgr_init(&mgr, this);
   this->nc = mg_bind(&mgr, address, wrapperHandler);
 
@@ -24,16 +24,6 @@ void WebServer::handler(struct mg_connection *c, int ev, void *p) {
   if (ev == MG_EV_HTTP_REQUEST) {
     struct http_message *hm = static_cast<struct http_message *>(p);
     Response response(c);
-
-    for (auto route : routes) {
-      if (route->match(hm->uri.p, hm->method.p)) {
-        route->handle(&response);
-        return;
-      }
-    }
-
-    this->notFoundRoute.handle(&response);
+    this->handle(hm->uri.p, hm->method.p, &response);
   }
 }
-
-void WebServer::addRoute(Route *route) { this->routes.push_back(route); }
