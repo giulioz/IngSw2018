@@ -3,6 +3,8 @@ project(WatchDogeFirmware)
 
 add_subdirectory(deps/opencv)
 
+set (CMAKE_CXX_STANDARD 11)
+
 if(ROBOT)
 add_subdirectory(deps/ev3dev-lang-cpp)
 endif()
