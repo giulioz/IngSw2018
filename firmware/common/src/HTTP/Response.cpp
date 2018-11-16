@@ -138,6 +138,10 @@ Response::Response(struct mg_connection* connection) {
 Response::~Response() {}
 
 void Response::type(const char* mimeType) {
+  if (!statusSent) {
+    status(200);
+  }
+
   mg_printf(connection, "Content-Type: %s\r\n", mimeType);
   this->typeSent = true;
 }
@@ -183,7 +187,7 @@ void Response::send(const char* content) {
 }
 
 void Response::json(const char* content) {
-  this->type("application/json");
+  this->type("application/json; charset=utf-8");
   this->send(content);
 }
 
