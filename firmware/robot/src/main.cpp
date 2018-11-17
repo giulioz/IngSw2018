@@ -1,35 +1,44 @@
-#include "ev3dev.h"
-#include <iostream>
-#include <stdlib.h>
-#include <stdio.h>
+#include "HTTP/Request.hpp"
+#include "HTTP/Response.hpp"
+#include "HTTP/Route.hpp"
+#include "HTTP/WebServer.hpp"
+#include "DB/DB.hpp"
 
-using namespace ev3dev;
-using namespace std;
+class TestRoute : public Route {
+ public:
+  TestRoute() : Route("/test", "GET") {}
+  void handle(const Request *request, Response *response) override {
+    response->json("{value:0}");
+  }
+};
 
-void moveToPosition(large_motor motor, int position, int speed = 30)
-{
-  motor.set_position_sp(position);
-  motor.set_speed_sp(speed);
-  motor.set_command(motor.command_run_to_abs_pos);
+class EchoRoute : public Route {
+ public:
+  EchoRoute() : Route("/echo", "GET") {}
+  void handle(const Request *request, Response *response) override {
+    std::string tmp;
+    tmp += "URL: " + request->url + '\n';
+    tmp += "METHOD: " + request->method + '\n';
+    tmp += "BODY: " + request->body + '\n';
+    tmp += "QUERY: " + request->queryString + '\n';
 
-  while (abs(position - motor.position()) > 5)
-    ;
+    for (auto pair : request->headerFields) {
+      tmp += "HEADER FIELD: " + pair.key + " = " + pair.value + '\n';
+    }
+    response->json(tmp.c_str());
+  }
+};
 
-  motor.set_command(motor.stop_action_brake);
-}
+int main() {
+  DB db("test.db");
 
-void interopTest()
-{
-  cout << "test";
-}
+  Server server;
+  WebServer webServer(&server, "0.0.0.0:8000");
 
-int main(int argc, char **argv)
-{
-  large_motor motor(OUTPUT_D);
-  motor.reset();
-  int val = 0;
-  sscanf(argv[1], "%d", &val);
-  moveToPosition(motor, val);
+  TestRoute testRoute;
+  webServer.addRoute(static_cast<Route *>(&testRoute));
+  EchoRoute echoRoute;
+  webServer.addRoute(static_cast<Route *>(&echoRoute));
 
-  return 0;
+  server.start();
 }
