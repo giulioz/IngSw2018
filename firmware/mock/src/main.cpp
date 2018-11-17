@@ -17,13 +17,13 @@ class EchoRoute : public Route {
   void handle(const Request *request, Response *response) override {
     std::string tmp;
     tmp += "URL:";
-    tmp += request->url;
+    tmp += request->url + '\n';
     tmp += "METHOD:";
-    tmp += request->method;
+    tmp += request->method + '\n';
     tmp += "BODY:";
-    tmp += request->body;
+    tmp += request->body + '\n';
     tmp += "QUERY:";
-    tmp += request->queryString;
+    tmp += request->queryString + '\n';
     response->json(tmp.c_str());
   }
 };
