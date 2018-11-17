@@ -2,6 +2,7 @@
 #include "HTTP/Response.hpp"
 #include "HTTP/Route.hpp"
 #include "HTTP/WebServer.hpp"
+#include "DB/DB.hpp"
 
 class TestRoute : public Route {
  public:
@@ -29,12 +30,13 @@ class EchoRoute : public Route {
 };
 
 int main() {
+  DB db("test.db");
+
   Server server;
   WebServer webServer(&server, "0.0.0.0:8000");
 
   TestRoute testRoute;
   webServer.addRoute(static_cast<Route *>(&testRoute));
-
   EchoRoute echoRoute;
   webServer.addRoute(static_cast<Route *>(&echoRoute));
 
