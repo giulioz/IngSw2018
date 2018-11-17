@@ -7,11 +7,11 @@ add_library(WatchDogeCommon
         ${SOURCES}
         ../deps/mongoose/mongoose.c
         ../deps/unqlite/unqlite.c
-        ../deps/json/single-include/nlohmann/json.hpp)
+        ../deps/json/single_include/nlohmann/json.hpp)
 
 target_include_directories(WatchDogeCommon PUBLIC
         ${WatchDogeCommon_SOURCE_DIR}/include
         ${WatchDogeCommon_SOURCE_DIR}/../deps/mongoose
         ${WatchDogeCommon_SOURCE_DIR}/../deps/unqlite
-        ${WatchDogeCommon_SOURCE_DIR}/../deps/json/single-include
+        ${WatchDogeCommon_SOURCE_DIR}/../deps/json/single_include
 )
