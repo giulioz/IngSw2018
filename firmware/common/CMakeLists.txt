@@ -3,14 +3,15 @@ project(WatchDogeCommon)
 
 file(GLOB SOURCES src/*.cpp src/*/*.cpp)
 
-add_library(WatchDogeCommon ${SOURCES}
+add_library(WatchDogeCommon
+        ${SOURCES}
         ../deps/mongoose/mongoose.c
         ../deps/unqlite/unqlite.c
-        ../deps/json/nlohmann/json.hpp)
+        ../deps/json/single-include/nlohmann/json.hpp)
 
 target_include_directories(WatchDogeCommon PUBLIC
         ${WatchDogeCommon_SOURCE_DIR}/include
         ${WatchDogeCommon_SOURCE_DIR}/../deps/mongoose
         ${WatchDogeCommon_SOURCE_DIR}/../deps/unqlite
-        ${WatchDogeCommon_SOURCE_DIR}/../deps/json
+        ${WatchDogeCommon_SOURCE_DIR}/../deps/json/single-include
 )
