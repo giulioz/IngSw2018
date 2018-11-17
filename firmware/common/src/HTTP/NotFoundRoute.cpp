@@ -2,6 +2,6 @@
 
 NotFoundRoute::NotFoundRoute() : Route("*", "*") {}
 
-void NotFoundRoute::handle(Response *res) {
-  res->sendStatus(404);
+void NotFoundRoute::handle(const Request *request, Response *response) {
+  response->sendStatus(404);
 }

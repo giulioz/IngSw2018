@@ -23,7 +23,8 @@ void WebServer::start() {
 void WebServer::handler(struct mg_connection *c, int ev, void *p) {
   if (ev == MG_EV_HTTP_REQUEST) {
     struct http_message *hm = static_cast<struct http_message *>(p);
+    Request request(hm);
     Response response(c);
-    this->handle(hm->uri.p, hm->method.p, &response);
+    this->handle(&request, &response);
   }
 }

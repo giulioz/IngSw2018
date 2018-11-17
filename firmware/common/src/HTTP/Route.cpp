@@ -52,9 +52,7 @@ static bool _matchMethod(const char *method, const char *toMatch) {
   return false;
 }
 
-bool Route::match(const char *path, const char *method) {
-  return (_match(path, this->path) || strcmp("*", this->method) == 0) &&
-         (_matchMethod(method, this->method) || strcmp("*", this->method) == 0);
+bool Route::match(const Request *request) {
+  return (_match(request->url.c_str(), this->path) || strcmp("*", this->method) == 0) &&
+         (_matchMethod(request->method.c_str(), this->method) || strcmp("*", this->method) == 0);
 }
-
-void Route::handle(Response *response) {}
