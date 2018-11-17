@@ -19,8 +19,11 @@ Request::Request(struct http_message *hm) {
   }
 
   for (size_t i = 0; hm->header_names[i].p; i++) {
+    std::string tmpN(hm->header_names[i].p);
+    std::string tmpV(hm->header_values[i].p);
     headerFields.push_back(
-        HeaderField(hm->header_names[i].p, hm->header_values[i].p));
+        HeaderField(tmpN.substr(0, hm->header_names[i].len),
+                    tmpV.substr(0, hm->header_values[i].len)));
   }
 }
 

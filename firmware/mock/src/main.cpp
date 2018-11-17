@@ -16,14 +16,14 @@ class EchoRoute : public Route {
   EchoRoute() : Route("/echo", "GET") {}
   void handle(const Request *request, Response *response) override {
     std::string tmp;
-    tmp += "URL:";
-    tmp += request->url + '\n';
-    tmp += "METHOD:";
-    tmp += request->method + '\n';
-    tmp += "BODY:";
-    tmp += request->body + '\n';
-    tmp += "QUERY:";
-    tmp += request->queryString + '\n';
+    tmp += "URL: " + request->url + '\n';
+    tmp += "METHOD: " + request->method + '\n';
+    tmp += "BODY: " + request->body + '\n';
+    tmp += "QUERY: " + request->queryString + '\n';
+
+    for (auto pair : request->headerFields) {
+      tmp += "HEADER FIELD: " + pair.key + " = " + pair.value + '\n';
+    }
     response->json(tmp.c_str());
   }
 };
