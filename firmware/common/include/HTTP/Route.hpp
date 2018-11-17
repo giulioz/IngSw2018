@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HTTP/Response.hpp"
+#include "HTTP/Request.hpp"
 
 class Route {
  private:
@@ -11,6 +12,6 @@ class Route {
   Route(const char *path, const char *method);
   virtual ~Route();
 
-  bool match(const char *path, const char *method);
-  virtual void handle(Response* response) = 0;
+  bool match(const Request *request);
+  virtual void handle(const Request *request, Response* response) = 0;
 };
