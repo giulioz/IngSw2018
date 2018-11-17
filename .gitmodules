@@ -10,3 +10,6 @@
 [submodule "firmware/deps/unqlite"]
 	path = firmware/deps/unqlite
 	url = https://github.com/symisc/unqlite.git
+[submodule "firmware/deps/json"]
+	path = firmware/deps/json
+	url = https://github.com/nlohmann/json.git
