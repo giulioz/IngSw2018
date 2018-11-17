@@ -3,7 +3,6 @@
 //CAPIRE COSA VIENE RICEVUTO
 //CREARE IL MESSAGGIO DI RISPOSTA PER ESITO POSITIVO
 
-
 ServerUDP::ServerUDP(const char *address)
 {
 
@@ -35,6 +34,8 @@ void ServerUDP::handler(struct mg_connection *c, int ev, void *p)
         if (nc->recv_mbuf == DOGE_SEARCH)
         {
             mg_send(c, DOGE_ANNOUNCE + IPaddress, msglen);
+
+            nc->flags |= MG_F_SEND_AND_CLOSE;
         }
         mbuf_remove(io, io->len); //Pulisce il buffer
     }
