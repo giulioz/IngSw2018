@@ -23,16 +23,13 @@ void DB::appendValue(const char* key, const void* data,
 }
 
 bool DB::deleteValue(const char* key) {
-  if (unqlite_kv_delete(pDb, key, -1) != UNQLITE_OK) {
-    throw "Cannot delete value.";
-  }
+  return (unqlite_kv_delete(pDb, key, -1) == UNQLITE_OK);
 }
 
-template<typename T, size_t s>
-bool DB::fetchValue(const char* key, std::array<T,s> buffer) {
-  if (unqlite_kv_fetch(pDb, key, -1, buffer.data, buffer.size) != UNQLITE_OK) {
-    throw "Cannot store value.";
-  }
+template <typename T, size_t s>
+bool DB::fetchValue(const char* key, std::array<T, s> buffer) {
+  return (unqlite_kv_fetch(pDb, key, -1, buffer.data, buffer.size) ==
+          UNQLITE_OK);
 }
 
 // bool DB::fetchValueAsync(const char* key) {
