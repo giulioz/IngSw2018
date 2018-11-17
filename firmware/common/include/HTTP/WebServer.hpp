@@ -2,18 +2,18 @@
 
 #include <mongoose.h>
 #include <vector>
+#include "Server.hpp"
 #include "HTTP/NotFoundRoute.hpp"
 #include "HTTP/Route.hpp"
 #include "HTTP/Router.hpp"
 
 class WebServer : public Router {
  private:
-  struct mg_mgr mgr;
+  Server *server;
   struct mg_connection *nc;
 
  public:
-  WebServer(const char *address);
+  WebServer(Server *server, const char *address);
   ~WebServer();
-  void start();
   void handler(struct mg_connection *nc, int ev, void *p);
 };

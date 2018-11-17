@@ -1,13 +1,13 @@
 #include <mongoose.h>
+#include <Server.hpp>
 
 class ServerUDP {
  private:
-  mg_mgr mgr;
+  Server *server;
   struct mg_connection *nc;
 
  public:
-  ServerUDP(const char *address);
+  ServerUDP(Server *server, const char *address);
   ~ServerUDP();
-  void start();
   void handler(struct mg_connection *nc, int ev, void *p);
 };

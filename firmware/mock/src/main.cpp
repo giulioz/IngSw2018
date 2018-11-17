@@ -29,7 +29,8 @@ class EchoRoute : public Route {
 };
 
 int main() {
-  WebServer webServer("0.0.0.0:8000");
+  Server server;
+  WebServer webServer(&server, "0.0.0.0:8000");
 
   TestRoute testRoute;
   webServer.addRoute(static_cast<Route *>(&testRoute));
@@ -37,5 +38,5 @@ int main() {
   EchoRoute echoRoute;
   webServer.addRoute(static_cast<Route *>(&echoRoute));
 
-  webServer.start();
+  server.start();
 }
