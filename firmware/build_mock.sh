@@ -2,5 +2,5 @@
 
 mkdir mock_build
 cd mock_build
-cmake -DCMAKE_BUILD_TYPE=Debug -DMOCK=ON ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 make

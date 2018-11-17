@@ -7,3 +7,6 @@
 [submodule "firmware/deps/opencv"]
 	path = firmware/deps/opencv
 	url = https://github.com/opencv/opencv.git
+[submodule "firmware/deps/unqlite"]
+	path = firmware/deps/unqlite
+	url = https://github.com/symisc/unqlite.git

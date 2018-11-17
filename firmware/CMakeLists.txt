@@ -11,10 +11,8 @@ endif()
 
 add_subdirectory(common)
 
-if(MOCK)
-add_subdirectory(mock)
-endif()
-
 if(ROBOT)
 add_subdirectory(robot)
+else()
+add_subdirectory(mock)
 endif()
