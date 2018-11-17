@@ -30,7 +30,7 @@ bool DB::deleteValue(const char* key) {
 
 template<typename T, size_t s>
 bool DB::fetchValue(const char* key, std::array<T,s> buffer) {
-  if (unqlite_kv_fetch(pDb, key, -1, ) != UNQLITE_OK) {
+  if (unqlite_kv_fetch(pDb, key, -1, buffer.data, buffer.size) != UNQLITE_OK) {
     throw "Cannot store value.";
   }
 }
