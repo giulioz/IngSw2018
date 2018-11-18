@@ -1,3 +1,4 @@
+#include "UDP/ServerUDP.hpp"
 #include "HTTP/Request.hpp"
 #include "HTTP/Response.hpp"
 #include "HTTP/Route.hpp"
@@ -34,6 +35,7 @@ int main() {
 
   Server server;
   WebServer webServer(&server, "0.0.0.0:8000");
+  ServerUDP serverUdp(&server, "udp://0.0.0.0:8001");
 
   TestRoute testRoute;
   webServer.addRoute(static_cast<Route *>(&testRoute));
