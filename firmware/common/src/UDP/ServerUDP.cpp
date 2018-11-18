@@ -15,9 +15,6 @@ ServerUDP::~ServerUDP() {}
 void ServerUDP::handler(struct mg_connection *c, int ev, void *p) {
   struct mbuf *io = &c->recv_mbuf;
   if (ev == MG_EV_RECV) {
-    // if (nc->recv_mbuf == DOGE_SEARCH) {
-      // mg_send(c, DOGE_ANNOUNCE + IPaddress, msglen);
-    // }
     mg_send(c, io->buf, io->len);
     mbuf_remove(io, io->len);  // Pulisce il buffer
   }
