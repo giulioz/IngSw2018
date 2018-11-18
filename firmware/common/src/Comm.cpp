@@ -1,5 +1,7 @@
 #include "Comm.hpp"
 
+#include <time.h>
+
 TestRoute::TestRoute() : Route("/test", "GET") {}
 void TestRoute::handle(const Request *request, Response *response) {
   response->json("{value:0}");
@@ -25,6 +27,12 @@ Comm::Comm()
       serverUdp(&server, "udp://0.0.0.0:8001") {
   webServer.addRoute(static_cast<Route *>(&testRoute));
   webServer.addRoute(static_cast<Route *>(&echoRoute));
+  serverUdp.setEventHandler([](UDPData *data) {
+    std::string tmp;
+    tmp += "Time: ";
+    tmp += std::to_string(time(nullptr));
+    data->send(tmp.c_str(), tmp.size());
+  });
 }
 
 Comm::~Comm() {}
