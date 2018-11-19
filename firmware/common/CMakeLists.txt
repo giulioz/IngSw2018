@@ -14,4 +14,5 @@ target_include_directories(WatchDogeCommon PUBLIC
         ${WatchDogeCommon_SOURCE_DIR}/../deps/mongoose
         ${WatchDogeCommon_SOURCE_DIR}/../deps/unqlite
         ${WatchDogeCommon_SOURCE_DIR}/../deps/json/single_include
+        ${OpenCV_INCLUDE_DIRS}
 )
