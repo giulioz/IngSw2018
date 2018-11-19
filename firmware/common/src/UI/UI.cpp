@@ -1,6 +1,16 @@
 #include "UI/UI.hpp"
 
-UI(FrameBuffer* frameBuffer) { this->frameBuffer = frameBuffer; }
+#include "UI/normal_font.xbm"
+#define NORMAL_FONT_PIXEL(x, y) \
+  ((normal_font_bits[((x) >> 3) + (y)*16] & (1 << ((x)&7))) >> ((x)&7))
+#define NORMAL_LETTER_WIDTH 8
+#define NORMAL_LETTER_HEIGHT 9
+#define EV3_PIXEL_SET(x, y) __fbp[((x) >> 3) + (y)*EV3_S_LCD] |= 1 << ((x)&7)
+
+#define EV3_S_LCD 24
+
+
+UI::UI(FrameBuffer* frameBuffer) { this->frameBuffer = frameBuffer; }
 
 void UI::drawText(int x, int y, const char* text) {
   int i;
