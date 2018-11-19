@@ -1,14 +1,8 @@
 #include "HTTP/Router.hpp"
 
-Router::Router(const char *basePath) {
-  this->basePath = basePath;
-}
+Router::Router(const char *basePath) { this->basePath = basePath; }
 
 Router::~Router() {}
-
-void Router::addRoute(Route *route) { routes.push_back(route); }
-
-void Router::addRouter(Router *router) { childRouters.push_back(router); }
 
 static bool _match(const char *str, const char *toMatch) {
   if (!*str && !*toMatch) {
@@ -45,3 +39,15 @@ void Router::handle(const Request *request, Response *response) {
 
   this->notFoundRoute.handle(request, response);
 }
+
+void Router::addRoute(Route *route) { routes.push_back(route); }
+
+void Router::addRoute(const char *path, const char *method,
+                      void (*handler)(const Request *request,
+                                      Response *response)) {
+  AutoRoute autoRoute(path, method, handler);
+  autoRoutes.push_back(autoRoute);
+  addRoute(static_cast<Route *>(&autoRoutes.back()));
+}
+
+void Router::addRouter(Router *router) { childRouters.push_back(router); }

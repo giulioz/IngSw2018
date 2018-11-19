@@ -29,6 +29,8 @@ static bool _match(const char *path, const char *toMatch) {
     return false;
   } else if (*path && !*toMatch) {
     return true;
+  } else if (*toMatch == '*') {
+    return true;
   } else if (*toMatch == ':') {
     return _matchParam(path, toMatch);
   } else if (*path == *toMatch) {
@@ -45,6 +47,8 @@ static bool _matchMethod(const char *method, const char *toMatch) {
     return false;
   } else if (*method && !*toMatch) {
     return true;
+  } else if (*toMatch == '*') {
+    return true;
   } else if (*method == *toMatch) {
     return _matchMethod(method + 1, toMatch + 1);
   }
@@ -53,6 +57,6 @@ static bool _matchMethod(const char *method, const char *toMatch) {
 }
 
 bool Route::match(const Request *request) {
-  return (_match(request->url.c_str(), this->path) || strcmp("*", this->method) == 0) &&
-         (_matchMethod(request->method.c_str(), this->method) || strcmp("*", this->method) == 0);
+  return (_match(request->url.c_str(), this->path)) &&
+         (_matchMethod(request->method.c_str(), this->method));
 }

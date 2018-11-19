@@ -15,5 +15,4 @@ class Server {
                       void *ref);
 
   void poll();
-  void start();
 };

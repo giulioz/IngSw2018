@@ -14,9 +14,3 @@ mg_connection *Server::bind(const char *address,
 }
 
 void Server::poll() { mg_mgr_poll(&mgr, 1000); }
-
-void Server::start() {
-  for (;;) {
-    this->poll();
-  }
-}
