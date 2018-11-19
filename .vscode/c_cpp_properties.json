@@ -4,6 +4,9 @@
       "name": "Mac",
       "includePath": [
         "${workspaceFolder}/**",
+        "${workspaceFolder}/firmware/common/include",
+        "${workspaceFolder}/firmware/robot/include",
+        "${workspaceFolder}/firmware/mock/include",
         "${workspaceFolder}/firmware/deps/mongoose",
         "${workspaceFolder}/firmware/deps/unqlite",
         "${workspaceFolder}/firmware/common/include"
