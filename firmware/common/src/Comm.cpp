@@ -2,10 +2,7 @@
 
 #include <time.h>
 
-Comm::Comm()
-    : server(),
-      webServer(&server, "0.0.0.0:8000"),
-      serverUdp(&server, "udp://0.0.0.0:8001") {
+Comm::Comm() : server(), webServer(&server, "0.0.0.0:8000"), pairing(&server) {
   webServer.addRoute("/test", "GET",
                      [](const Request *request, Response *response) {
                        response->json("{value:0}");
@@ -24,13 +21,6 @@ Comm::Comm()
         }
         response->json(tmp.c_str());
       });
-
-  serverUdp.setEventHandler([](UDPData *data) {
-    std::string tmp;
-    tmp += "Time: ";
-    tmp += std::to_string(time(nullptr));
-    data->reply(tmp.c_str(), tmp.size());
-  });
 }
 
 Comm::~Comm() {}

@@ -1,8 +1,14 @@
 #pragma once
 
+#include "Server.hpp"
+#include "UDP/ServerUDP.hpp"
+
 class Pairing {
  private:
+  Server *server;
+  ServerUDP serverUdp;
+
  public:
-  Pairing();
+  Pairing(Server *server);
   ~Pairing();
 };

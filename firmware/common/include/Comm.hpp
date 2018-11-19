@@ -1,16 +1,17 @@
 #pragma once
 
 #include "HTTP/WebServer.hpp"
-#include "Server.hpp" 
+#include "Server.hpp"
 #include "UDP/ServerUDP.hpp"
 #include "UDP/UDPData.hpp"
+#include "Pairing.hpp"
 
 class Comm {
  private:
  public:
   Server server;
   WebServer webServer;
-  ServerUDP serverUdp;
+  Pairing pairing;
 
   Comm();
   ~Comm();
