@@ -7,6 +7,8 @@ class WebApi {
  private:
   WebServer webServer;
 
+  void postPair(const Request *request, Response *response);
+
  public:
   WebApi(Server *server);
 };

@@ -3,6 +3,8 @@ project(WatchDogeCommon)
 
 file(GLOB SOURCES src/*.cpp src/*/*.cpp)
 
+find_package(OpenCV REQUIRED)
+
 add_library(WatchDogeCommon
         ${SOURCES}
         ../deps/mongoose/mongoose.c

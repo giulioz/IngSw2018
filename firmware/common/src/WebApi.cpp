@@ -1,6 +1,12 @@
 #include "WebApi.hpp"
 
+void WebApi::postPair(const Request *request, Response *response){
+  response->json("{value:0}");
+}
+
 WebApi::WebApi(Server *server) : webServer(server, "0.0.0.0:8000") {
+  // webServer.addRoute("/pair", "POST", postPair);
+
   webServer.addRoute("/test", "GET",
                      [](const Request *request, Response *response) {
                        response->json("{value:0}");
