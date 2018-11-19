@@ -13,6 +13,6 @@ UDPData::UDPData(char* data, int size, ServerUDP* server,
 
 UDPData::~UDPData() { delete data; }
 
-void UDPData::send(const char* data, int size) {
+void UDPData::reply(const char* data, int size) {
   mg_send(connection, data, size);
 }

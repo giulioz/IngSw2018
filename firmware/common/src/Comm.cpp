@@ -31,7 +31,7 @@ Comm::Comm()
     std::string tmp;
     tmp += "Time: ";
     tmp += std::to_string(time(nullptr));
-    data->send(tmp.c_str(), tmp.size());
+    data->reply(tmp.c_str(), tmp.size());
   });
 }
 

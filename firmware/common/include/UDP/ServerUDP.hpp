@@ -16,5 +16,4 @@ class ServerUDP {
   ~ServerUDP();
   void handler(struct mg_connection *connection, int ev, void *p);
   void setEventHandler(void (*eventHandler)(UDPData *data));
-  void send(const char *data, int size);
 };

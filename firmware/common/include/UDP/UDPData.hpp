@@ -15,5 +15,5 @@ class UDPData {
           struct mg_connection* connection);
   ~UDPData();
 
-  void send(const char* data, int size);
+  void reply(const char* data, int size);
 };

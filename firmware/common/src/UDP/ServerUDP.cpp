@@ -30,5 +30,3 @@ void ServerUDP::handler(struct mg_connection *connection, int ev, void *p) {
     connection->flags |= MG_F_SEND_AND_CLOSE;
   }
 }
-
-void ServerUDP::send(const char *data, int size) { mg_send(connection, data, size); }
