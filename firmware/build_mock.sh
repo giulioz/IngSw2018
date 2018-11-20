@@ -8,5 +8,6 @@ cmake \
     -DBUILD_TESTS=OFF \
     -DBUILD_EXAMPLES=OFF \
     -DBUILD_PERF_TESTS=OFF \
+    -DWITH_CUDA=OFF \
     ..
 make

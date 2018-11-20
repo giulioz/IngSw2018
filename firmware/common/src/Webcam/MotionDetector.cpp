@@ -5,7 +5,7 @@ MotionDetector::MotionDetector(void (*callback)(void)) : camera(0) {
   this->first = true;
 }
 
-MotionDetector::poll() {
+void MotionDetector::poll() {
   Mat frame, gray, frameDelta, thresh;
   vector<vector<Point> > cnts;
 
