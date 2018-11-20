@@ -12,6 +12,6 @@ class AutoRoute : public Route {
 
  public:
   AutoRoute(const char *path, const char *method,
-            std::function<void(const Request *request, Response *response)>);
+            std::function<void(const Request *request, Response *response)> handler);
   void handle(const Request *request, Response *response) override;
 };
