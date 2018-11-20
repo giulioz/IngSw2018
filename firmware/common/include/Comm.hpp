@@ -18,5 +18,4 @@ class Comm {
   ~Comm();
 
   void poll();
-  void start();
 };

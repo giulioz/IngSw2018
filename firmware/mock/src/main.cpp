@@ -7,5 +7,8 @@ int main() {
 
   MockHardwareInterface mockHardwareInterface;
   Comm comm(&mockHardwareInterface);
-  comm.start();
+  for (;;) {
+    comm.poll();
+    mockHardwareInterface.poll();
+  }
 }

@@ -8,9 +8,3 @@ Comm::Comm(HardwareInterface *hardwareInterface)
 Comm::~Comm() {}
 
 void Comm::poll() { server.poll(); }
-
-void Comm::start() {
-  for (;;) {
-    this->poll();
-  }
-}

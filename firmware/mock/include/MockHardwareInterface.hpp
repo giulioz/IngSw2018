@@ -10,4 +10,6 @@ class MockHardwareInterface : public HardwareInterface {
   virtual void left() override;
   virtual void right() override;
   virtual int getDistance() override;
+
+  void poll();
 };
