@@ -1,6 +1,7 @@
 #pragma once
 
 #include <list>
+#include <functional>
 #include "HTTP/AutoRoute.hpp"
 #include "HTTP/NotFoundRoute.hpp"
 #include "HTTP/Request.hpp"
@@ -23,7 +24,8 @@ class Router {
   void handle(const Request *request, Response *response);
 
   void addRoute(Route *route);
-  void addRoute(const char *path, const char *method,
-                void (*handler)(const Request *request, Response *response));
+  void addRoute(
+      const char *path, const char *method,
+      std::function<void(const Request *request, Response *response)> handler);
   void addRouter(Router *router);
 };

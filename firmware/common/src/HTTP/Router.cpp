@@ -42,9 +42,9 @@ void Router::handle(const Request *request, Response *response) {
 
 void Router::addRoute(Route *route) { routes.push_back(route); }
 
-void Router::addRoute(const char *path, const char *method,
-                      void (*handler)(const Request *request,
-                                      Response *response)) {
+void Router::addRoute(
+    const char *path, const char *method,
+    std::function<void(const Request *request, Response *response)> handler) {
   AutoRoute autoRoute(path, method, handler);
   autoRoutes.push_back(autoRoute);
   addRoute(static_cast<Route *>(&autoRoutes.back()));

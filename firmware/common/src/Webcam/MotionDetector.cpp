@@ -1,5 +1,8 @@
 #include "Webcam/MotionDetector.hpp"
 
+using namespace std;
+using namespace cv;
+
 MotionDetector::MotionDetector(void (*callback)(void)) : camera(0) {
   this->callback = callback;
   this->first = true;

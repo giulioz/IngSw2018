@@ -1,22 +1,26 @@
 #include "WebApi.hpp"
 
-void WebApi::postPair(const Request *request, Response *response) {
-  response->json("{value:0}");
-}
-
 WebApi::WebApi(Server *server, HardwareInterface *hardwareInterface)
     : webServer(server, "0.0.0.0:8000") {
   this->hardwareInterface = hardwareInterface;
 
-  // webServer.addRoute("/pair", "POST", postPair);
+  webServer.addRoute("/shot", "GET",
+                     [this](const Request *request, Response *response) {
+                       response->json("{value:0}");
+                     });
+
+  webServer.addRoute("/pair", "POST",
+                     [this](const Request *request, Response *response) {
+                       response->json("{value:0}");
+                     });
 
   webServer.addRoute("/test", "GET",
-                     [](const Request *request, Response *response) {
+                     [this](const Request *request, Response *response) {
                        response->json("{value:0}");
                      });
 
   webServer.addRoute(
-      "/echo", "GET", [](const Request *request, Response *response) {
+      "/echo", "GET", [this](const Request *request, Response *response) {
         std::string tmp;
         tmp += "URL: " + request->url + '\n';
         tmp += "METHOD: " + request->method + '\n';

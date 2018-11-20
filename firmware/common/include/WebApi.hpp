@@ -9,8 +9,6 @@ class WebApi {
   WebServer webServer;
   HardwareInterface *hardwareInterface;
 
-  void postPair(const Request *request, Response *response);
-
  public:
   WebApi(Server *server, HardwareInterface *hardwareInterface);
 };
