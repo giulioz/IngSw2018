@@ -4,6 +4,7 @@
 
 class MockHardwareInterface : public HardwareInterface {
  public:
+  MockHardwareInterface();
   virtual ~MockHardwareInterface() override;
 
   virtual void left() override;
