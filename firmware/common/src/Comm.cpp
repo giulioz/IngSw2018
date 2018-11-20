@@ -1,6 +1,9 @@
 #include "Comm.hpp"
 
-Comm::Comm() : server(), webApi(&server), pairing(&server) {}
+Comm::Comm(HardwareInterface *hardwareInterface)
+    : server(), webApi(&server, hardwareInterface), pairing(&server) {
+  this->hardwareInterface = hardwareInterface;
+}
 
 Comm::~Comm() {}
 
