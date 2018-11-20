@@ -15,5 +15,5 @@ class ImageCapturer {
  public:
   ImageCapturer();
 
-  Mat capture();
+  std::vector<uchar> capture();
 };
