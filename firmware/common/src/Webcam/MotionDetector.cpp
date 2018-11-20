@@ -1,5 +1,7 @@
 #include "Webcam/MotionDetector.hpp"
 
+#include <unistd.h>
+
 using namespace std;
 using namespace cv;
 

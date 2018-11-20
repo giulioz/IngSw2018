@@ -4,10 +4,10 @@
 template <typename T>
 class UI {
  private:
-  FrameBuffer* frameBuffer;
+  FrameBuffer<T>* frameBuffer;
 
  public:
-  UI(FrameBuffer* frameBuffer);
+  UI(FrameBuffer<T>* frameBuffer);
   ~UI();
 
   void drawText(int x, int y, const char* text);

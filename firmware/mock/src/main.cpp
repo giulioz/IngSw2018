@@ -1,9 +1,11 @@
 #include "Comm.hpp"
 #include "DB/DB.hpp"
+#include "MockHardwareInterface.hpp"
 
 int main() {
   DB db("test.db");
 
-  Comm comm;
+  MockHardwareInterface mockHardwareInterface;
+  Comm comm(&mockHardwareInterface);
   comm.start();
 }
