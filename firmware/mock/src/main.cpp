@@ -15,7 +15,7 @@ int main() {
 
   SDLFrameBuffer sdlFrameBuffer;
   MockHardwareInterface mockHardwareInterface;
-  ImageCapturer imageCapturer;
+  ImageCapturer imageCapturer("/dev/video0");
   Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer,
             infoString);
 
