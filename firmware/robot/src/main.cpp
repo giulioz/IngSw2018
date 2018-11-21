@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "HTTP/Request.hpp"
 #include "HTTP/Response.hpp"
 #include "HTTP/Route.hpp"
@@ -42,3 +43,19 @@ int main() {
 
   server.start();
 }
+=======
+#include "Comm.hpp"
+#include "DB.hpp"
+#include "RobotHardwareInterface.hpp"
+
+int main() {
+  DB db("test.db");
+  RobotHardwareInterface robotHardwareInterface;
+
+  Comm comm(&robotHardwareInterface);
+  for (;;) {
+    comm.poll();
+    robotHardwareInterface.poll();
+  }
+}
+>>>>>>> 9b9ccae2315b8d9384a57a0d2b49d00c0e52c2fb

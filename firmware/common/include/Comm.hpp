@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #pragma once
 
 #include "HTTP/WebServer.hpp"
@@ -19,3 +20,26 @@ class Comm {
   void poll();
   void start();
 };
+=======
+#pragma once
+
+#include "HardwareInterface.hpp"
+#include "Pairing.hpp"
+#include "Server.hpp"
+#include "WebApi.hpp"
+
+class Comm {
+ private:
+  HardwareInterface *hardwareInterface;
+  
+ public:
+  Server server;
+  WebApi webApi;
+  Pairing pairing;
+
+  Comm(HardwareInterface *hardwareInterface);
+  ~Comm();
+
+  void poll();
+};
+>>>>>>> 9b9ccae2315b8d9384a57a0d2b49d00c0e52c2fb
