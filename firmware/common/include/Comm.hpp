@@ -15,7 +15,7 @@ class Comm {
   WebApi webApi;
   Pairing pairing;
 
-  Comm(HardwareInterface *hardwareInterface);
+  Comm(HardwareInterface *hardwareInterface, const char *infoString);
   ~Comm();
 
   void poll();

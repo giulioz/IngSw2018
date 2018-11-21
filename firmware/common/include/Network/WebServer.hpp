@@ -3,9 +3,9 @@
 #include <mongoose.h>
 #include <vector>
 #include "Server.hpp"
-#include "HTTP/NotFoundRoute.hpp"
-#include "HTTP/Route.hpp"
-#include "HTTP/Router.hpp"
+#include "Network/NotFoundRoute.hpp"
+#include "Network/Route.hpp"
+#include "Network/Router.hpp"
 
 class WebServer : public Router {
  private:

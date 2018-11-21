@@ -1,4 +1,4 @@
-#include "HTTP/WebServer.hpp"
+#include "Network/WebServer.hpp"
 
 static void wrapperHandler(struct mg_connection *nc, int ev, void *p) {
   WebServer *_this = static_cast<WebServer *>(nc->user_data);

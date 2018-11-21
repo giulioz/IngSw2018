@@ -1,7 +1,7 @@
 #pragma once
 
-#include "HTTP/Request.hpp"
-#include "HTTP/Response.hpp"
+#include "Network/Request.hpp"
+#include "Network/Response.hpp"
 
 class Route {
  private:

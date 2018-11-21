@@ -1,4 +1,4 @@
-#include "HTTP/Response.hpp"
+#include "Network/Response.hpp"
 
 #include <string>
 

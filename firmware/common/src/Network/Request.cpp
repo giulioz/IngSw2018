@@ -1,4 +1,4 @@
-#include "HTTP/Request.hpp"
+#include "Network/Request.hpp"
 
 Request::Request(struct http_message *hm) {
   if (hm->uri.p) {

@@ -1,7 +1,9 @@
 #include "Comm.hpp"
 
-Comm::Comm(HardwareInterface *hardwareInterface)
-    : server(), webApi(&server, hardwareInterface), pairing(&server) {
+Comm::Comm(HardwareInterface *hardwareInterface, const char *infoString)
+    : server(),
+      webApi(&server, hardwareInterface, infoString),
+      pairing(&server) {
   this->hardwareInterface = hardwareInterface;
 }
 

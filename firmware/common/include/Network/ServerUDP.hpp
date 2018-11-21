@@ -2,7 +2,7 @@
 
 #include <mongoose.h>
 #include <Server.hpp>
-#include <UDP/UDPData.hpp>
+#include <Network/UDPData.hpp>
 
 class ServerUDP {
  private:

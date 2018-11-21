@@ -2,11 +2,11 @@
 
 #include <functional>
 #include <list>
-#include "HTTP/AutoRoute.hpp"
-#include "HTTP/NotFoundRoute.hpp"
-#include "HTTP/Request.hpp"
-#include "HTTP/Response.hpp"
-#include "HTTP/Route.hpp"
+#include "Network/AutoRoute.hpp"
+#include "Network/NotFoundRoute.hpp"
+#include "Network/Request.hpp"
+#include "Network/Response.hpp"
+#include "Network/Route.hpp"
 
 class Router {
  private:

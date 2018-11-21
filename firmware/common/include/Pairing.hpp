@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Server.hpp"
-#include "UDP/ServerUDP.hpp"
+#include "Network/ServerUDP.hpp"
 
 class Pairing {
  private:

@@ -1,4 +1,4 @@
-#include "HTTP/HeaderField.hpp"
+#include "Network/HeaderField.hpp"
 
 HeaderField::HeaderField(std::string key, std::string value)
     : key(key), value(value) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HTTP/Route.hpp"
+#include "Network/Route.hpp"
 
 class NotFoundRoute : public Route {
  public:

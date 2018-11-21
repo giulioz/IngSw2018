@@ -3,7 +3,7 @@
 #include <mongoose.h>
 #include <string>
 #include <vector>
-#include "HTTP/HeaderField.hpp"
+#include "Network/HeaderField.hpp"
 
 class Request {
  private:

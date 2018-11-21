@@ -1,4 +1,4 @@
-#include "HTTP/NotFoundRoute.hpp"
+#include "Network/NotFoundRoute.hpp"
 
 NotFoundRoute::NotFoundRoute() : Route("*", "*") {}
 

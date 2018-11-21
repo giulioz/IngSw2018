@@ -1,8 +1,8 @@
 #pragma once
 
-#include "HTTP/Request.hpp"
-#include "HTTP/Response.hpp"
-#include "HTTP/Route.hpp"
+#include "Network/Request.hpp"
+#include "Network/Response.hpp"
+#include "Network/Route.hpp"
 
 #include <functional>
 
