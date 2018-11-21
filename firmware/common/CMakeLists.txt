@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-cmake_minimum_required(VERSION 3.0)
-project(WatchDogeCommon)
-
-file(GLOB SOURCES src/*.cpp src/*/*.cpp)
-
-add_library(WatchDogeCommon
-        ${SOURCES}
-        ../deps/mongoose/mongoose.c
-        ../deps/unqlite/unqlite.c
-        ../deps/json/single_include/nlohmann/json.hpp)
-
-target_include_directories(WatchDogeCommon PUBLIC
-        ${WatchDogeCommon_SOURCE_DIR}/include
-        ${WatchDogeCommon_SOURCE_DIR}/../deps/mongoose
-        ${WatchDogeCommon_SOURCE_DIR}/../deps/unqlite
-        ${WatchDogeCommon_SOURCE_DIR}/../deps/json/single_include
-)
-=======
->>>>>>> asdf
 cmake_minimum_required(VERSION 3.0)
 project(WatchDogeCommon)
 
@@ -40,7 +18,3 @@ target_include_directories(WatchDogeCommon PUBLIC
 )
 
 target_link_libraries(WatchDogeCommon ${OpenCV_LIBS})
-<<<<<<< HEAD
-=======
->>>>>>> 9b9ccae2315b8d9384a57a0d2b49d00c0e52c2fb
->>>>>>> asdf
