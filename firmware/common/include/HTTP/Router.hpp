@@ -1,7 +1,7 @@
 #pragma once
 
-#include <list>
 #include <functional>
+#include <list>
 #include "HTTP/AutoRoute.hpp"
 #include "HTTP/NotFoundRoute.hpp"
 #include "HTTP/Request.hpp"

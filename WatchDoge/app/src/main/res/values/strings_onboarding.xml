@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_OnBoarding_1">FIND YOUR DOGE</string>
+    <string name="title_OnBoarding_1">Benvenuto</string>
+    <string name="descriptin_OnBoarding_1">
+        Attraverso questo menu potrai facilmente ricercare e configurare il tuo Doge domestico.\n
+        Per cominciare clicca su: FIND YOUR DOGE
+    </string>
+</resources>

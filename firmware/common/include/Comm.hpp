@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include "HardwareInterface.hpp"
@@ -8,7 +9,7 @@
 class Comm {
  private:
   HardwareInterface *hardwareInterface;
-  
+
  public:
   Server server;
   WebApi webApi;
