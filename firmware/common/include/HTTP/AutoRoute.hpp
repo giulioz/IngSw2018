@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+#pragma once
+
+#include "HTTP/Request.hpp"
+#include "HTTP/Response.hpp"
+#include "HTTP/Route.hpp"
+
+class AutoRoute : public Route {
+ private:
+  void (*handler)(const Request *request, Response *response);
+
+ public:
+  AutoRoute(const char *path, const char *method,
+            void (*handler)(const Request *request, Response *response));
+  void handle(const Request *request, Response *response) override;
+};
+=======
+>>>>>>> asdf
 #pragma once
 
 #include "HTTP/Request.hpp"
@@ -15,3 +35,7 @@ class AutoRoute : public Route {
             std::function<void(const Request *request, Response *response)> handler);
   void handle(const Request *request, Response *response) override;
 };
+<<<<<<< HEAD
+=======
+>>>>>>> 9b9ccae2315b8d9384a57a0d2b49d00c0e52c2fb
+>>>>>>> asdf
