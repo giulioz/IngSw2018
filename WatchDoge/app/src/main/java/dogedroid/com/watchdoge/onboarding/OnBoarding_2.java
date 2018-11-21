@@ -9,26 +9,37 @@ import android.widget.Button;
 
 import dogedroid.com.watchdoge.R;
 
-public class OnBoarding_1 extends AppCompatActivity {
+public class OnBoarding_2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_boarding_1);
+        setContentView(R.layout.activity_on_boarding_2);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
-        Button onBoardBtn = findViewById(R.id.button_OnBoarding_1);
-        onBoardBtn.setOnClickListener(new View.OnClickListener() {
+        Button nextBtn = findViewById(R.id.button_AcceptOnBoarding_2);
+        nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 go_OnBordingNext();
             }
         });
+
+        Button backBtn = findViewById(R.id.button_BackOnBoarding_2);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                go_OnBordingPrev();
+            }
+        });
     }
     public void go_OnBordingNext() {
-        startActivity(new Intent(this, OnBoarding_2.class));
+        startActivity(new Intent(this, OnBoarding_3.class));
+    }
+
+    public void go_OnBordingPrev() {
+        startActivity(new Intent(this, OnBoarding_1.class));
     }
 
 }

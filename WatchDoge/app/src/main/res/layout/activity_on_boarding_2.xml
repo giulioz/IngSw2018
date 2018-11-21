@@ -4,33 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".onboarding.OnBoarding_1">
+    tools:context=".onboarding.OnBoarding_2">
 
     <Button
-        android:id="@+id/button_OnBoarding_1"
+        android:id="@+id/button_AcceptOnBoarding_2"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="#FB5226"
         android:fontFamily="@font/roboto"
-        android:text="@string/button_OnBoarding_1"
+        android:text="@string/button_AcceptOnBoarding_2"
         android:textColor="#FFFFFF"
+        android:bottomRightRadius="30dp"
+        android:bottomLeftRadius="30dp"
+        android:topLeftRadius="30dp"
+        android:topRightRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button_BackOnBoarding_2"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/roboto"
+        android:text="@string/button_BackOnBoarding_2"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/title_OnBoarding_1"
+        android:id="@+id/title_OnBoarding_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/title_OnBoarding_1"
+        android:text="@string/title_OnBoarding_2"
         android:textAllCaps="false"
         android:textColor="#FB5226"
         android:textSize="30sp"
@@ -46,11 +62,11 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/description_OnBoarding_1"
+        android:text="@string/description_OnBoarding_2"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_OnBoarding_1" />
+        app:layout_constraintTop_toBottomOf="@+id/title_OnBoarding_2" />
 
     <ImageView
         android:id="@+id/doge_logo"
