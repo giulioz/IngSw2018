@@ -28,10 +28,10 @@ class WebApi {
 
   // Authentication
   void postPair(const Request *request, Response *response);
-  void deletePair(const Request *request, Response *response);
 
   // Misc
   void getInfo(const Request *request, Response *response);
+  void getTest(const Request *request, Response *response);
 
  public:
   WebApi(Server *server, HardwareInterface *hardwareInterface,

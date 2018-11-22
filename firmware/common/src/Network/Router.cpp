@@ -22,7 +22,7 @@ bool Router::match(const Request *request) {
   return _match(request->url.c_str(), this->basePath);
 }
 
-void Router::handle(const Request *request, Response *response) {
+void Router::handle(Request *request, Response *response) {
   for (auto route : routes) {
     if (route->match(request)) {
       route->handle(request, response);

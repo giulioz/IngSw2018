@@ -21,7 +21,7 @@ class Router {
   ~Router();
 
   bool match(const Request *request);
-  void handle(const Request *request, Response *response);
+  void handle(Request *request, Response *response);
 
   void addRoute(Route *route);
   void addRoute(

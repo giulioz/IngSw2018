@@ -1,9 +1,8 @@
 #pragma once
 
 #include <mongoose.h>
+#include <map>
 #include <string>
-#include <vector>
-#include "Network/HeaderField.hpp"
 
 class Request {
  private:
@@ -11,8 +10,9 @@ class Request {
   std::string url;
   std::string method;
   std::string body;
-  std::string queryString;
-  std::vector<HeaderField> headerFields;
+  std::map<std::string, std::string> urlParams;
+  std::map<std::string, std::string> queryParams;
+  std::map<std::string, std::string> headerFields;
 
   Request(struct http_message *hm);
   virtual ~Request();

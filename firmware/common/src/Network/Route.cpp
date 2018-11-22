@@ -55,7 +55,7 @@ static bool _matchMethod(const char *method, const char *toMatch) {
   return false;
 }
 
-bool Route::match(const Request *request) {
+bool Route::match(Request *request) {
   return (_match(request->url.c_str(), this->path)) &&
          (_matchMethod(request->method.c_str(), this->method));
 }

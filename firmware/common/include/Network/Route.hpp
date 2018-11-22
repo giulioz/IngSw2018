@@ -12,6 +12,6 @@ class Route {
   Route(const char *path, const char *method);
   virtual ~Route();
 
-  bool match(const Request *request);
+  bool match(Request *request);
   virtual void handle(const Request *request, Response *response) = 0;
 };

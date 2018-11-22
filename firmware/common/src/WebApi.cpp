@@ -16,11 +16,13 @@ void WebApi::getIntrusionsTime(const Request *request, Response *response) {
 
 void WebApi::getIntrusionShoot(const Request *request, Response *response) {
   auto imgData = this->imageCapturer->captureJpeg();
+  response->type("image/jpeg");
   response->send(imgData.data(), imgData.size());
 }
 
 void WebApi::getShoot(const Request *request, Response *response) {
   auto imgData = this->imageCapturer->captureJpeg();
+  response->type("image/jpeg");
   response->send(imgData.data(), imgData.size());
 }
 
@@ -38,12 +40,22 @@ void WebApi::postPair(const Request *request, Response *response) {
   response->json("");
 }
 
-void WebApi::deletePair(const Request *request, Response *response) {
-  response->sendStatus(200);
-}
-
 void WebApi::getInfo(const Request *request, Response *response) {
   response->json(this->infoString);
+}
+
+void getTest(const Request *request, Response *response) {
+  std::string tmp;
+  tmp += "URL: " + request->url + '\n';
+  tmp += "METHOD: " + request->method + '\n';
+  tmp += "BODY: " + request->body + '\n';
+  for (auto pair : request->queryParams) {
+    tmp += "QUERY FIELD: " + pair.first + " = " + pair.second + '\n';
+  }
+  for (auto pair : request->headerFields) {
+    tmp += "HEADER FIELD: " + pair.first + " = " + pair.second + '\n';
+  }
+  response->json(tmp.c_str());
 }
 
 void WebApi::loadRoutes() {
@@ -57,7 +69,7 @@ void WebApi::loadRoutes() {
                        this->getIntrusionsTime(request, response);
                      });
 
-  webServer.addRoute("/intrusions/:id/shoot.jpg", "GET",
+  webServer.addRoute("/intrusions/:id/shoot", "GET",
                      [this](const Request *request, Response *response) {
                        this->getIntrusionShoot(request, response);
                      });
@@ -67,7 +79,7 @@ void WebApi::loadRoutes() {
                        this->getIntrusions(request, response);
                      });
 
-  webServer.addRoute("/shoot.jpg", "GET",
+  webServer.addRoute("/shoot", "GET",
                      [this](const Request *request, Response *response) {
                        this->getShoot(request, response);
                      });
@@ -87,14 +99,14 @@ void WebApi::loadRoutes() {
                        this->postPair(request, response);
                      });
 
-  webServer.addRoute("/pair", "DELETE",
-                     [this](const Request *request, Response *response) {
-                       this->deletePair(request, response);
-                     });
-
   webServer.addRoute("/info", "GET",
                      [this](const Request *request, Response *response) {
                        this->getInfo(request, response);
+                     });
+
+  webServer.addRoute("/test", "GET",
+                     [this](const Request *request, Response *response) {
+                       this->getTest(request, response);
                      });
 }
 

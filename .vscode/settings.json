@@ -25,7 +25,9 @@
     "tuple": "cpp",
     "bitset": "cpp",
     "set": "cpp",
-    "*.ipp": "cpp"
+    "*.ipp": "cpp",
+    "map": "cpp",
+    "utility": "cpp"
   },
   "C_Cpp.clang_format_style": "Google"
 }
