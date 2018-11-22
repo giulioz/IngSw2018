@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import android.widget.ImageView;
+import com.squareup.picasso.Picasso;
 import dogedroid.com.watchdoge.onboarding.OnBoarding_1;
 
 
@@ -22,6 +24,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 go_OnBording();
+            }
+        });
+
+        findViewById(R.id.fetchButton).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                ImageView imageView = findViewById(R.id.imageView);
+                Picasso.get()
+                    .load("http://172.16.100.243:8000/shoot")
+                    .fit()
+                    .centerCrop()
+                    .into(imageView);
             }
         });
     }
