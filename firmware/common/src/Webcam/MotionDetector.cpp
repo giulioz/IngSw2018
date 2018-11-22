@@ -1,6 +1,6 @@
 #include "Webcam/MotionDetector.hpp"
 
-#include <unistd.h>
+// #include <unistd.h>
 
 using namespace std;
 using namespace cv;
@@ -19,7 +19,7 @@ void MotionDetector::poll() {
     this->camera.set(3, 512);
     this->camera.set(4, 288);
 
-    sleep(3);
+    // sleep(3);
     this->camera.read(frame);
 
     // convert to grayscale and set the first frame
