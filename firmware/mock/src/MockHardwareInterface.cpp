@@ -15,6 +15,7 @@ void MockHardwareInterface::right() { cout << "ROBOT: received Right" << endl; }
 
 int MockHardwareInterface::getDistance() {
   cout << "ROBOT: sent mock distance" << endl;
+  return 0;
 }
 
 void MockHardwareInterface::poll() {}
