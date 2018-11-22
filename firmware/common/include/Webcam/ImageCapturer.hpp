@@ -10,5 +10,5 @@ class ImageCapturer {
  public:
   ImageCapturer();
 
-  std::vector<uchar> capture();
+  std::vector<uchar> captureJpeg();
 };

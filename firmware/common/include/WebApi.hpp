@@ -1,13 +1,15 @@
 #pragma once
 
-#include "Network/WebServer.hpp"
 #include "HardwareInterface.hpp"
+#include "Network/WebServer.hpp"
 #include "Server.hpp"
+#include "Webcam/ImageCapturer.hpp"
 
 class WebApi {
  private:
   WebServer webServer;
   HardwareInterface *hardwareInterface;
+  ImageCapturer *imageCapturer;
   const char *infoString;
 
   void loadRoutes();
@@ -32,5 +34,6 @@ class WebApi {
   void getInfo(const Request *request, Response *response);
 
  public:
-  WebApi(Server *server, HardwareInterface *hardwareInterface, const char *infoString);
+  WebApi(Server *server, HardwareInterface *hardwareInterface,
+         ImageCapturer *imageCapturer, const char *infoString);
 };

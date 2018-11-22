@@ -1,23 +1,27 @@
 #include "WebApi.hpp"
 
 void WebApi::getIntrusions(const Request *request, Response *response) {
-  response->json("[{id:0, time:0}, {id:1, time:1}]");
+  response->json(
+      "[{id:0, time:0, readt:true}, {id:1, time:1, readt:true}, {id:3, time:3, "
+      "readt:false}]");
 }
 
 void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
-  response->json("[]");
+  response->json("[{id:3, time:3, readt:false}]");
 }
 
 void WebApi::getIntrusionsTime(const Request *request, Response *response) {
-  response->json("[{id:1, time:1}]");
+  response->json("[{id:1, time:1, readt:true}]");
 }
 
 void WebApi::getIntrusionShoot(const Request *request, Response *response) {
-  response->send(nullptr, 0);
+  auto imgData = this->imageCapturer->captureJpeg();
+  response->send(imgData.data(), imgData.size());
 }
 
 void WebApi::getShoot(const Request *request, Response *response) {
-  response->send(nullptr, 0);
+  auto imgData = this->imageCapturer->captureJpeg();
+  response->send(imgData.data(), imgData.size());
 }
 
 void WebApi::postLeft(const Request *request, Response *response) {
@@ -53,7 +57,7 @@ void WebApi::loadRoutes() {
                        this->getIntrusionsTime(request, response);
                      });
 
-  webServer.addRoute("/intrusions/shoot/:id", "GET",
+  webServer.addRoute("/intrusions/:id/shoot.jpg", "GET",
                      [this](const Request *request, Response *response) {
                        this->getIntrusionShoot(request, response);
                      });
@@ -63,7 +67,7 @@ void WebApi::loadRoutes() {
                        this->getIntrusions(request, response);
                      });
 
-  webServer.addRoute("/shoot", "GET",
+  webServer.addRoute("/shoot.jpg", "GET",
                      [this](const Request *request, Response *response) {
                        this->getShoot(request, response);
                      });
@@ -95,9 +99,10 @@ void WebApi::loadRoutes() {
 }
 
 WebApi::WebApi(Server *server, HardwareInterface *hardwareInterface,
-               const char *infoString)
+               ImageCapturer *imageCapturer, const char *infoString)
     : webServer(server, "0.0.0.0:8000") {
   this->hardwareInterface = hardwareInterface;
+  this->imageCapturer = imageCapturer;
   this->infoString = infoString;
   this->loadRoutes();
 }

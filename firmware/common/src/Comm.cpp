@@ -1,10 +1,12 @@
 #include "Comm.hpp"
 
-Comm::Comm(HardwareInterface *hardwareInterface, const char *infoString)
+Comm::Comm(HardwareInterface *hardwareInterface, ImageCapturer *imageCapturer,
+           const char *infoString)
     : server(),
-      webApi(&server, hardwareInterface, infoString),
+      webApi(&server, hardwareInterface, imageCapturer, infoString),
       pairing(&server) {
   this->hardwareInterface = hardwareInterface;
+  this->imageCapturer = imageCapturer;
 }
 
 Comm::~Comm() {}
