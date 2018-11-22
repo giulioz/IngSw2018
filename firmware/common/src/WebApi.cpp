@@ -44,7 +44,7 @@ void WebApi::getInfo(const Request *request, Response *response) {
   response->json(this->infoString);
 }
 
-void getTest(const Request *request, Response *response) {
+void WebApi::getTest(const Request *request, Response *response) {
   std::string tmp;
   tmp += "URL: " + request->url + '\n';
   tmp += "METHOD: " + request->method + '\n';
