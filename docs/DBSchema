@@ -1,9 +1,18 @@
 Root = {
-	"auth-keys": Dictionary("device-id": String, "auth-key": String), // (Required) The dictionary which binds a client device (identified by "device-id") to an authentication key ("auth-key"), which is required by the device to use Doge's services.
-	"auto-mode": Boolean, // (Required) Whether it is true, the auto-mode (the process of automatic activation of the intrusion detection system) is on, otherwhise it is off.
-	"auto-mode-conf": Dictionary("day": WeekDay, "hours": TimeSpan[]), // (Required) The dictionary which stores the time configuration for the auto-mode feature.
-	"active": Boolean, // (Required) Whether it is true, the intrusion detection system has been manually activated by the user, otherwise it is off.
-	"intrusions": Intrusion[] // (Required) The history of the detected intrusions.
+	// (Required) The dictionary which binds a client device (identified by "device-id") to an authentication key ("auth-key"), which is required by the device to use Doge's services.
+	"auth-keys": Dictionary("device-id": String, "auth-key": String),
+	
+	// (Required) Whether it is true, the auto-mode (the process of automatic activation of the intrusion detection system) is on, otherwhise it is off.
+	"auto-mode": Boolean,
+	
+	// (Required) The dictionary which stores the time configuration for the auto-mode feature.
+	"auto-mode-conf": Dictionary("day": WeekDay, "hours": TimeSpan[]),
+	
+	// (Required) Whether it is true, the intrusion detection system has been manually activated by the user, otherwise it is off.
+	"active": Boolean,
+	
+	// (Required) The history of the detected intrusions.
+	"intrusions": Intrusion[]
 }
 
 WeekDay = Enum("mon", "tue", "wed", "thu", "fri", "sat", "sun")
@@ -14,13 +23,12 @@ TimeSpan = {
 }
 
 Time = {
-	"hour": Int, // (Required) The hour, MUST be in [0, 23]
+	"hour": Int,	// (Required) The hour, MUST be in [0, 23]
 	"minute": Int	// (Required) The minute, MUST be in [0, 59]
 }
 
 Intrusion = {
-	"date": String,	// (Required) The date of the intrusion, MUST have the following format: yyyy-MM-dd
-	"time": String, // (Required) The time of the intrusion, MUST have the following format: hh:mm:ss
-	"photo": Path,	// The path to the attached photo file, or null.
-	"notified": Boolean // (Required) Whether it is true, the intrusion has been notified to the user, otherwise it hasn't.
+	"id": Long,			// (Required) Numeric ID of the intrusion
+	"date": Long,			// (Required) The date of the intrusion, Unix seconds timestamp format
+	"notified": Boolean 		// (Required) Whether it is true, the intrusion has been notified to the user, otherwise it hasn't.
 }
