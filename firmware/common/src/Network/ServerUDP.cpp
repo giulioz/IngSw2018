@@ -5,28 +5,21 @@ static void wrapperHandler(struct mg_connection *connection, int ev, void *p) {
   _this->handler(connection, ev, p);
 }
 
-ServerUDP::ServerUDP(Server *server, const char *address) {
+ServerUDP::ServerUDP(Server *server, const char *address,
+                     std::function<void(UDPData *data)> eventHandler) {
   this->server = server;
-  this->eventHandler = nullptr;
+  this->eventHandler = eventHandler;
   this->connection = server->bind(address, wrapperHandler, this);
 }
 
 ServerUDP::~ServerUDP() {}
-
-void ServerUDP::setEventHandler(void (*eventHandler)(UDPData *data)) {
-  this->eventHandler = eventHandler;
-}
 
 void ServerUDP::handler(struct mg_connection *connection, int ev, void *p) {
   if (ev == MG_EV_RECV) {
     struct mbuf *io = &connection->recv_mbuf;
     UDPData data(io->buf, io->len, this, connection);
     mbuf_remove(io, io->len);
-
-    if (this->eventHandler) {
-      eventHandler(&data);
-    }
-
+    this->eventHandler(&data);
     connection->flags |= MG_F_SEND_AND_CLOSE;
   }
 }

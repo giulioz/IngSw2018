@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Server.hpp"
 #include "Network/ServerUDP.hpp"
+#include "Network/UDPData.hpp"
+#include "Server.hpp"
 
 class Pairing {
  private:
@@ -9,6 +10,6 @@ class Pairing {
   ServerUDP serverUdp;
 
  public:
-  Pairing(Server *server);
+  Pairing(Server *server, const char *info);
   ~Pairing();
 };
