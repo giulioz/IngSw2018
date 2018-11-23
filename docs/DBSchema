@@ -19,7 +19,7 @@ SecureKey = {
 	// (Required) The output of the following operation: ENCODE-SHA-256(constructor.key + this.salt), where ENCODE-HASH-256 is the function which returns the SHA-256 hash of a given string.
 	"digest": String,
 	
-	// (Required) A random 8-character string, used to keep the key almost immune by dictionary attacks.
+	// (Required) A random 8-character string, used to keep the hashed key almost immune by reversing attempts through dictionary attacks.
 	"salt": String
 }
 
