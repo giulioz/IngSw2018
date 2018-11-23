@@ -3,7 +3,7 @@ project(WatchDogeCommon)
 
 file(GLOB SOURCES src/*.cpp src/*/*.cpp)
 
-add_library(WatchDogeCommon
+add_library(WatchDogeCommon STATIC
         ${SOURCES}
         ../deps/mongoose/mongoose.c
         ../deps/unqlite/unqlite.c
