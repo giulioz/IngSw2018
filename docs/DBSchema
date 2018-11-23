@@ -1,11 +1,13 @@
 Root = {
 	// (Required) The dictionary which binds a client device (identified by "device-id") to an authentication key ("auth-key"), which is required by the device to use Doge's services.
-	"auth-keys": Dictionary("device-id": String, "auth-key": SecureKey),
+	// In particular, the authentication key MUST be a string obtained as a result of the following operation: ENCODE-SHA-256(plain-key + salt), where ENCODE-SHA-256 is the function which returns the SHA-256 hash of the given string, and salt is a string which makes the stored key almost safe from dictionary attacks.
+	"auth-keys": Dictionary("device-id": String, "auth-key": String),
 	
 	// (Required) Whether it is true, the auto-mode (the process of automatic activation of the intrusion detection system) is on, otherwhise it is off.
 	"auto-mode": Boolean,
 	
-	// (Required) The dictionary which stores the configuration for the auto-mode feature. In particular, each pair defines the list of time spans (not overlying) on which the intrusion detection system is on, in the week day indicated by the pair's key.
+	// (Required) The dictionary which stores the configuration for the auto-mode feature.
+	// In particular, each pair defines the list of time spans (not overlying) on which the intrusion detection system is on, in the week day indicated by the pair's key.
 	"auto-mode-conf": Dictionary("day": WeekDay, "hours": TimeSpan[]),
 	
 	// (Required) Whether it is true, the intrusion detection system has been manually activated by the user, otherwise it is off.
@@ -13,14 +15,6 @@ Root = {
 	
 	// (Required) The history of the detected intrusions.
 	"intrusions": Intrusion[]
-}
-
-SecureKey = {
-	// (Required) The output of the following operation: ENCODE-SHA-256(constructor.key + this.salt), where ENCODE-HASH-256 is the function which returns the SHA-256 hash of a given string.
-	"digest": String,
-	
-	// (Required) A random 8-character string, used to keep the hashed key almost immune by reversing attempts through dictionary attacks.
-	"salt": String
 }
 
 WeekDay = Enum("mon", "tue", "wed", "thu", "fri", "sat", "sun")
