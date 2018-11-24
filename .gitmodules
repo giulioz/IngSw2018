@@ -13,3 +13,6 @@
 [submodule "firmware/deps/json"]
 	path = firmware/deps/json
 	url = https://github.com/nlohmann/json.git
+[submodule "firmware/deps/sdl"]
+	path = firmware/deps/sdl
+	url = https://github.com/spurious/SDL-mirror.git

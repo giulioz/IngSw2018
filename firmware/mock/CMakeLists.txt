@@ -1,12 +1,15 @@
 cmake_minimum_required(VERSION 3.0)
 project(WatchDogeMock)
 
+add_subdirectory(deps/sdl)
+
 file(GLOB SOURCES src/*.cpp src/*/*.cpp)
 
 add_executable(WatchDogeMock ${SOURCES})
 target_include_directories(WatchDogeMock PUBLIC
         ${WatchDogeCommon_SOURCE_DIR}/include
         ${WatchDogeMock_SOURCE_DIR}/include
+        ${DrMauro_SOURCE_DIR}/deps/sdl/include
 )
 
 if (MSVC)
@@ -20,6 +23,7 @@ if (MSVC)
             WatchDogeMock
             WatchDogeCommon
             ${OpenCV_LIBS}
+            SDL2
     )
 else()
     target_link_libraries(
@@ -28,5 +32,6 @@ else()
         stdc++
         m
         ${OpenCV_LIBS}
+        SDL2
     )
 endif()
