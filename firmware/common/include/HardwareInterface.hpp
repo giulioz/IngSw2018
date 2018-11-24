@@ -2,7 +2,7 @@
 
 class HardwareInterface {
  public:
-  virtual ~HardwareInterface();
+  virtual ~HardwareInterface() {}
 
   virtual void left() = 0;
   virtual void right() = 0;

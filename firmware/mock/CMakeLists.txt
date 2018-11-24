@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(WatchDogeMock)
 
-add_subdirectory(deps/sdl)
-
 file(GLOB SOURCES src/*.cpp src/*/*.cpp)
 
 add_executable(WatchDogeMock ${SOURCES})
