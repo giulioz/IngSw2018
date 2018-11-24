@@ -6,7 +6,7 @@
 #include "SDLFrameBuffer.hpp"
 #include "Webcam/ImageCapturer.hpp"
 
-static const char *infoString = "WatchDoge\nMOCK server dev version";
+static const char *infoString = "MOCK server dev version";
 
 int main() {
   bool running = true;
