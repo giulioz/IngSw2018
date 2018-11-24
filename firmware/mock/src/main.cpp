@@ -16,7 +16,11 @@ int main() {
   SDLFrameBuffer sdlFrameBuffer;
   MockHardwareInterface mockHardwareInterface;
   ImageCapturer imageCapturer;
-  Comm comm(&mockHardwareInterface, &imageCapturer, infoString);
+  Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer,
+            infoString);
+
+  sdlFrameBuffer.clear();
+  sdlFrameBuffer.UI::drawPixel(10, 10, true);
 
   while (running) {
     mockHardwareInterface.poll();

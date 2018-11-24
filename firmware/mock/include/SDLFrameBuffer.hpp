@@ -1,17 +1,13 @@
 #pragma once
 
 #include <SDL.h>
-#include <UI/FrameBuffer.hpp>
+#include <UI/UI.hpp>
 
 #define WIDTH 178
 #define HEIGHT 128
 #define SCALING 4
 
-typedef struct SDLColor {
-  unsigned char b, g, r, a;
-} SDLColor;
-
-class SDLFrameBuffer : public FrameBuffer<SDLColor> {
+class SDLFrameBuffer : public UI {
  private:
   SDL_Window *window;
   SDL_Surface *screenSurface, *tempSurface;
@@ -20,7 +16,7 @@ class SDLFrameBuffer : public FrameBuffer<SDLColor> {
   SDLFrameBuffer();
   virtual ~SDLFrameBuffer() override;
 
-  virtual SDLColor *getSurface() override;
+  virtual void drawPixel(int i, bool value) override;
   virtual int getWidth() override;
   virtual int getHeight() override;
 

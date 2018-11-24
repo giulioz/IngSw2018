@@ -22,8 +22,9 @@ SDLFrameBuffer::~SDLFrameBuffer() {
   SDL_Quit();
 }
 
-SDLColor *SDLFrameBuffer::getSurface() {
-  return reinterpret_cast<SDLColor *>(this->screenSurface->pixels);
+void SDLFrameBuffer::drawPixel(int i, bool value) {
+  int *p = reinterpret_cast<int*>(this->screenSurface->pixels);
+  p[i] = value ? 0xffffffff : 0xff000000;
 }
 
 int SDLFrameBuffer::getWidth() { return WIDTH; }
