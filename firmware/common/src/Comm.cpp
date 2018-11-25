@@ -4,7 +4,7 @@ Comm::Comm(HardwareInterface *hardwareInterface, ImageCapturer *imageCapturer,
            UI *ui, const char *infoString)
     : server(),
       webApi(&server, hardwareInterface, imageCapturer, infoString),
-      pairing(&server, infoString) {
+      discovery(&server, infoString) {
   this->hardwareInterface = hardwareInterface;
   this->imageCapturer = imageCapturer;
   this->ui = ui;

@@ -4,12 +4,12 @@
 #include "Network/UDPData.hpp"
 #include "Server.hpp"
 
-class Pairing {
+class Discovery {
  private:
   Server *server;
   ServerUDP serverUdp;
 
  public:
-  Pairing(Server *server, const char *info);
-  ~Pairing();
+  Discovery(Server *server, const char *info);
+  ~Discovery();
 };

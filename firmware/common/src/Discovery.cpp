@@ -1,8 +1,8 @@
-#include "Pairing.hpp"
+#include "Discovery.hpp"
 
 #include <string>
 
-Pairing::Pairing(Server *server, const char *info)
+Discovery::Discovery(Server *server, const char *info)
     : serverUdp(server, "udp://0.0.0.0:8001", [info](UDPData *data) {
         if (memcmp(data->data, "DOGE_SEARCH", 11) == 0) {
           std::string tmp;
@@ -14,4 +14,4 @@ Pairing::Pairing(Server *server, const char *info)
   this->server = server;
 }
 
-Pairing::~Pairing() {}
+Discovery::~Discovery() {}

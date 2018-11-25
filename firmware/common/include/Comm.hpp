@@ -2,7 +2,7 @@
 #pragma once
 
 #include "HardwareInterface.hpp"
-#include "Pairing.hpp"
+#include "Discovery.hpp"
 #include "Server.hpp"
 #include "UI/UI.hpp"
 #include "WebApi.hpp"
@@ -17,7 +17,7 @@ class Comm {
  public:
   Server server;
   WebApi webApi;
-  Pairing pairing;
+  Discovery discovery;
 
   Comm(HardwareInterface *hardwareInterface, ImageCapturer *imageCapturer,
        UI *ui, const char *infoString);

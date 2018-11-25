@@ -21,6 +21,9 @@ int main() {
 
   sdlFrameBuffer.clear();
   sdlFrameBuffer.UI::drawPixel(10, 10, true);
+  sdlFrameBuffer.UI::drawPixel(15, 10, true);
+  sdlFrameBuffer.UI::drawPixel(12, 20, true);
+  sdlFrameBuffer.UI::drawPixel(10, 13, true);
 
   while (running) {
     mockHardwareInterface.poll();
