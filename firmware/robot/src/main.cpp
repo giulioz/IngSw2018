@@ -8,7 +8,7 @@ static const char *infoString = "Test robot";
 int main() {
   DB db("test.db");
   RobotHardwareInterface robotHardwareInterface;
-  ImageCapturer imageCapturer;
+  ImageCapturer imageCapturer("/dev/video0");
   EV3Lcd ev3Lcd;
 
   Comm comm(&robotHardwareInterface, &imageCapturer, &ev3Lcd, infoString);

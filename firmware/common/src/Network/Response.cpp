@@ -165,7 +165,11 @@ void Response::send(const void* content, long size) {
     this->type("text/binary");
   }
 
-  mg_printf(connection, "Content-Length: %" INT64_FMT "\r\n", size);
+  std::string tmp;
+  tmp += "Content-Length: ";
+  tmp += size;
+  tmp += "\r\n";
+  mg_send(connection, tmp.c_str(), tmp.length());
   mg_printf(connection, "Connection: close\r\n\r\n");
   mg_send(connection, content, size);
   connection->flags |= MG_F_SEND_AND_CLOSE;

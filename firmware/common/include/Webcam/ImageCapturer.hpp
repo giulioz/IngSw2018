@@ -8,7 +8,8 @@ class ImageCapturer {
   cv::VideoCapture camera;
 
  public:
-  ImageCapturer();
+  ImageCapturer(const char* videoId);
+  ~ImageCapturer();
 
   std::vector<uchar> captureJpeg();
 };
