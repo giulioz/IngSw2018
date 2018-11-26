@@ -12,11 +12,11 @@ WebServer::WebServer(Server *server, const char *address) : Router("") {
   mg_set_protocol_http_websocket(this->nc);
 }
 
-WebServer::~WebServer() { }
+WebServer::~WebServer() {}
 
 void WebServer::handler(struct mg_connection *c, int ev, void *p) {
   if (ev == MG_EV_HTTP_REQUEST) {
-    struct http_message *hm = static_cast<struct http_message *>(p);
+    auto hm = static_cast<struct http_message *>(p);
     Request request(hm);
     Response response(c);
     this->handle(&request, &response);
