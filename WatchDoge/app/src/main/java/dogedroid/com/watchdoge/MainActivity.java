@@ -32,9 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         Pairing.text = findViewById(R.id.text);
-
-        Pairing connection = new Pairing();
-
+        Pairing connection = new Pairing(result -> {
+            Pairing.dogeAddress=result;
+            //CRASH app per setText
+            //Pairing.text.setText(result);
+            return null;
+        });
 
 
         Button onBoardBtn = findViewById(R.id.onBoardButton);
@@ -67,12 +70,13 @@ public class MainActivity extends AppCompatActivity {
     public void image_livefeed() {
 
         final ImageView imageView = findViewById(R.id.imageView);
-        final int refreshIntervalMs = 500;
+        final int refreshIntervalMs = 42;
         final Handler handler = new Handler();
         final Runnable imageUpdater = new Runnable() {
             @Override
             public void run() {
-                new LiveFeed(imageView).execute("http:/" + Pairing.dogeAddress + ":8000/shoot");
+                Pairing.text.setText("http:/"+Pairing.dogeAddress + ":8000/shoot");
+                new LiveFeed(imageView).execute("http:/"+Pairing.dogeAddress + ":8000/shoot");
                 handler.postDelayed(this, refreshIntervalMs);
             }
         };
