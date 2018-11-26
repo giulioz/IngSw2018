@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
@@ -29,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Pairing.text = findViewById(R.id.text);
+
         Pairing connection = new Pairing();
+
+
 
         Button onBoardBtn = findViewById(R.id.onBoardButton);
         onBoardBtn.setOnClickListener(new View.OnClickListener() {

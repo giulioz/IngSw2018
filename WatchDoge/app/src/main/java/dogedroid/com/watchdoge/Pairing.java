@@ -1,6 +1,8 @@
 package dogedroid.com.watchdoge;
 
 import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -12,10 +14,13 @@ import java.net.UnknownHostException;
 
 public class Pairing {
     public static String dogeAddress;
+    public static TextView text;
+
     public static final int port = 8001;
 
     public Pairing(){
         new Thread(new connect()).start();
+
     }
 
     private class connect implements Runnable{
@@ -44,6 +49,7 @@ public class Pairing {
                         udpSocket.receive(receivePacket);
                         Pairing.dogeAddress = receivePacket.getAddress().toString();
                         run = false;
+                        Pairing.text.setText(Pairing.dogeAddress);
                     } catch (IOException e) {
                         Log.e(" UDP client IOException", "error: ", e);
                         run = false;
