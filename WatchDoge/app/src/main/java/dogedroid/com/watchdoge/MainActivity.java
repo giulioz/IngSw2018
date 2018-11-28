@@ -30,37 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        Pairing.text = findViewById(R.id.text);
-        Pairing connection = new Pairing(result -> {
-            Pairing.dogeAddress=result;
-            //CRASH app per setText
-            //Pairing.text.setText(result);
-            return null;
-        });
+        new Pairing();
 
 
         Button onBoardBtn = findViewById(R.id.onBoardButton);
-        onBoardBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                go_OnBording();
-            }
-        });
+        onBoardBtn.setOnClickListener(v -> go_OnBording());
 
-        findViewById(R.id.fetchButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                image_livefeed();
-            }
-        });
-
-        findViewById(R.id.stop_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.running = false;
-            }
-        });
+        findViewById(R.id.fetchButton).setOnClickListener(view -> image_livefeed());
     }
 
     public void go_OnBording() {
@@ -70,17 +46,19 @@ public class MainActivity extends AppCompatActivity {
     public void image_livefeed() {
 
         final ImageView imageView = findViewById(R.id.imageView);
+        final TextView textView = findViewById(R.id.text);
         final int refreshIntervalMs = 42;
         final Handler handler = new Handler();
         final Runnable imageUpdater = new Runnable() {
             @Override
             public void run() {
-                Pairing.text.setText("http:/"+Pairing.dogeAddress + ":8000/shoot");
-                new LiveFeed(imageView).execute("http:/"+Pairing.dogeAddress + ":8000/shoot");
-                handler.postDelayed(this, refreshIntervalMs);
+                    textView.setText("http:/" + Pairing.dogeAddress + ":8000/shoot");
+                    new LiveFeed(imageView).execute("http:/" + Pairing.dogeAddress + ":8000/shoot");
+                    handler.postDelayed(this, refreshIntervalMs);
             }
         };
         handler.post(imageUpdater);
+        findViewById(R.id.stop_button).setOnClickListener(v -> handler.removeCallbacks(imageUpdater));
     }
 
 
