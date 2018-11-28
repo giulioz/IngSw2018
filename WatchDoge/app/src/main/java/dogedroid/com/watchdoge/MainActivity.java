@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
         onBoardBtn.setOnClickListener(v -> go_OnBording());
 
         findViewById(R.id.fetchButton).setOnClickListener(view -> image_livefeed());
-
-        findViewById(R.id.stop_button).setOnClickListener(v -> MainActivity.running = false);
     }
 
     public void go_OnBording() {
@@ -54,12 +52,13 @@ public class MainActivity extends AppCompatActivity {
         final Runnable imageUpdater = new Runnable() {
             @Override
             public void run() {
-                textView.setText("http:/"+Pairing.dogeAddress + ":8000/shoot");
-                new LiveFeed(imageView).execute("http:/"+Pairing.dogeAddress + ":8000/shoot");
-                handler.postDelayed(this, refreshIntervalMs);
+                    textView.setText("http:/" + Pairing.dogeAddress + ":8000/shoot");
+                    new LiveFeed(imageView).execute("http:/" + Pairing.dogeAddress + ":8000/shoot");
+                    handler.postDelayed(this, refreshIntervalMs);
             }
         };
         handler.post(imageUpdater);
+        findViewById(R.id.stop_button).setOnClickListener(v -> handler.removeCallbacks(imageUpdater));
     }
 
 
