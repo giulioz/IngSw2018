@@ -3,6 +3,7 @@
     package="dogedroid.com.watchdoge">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +22,15 @@
         <activity android:name=".onboarding.OnBoarding_2" />
         <activity android:name=".onboarding.OnBoarding_3" />
         <activity android:name=".onboarding.OnBoarding_4" />
-        <activity android:name=".onboarding.OnBoarding_5"></activity>
+        <activity android:name=".onboarding.OnBoarding_5" />
+        <activity
+            android:name=".LiveFeedActivity"
+            android:label="@string/title_activity_live_feed"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DogeLogActivity"
+
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

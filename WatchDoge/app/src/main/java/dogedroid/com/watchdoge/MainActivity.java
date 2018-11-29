@@ -22,44 +22,32 @@ import dogedroid.com.watchdoge.onboarding.OnBoarding_1;
 
 
 public class MainActivity extends AppCompatActivity {
+    private Button onBoardBtn;
+    private Button liveBtn;
 
-    public static boolean running = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        onBoardBtn = findViewById(R.id.onBoardButton);
+        liveBtn = findViewById(R.id.live_activity_btn);
+
+        // SE SIAMO CONNESSI
         new Pairing();
 
 
-        Button onBoardBtn = findViewById(R.id.onBoardButton);
-        onBoardBtn.setOnClickListener(v -> go_OnBording());
+        onBoardBtn.setOnClickListener(v ->
+                startActivity(new Intent(this, OnBoarding_1.class))
+        );
 
-        findViewById(R.id.fetchButton).setOnClickListener(view -> image_livefeed());
+        liveBtn.setOnClickListener((v) ->
+                startActivity(new Intent(this, LiveFeedActivity.class))
+        );
     }
 
-    public void go_OnBording() {
-        startActivity(new Intent(this, OnBoarding_1.class));
-    }
 
-    public void image_livefeed() {
-
-        final ImageView imageView = findViewById(R.id.imageView);
-        final TextView textView = findViewById(R.id.text);
-        final int refreshIntervalMs = 42;
-        final Handler handler = new Handler();
-        final Runnable imageUpdater = new Runnable() {
-            @Override
-            public void run() {
-                    textView.setText("http:/" + Pairing.dogeAddress + ":8000/shoot");
-                    new LiveFeed(imageView).execute("http:/" + Pairing.dogeAddress + ":8000/shoot");
-                    handler.postDelayed(this, refreshIntervalMs);
-            }
-        };
-        handler.post(imageUpdater);
-        findViewById(R.id.stop_button).setOnClickListener(v -> handler.removeCallbacks(imageUpdater));
-    }
 
 
 }

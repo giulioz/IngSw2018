@@ -44,7 +44,9 @@ public class Pairing {
                     try {
                         receivePacket = new DatagramPacket(message,message.length);
                         udpSocket.setSoTimeout(1000);
+
                         udpSocket.receive(receivePacket);
+
                         if(receivePacket.getAddress()!=null){
                             Pairing.dogeAddress = receivePacket.getAddress().toString();
                             run = false;

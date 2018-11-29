@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WatchDoge</string>
+    <string name="title_activity_live_feed">LiveFeedActivity</string>
 
 </resources>
