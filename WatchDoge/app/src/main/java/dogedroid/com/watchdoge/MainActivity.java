@@ -18,12 +18,14 @@ import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 
+import dogedroid.com.watchdoge.dogelog.DogeLogActivity;
 import dogedroid.com.watchdoge.onboarding.OnBoarding_1;
 
 
 public class MainActivity extends AppCompatActivity {
     private Button onBoardBtn;
     private Button liveBtn;
+    private Button logBtn;
 
 
     @Override
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         onBoardBtn = findViewById(R.id.onBoardButton);
         liveBtn = findViewById(R.id.live_activity_btn);
+        logBtn = findViewById(R.id.log_activity_btn);
 
         // SE SIAMO CONNESSI
         new Pairing();
@@ -45,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
         liveBtn.setOnClickListener((v) ->
                 startActivity(new Intent(this, LiveFeedActivity.class))
         );
+
+        logBtn.setOnClickListener((v) ->
+                startActivity(new Intent(this, DogeLogActivity.class))
+        );
+
     }
 
 

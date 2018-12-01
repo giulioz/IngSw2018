@@ -28,7 +28,7 @@
             android:label="@string/title_activity_live_feed"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DogeLogActivity"
+        <activity android:name=".dogelog.DogeLogActivity"
 
             android:parentActivityName=".MainActivity"></activity>
     </application>
