@@ -43,7 +43,6 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     private void fetchListe() {
         String json = null;
         try {
-            Log.d(TAG, "fetchListe: ip: http:/" + Pairing.dogeAddress + ":8000/intrusions/unread");
             json = new GetJson().AsString("http:/" + Pairing.dogeAddress + ":8000/intrusions/unread");
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -59,12 +58,6 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
             for (int i = 0; i < len; i++) {
                 id.add(array.get(i).getAsJsonObject().get("id").toString());
                 date.add(array.get(i).getAsJsonObject().get("time").toString());
-
-                Log.d(TAG, "fetchListe: array:" + array.get(i).toString());
-
-                Log.d(TAG, "fetchListe: id:" + id.get(i));
-
-                Log.d(TAG, "fetchListe: date:" + date.get(i));
             }
         }
 
