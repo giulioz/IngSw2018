@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.CircularProgressDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,25 +29,28 @@ import dogedroid.com.watchdoge.R;
 
 public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
 
+    private static final String TAG = "ListaLog";
     private ArrayList<String> id = new ArrayList<>();
     private ArrayList<String> date = new ArrayList<>();
 
     private Context myContex;
 
     public ListaLog(Context myContex) {
-        getListe();
         this.myContex = myContex;
+        fetchListe();
     }
 
-    private void getListe() {
+    private void fetchListe() {
         String json = null;
         try {
+            Log.d(TAG, "fetchListe: ip: http:/" + Pairing.dogeAddress + ":8000/intrusions/unread");
             json = new GetJson().AsString("http:/" + Pairing.dogeAddress + ":8000/intrusions/unread");
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         JsonArray reader = new JsonParser().parse(json).getAsJsonArray();
         JsonArray array = reader.getAsJsonArray();
 
@@ -54,7 +58,13 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
             int len = array.size();
             for (int i = 0; i < len; i++) {
                 id.add(array.get(i).getAsJsonObject().get("id").toString());
-                date.add(array.get(i).getAsJsonObject().get("date").toString());
+                date.add(array.get(i).getAsJsonObject().get("time").toString());
+
+                Log.d(TAG, "fetchListe: array:" + array.get(i).toString());
+
+                Log.d(TAG, "fetchListe: id:" + id.get(i));
+
+                Log.d(TAG, "fetchListe: date:" + date.get(i));
             }
         }
 
