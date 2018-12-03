@@ -23,7 +23,7 @@ class Root {
   bool isAutoMode() const;
   void setAutoMode(bool);
   std::map<WeekDay, std::list<TimeSpan> > getAutoModeConf() const;
-  bool isActive() const { return this->active; }
+  bool isActive() const;
   void setActive(bool);
   std::list<Intrusion> getIntrusions() const;
 };

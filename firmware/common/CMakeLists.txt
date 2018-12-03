@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(WatchDogeCommon)
 
-file(GLOB SOURCES src/*.cpp src/*/*.cpp)
+file(GLOB SOURCES src/*.cpp src/*/*.cpp src/*/*/*.cpp)
 
 add_library(WatchDogeCommon STATIC
         ${SOURCES}

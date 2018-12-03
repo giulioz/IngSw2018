@@ -8,23 +8,6 @@ DBConnector::DBConnector(const char* dbFile) {
 
 DBConnector::~DBConnector() { unqlite_close(pDb); }
 
-template <typename T>
-void DBConnector::storeValue(const char* key, const T* buf, unqlite_int64 len) {
-  if (unqlite_kv_store(pDb, key, -1, buf, (unqlite_int64)sizeof(T) * len) !=
-      UNQLITE_OK) {
-    throw "Cannot store value.";
-  }
-}
-
-template <typename T>
-void DBConnector::appendValue(const char* key, const T* buf,
-                              unqlite_int64 len) {
-  if (unqlite_kv_append(pDb, key, -1, buf, (unqlite_int64)sizeof(T) * len) !=
-      UNQLITE_OK) {
-    throw "Cannot append value.";
-  }
-}
-
 void DBConnector::deleteValue(const char* key) {
   unqlite_kv_delete(pDb, key, -1);
 }
@@ -38,12 +21,6 @@ void DBConnector::deleteAll() {
        unqlite_kv_cursor_next_entry(pCursor)) {
     rc = unqlite_kv_cursor_delete_entry(pCursor);
   }
-}
-
-template <typename T>
-bool DBConnector::fetchValue(const char* key, const T* buf, unqlite_int64 len) {
-  return (unqlite_kv_fetch(pDb, key, -1, buf, (unqlite_int64)sizeof(T) * len) ==
-          UNQLITE_OK);
 }
 
 // bool DBConnector::fetchValueAsync(const char* key) {
