@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include <string.h>
 #include "Comm.hpp"
+#include "DB/DBConnector.hpp"
 #include "DB/DB.hpp"
 #include "MockHardwareInterface.hpp"
 #include "SDLFrameBuffer.hpp"
@@ -11,7 +12,8 @@ static const char *infoString = "MOCK server dev version";
 int main() {
   bool running = true;
 
-  DB db("test.db");
+  DBConnector dbC("test.db");
+  DB db(&dbC);
 
   SDLFrameBuffer sdlFrameBuffer;
   MockHardwareInterface mockHardwareInterface;
