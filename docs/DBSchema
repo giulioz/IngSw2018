@@ -17,7 +17,7 @@ Root = {
 	"intrusions": Intrusion[]
 }
 
-WeekDay = Enum("mon", "tue", "wed", "thu", "fri", "sat", "sun")
+WeekDay = Enum(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
 
 TimeSpan = {
 	// (Required) The start time.
