@@ -78,9 +78,9 @@ Modello event-driven broadcast [...]
 Di seguito verranno elencati gli endpoint che consentono di interagire con il device, in ascolto sulla porta *HTTP 8000*.
 Tutte le richieste vogliono il token di autenticazione come Bearer Token, altrimenti ritornano 403.
 
-## Allarm
+### Allarm
 
-### GET /allarm/state
+#### GET /allarm/state
 
 Ritorna lo stato attuale dell'allarme.
 
@@ -92,7 +92,7 @@ Ritorna lo stato attuale dell'allarme.
 }
 ```
 
-### GET /allarm/program
+#### GET /allarm/program
 
 Ritorna la programmazione impostata dell'allarme.
 
@@ -144,7 +144,7 @@ Ritorna la programmazione impostata dell'allarme.
 }
 ```
 
-### POST /allarm/on
+#### POST /allarm/on
 
 Attiva l'allarme (override modalità automatica).
 
@@ -152,7 +152,7 @@ Attiva l'allarme (override modalità automatica).
 
 **Response:** nessuno
 
-### POST /allarm/off
+#### POST /allarm/off
 
 Attiva l'allarme (override modalità automatica).
 
@@ -160,7 +160,7 @@ Attiva l'allarme (override modalità automatica).
 
 **Response:** nessuno
 
-### POST /allarm/auto
+#### POST /allarm/auto
 
 Attiva la modalità automatica per l'allarme.
 
@@ -168,7 +168,7 @@ Attiva la modalità automatica per l'allarme.
 
 **Response:** nessuno
 
-### POST /allarm/program
+#### POST /allarm/program
 
 Imposta la programmazione per la modalità automatica.
 
@@ -176,9 +176,9 @@ Imposta la programmazione per la modalità automatica.
 
 **Response:** nessuno
 
-## Data
+### Data
 
-### GET /intrusions
+#### GET /intrusions
 
 Ritorna lo storico di tutte le intrusioni. Imposta quelle restitute come lette.
 
@@ -193,33 +193,33 @@ Ritorna lo storico di tutte le intrusioni. Imposta quelle restitute come lette.
 ]
 ```
 
-### GET /intrusions/unread
+#### GET /intrusions/unread
 
 Ritorna le intrusioni non ancora lette. Imposta quelle restitute come lette.
 
 **Response:** JSON (vedi sopra)
 
-### GET /intrusions/time/:start/:end
+#### GET /intrusions/time/:start/:end
 
 Ritorna lo storico delle intrusioni in un certo rango di tempo (specificato come secondi timestamp). Imposta quelle restitute come lette.
 
 **Response:** JSON (vedi sopra)
 
-### GET /intrusions/:id/shoot
+#### GET /intrusions/:id/shoot
 
 Ritorna la foto relativa ad una certa intrusione.
 
 **Response:** JPEG binary
 
-## Hardware
+### Hardware
 
-### GET /shoot
+#### GET /shoot
 
 Ritorna un frame preso dalla videocamera.
 
 **Response:** JPEG binary
 
-### POST /move/left
+#### POST /move/left
 
 Gira il robot a sinistra.
 
@@ -227,7 +227,7 @@ Gira il robot a sinistra.
 
 **Response:** nessuno
 
-### POST /move/right
+#### POST /move/right
 
 Gira il robot a destra.
 
@@ -235,9 +235,9 @@ Gira il robot a destra.
 
 **Response:** nessuno
 
-## Authentication
+### Authentication
 
-### POST /pair
+#### POST /pair
 
 Richiede un nuovo token per l'autenticazione.
 
@@ -252,9 +252,9 @@ Richiede un nuovo token per l'autenticazione.
 
 **Response:** stringa JSON in caso positivo, HTTP 403 in caso di codice errato
 
-## Misc
+### Misc
 
-### GET /info
+#### GET /info
 
 Ritorna informazioni sul robot.
 
