@@ -154,7 +154,7 @@ Attiva l'allarme (override modalità automatica).
 
 #### POST /allarm/off
 
-Attiva l'allarme (override modalità automatica).
+Disattiva l'allarme (override modalità automatica).
 
 **Body:** nessuno
 
