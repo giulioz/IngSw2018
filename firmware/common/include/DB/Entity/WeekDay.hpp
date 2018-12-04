@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 enum class WeekDay {
   MONDAY,
   TUESDAY,
@@ -9,3 +11,5 @@ enum class WeekDay {
   SATURDAY,
   SUNDAY
 };
+
+std::string convertWeekDayToString(const WeekDay&);

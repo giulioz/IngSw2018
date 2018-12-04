@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 class Intrusion {
  private:
   long id;
@@ -8,9 +10,10 @@ class Intrusion {
 
  public:
   Intrusion(long, long, bool);
-  Intrusion(const Intrusion&);
+  Intrusion(const Intrusion &);
 
-  long getId() const;
-  long getDate() const;
-  bool isNotified() const;
+  long getId();
+  long getDate();
+  bool isNotified();
+  std::string toString();
 };

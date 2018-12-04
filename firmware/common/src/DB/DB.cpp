@@ -73,7 +73,7 @@ void DB::fetchIntrusions(Root& root) {
   }
 }
 
-void DB::storeAuthKeys(const Root& root) {
+void DB::storeAuthKeys(Root& root) {
   long size = (&root)->getAuthKeys().size();
   this->pDbC->storeValue<long>("$ak", &size, 1);
   long i = 0;
@@ -96,7 +96,7 @@ void DB::storeAuthKeys(const Root& root) {
   }
 }
 
-void DB::storeAutoModeConf(const Root& root) {
+void DB::storeAutoModeConf(Root& root) {
   for (long d = 0; d < 7; d++) {
     long size = 0;
     std::map<WeekDay, std::list<TimeSpan>>::iterator it =
@@ -138,7 +138,7 @@ void DB::storeAutoModeConf(const Root& root) {
   }
 }
 
-void DB::storeIntrusions(const Root& root) {
+void DB::storeIntrusions(Root& root) {
   long size = (&root)->getIntrusions().size();
   this->pDbC->storeValue<long>(std::string("$i").c_str(), &size, 1);
   long i = 0;
@@ -169,7 +169,7 @@ Root DB::fetch() {
   return root;
 }
 
-void DB::store(const Root& root) {
+void DB::store(Root& root) {
   this->pDbC->deleteAll();
   bool autoMode = (&root)->isAutoMode(), active = (&root)->isActive();
   this->pDbC->storeValue<bool>("am", &autoMode, 1);

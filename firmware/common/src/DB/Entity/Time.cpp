@@ -14,11 +14,11 @@ Time::Time(const Time& t) {
   this->minute = (&t)->minute;
 }
 
-long Time::getHour() const { return this->hour; }
+long Time::getHour() { return this->hour; }
 
-long Time::getMinute() const { return this->minute; }
+long Time::getMinute() { return this->minute; }
 
-long Time::compare(const Time& t) const {
+long Time::compare(const Time& t) {
   if (this->hour < (&t)->hour ||
       (this->hour == (&t)->hour && this->minute < (&t)->minute)) {
     return -1;
@@ -28,4 +28,9 @@ long Time::compare(const Time& t) const {
   return 1;
 }
 
-bool Time::equals(const Time& t) const { return (this->compare(t) == 0); }
+bool Time::equals(const Time& t) { return (this->compare(t) == 0); }
+
+std::string Time::toString() {
+  return std::string("Time(" + std::to_string(this->getHour()) + ", " +
+                     std::to_string(this->getMinute()) + ")");
+}

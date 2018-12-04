@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 class Time {
  private:
   long hour;
@@ -9,8 +11,9 @@ class Time {
   Time(long, long);
   Time(const Time&);
 
-  long getHour() const;
-  long getMinute() const;
-  long compare(const Time&) const;
-  bool equals(const Time&) const;
+  long getHour();
+  long getMinute();
+  long compare(const Time&);
+  bool equals(const Time&);
+  std::string toString();
 };

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "DB/Entity/Time.hpp"
 
 class TimeSpan {
@@ -11,7 +13,8 @@ class TimeSpan {
   TimeSpan(const Time&, const Time&);
   TimeSpan(const TimeSpan&);
 
-  Time getFrom() const;
-  Time getTo() const;
-  bool intersects(const TimeSpan&) const;
+  Time& getFrom();
+  Time& getTo();
+  bool intersects(const TimeSpan&);
+  std::string toString();
 };

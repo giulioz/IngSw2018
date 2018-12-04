@@ -6,14 +6,20 @@ Intrusion::Intrusion(long id, long date, bool notified) {
   this->notified = notified;
 }
 
-Intrusion::Intrusion(const Intrusion& i) {
+Intrusion::Intrusion(const Intrusion &i) {
   this->id = (&i)->id;
   this->date = (&i)->date;
   this->notified = (&i)->notified;
 }
 
-long Intrusion::getId() const { return this->id; }
+long Intrusion::getId() { return this->id; }
 
-long Intrusion::getDate() const { return this->date; }
+long Intrusion::getDate() { return this->date; }
 
-bool Intrusion::isNotified() const { return this->notified; }
+bool Intrusion::isNotified() { return this->notified; }
+
+std::string Intrusion::toString() {
+  return std::string("Intrusion(" + std::to_string(this->getId()) + ", " +
+                     std::to_string(this->getDate()) + ", " +
+                     (this->isNotified() ? "true" : "false") + ")");
+}

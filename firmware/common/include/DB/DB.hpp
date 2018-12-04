@@ -19,13 +19,13 @@ class DB {
   void fetchAuthKeys(Root&);
   void fetchAutoModeConf(Root&);
   void fetchIntrusions(Root&);
-  void storeAuthKeys(const Root&);
-  void storeAutoModeConf(const Root&);
-  void storeIntrusions(const Root&);
+  void storeAuthKeys(Root&);
+  void storeAutoModeConf(Root&);
+  void storeIntrusions(Root&);
 
  public:
   DB(DBConnector*);
 
   Root fetch();
-  void store(const Root&);
+  void store(Root&);
 };
