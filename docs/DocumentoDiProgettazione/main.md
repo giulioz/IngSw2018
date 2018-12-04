@@ -78,9 +78,9 @@ Modello event-driven broadcast [...]
 Di seguito verranno elencati gli endpoint che consentono di interagire con il device, in ascolto sulla porta *HTTP 8000*.
 Tutte le richieste vogliono il token di autenticazione come Bearer Token, altrimenti ritornano 403.
 
-### Allarm
+### Alarm
 
-#### GET /allarm/state
+#### GET /alarm/status
 
 Ritorna lo stato attuale dell'allarme.
 
@@ -92,7 +92,7 @@ Ritorna lo stato attuale dell'allarme.
 }
 ```
 
-#### GET /allarm/program
+#### GET /auto/conf
 
 Ritorna la programmazione impostata dell'allarme.
 
@@ -144,7 +144,7 @@ Ritorna la programmazione impostata dell'allarme.
 }
 ```
 
-#### POST /allarm/on
+#### POST /alarm/on
 
 Attiva l'allarme (override modalità automatica).
 
@@ -152,7 +152,7 @@ Attiva l'allarme (override modalità automatica).
 
 **Response:** nessuno
 
-#### POST /allarm/off
+#### POST /alarm/off
 
 Disattiva l'allarme (override modalità automatica).
 
@@ -160,19 +160,19 @@ Disattiva l'allarme (override modalità automatica).
 
 **Response:** nessuno
 
-#### POST /allarm/auto
-
-Attiva la modalità automatica per l'allarme.
-
-**Body:** nessuno
-
-**Response:** nessuno
-
-#### POST /allarm/program
+#### POST /auto/conf
 
 Imposta la programmazione per la modalità automatica.
 
 **Body:** JSON (vedi sopra)
+
+**Response:** nessuno
+
+#### POST /auto/toggle
+
+Attiva/disattiva la modalità automatica per l'allarme.
+
+**Body:** nessuno
 
 **Response:** nessuno
 
