@@ -17,7 +17,7 @@ public class DogeLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doge_log);
         list = findViewById(R.id.log_list);
-        listAdaptor = new ListaLog(getApplicationContext());
+        listAdaptor = new ListaLog(getApplicationContext(),"/unread");
         list.setAdapter(listAdaptor);
         list.setLayoutManager(new LinearLayoutManager(this));
     }
