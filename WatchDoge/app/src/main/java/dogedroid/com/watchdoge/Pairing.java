@@ -11,14 +11,22 @@ import java.net.SocketTimeoutException;
 import java.util.function.Function;
 
 public class Pairing {
+    public static boolean connected = false;
     public static String dogeAddress="";
     public static final int port = 8001;
+    private Thread pairingThread;
 
-    public Pairing(){
-        new Thread(new connect()).start();
+    public Pairing() {
+        this.pairingThread = new Thread(new Connect());
+        pairingThread.start();
     }
 
-    private class connect implements Runnable{
+    private class Connect implements Runnable{
+        private void connectionSuccess(String ip){
+            Pairing.connected = true;
+            Pairing.dogeAddress = ip;
+        }
+
         @Override
         public void run() {
             boolean run = true;
@@ -36,30 +44,25 @@ public class Pairing {
                 sendData = sentence.getBytes();
 
                 DatagramPacket packet = new DatagramPacket(sendData, sendData.length,serverAddr, port);
-                udpSocket.send(packet);
-
                 DatagramPacket receivePacket;
 
                 while (run) {
                     try {
+                        udpSocket.send(packet);
                         receivePacket = new DatagramPacket(message,message.length);
-                        udpSocket.setSoTimeout(1000);
-
+                        udpSocket.setSoTimeout(1500);
                         udpSocket.receive(receivePacket);
 
-                        if(receivePacket.getAddress()!=null){
-                            Pairing.dogeAddress = receivePacket.getAddress().toString();
-                            run = false;
-                            udpSocket.close();
-                        }
+                        connectionSuccess(receivePacket.getAddress().toString());
+                        run = false;
+                        udpSocket.close();
+
+
+
                     } catch (SocketTimeoutException e) {
                         Log.d("Timeout Exception","UDP Connection:",e);
-                        run = false;
-                        udpSocket.close();
                     } catch (IOException e) {
                         Log.d("UDP client IOException", "error: ", e);
-                        run = false;
-                        udpSocket.close();
                     }
                 }
             } catch (SocketException e) {
