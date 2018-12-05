@@ -13,7 +13,7 @@ Se l'utente intende accettare le condizioni verrà guidata alla fase successiva 
 
 ![pair: Doge nelle Vicinanze](https://github.com/giulioz/IngSw2018/blob/master/docs/FinalMockup/Pair_mock/Pair_mock%20%E2%80%93%203.png)
 
-La terza schermata di pair avvierà nell'applicazione la fase di DISCOVER per permettere la ricerca nella vicinanze di sistemi DOGE (robottino).
+La terza schermata di pair avvierà nell'applicazione la fase di DISCOVERY per permettere la ricerca nella vicinanze di sistemi DOGE (robottino).
 Sarà quindi l'utente a scegliere il DOGE voluto (mediante la loro identificazione attraverso il loro nome in rete).
 
 ![pair: Connetti Doge](https://github.com/giulioz/IngSw2018/blob/master/docs/FinalMockup/Pair_mock/Pair_mock%20%E2%80%93%204.png)
