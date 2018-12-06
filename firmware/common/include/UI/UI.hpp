@@ -2,6 +2,8 @@
 
 class UI {
  private:
+  void drawChar(int x, int y, const char c);
+
  public:
   virtual ~UI(){};
 

@@ -12,14 +12,18 @@ void UI::clear() {
   }
 }
 
-void UI::drawText(int x, int y, const char* text) {
-  for (; y < 8; y++) {
-    for (auto k = 0; k < strlen(text); k++) {
-      auto i = text[k];
-      for (; x < 8; x++) {
-        auto set = font8x8_basic[i][1] & 1 << y;
-        if (set) drawPixel(x, y, true);
-      }
+void UI::drawChar(int px, int py, const char c) {
+  for (auto y = 0; y < 8; y++) {
+    for (auto x = 0; x < 8; x++) {
+      auto set = font8x8_basic[c][y] & 1 << x;
+      drawPixel(x + px, y + py, set);
     }
+  }
+}
+
+void UI::drawText(int x, int y, const char* text) {
+  auto length = strlen(text);
+  for (auto k = 0; k < length; k++) {
+    drawChar(x + 8 * k, y, text[k]);
   }
 }
