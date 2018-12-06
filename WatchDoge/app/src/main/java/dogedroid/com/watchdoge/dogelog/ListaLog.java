@@ -33,17 +33,22 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     private ArrayList<String> id = new ArrayList<>();
     private ArrayList<String> date = new ArrayList<>();
 
+    private String addedLink;
     private Context myContex;
 
-    public ListaLog(Context myContex) {
+    public ListaLog(Context myContex,String addedLink) {
         this.myContex = myContex;
+        this.addedLink = addedLink;
         fetchListe();
+    }
+    public ListaLog(Context myContex) {
+        this(myContex,"");
     }
 
     private void fetchListe() {
         String json = null;
         try {
-            json = new GetJson().AsString("http:/" + Pairing.dogeAddress + ":8000/intrusions/unread");
+            json = new GetJson().AsString("http:/" + Pairing.dogeAddress + ":8000/intrusions" + this.addedLink);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
