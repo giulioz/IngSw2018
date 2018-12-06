@@ -156,8 +156,7 @@ void DB::storeIntrusions(Root& root) {
   }
 }
 
-Root DB::fetch() {
-  Root root;
+void DB::fetch(Root& root) {
   bool autoMode, active;
   this->pDbC->fetchValue<bool>("am", &autoMode, 1);
   this->pDbC->fetchValue<bool>("a", &active, 1);
@@ -166,7 +165,6 @@ Root DB::fetch() {
   this->fetchAuthKeys(root);
   this->fetchAutoModeConf(root);
   this->fetchIntrusions(root);
-  return root;
 }
 
 void DB::store(Root& root) {

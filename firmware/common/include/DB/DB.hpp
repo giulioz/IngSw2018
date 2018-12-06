@@ -26,6 +26,6 @@ class DB {
  public:
   DB(DBConnector*);
 
-  Root fetch();
+  void fetch(Root& root);
   void store(Root&);
 };

@@ -1,6 +1,7 @@
 #include "WebApi.hpp"
 
 void WebApi::getAlarmStatus(const Request *request, Response *response) {
+  ui->drawText(0, 0, "diocan");
   response->json("[{id:3, time:3, readt:false}]");
 }
 
@@ -60,6 +61,10 @@ void WebApi::postRight(const Request *request, Response *response) {
   response->sendStatus(200);
 }
 
+void WebApi::getPair(const Request *request, Response *response) {
+  response->json("");
+}
+
 void WebApi::postPair(const Request *request, Response *response) {
   response->json("");
 }
@@ -102,16 +107,21 @@ void WebApi::loadRoutes() {
   ROUTE("/shoot", "GET", getShoot);
   ROUTE("/move/left", "POST", postLeft);
   ROUTE("/move/right", "POST", postRight);
+  ROUTE("/pair", "GET", getPair);
   ROUTE("/pair", "POST", postPair);
   ROUTE("/info", "GET", getInfo);
   ROUTE("/test", "GET", getTest);
 }
 
 WebApi::WebApi(Server *server, HardwareInterface *hardwareInterface,
-               ImageCapturer *imageCapturer, const char *infoString)
+               AlarmEngine *alarmEngine, UI *ui, ImageCapturer *imageCapturer,
+               DB *db, const char *infoString)
     : webServer(server, "0.0.0.0:8000") {
   this->hardwareInterface = hardwareInterface;
+  this->alarmEngine = alarmEngine;
   this->imageCapturer = imageCapturer;
+  this->db = db;
+  this->ui = ui;
   this->infoString = infoString;
   this->loadRoutes();
 }
