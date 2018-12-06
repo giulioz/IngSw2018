@@ -15,9 +15,6 @@
 static const char *infoString = "Doge Server (Mock)";
 
 int main() {
-  // DBConnector dbC("test.db");
-  // DB db(&dbC);
-  // Root root = db.fetch();
   /*
     root.setActive(true);
     root.getAuthKeys().insert(std::pair<std::string, std::string>(
@@ -35,20 +32,13 @@ int main() {
   SDLFrameBuffer sdlFrameBuffer;
   MockHardwareInterface mockHardwareInterface;
   ImageCapturer imageCapturer;
-  Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer,
+  DBConnector dbC("test.db");
+  Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer, &dbC,
             infoString);
-
-  sdlFrameBuffer.clear();
-  sdlFrameBuffer.UI::drawPixel(10, 10, true);
-  sdlFrameBuffer.UI::drawPixel(15, 10, true);
-  sdlFrameBuffer.UI::drawPixel(12, 20, true);
-  sdlFrameBuffer.UI::drawPixel(10, 13, true);
 
   while (running) {
     mockHardwareInterface.poll();
     sdlFrameBuffer.poll(&running);
     comm.poll();
-
-    SDL_Delay(10);
   }
 }

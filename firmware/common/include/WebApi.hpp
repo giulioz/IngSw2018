@@ -1,8 +1,11 @@
 #pragma once
 
+#include "DB/DB.hpp"
+#include "UI/UI.hpp"
 #include "HardwareInterface.hpp"
 #include "Network/WebServer.hpp"
 #include "Server.hpp"
+#include "AlarmEngine.hpp"
 #include "Webcam/ImageCapturer.hpp"
 
 class WebApi {
@@ -10,6 +13,9 @@ class WebApi {
   WebServer webServer;
   HardwareInterface *hardwareInterface;
   ImageCapturer *imageCapturer;
+  DB *db;
+  UI *ui;
+  AlarmEngine* alarmEngine;
   const char *infoString;
 
   void loadRoutes();
@@ -42,6 +48,6 @@ class WebApi {
   void getTest(const Request *request, Response *response);
 
  public:
-  WebApi(Server *server, HardwareInterface *hardwareInterface,
-         ImageCapturer *imageCapturer, const char *infoString);
+  WebApi(Server *server, HardwareInterface *hardwareInterface, AlarmEngine* alarmEngine, UI *ui,
+         ImageCapturer *imageCapturer, DB *db, const char *infoString);
 };
