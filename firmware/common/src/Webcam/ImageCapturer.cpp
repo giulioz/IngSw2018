@@ -2,12 +2,26 @@
 
 #include <iostream>
 
+#define WIDTH 320
+#define HEIGHT 240
+
+ImageCapturer::ImageCapturer() : camera(0) {
+  if (!camera.isOpened()) {
+    std::cout << "Error opening video stream." << std::endl;
+  }
+  this->camera.set(cv::CAP_PROP_FRAME_WIDTH, WIDTH);
+  this->camera.set(cv::CAP_PROP_FRAME_HEIGHT, HEIGHT);
+
+  cv::Mat frame;
+  this->camera.read(frame);
+}
+
 ImageCapturer::ImageCapturer(const char* videoId) : camera(videoId) {
   if (!camera.isOpened()) {
     std::cout << "Error opening video stream." << std::endl;
   }
-  this->camera.set(cv::CAP_PROP_FRAME_WIDTH, 320);
-  this->camera.set(cv::CAP_PROP_FRAME_HEIGHT, 240);
+  this->camera.set(cv::CAP_PROP_FRAME_WIDTH, WIDTH);
+  this->camera.set(cv::CAP_PROP_FRAME_HEIGHT, HEIGHT);
 
   cv::Mat frame;
   this->camera.read(frame);

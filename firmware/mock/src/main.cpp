@@ -15,9 +15,9 @@
 static const char *infoString = "Doge Server (Mock)";
 
 int main() {
-  DBConnector dbC("test.db");
-  DB db(&dbC);
-  Root root = db.fetch();
+  // DBConnector dbC("test.db");
+  // DB db(&dbC);
+  // Root root = db.fetch();
   /*
     root.setActive(true);
     root.getAuthKeys().insert(std::pair<std::string, std::string>(
@@ -34,7 +34,7 @@ int main() {
 
   SDLFrameBuffer sdlFrameBuffer;
   MockHardwareInterface mockHardwareInterface;
-  ImageCapturer imageCapturer("/dev/video0");
+  ImageCapturer imageCapturer;
   Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer,
             infoString);
 

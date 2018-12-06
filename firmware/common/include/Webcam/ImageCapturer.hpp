@@ -8,6 +8,7 @@ class ImageCapturer {
   cv::VideoCapture camera;
 
  public:
+  ImageCapturer();
   ImageCapturer(const char* videoId);
   ~ImageCapturer();
 
