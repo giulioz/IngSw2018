@@ -1,15 +1,12 @@
 package dogedroid.com.watchdoge.dogelog;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.CircularProgressDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +21,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-import dogedroid.com.watchdoge.Pairing;
+import dogedroid.com.watchdoge.Discovery;
 import dogedroid.com.watchdoge.R;
 
 public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
@@ -48,7 +45,7 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     private void fetchListe() {
         String json = null;
         try {
-            json = new GetJson().AsString("http:/" + Pairing.dogeAddress + ":8000/intrusions" + this.addedLink);
+            json = new GetJson().AsString("http:/" + Discovery.dogeAddress + ":8000/intrusions" + this.addedLink);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -69,7 +66,7 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     }
 
     private String generateUrl(int i){
-        return "http:/" + Pairing.dogeAddress + ":8000/intrusions/"+id.get(i)+"/shoot";
+        return "http:/" + Discovery.dogeAddress + ":8000/intrusions/"+id.get(i)+"/shoot";
     }
 
     @NonNull

@@ -8,28 +8,49 @@ import android.widget.ImageView;
 
 import java.io.InputStream;
 
-public class LiveFeed extends AsyncTask<String, Void, Bitmap> {
+public class LiveFeed extends AsyncTask<Void, Bitmap, Void> {
+    public final long frameRate = 42;
 
-    ImageView bmImage;
+    private ImageView image;
+    private boolean run;
 
-        public LiveFeed(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
+    public LiveFeed(ImageView im){
+        this.image = im;
+        this.run = true;
+    }
 
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
+    public void stopLive(){
+        this.run = false;
+    }
+
+    @Override
+    protected Void doInBackground(Void... voids) {
+        while (run){
             Bitmap mIcon11 = null;
             try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
+                InputStream in = new java.net.URL("http:/" + Discovery.dogeAddress + ":8000/shoot").openStream();
                 mIcon11 = BitmapFactory.decodeStream(in);
+                publishProgress(mIcon11);
+                // Frame Rate
+                Thread.currentThread();
+                Thread.sleep(this.frameRate);
             } catch (Exception e) {
                 Log.e("Error", e.getMessage());
                 e.printStackTrace();
             }
-            return mIcon11;
         }
-
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
-        }
+        return null;
     }
+
+    @Override
+    protected void onProgressUpdate(Bitmap... values) {
+        super.onProgressUpdate(values);
+        image.setImageBitmap(values[0]);
+    }
+
+    @Override
+    protected void onPostExecute(Void aVoid) {
+        super.onPostExecute(aVoid);
+        //image.setImageIcon();
+    }
+}
