@@ -21,7 +21,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-import dogedroid.com.watchdoge.Discovery;
+import dogedroid.com.watchdoge.DiscoveryActivity;
 import dogedroid.com.watchdoge.R;
 
 public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
@@ -45,7 +45,7 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     private void fetchListe() {
         String json = null;
         try {
-            json = new GetJson().AsString("http:/" + Discovery.dogeAddress + ":8000/intrusions" + this.addedLink);
+            json = new GetJson().AsString("http:/" + DiscoveryActivity.dogeAddress + ":8000/intrusions" + this.addedLink);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -66,7 +66,7 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     }
 
     private String generateUrl(int i){
-        return "http:/" + Discovery.dogeAddress + ":8000/intrusions/"+id.get(i)+"/shoot";
+        return "http:/" + DiscoveryActivity.dogeAddress + ":8000/intrusions/"+id.get(i)+"/shoot";
     }
 
     @NonNull

@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".DiscoveryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,11 +26,12 @@
         <activity
             android:name=".LiveFeedActivity"
             android:label="@string/title_activity_live_feed"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".DiscoveryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".dogelog.DogeLogActivity"
-
-            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".dogelog.DogeLogActivity"
+            android:parentActivityName=".DiscoveryActivity" />
+        <activity android:name=".DashboardActivity"></activity>
     </application>
 
 </manifest>

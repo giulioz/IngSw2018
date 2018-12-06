@@ -28,7 +28,7 @@ public class LiveFeed extends AsyncTask<Void, Bitmap, Void> {
         while (run){
             Bitmap mIcon11 = null;
             try {
-                InputStream in = new java.net.URL("http:/" + Discovery.dogeAddress + ":8000/shoot").openStream();
+                InputStream in = new java.net.URL("http:/" + DiscoveryActivity.dogeAddress + ":8000/shoot").openStream();
                 mIcon11 = BitmapFactory.decodeStream(in);
                 publishProgress(mIcon11);
                 // Frame Rate
