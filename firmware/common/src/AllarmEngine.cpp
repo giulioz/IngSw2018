@@ -1,11 +1,11 @@
-#include "AllarmEngine.hpp"
+#include "AlarmEngine.hpp"
 
-AllarmEngine::AllarmEngine(HardwareInterface *hardwareInterface,
+AlarmEngine::AlarmEngine(HardwareInterface *hardwareInterface,
                            ImageCapturer *imageCapturer) {
   this->hardwareInterface = hardwareInterface;
   this->imageCapturer = imageCapturer;
 }
 
-AllarmEngine::~AllarmEngine() {}
+AlarmEngine::~AlarmEngine() {}
 
-void AllarmEngine::poll() {}
+void AlarmEngine::poll() {}

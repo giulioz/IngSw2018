@@ -3,15 +3,15 @@
 #include "HardwareInterface.hpp"
 #include "Webcam/ImageCapturer.hpp"
 
-class AllarmEngine {
+class AlarmEngine {
  private:
   HardwareInterface *hardwareInterface;
   ImageCapturer *imageCapturer;
 
  public:
-  AllarmEngine(HardwareInterface *hardwareInterface,
+  AlarmEngine(HardwareInterface *hardwareInterface,
          ImageCapturer *imageCapturer);
-  ~AllarmEngine();
+  ~AlarmEngine();
 
   void poll();
 };

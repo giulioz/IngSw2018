@@ -14,13 +14,13 @@ class WebApi {
 
   void loadRoutes();
 
-  // Allarm
-  void getAllarmState(const Request *request, Response *response);
-  void getAllarmProgram(const Request *request, Response *response);
-  void postAllarmOn(const Request *request, Response *response);
-  void postAllarmOff(const Request *request, Response *response);
-  void postAllarmAuto(const Request *request, Response *response);
-  void postAllarmProgram(const Request *request, Response *response);
+  // Alarm
+  void getAlarmStatus(const Request *request, Response *response);
+  void getAutoConf(const Request *request, Response *response);
+  void postAlarmOn(const Request *request, Response *response);
+  void postAlarmOff(const Request *request, Response *response);
+  void postAutoToggle(const Request *request, Response *response);
+  void postAutoConf(const Request *request, Response *response);
 
   // Data
   void getIntrusions(const Request *request, Response *response);
@@ -34,6 +34,7 @@ class WebApi {
   void postRight(const Request *request, Response *response);
 
   // Authentication
+  void getPair(const Request *request, Response *response);
   void postPair(const Request *request, Response *response);
 
   // Misc
