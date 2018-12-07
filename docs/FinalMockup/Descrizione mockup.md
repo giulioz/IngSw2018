@@ -41,8 +41,7 @@ Questa schermata si comporrà di più componenti:
 1) Live Feed: questa finestra mostrarà un video in diretta dell'ambiente puntato dal Doge. L'utente sarà quindi in grado di vedere in live dell'area puntata della camera collegato al sistema di sicurezza;
 2) Sistema di controllo: mediante alla frecce "SINISTRA" "DESTRA" l'utente sarà in gradi di spostare la camera, permettendo quindi di cambiare l'area di interesse del Live Feed.
 3) ON/OFF: attraverso questo pulsante l'utente sarà in grado di Accendere o Spegnere il sistema di sicurezza, potendo abilitare o disabilitare il sensore Sonar del Lego EV3 che permetterà di intercettare passaggio di intrusi nell'area di interesse.
-4) AUTO - PROGRAMMA: grazie alla spunta sul campo AUTO l'utente potrà pianificare l'accensione e lo spegnimento automatico del sistema di sicurezza (robottino), settato in precedenza mediante un tap su PROGRAMMA (che farà visualizzare un calendario per definire giorni ed orari in cui il sistema dovrà funzionare).
-5) Ultime Intrusioni: questa porzione di schermata offrirà all'utente un sistema di notifiche veloce per le ultime intrusione non ancora visualizzate. Attraverso un tap su in questo campo l'utente verrà indirizzato alla schermata STORICO INTRUSIONI.
+4) Ultime Intrusioni: questa porzione di schermata offrirà all'utente un sistema di notifiche veloce per le ultime intrusione non ancora visualizzate. Attraverso un tap su in questo campo l'utente verrà indirizzato alla schermata STORICO INTRUSIONI.
 
 ![main: Main_activity_settings](https://github.com/giulioz/IngSw2018/blob/master/docs/FinalMockup/Main_mock/Main_mock%20%E2%80%93%202.png)
 
