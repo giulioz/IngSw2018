@@ -157,7 +157,7 @@ void DB::storeIntrusions(Root& root) {
 }
 
 void DB::fetch(Root& root) {
-  bool autoMode, active;
+  bool autoMode = false, active = false;
   this->pDbC->fetchValue<bool>("am", &autoMode, 1);
   this->pDbC->fetchValue<bool>("a", &active, 1);
   (&root)->setAutoMode(autoMode);
