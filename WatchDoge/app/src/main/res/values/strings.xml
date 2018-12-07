@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">WatchDoge</string>
-    <string name="title_activity_live_feed">LiveFeedActivity</string>
+    <string name="title_activity_discovery">Doge Finder</string>
+    <string name="title_activity_live_feed">LiveFeed</string>
+    <string name="title_activity_dogelog">DogeLog - History</string>
 
 </resources>

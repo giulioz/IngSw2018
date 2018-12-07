@@ -27,8 +27,8 @@ public class LiveFeedActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onPause() {
+        super.onPause();
         liveThread.stopLive();
     }
 }

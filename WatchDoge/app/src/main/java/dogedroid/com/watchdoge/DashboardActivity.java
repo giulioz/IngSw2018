@@ -9,15 +9,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import dogedroid.com.watchdoge.dogelog.DogeLogActivity;
 import dogedroid.com.watchdoge.dogelog.ListaLog;
 
 public class DashboardActivity extends AppCompatActivity {
-    Button moveLeft;
-    Button moveRight;
     TextView connectedText;
     ImageView liveFeedImage;
-    LiveFeed liveThread;
     RecyclerView unreadLog;
     TextView historyText;
 
@@ -27,29 +26,33 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         this.connectedText = findViewById(R.id.connectedText_dashboard);
-        this.moveLeft = findViewById(R.id.left_btn);
-        this.moveRight = findViewById(R.id.right_btn);
         this.liveFeedImage = findViewById(R.id.live_image_view);
         this.unreadLog = findViewById(R.id.unread_log_view);
         this.historyText = findViewById(R.id.history_text);
 
-        liveThread = new LiveFeed(liveFeedImage);
-        liveThread.execute();
-
+        //Dogelog (Unread)
         ListaLog listAdaptor = new ListaLog(getApplicationContext(), "/unread");
         unreadLog.setAdapter(listAdaptor);
         unreadLog.setLayoutManager(new LinearLayoutManager(this));
 
+        //Live Image
+        String url = "http:/" + DiscoveryActivity.dogeAddress + ":8000/shoot";
+        Picasso.get().load(url).into(liveFeedImage);
+        liveFeedImage.setOnClickListener((v) ->
+                startActivity(new Intent(this, LiveFeedActivity.class))
+        );
+
+        //Storico Intrusioni
         historyText.setOnClickListener((v) ->
                 startActivity(new Intent(this, DogeLogActivity.class)));
 
-        this.connectedText.setText(DiscoveryActivity.dogeAddress);
+        //Ip
+        this.connectedText.setText(DiscoveryActivity.dogeAddress.substring(1));
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        liveThread.stopLive();
-    }
+    // Prevent Back Button
+    public void onBackPressed() { return; }
+
+
 }

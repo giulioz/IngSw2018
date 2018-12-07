@@ -26,7 +26,6 @@ import dogedroid.com.watchdoge.R;
 
 public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
 
-    private static final String TAG = "ListaLog";
     private ArrayList<String> id = new ArrayList<>();
     private ArrayList<String> date = new ArrayList<>();
 
@@ -36,6 +35,7 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     public ListaLog(Context myContex,String addedLink) {
         this.myContex = myContex;
         this.addedLink = addedLink;
+
         fetchListe();
     }
     public ListaLog(Context myContex) {
@@ -45,7 +45,8 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     private void fetchListe() {
         String json = null;
         try {
-            json = new GetJson().AsString("http:/" + DiscoveryActivity.dogeAddress + ":8000/intrusions" + this.addedLink);
+            json = new GetJson().AsString("http:/" + DiscoveryActivity.dogeAddress +
+                    ":8000/intrusions" + this.addedLink);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="300dp"
         android:background="@null"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/doge_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
