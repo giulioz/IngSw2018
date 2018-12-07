@@ -2,8 +2,11 @@ package dogedroid.com.watchdoge;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import java.util.function.Function;
 
 public class LiveFeedActivity extends AppCompatActivity {
     private ImageView liveImage;
@@ -20,6 +23,7 @@ public class LiveFeedActivity extends AppCompatActivity {
         liveThread = new LiveFeed(liveImage);
         liveThread.execute();
         stopButton.setOnClickListener(v -> liveThread.stopLive());
+
     }
 
     @Override

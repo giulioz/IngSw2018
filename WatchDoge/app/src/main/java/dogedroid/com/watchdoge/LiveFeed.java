@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import java.io.InputStream;
 
 public class LiveFeed extends AsyncTask<Void, Bitmap, Void> {
-    public final long frameRate = 42;
+    public final long frameRate = 0;
 
     private ImageView image;
     private boolean run;
