@@ -16,9 +16,15 @@ WebServer::~WebServer() {}
 
 void WebServer::handler(struct mg_connection *c, int ev, void *p) {
   if (ev == MG_EV_HTTP_REQUEST) {
-    auto hm = static_cast<struct http_message *>(p);
-    Request request(hm);
-    Response response(c);
-    this->handle(&request, &response);
+    try {
+      auto hm = static_cast<struct http_message *>(p);
+      Request request(hm);
+      Response response(c);
+      this->handle(&request, &response);
+    } catch (const std::exception &ex) {
+      Response response(c);
+      response.status(500);
+      response.send(ex.what());
+    }
   }
 }
