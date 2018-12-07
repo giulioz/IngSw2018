@@ -35,7 +35,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         liveThread = new LiveFeed(liveFeedImage);
         liveThread.execute();
-        
+
         ListaLog listAdaptor = new ListaLog(getApplicationContext(), "/unread");
         unreadLog.setAdapter(listAdaptor);
         unreadLog.setLayoutManager(new LinearLayoutManager(this));
