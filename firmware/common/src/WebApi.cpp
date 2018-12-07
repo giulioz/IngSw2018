@@ -1,42 +1,95 @@
 #include "WebApi.hpp"
 
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
+/* ==================================
+    Alarm
+  ================================== */
+
 void WebApi::getAlarmStatus(const Request *request, Response *response) {
-  ui->drawText(0, 0, "diocan");
-  response->json("[{id:3, time:3, readt:false}]");
+  std::string json;
+  json += "{active:";
+  json += alarmEngine->active ? "true" : "false";
+  json += ", auto:";
+  json += alarmEngine->autoActivated ? "true" : "false";
+  json += "}";
+
+  response->json(json.c_str());
 }
 
 void WebApi::getAutoConf(const Request *request, Response *response) {
-  response->json("[{id:3, time:3, readt:false}]");
+  // TODO
+  response->sendStatus(404);
 }
 
 void WebApi::postAlarmOn(const Request *request, Response *response) {
-  response->json("[{id:3, time:3, readt:false}]");
+  alarmEngine->setAlarmState(true);
+  response->sendStatus(200);
 }
 
 void WebApi::postAlarmOff(const Request *request, Response *response) {
-  response->json("[{id:3, time:3, readt:false}]");
+  alarmEngine->setAlarmState(false);
+  response->sendStatus(200);
 }
 
 void WebApi::postAutoToggle(const Request *request, Response *response) {
-  response->json("[{id:3, time:3, readt:false}]");
+  // alarmEngine->setAutoState(true);
+  // response->sendStatus(200);
+  response->sendStatus(404);
 }
 
 void WebApi::postAutoConf(const Request *request, Response *response) {
-  response->json("[{id:3, time:3, readt:false}]");
+  // TODO
+  response->sendStatus(404);
 }
 
+/* ==================================
+    Intrusions
+  ================================== */
+
 void WebApi::getIntrusions(const Request *request, Response *response) {
-  response->json(
-      "[{id:0, time:0, readt:true}, {id:1, time:1, readt:true}, {id:3, time:3, "
-      "readt:false}]");
+  auto intrusions = root->getIntrusions();
+  std::string json = "[";
+
+  bool first = true;
+  for (auto &intrusion : intrusions) {
+    if (!first) {
+      json += ",";
+      first = false;
+    }
+
+    json += intrusion.toString();
+  }
+
+  // TODO: set read
+
+  response->json(json.c_str());
 }
 
 void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
-  response->json("[{id:3, time:3, readt:false}]");
+  auto intrusions = root->getIntrusions();
+  std::string json = "[";
+
+  bool first = true;
+  for (auto &intrusion : intrusions) {
+    if (!intrusion.notified) {
+      if (!first) {
+        json += ",";
+        first = false;
+      }
+
+      json += intrusion.toString();
+    }
+  }
+
+  // TODO: set read
+
+  response->json(json.c_str());
 }
 
 void WebApi::getIntrusionsTime(const Request *request, Response *response) {
-  response->json("[{id:1, time:1, readt:true}]");
+  response->sendStatus(404);
 }
 
 void WebApi::getIntrusionShoot(const Request *request, Response *response) {
@@ -44,6 +97,10 @@ void WebApi::getIntrusionShoot(const Request *request, Response *response) {
   response->type("image/jpeg");
   response->send(imgData.data(), imgData.size());
 }
+
+/* ==================================
+    Hardware
+  ================================== */
 
 void WebApi::getShoot(const Request *request, Response *response) {
   auto imgData = this->imageCapturer->captureJpeg();
@@ -61,13 +118,65 @@ void WebApi::postRight(const Request *request, Response *response) {
   response->sendStatus(200);
 }
 
+/* ==================================
+    Auth
+  ================================== */
+
+static const char alphanum[] =
+    "0123456789"
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "abcdefghijklmnopqrstuvwxyz";
+
+static const char num[] = "0123456789";
+
+static std::string genKey(int len, const char *table, int tSize) {
+  std::string str;
+  for (int i = 0; i < len; ++i) {
+    str += table[rand() % (tSize - 1)];
+  }
+  return str;
+}
+
 void WebApi::getPair(const Request *request, Response *response) {
-  response->json("");
+  auto clientKey = genKey(10, alphanum, sizeof(alphanum) - 1);
+  auto pairKey = genKey(4, num, sizeof(num) - 1);
+  authPairs[clientKey] = pairKey;
+
+  ui->clear();
+  ui->drawText(0, 0, pairKey.c_str());
+
+  std::string json = "\"";
+  json += clientKey;
+  json += "\"";
+  response->json(json.c_str());
 }
 
 void WebApi::postPair(const Request *request, Response *response) {
-  response->json("");
+  auto inputJson = json::parse(request->body);
+  auto clientKey = inputJson["clientKey"].get<std::string>();
+  auto pairKey = inputJson["pairKey"].get<std::string>();
+
+  auto pairEntry = authPairs[clientKey];
+  if (pairEntry == pairKey) {
+    auto authKey = genKey(20, alphanum, sizeof(alphanum) - 1);
+    root->getAuthKeys()[clientKey] = authKey;
+    db->store(*root);
+
+    std::string json = "\"";
+    json += clientKey;
+    json += "\"";
+    response->json(json.c_str());
+  } else {
+    response->sendStatus(403);
+  }
+
+  ui->clear();
+  authPairs.erase(pairKey);
 }
+
+/* ==================================
+    Misc
+  ================================== */
 
 void WebApi::getInfo(const Request *request, Response *response) {
   response->json(this->infoString);
@@ -115,12 +224,13 @@ void WebApi::loadRoutes() {
 
 WebApi::WebApi(Server *server, HardwareInterface *hardwareInterface,
                AlarmEngine *alarmEngine, UI *ui, ImageCapturer *imageCapturer,
-               DB *db, const char *infoString)
+               DB *db, Root *root, const char *infoString)
     : webServer(server, "0.0.0.0:8000") {
   this->hardwareInterface = hardwareInterface;
   this->alarmEngine = alarmEngine;
   this->imageCapturer = imageCapturer;
   this->db = db;
+  this->root = root;
   this->ui = ui;
   this->infoString = infoString;
   this->loadRoutes();

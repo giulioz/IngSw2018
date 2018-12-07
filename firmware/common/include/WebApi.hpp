@@ -1,11 +1,13 @@
 #pragma once
 
+#include <map>
+#include "AlarmEngine.hpp"
 #include "DB/DB.hpp"
-#include "UI/UI.hpp"
+#include "DB/Entity/Root.hpp"
 #include "HardwareInterface.hpp"
 #include "Network/WebServer.hpp"
 #include "Server.hpp"
-#include "AlarmEngine.hpp"
+#include "UI/UI.hpp"
 #include "Webcam/ImageCapturer.hpp"
 
 class WebApi {
@@ -14,9 +16,12 @@ class WebApi {
   HardwareInterface *hardwareInterface;
   ImageCapturer *imageCapturer;
   DB *db;
+  Root *root;
   UI *ui;
-  AlarmEngine* alarmEngine;
+  AlarmEngine *alarmEngine;
   const char *infoString;
+
+  std::map<std::string, std::string> authPairs;
 
   void loadRoutes();
 
@@ -48,6 +53,7 @@ class WebApi {
   void getTest(const Request *request, Response *response);
 
  public:
-  WebApi(Server *server, HardwareInterface *hardwareInterface, AlarmEngine* alarmEngine, UI *ui,
-         ImageCapturer *imageCapturer, DB *db, const char *infoString);
+  WebApi(Server *server, HardwareInterface *hardwareInterface,
+         AlarmEngine *alarmEngine, UI *ui, ImageCapturer *imageCapturer, DB *db,
+         Root *root, const char *infoString);
 };

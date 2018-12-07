@@ -3,6 +3,7 @@
 #include <mongoose.h>
 #include <map>
 #include <string>
+#include <vector>
 
 class Request {
  private:
@@ -10,7 +11,7 @@ class Request {
   std::string url;
   std::string method;
   std::string body;
-  std::map<std::string, std::string> urlParams;
+  std::vector<std::string> urlParams;
   std::map<std::string, std::string> queryParams;
   std::map<std::string, std::string> headerFields;
 

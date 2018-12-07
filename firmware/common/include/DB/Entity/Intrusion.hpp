@@ -4,16 +4,14 @@
 
 class Intrusion {
  private:
-  long id;
-  long date;
-  bool notified;
 
  public:
   Intrusion(long, long, bool);
   Intrusion(const Intrusion &);
 
-  long getId();
-  long getDate();
-  bool isNotified();
+  long id;
+  long date;
+  bool notified;
+  
   std::string toString();
 };

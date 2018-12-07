@@ -1,8 +1,10 @@
 #include "DB/DBConnector.hpp"
 
+#include <exception>
+
 DBConnector::DBConnector(const char* dbFile) {
   if (unqlite_open(&pDb, dbFile, UNQLITE_OPEN_CREATE) != UNQLITE_OK) {
-    throw "Cannot open connection to DB.";
+    throw std::runtime_error("Cannot open connection to DB.");
   }
 }
 
