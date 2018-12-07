@@ -1,11 +1,13 @@
 #include "DB/Entity/Time.hpp"
 
+#include <exception>
+
 Time::Time(long hour, long minute) {
   this->hour = hour;
   this->minute = minute;
   if (this->hour < 0 || this->hour > 23 || this->minute < 0 ||
       this->minute > 59) {
-    throw "Invalid argument.";
+    throw std::invalid_argument("time");
   }
 }
 

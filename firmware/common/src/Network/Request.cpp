@@ -26,14 +26,17 @@ Request::Request(struct http_message* hm) {
     std::string tmp(hm->uri.p);
     this->url += tmp.substr(0, hm->uri.len);
   }
+
   if (hm->method.p) {
     std::string tmp(hm->method.p);
     this->method += tmp.substr(0, hm->method.len);
   }
+
   if (hm->body.p) {
     std::string tmp(hm->body.p);
     this->body += tmp.substr(0, hm->body.len);
   }
+
   if (hm->query_string.p) {
     std::string tmp(hm->query_string.p);
     std::string queryString = tmp.substr(0, hm->query_string.len);
@@ -45,6 +48,8 @@ Request::Request(struct http_message* hm) {
       }
     }
   }
+
+  urlParams = tokenize(this->url, '/');
 
   for (size_t i = 0; hm->header_names[i].p; i++) {
     std::string tmpN(hm->header_names[i].p);

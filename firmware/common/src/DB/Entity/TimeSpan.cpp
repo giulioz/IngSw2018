@@ -1,8 +1,10 @@
 #include "DB/Entity/TimeSpan.hpp"
 
+#include <exception>
+
 TimeSpan::TimeSpan(const Time& from, const Time& to) : from(from), to(to) {
   if ((&this->from)->compare(this->to) > 0) {
-    throw "Invalid argument.";
+    throw std::invalid_argument("timespan");
   }
 }
 

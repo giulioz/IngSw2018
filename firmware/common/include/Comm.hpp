@@ -9,6 +9,7 @@
 #include "Webcam/ImageCapturer.hpp"
 #include "DB/DBConnector.hpp"
 #include "DB/DB.hpp"
+#include "DB/Entity/Root.hpp"
 
 class Comm {
  private:
@@ -22,6 +23,7 @@ class Comm {
   WebApi webApi;
   Discovery discovery;
   DB db;
+  Root root;
   AlarmEngine alarmEngine;
 
   Comm(HardwareInterface *hardwareInterface, ImageCapturer *imageCapturer,

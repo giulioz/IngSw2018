@@ -2,6 +2,7 @@
 
 #include <unqlite.h>
 #include <array>
+#include <exception>
 
 class DBConnector {
  private:
@@ -16,7 +17,7 @@ class DBConnector {
     if (unqlite_kv_store(pDb, key, -1, buf,
                          static_cast<unqlite_int64>(sizeof(T) * len)) !=
         UNQLITE_OK) {
-      throw "Cannot store value.";
+      throw std::runtime_error("Cannot store value.");
     }
   }
 
@@ -25,7 +26,7 @@ class DBConnector {
     if (unqlite_kv_append(pDb, key, -1, buf,
                           static_cast<unqlite_int64>(sizeof(T) * len)) !=
         UNQLITE_OK) {
-      throw "Cannot append value.";
+      throw std::runtime_error("Cannot append value.");
     }
   }
 

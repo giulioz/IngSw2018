@@ -144,8 +144,8 @@ void DB::storeIntrusions(Root& root) {
   long i = 0;
   for (std::list<Intrusion>::iterator it = (&root)->getIntrusions().begin();
        it != (&root)->getIntrusions().end(); ++it) {
-    long id = it->getId(), date = it->getDate();
-    bool notified = it->isNotified();
+    long id = it->id, date = it->date;
+    bool notified = it->notified;
     this->pDbC->storeValue<long>(
         std::string("i[" + std::to_string(i) + "].i").c_str(), &id, 1);
     this->pDbC->storeValue<long>(
