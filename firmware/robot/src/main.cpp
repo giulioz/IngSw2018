@@ -6,7 +6,11 @@
 static const char *infoString = "Test robot";
 
 int main() {
-  DB db("test.db");
+  DBConnector dbC("test.db");
+  DB db(&dbC);
+  Root root;
+  db.fetch(root);
+
   RobotHardwareInterface robotHardwareInterface;
   ImageCapturer imageCapturer("/dev/video0");
   EV3Lcd ev3Lcd;

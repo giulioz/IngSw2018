@@ -3,7 +3,7 @@
 DB::DB(DBConnector* pDbC) { this->pDbC = pDbC; }
 
 void DB::fetchAuthKeys(Root& root) {
-  long size;
+  long size = 0;
   this->pDbC->fetchValue<long>("$ak", &size, 1);
   for (long i = 0; i < size; i++) {
     long size1;
@@ -26,7 +26,7 @@ void DB::fetchAuthKeys(Root& root) {
 void DB::fetchAutoModeConf(Root& root) {
   for (long d = 0; d < 7; d++) {
     std::list<TimeSpan> tss;
-    long size;
+    long size = 0;
     this->pDbC->fetchValue<long>(
         std::string("$ac[" + std::to_string(d) + "]").c_str(), &size, 1);
     for (long i = 0; i < size; i++) {
@@ -58,7 +58,7 @@ void DB::fetchAutoModeConf(Root& root) {
 }
 
 void DB::fetchIntrusions(Root& root) {
-  long size;
+  long size = 0;
   this->pDbC->fetchValue<long>("$i", &size, 1);
   for (long i = 0; i < size; i++) {
     long id, date;
