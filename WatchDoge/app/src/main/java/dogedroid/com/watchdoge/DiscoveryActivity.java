@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.squareup.picasso.OkHttp3Downloader;
+import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -14,10 +17,18 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 
+import dogedroid.com.watchdoge.onboarding.OnBoarding_1;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 
 public class DiscoveryActivity extends AppCompatActivity {
     public static String dogeAddress = "";
     public static final int port = 8001;
+    public static String token = "";
+    public static Picasso picasso;
 
     private TextView connectedText;
 
@@ -27,15 +38,47 @@ public class DiscoveryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        connectedText = findViewById(R.id.connectedText);
-        new Discovery().execute();
+        if (getToken()) {
+            connectedText = findViewById(R.id.connectedText);
+            creaPicasso();
+            new Discovery().execute();
+        } else
+            startActivity(new Intent(this, OnBoarding_1.class));
+
     }
 
+    public static String getUrl(String add) {
+        return "http:/" + DiscoveryActivity.dogeAddress + ":8000" + add;
+    }
+
+    private void creaPicasso() {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new Interceptor() {
+                    @Override
+                    public Response intercept(Chain chain) throws IOException {
+                        String authString = "Bearer " + token;
+                        Request newRequest = chain.request().newBuilder()
+                                .addHeader("Authorization", authString)
+                                .build();
+                        return chain.proceed(newRequest);
+                    }
+                })
+                .build();
+
+        picasso = new Picasso.Builder(this)
+                .downloader(new OkHttp3Downloader(client))
+                .build();
+    }
 
     private void connectedSuccesfully() {
         startActivity(new Intent(this, DashboardActivity.class));
     }
 
+    // Ritorna TRUE se ha trovato il token
+    private boolean getToken() {
+        token = "ABC";
+        return true;
+    }
 
     private class Discovery extends AsyncTask<Void, Void, String> {
         @Override
@@ -95,7 +138,6 @@ public class DiscoveryActivity extends AppCompatActivity {
             connectedSuccesfully();
         }
     }
-
 
 }
 
