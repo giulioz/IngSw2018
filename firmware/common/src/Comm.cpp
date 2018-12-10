@@ -5,7 +5,7 @@
 Comm::Comm(HardwareInterface *hardwareInterface, ImageCapturer *imageCapturer,
            UI *ui, DBConnector *dbConnector, const char *infoString)
     : server(),
-      alarmEngine(hardwareInterface, imageCapturer),
+      alarmEngine(hardwareInterface, imageCapturer, &db, &root),
       webApi(&server, hardwareInterface, &alarmEngine, ui, imageCapturer, &db,
              &root, infoString),
       discovery(&server, infoString),
