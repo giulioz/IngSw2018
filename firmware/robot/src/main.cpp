@@ -3,19 +3,15 @@
 #include "EV3Lcd.hpp"
 #include "RobotHardwareInterface.hpp"
 
-static const char *infoString = "Test robot";
+static const char *infoString = "EV3";
 
 int main() {
-  DBConnector dbC("test.db");
-  DB db(&dbC);
-  Root root;
-  db.fetch(root);
-
   RobotHardwareInterface robotHardwareInterface;
   ImageCapturer imageCapturer("/dev/video0");
+  DBConnector dbC("test.db");
   EV3Lcd ev3Lcd;
 
-  Comm comm(&robotHardwareInterface, &imageCapturer, &ev3Lcd, infoString);
+  Comm comm(&robotHardwareInterface, &imageCapturer, &ev3Lcd, &dbC, infoString);
   for (;;) {
     comm.poll();
     robotHardwareInterface.poll();
