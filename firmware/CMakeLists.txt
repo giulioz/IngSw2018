@@ -6,9 +6,6 @@ if (MSVC)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 endif()
 
-set(JSON_BuildTests OFF CACHE INTERNAL "")
-add_subdirectory(deps/json)
-
 add_subdirectory(deps/opencv)
 #set(OpenCV_ROOT_DIR deps/opencv)
 #find_package(OpenCV REQUIRED)
