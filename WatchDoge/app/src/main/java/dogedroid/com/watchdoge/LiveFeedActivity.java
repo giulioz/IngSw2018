@@ -2,11 +2,10 @@ package dogedroid.com.watchdoge;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import java.util.function.Function;
+import dogedroid.com.watchdoge.utility.LiveFeed;
 
 public class LiveFeedActivity extends AppCompatActivity {
     private ImageView liveImage;
