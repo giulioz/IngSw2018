@@ -1,6 +1,7 @@
 #include "DB/Entity/Time.hpp"
 
 #include <exception>
+#include <stdexcept>
 
 Time::Time(long hour, long minute) {
   this->hour = hour;
