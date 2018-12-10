@@ -16,4 +16,6 @@ int main() {
     comm.poll();
     robotHardwareInterface.poll();
   }
+
+  return 0;
 }

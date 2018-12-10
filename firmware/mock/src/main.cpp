@@ -14,7 +14,7 @@
 
 static const char *infoString = "Doge Server (Mock)";
 
-int main() {
+int _main() {
   bool running = true;
 
   SDLFrameBuffer sdlFrameBuffer;
@@ -29,4 +29,18 @@ int main() {
     sdlFrameBuffer.poll(&running);
     comm.poll();
   }
+
+  return 0;
 }
+
+/* STUB */
+#ifdef WIN32
+#include <windows.h>
+int CALLBACK WinMain(HINSTANCE a, HINSTANCE b, LPSTR c, int d) {
+	return _main();
+}
+#else
+int main(int argc, char **argv) {
+	return _main();
+}
+#endif
