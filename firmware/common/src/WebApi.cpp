@@ -62,6 +62,8 @@ void WebApi::getIntrusions(const Request *request, Response *response) {
     json += intrusion.toString();
   }
 
+  json += "]";
+
   // TODO: set read
 
   response->json(json.c_str());
@@ -82,6 +84,8 @@ void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
       json += intrusion.toString();
     }
   }
+
+  json += "]";
 
   // TODO: set read
 
