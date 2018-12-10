@@ -20,9 +20,7 @@ AlarmEngine::AlarmEngine(HardwareInterface *hardwareInterface,
 
 AlarmEngine::~AlarmEngine() {}
 
-void AlarmEngine::setAlarmState(bool active) {
-  this->active = true;
-}
+void AlarmEngine::setAlarmState(bool active) { this->active = active; }
 
 void AlarmEngine::setAutoState(bool active) {}
 
@@ -32,8 +30,9 @@ void AlarmEngine::poll() {
   if (abs(depth - lastDepth) > THRESHOLD) {
     if (active) {
       triggerAlarm();
-      lastDepth = depth;
     }
+
+    lastDepth = depth;
   }
 }
 

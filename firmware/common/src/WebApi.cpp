@@ -1,6 +1,9 @@
 #include "WebApi.hpp"
 
+#include <fstream>
+#include <iostream>
 #include <nlohmann/json.hpp>
+#include <vector>
 using json = nlohmann::json;
 
 /* ==================================
@@ -53,7 +56,7 @@ void WebApi::getIntrusions(const Request *request, Response *response) {
   std::string json = "[";
 
   bool first = true;
-  for (auto &intrusion : intrusions) {
+  for (auto &&intrusion : intrusions) {
     if (!first) {
       json += ",";
     } else {
@@ -61,11 +64,10 @@ void WebApi::getIntrusions(const Request *request, Response *response) {
     }
 
     json += intrusion.toString();
+    intrusion.notified = true;
   }
 
   json += "]";
-
-  // TODO: set read
 
   response->json(json.c_str());
 }
@@ -75,7 +77,7 @@ void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
   std::string json = "[";
 
   bool first = true;
-  for (auto &intrusion : intrusions) {
+  for (auto &&intrusion : intrusions) {
     if (!intrusion.notified) {
       if (!first) {
         json += ",";
@@ -84,12 +86,11 @@ void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
       }
 
       json += intrusion.toString();
+      intrusion.notified = true;
     }
   }
 
   json += "]";
-
-  // TODO: set read
 
   response->json(json.c_str());
 }
@@ -98,10 +99,26 @@ void WebApi::getIntrusionsTime(const Request *request, Response *response) {
   response->sendStatus(404);
 }
 
+static std::vector<char> readAllBytes(std::string filename) {
+  std::ifstream ifs(filename, std::ios::binary | std::ios::ate);
+  std::ifstream::pos_type pos = ifs.tellg();
+
+  std::vector<char> result(pos);
+
+  ifs.seekg(0, std::ios::beg);
+  ifs.read(&result[0], pos);
+
+  return result;
+}
+
 void WebApi::getIntrusionShoot(const Request *request, Response *response) {
-  auto imgData = this->imageCapturer->captureJpeg();
+  std::string fileName = "intrusion_";
+  fileName += request->urlParams[1];
+  fileName += ".jpg";
+
+  auto bytes = readAllBytes(fileName);
   response->type("image/jpeg");
-  response->send(imgData.data(), imgData.size());
+  response->send(bytes.data(), bytes.size());
 }
 
 /* ==================================
