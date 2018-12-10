@@ -5,15 +5,26 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import dogedroid.com.watchdoge.utility.ListaLog;
+import okhttp3.Response;
 
 public class DashboardActivity extends AppCompatActivity {
     TextView connectedText;
@@ -51,9 +62,11 @@ public class DashboardActivity extends AppCompatActivity {
         alarmSwitch.setOnClickListener((v) -> {
             if(alarmSwitch.isChecked()){
                 Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_SHORT).show();
+                toggleAlarm("on");
             }
             else {
                 Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_SHORT).show();
+                toggleAlarm("off");
             }
         });
 
@@ -69,5 +82,24 @@ public class DashboardActivity extends AppCompatActivity {
     // Prevent Back Button
     public void onBackPressed() { return; }
 
+    private void toggleAlarm(String add){
+        String url = DiscoveryActivity.getUrl("/alarm/" + add);
 
+        StringRequest request = new StringRequest(Request.Method.POST, url,
+                (response) -> {},
+                (error) -> {
+                    Log.d("DASHBOARD", "toggleAlarm: errore toggle");
+                }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/json; charset=UTF-8");
+                params.put("Authorization", "Bearer " + DiscoveryActivity.token);
+                return params;
+            }
+
+        };
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        queue.add(request);
+    }
 }
