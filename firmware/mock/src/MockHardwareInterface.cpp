@@ -1,5 +1,6 @@
 #include "MockHardwareInterface.hpp"
 
+#include <ctime>
 #include <iostream>
 using namespace std;
 
@@ -14,8 +15,14 @@ void MockHardwareInterface::left() { cout << "ROBOT: received Left" << endl; }
 void MockHardwareInterface::right() { cout << "ROBOT: received Right" << endl; }
 
 int MockHardwareInterface::getDistance() {
-  cout << "ROBOT: sent mock distance" << endl;
-  return 0;
+  auto time = std::time(0);
+
+  if (time % 10 == 0) {
+    cout << "ROBOT: simulated intrusion" << endl;
+    return 100;
+  } else {
+    return 0;
+  }
 }
 
 void MockHardwareInterface::poll() {}

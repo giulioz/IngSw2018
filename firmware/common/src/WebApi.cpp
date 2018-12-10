@@ -56,11 +56,14 @@ void WebApi::getIntrusions(const Request *request, Response *response) {
   for (auto &intrusion : intrusions) {
     if (!first) {
       json += ",";
+    } else {
       first = false;
     }
 
     json += intrusion.toString();
   }
+
+  json += "]";
 
   // TODO: set read
 
@@ -76,12 +79,15 @@ void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
     if (!intrusion.notified) {
       if (!first) {
         json += ",";
+      } else {
         first = false;
       }
 
       json += intrusion.toString();
     }
   }
+
+  json += "]";
 
   // TODO: set read
 
