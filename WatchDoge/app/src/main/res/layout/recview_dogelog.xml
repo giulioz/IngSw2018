@@ -7,7 +7,7 @@
     android:layout_height="200dp">
 
     <ImageView
-        android:id="@+id/log_image"
+        android:id="@+id/logo"
         android:layout_width="190dp"
         android:layout_height="190dp"
         android:layout_marginEnd="8dp"
@@ -31,6 +31,6 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/log_image"
+        app:layout_constraintStart_toEndOf="@+id/logo"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

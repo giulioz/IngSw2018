@@ -1,8 +1,11 @@
 package dogedroid.com.watchdoge;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
@@ -41,7 +44,7 @@ public class DiscoveryActivity extends AppCompatActivity {
         if (getToken()) {
             connectedText = findViewById(R.id.connectedText);
             creaPicasso();
-            new Discovery().execute();
+            new DiscoverDoge().execute();
         } else
             startActivity(new Intent(this, OnBoarding_1.class));
 
@@ -76,11 +79,13 @@ public class DiscoveryActivity extends AppCompatActivity {
 
     // Ritorna TRUE se ha trovato il token
     private boolean getToken() {
-        token = "ABC";
-        return true;
+        SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
+        token = pref.getString("authToken", "");
+        return !(token.equals(""));
+
     }
 
-    private class Discovery extends AsyncTask<Void, Void, String> {
+    private class DiscoverDoge extends AsyncTask<Void, Void, String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();

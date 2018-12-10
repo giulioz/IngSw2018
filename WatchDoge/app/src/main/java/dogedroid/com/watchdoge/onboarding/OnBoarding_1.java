@@ -20,15 +20,7 @@ public class OnBoarding_1 extends AppCompatActivity {
 
 
         Button onBoardBtn = findViewById(R.id.button_OnBoarding_1);
-        onBoardBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                go_OnBordingNext();
-            }
-        });
-    }
-    public void go_OnBordingNext() {
-        startActivity(new Intent(this, OnBoarding_2.class));
+        onBoardBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_2.class)));
     }
 
 }

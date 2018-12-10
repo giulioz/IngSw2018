@@ -19,27 +19,9 @@ public class OnBoarding_2 extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Button nextBtn = findViewById(R.id.button_AcceptOnBoarding_2);
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                go_OnBordingNext();
-            }
-        });
+        nextBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_3.class)));
 
         Button backBtn = findViewById(R.id.button_BackOnBoarding_2);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                go_OnBordingPrev();
-            }
-        });
+        backBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_1.class)));
     }
-    public void go_OnBordingNext() {
-        startActivity(new Intent(this, OnBoarding_3.class));
-    }
-
-    public void go_OnBordingPrev() {
-        startActivity(new Intent(this, OnBoarding_1.class));
-    }
-
 }

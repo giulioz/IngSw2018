@@ -16,7 +16,13 @@
 
     <string name="button_AcceptOnBoarding_3">CONTINUA</string>
     <string name="button_BackOnBoarding_3">INDIETRO</string>
-    <string name="title_OnBoarding_3">Lista Doge disponibili</string>
+    <string name="title_OnBoarding_3">Ricerca Doge</string>
+    <string name="description_OnBoarding_3">
+        Attendi l\'esito della ricerca
+    </string>
+    <string name="description_OnBoarding_3_found">
+        Il Doge é stato trovato
+    </string>
 
     <string name="button_AcceptOnBoarding_4">CONTINUA</string>
     <string name="button_BackOnBoarding_4">INDIETRO</string>

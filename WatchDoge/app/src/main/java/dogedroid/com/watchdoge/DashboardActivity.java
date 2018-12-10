@@ -14,17 +14,14 @@ import android.widget.Toast;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.MemoryPolicy;
-import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import dogedroid.com.watchdoge.utility.ListaLog;
-import okhttp3.Response;
+import dogedroid.com.watchdoge.utility.DogeLogAdapter;
 
 public class DashboardActivity extends AppCompatActivity {
     TextView connectedText;
@@ -45,7 +42,7 @@ public class DashboardActivity extends AppCompatActivity {
         this.alarmSwitch = findViewById(R.id.on_off_switch);
 
         //Dogelog (Unread)
-        ListaLog listAdaptor = new ListaLog(getApplicationContext(), "/unread");
+        DogeLogAdapter listAdaptor = new DogeLogAdapter(getApplicationContext(), "/unread");
         unreadLog.setAdapter(listAdaptor);
         unreadLog.setLayoutManager(new LinearLayoutManager(this));
 
