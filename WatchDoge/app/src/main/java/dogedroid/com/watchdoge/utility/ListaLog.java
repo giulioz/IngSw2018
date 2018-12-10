@@ -7,18 +7,28 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.CircularProgressDrawable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.dezlum.codelabs.getjson.GetJson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
-import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import dogedroid.com.watchdoge.DiscoveryActivity;
@@ -32,41 +42,52 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
     private String addedLink;
     private Context myContex;
 
-    public ListaLog(Context myContex,String addedLink) {
+    public ListaLog(Context myContex, String addedLink) {
         this.myContex = myContex;
         this.addedLink = addedLink;
 
         fetchListe();
     }
+
     public ListaLog(Context myContex) {
-        this(myContex,"");
+        this(myContex, "");
     }
 
     private void fetchListe() {
-        String json = null;
-        try {
-            json = new GetJson().AsString(DiscoveryActivity.getUrl("/intrusions" + this.addedLink));
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        JsonArray reader = new JsonParser().parse(json).getAsJsonArray();
-        JsonArray array = reader.getAsJsonArray();
-
-        if (array != null) {
-            int len = array.size();
-            for (int i = 0; i < len; i++) {
-                id.add(array.get(i).getAsJsonObject().get("id").toString());
-                date.add(array.get(i).getAsJsonObject().get("time").toString());
+        String url = DiscoveryActivity.getUrl("/intrusions" + this.addedLink);
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+                (response) -> {
+                    for(int i = 0 ; i < response.length() ; i++){
+                        try {
+                            JSONObject obj = response.getJSONObject(i);
+                            id.add(obj.get("id").toString());
+                            date.add(obj.get("time").toString());
+                        } catch (JSONException e) {
+                            Log.d("LISTALOG", "fetchListe2: errore json");
+                            e.printStackTrace();
+                        }
+                    }
+                    this.notifyDataSetChanged();
+                },
+                (err) -> {
+                    Log.d("LISTALOG", "fetchListe2: errore fetch");
+                }
+        ){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/json; charset=UTF-8");
+                params.put("Authorization", "Bearer " + DiscoveryActivity.token);
+                return params;
             }
-        }
+        };
+        RequestQueue queue = Volley.newRequestQueue(myContex);
+        queue.add(request);
 
     }
 
-    private String generateUrl(int i){
-        return DiscoveryActivity.getUrl("/intrusions/" + id.get(i)+ "/shoot");
+    private String generateUrl(int i) {
+        return DiscoveryActivity.getUrl("/intrusions/" + id.get(i) + "/shoot");
     }
 
     @NonNull
@@ -82,7 +103,7 @@ public class ListaLog extends RecyclerView.Adapter<ListaLog.ViewHolder> {
         viewHolder.data.setText(date.get(i));
         CircularProgressDrawable progressCircle = new CircularProgressDrawable(myContex);
         progressCircle.setStrokeWidth(20f);
-        progressCircle.setColorFilter(ContextCompat.getColor(myContex, R.color.colorPrimary), PorterDuff.Mode.SRC_IN );
+        progressCircle.setColorFilter(ContextCompat.getColor(myContex, R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
 
         DiscoveryActivity.picasso
                 .load(generateUrl(i))
