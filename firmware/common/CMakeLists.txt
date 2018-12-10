@@ -17,4 +17,4 @@ target_include_directories(WatchDogeCommon PUBLIC
         ${OpenCV_INCLUDE_DIRS}
 )
 
-target_link_libraries(WatchDogeCommon ${OpenCV_LIBS} nlohmann_json::nlohmann_json)
+target_link_libraries(WatchDogeCommon ${OpenCV_LIBS})
