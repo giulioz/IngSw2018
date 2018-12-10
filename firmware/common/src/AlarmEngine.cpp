@@ -20,7 +20,9 @@ AlarmEngine::AlarmEngine(HardwareInterface *hardwareInterface,
 
 AlarmEngine::~AlarmEngine() {}
 
-void AlarmEngine::setAlarmState(bool active) {}
+void AlarmEngine::setAlarmState(bool active) {
+  this->active = true;
+}
 
 void AlarmEngine::setAutoState(bool active) {}
 
@@ -39,7 +41,7 @@ void AlarmEngine::triggerAlarm() {
   auto time = std::time(0);
 
   std::string fileName = "intrusion_";
-  fileName += time;
+  fileName += std::to_string(time);
   fileName += ".jpg";
 
   auto imageBytes = imageCapturer->captureJpeg();

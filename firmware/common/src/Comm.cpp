@@ -25,4 +25,7 @@ Comm::Comm(HardwareInterface *hardwareInterface, ImageCapturer *imageCapturer,
 
 Comm::~Comm() {}
 
-void Comm::poll() { server.poll(); }
+void Comm::poll() {
+  server.poll();
+  alarmEngine.poll();
+}

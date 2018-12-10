@@ -56,6 +56,7 @@ void WebApi::getIntrusions(const Request *request, Response *response) {
   for (auto &intrusion : intrusions) {
     if (!first) {
       json += ",";
+    } else {
       first = false;
     }
 
@@ -78,6 +79,7 @@ void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
     if (!intrusion.notified) {
       if (!first) {
         json += ",";
+      } else {
         first = false;
       }
 
