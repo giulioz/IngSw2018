@@ -4,27 +4,34 @@
 #include <iostream>
 using namespace std;
 
-RobotHardwareInterface::RobotHardwareInterface() {
-  cout << "Mock robot mode" << endl;
+#define MOTOR_PORT ev3dev::OUTPUT_A
+
+RobotHardwareInterface::RobotHardwareInterface()
+    : distanceSensor(), motor(MOTOR_PORT), sound() {
+  motor.stop();
+  motor.reset();
 }
 
 RobotHardwareInterface::~RobotHardwareInterface() {}
 
-void RobotHardwareInterface::left() { cout << "ROBOT: received Left" << endl; }
+void RobotHardwareInterface::left() {
+  motor.set_duty_cycle_sp(20);
+  motor.set_position_sp(10);
+  motor.run_to_rel_pos();
+}
 
 void RobotHardwareInterface::right() {
-  cout << "ROBOT: received Right" << endl;
+  motor.set_duty_cycle_sp(20);
+  motor.set_position_sp(-10);
+  motor.run_to_rel_pos();
 }
 
 int RobotHardwareInterface::getDistance() {
-  auto time = std::time(0);
+  return distanceSensor.distance_centimeters();
+}
 
-  if (time % 10 == 0) {
-    cout << "ROBOT: simulated intrusion" << endl;
-    return 100;
-  } else {
-    return 0;
-  }
+void RobotHardwareInterface::playAlarm() {
+  sound.tone(440, 2000);
 }
 
 void RobotHardwareInterface::poll() {}

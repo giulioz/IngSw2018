@@ -25,4 +25,6 @@ int MockHardwareInterface::getDistance() {
   }
 }
 
+void MockHardwareInterface::playAlarm() { cout << "ROBOT: play alarm" << endl; }
+
 void MockHardwareInterface::poll() {}
