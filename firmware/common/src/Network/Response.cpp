@@ -184,7 +184,11 @@ void Response::send(const char* content) {
     this->type("text/plain");
   }
 
-  mg_printf(connection, "Content-Length: %" INT64_FMT "\r\n", strlen(content));
+  std::string tmp;
+  tmp += "Content-Length: ";
+  tmp += strlen(content);
+  tmp += "\r\n";
+  mg_send(connection, tmp.c_str(), tmp.length());
   mg_printf(connection, "Connection: close\r\n\r\n");
   mg_send(connection, content, strlen(content));
   connection->flags |= MG_F_SEND_AND_CLOSE;
