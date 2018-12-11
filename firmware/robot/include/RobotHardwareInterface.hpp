@@ -6,7 +6,7 @@
 class RobotHardwareInterface : public HardwareInterface {
  private:
   ev3dev::ultrasonic_sensor distanceSensor;
-  ev3dev::motor motor;
+  ev3dev::large_motor motor;
   ev3dev::sound sound;
 
  public:

@@ -52,4 +52,6 @@ void AlarmEngine::triggerAlarm() {
   Intrusion intrusion(time, time, false);
   root->getIntrusions().push_back(intrusion);
   db->store(*root);
+
+  hardwareInterface->playAlarm();
 }

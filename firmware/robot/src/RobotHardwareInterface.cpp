@@ -8,20 +8,26 @@ using namespace std;
 
 RobotHardwareInterface::RobotHardwareInterface()
     : distanceSensor(), motor(MOTOR_PORT), sound() {
-  motor.stop();
   motor.reset();
+  motor.stop();
 }
 
 RobotHardwareInterface::~RobotHardwareInterface() {}
 
 void RobotHardwareInterface::left() {
-  motor.set_duty_cycle_sp(20);
+  cout << "Received left" << endl;
+
+  motor.set_stop_action("brake");
+  motor.set_speed_sp(60);
   motor.set_position_sp(10);
   motor.run_to_rel_pos();
 }
 
 void RobotHardwareInterface::right() {
-  motor.set_duty_cycle_sp(20);
+  cout << "Received right" << endl;
+
+  motor.set_stop_action("brake");
+  motor.set_speed_sp(60);
   motor.set_position_sp(-10);
   motor.run_to_rel_pos();
 }
@@ -31,6 +37,7 @@ int RobotHardwareInterface::getDistance() {
 }
 
 void RobotHardwareInterface::playAlarm() {
+  cout << "Alarm!" << endl;
   sound.tone(440, 2000);
 }
 
