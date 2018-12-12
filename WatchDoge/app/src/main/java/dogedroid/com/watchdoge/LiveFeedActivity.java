@@ -1,8 +1,12 @@
 package dogedroid.com.watchdoge;
 
-import android.support.v7.app.AppCompatActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -37,8 +41,15 @@ public class LiveFeedActivity extends AppCompatActivity {
         liveThread.execute();
         stopButton.setOnClickListener(v -> liveThread.stopLive());
 
-        moveLeftButton.setOnClickListener(v -> sendCommand("left"));
-        moveRightButton.setOnClickListener(v -> sendCommand("right"));
+        moveRightButton.setOnTouchListener(new RepeatListener(400, 100, view -> {
+            sendCommand("right");
+        }));
+        moveLeftButton.setOnTouchListener(new RepeatListener(400, 100, view -> {
+            sendCommand("left");
+        }));
+
+//        moveLeftButton.setOnClickListener(v -> );
+//        moveRightButton.setOnClickListener(v -> sendCommand("right"));
 
     }
 
@@ -48,14 +59,15 @@ public class LiveFeedActivity extends AppCompatActivity {
         liveThread.stopLive();
     }
 
-    private void sendCommand(String add){
+    private void sendCommand(String add) {
         String url = DiscoveryActivity.getUrl("/move/" + add);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
-                (response) -> {},
+                (response) -> {
+                },
                 (error) -> {
                     Log.d("LIVEFEED", "sendCommand: errore send");
-                }){
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
@@ -67,5 +79,63 @@ public class LiveFeedActivity extends AppCompatActivity {
         };
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(request);
+    }
+
+    private class RepeatListener implements View.OnTouchListener {
+
+        private Handler handler = new Handler();
+
+        private int initialInterval;
+        private final int normalInterval;
+        private final View.OnClickListener clickListener;
+        private View touchedView;
+
+        private Runnable handlerRunnable = new Runnable() {
+            @Override
+            public void run() {
+                if(touchedView.isEnabled()) {
+                    handler.postDelayed(this, normalInterval);
+                    clickListener.onClick(touchedView);
+                } else {
+                    // if the view was disabled by the clickListener, remove the callback
+                    handler.removeCallbacks(handlerRunnable);
+                    touchedView.setPressed(false);
+                    touchedView = null;
+                }
+            }
+        };
+
+        public RepeatListener(int initialInterval, int normalInterval,
+                              View.OnClickListener clickListener) {
+            if (clickListener == null)
+                throw new IllegalArgumentException("null runnable");
+            if (initialInterval < 0 || normalInterval < 0)
+                throw new IllegalArgumentException("negative interval");
+
+            this.initialInterval = initialInterval;
+            this.normalInterval = normalInterval;
+            this.clickListener = clickListener;
+        }
+
+        public boolean onTouch(View view, MotionEvent motionEvent) {
+            switch (motionEvent.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    handler.removeCallbacks(handlerRunnable);
+                    handler.postDelayed(handlerRunnable, initialInterval);
+                    touchedView = view;
+                    touchedView.setPressed(true);
+                    clickListener.onClick(view);
+                    return true;
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_CANCEL:
+                    handler.removeCallbacks(handlerRunnable);
+                    touchedView.setPressed(false);
+                    touchedView = null;
+                    return true;
+            }
+
+            return false;
+        }
+
     }
 }
