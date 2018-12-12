@@ -22,7 +22,7 @@ void WebApi::getAlarmStatus(const Request *request, Response *response) {
 }
 
 void WebApi::getAutoConf(const Request *request, Response *response) {
-  // TODO
+  // TODO in the future
   response->sendStatus(404);
 }
 
@@ -43,7 +43,7 @@ void WebApi::postAutoToggle(const Request *request, Response *response) {
 }
 
 void WebApi::postAutoConf(const Request *request, Response *response) {
-  // TODO
+  // TODO in the future
   response->sendStatus(404);
 }
 
@@ -69,6 +69,8 @@ void WebApi::getIntrusions(const Request *request, Response *response) {
 
   json += "]";
 
+  this->db->store(*root);
+
   response->json(json.c_str());
 }
 
@@ -91,6 +93,8 @@ void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
   }
 
   json += "]";
+
+  this->db->store(*root);
 
   response->json(json.c_str());
 }
