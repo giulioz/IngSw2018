@@ -52,19 +52,18 @@ void WebApi::postAutoConf(const Request *request, Response *response) {
   ================================== */
 
 void WebApi::getIntrusions(const Request *request, Response *response) {
-  auto intrusions = root->getIntrusions();
   std::string json = "[";
 
   bool first = true;
-  for (auto &&intrusion : intrusions) {
-    intrusion.notified = true;
-
+  for (auto &&intrusion : root->getIntrusions()) {
     if (!first) {
       json += ",";
     } else {
       first = false;
     }
     json += intrusion.toString();
+
+    intrusion.notified = true;
   }
 
   json += "]";
@@ -75,20 +74,19 @@ void WebApi::getIntrusions(const Request *request, Response *response) {
 }
 
 void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
-  auto intrusions = root->getIntrusions();
   std::string json = "[";
 
   bool first = true;
-  for (auto &&intrusion : intrusions) {
+  for (auto &&intrusion : root->getIntrusions()) {
     if (!intrusion.notified) {
-      intrusion.notified = true;
-
       if (!first) {
         json += ",";
       } else {
         first = false;
       }
       json += intrusion.toString();
+
+      intrusion.notified = true;
     }
   }
 

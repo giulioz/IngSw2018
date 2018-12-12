@@ -17,9 +17,9 @@ static const char *infoString = "Doge Server (Mock)";
 int _main() {
   bool running = true;
 
-  SDLFrameBuffer sdlFrameBuffer;
   MockHardwareInterface mockHardwareInterface;
   ImageCapturer imageCapturer;
+  SDLFrameBuffer sdlFrameBuffer;
   DBConnector dbC("test.db");
   Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer, &dbC,
             infoString);
@@ -37,10 +37,8 @@ int _main() {
 #ifdef WIN32
 #include <windows.h>
 int CALLBACK WinMain(HINSTANCE a, HINSTANCE b, LPSTR c, int d) {
-	return _main();
+  return _main();
 }
 #else
-int main(int argc, char **argv) {
-	return _main();
-}
+int main(int argc, char **argv) { return _main(); }
 #endif
