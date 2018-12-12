@@ -57,14 +57,14 @@ void WebApi::getIntrusions(const Request *request, Response *response) {
 
   bool first = true;
   for (auto &&intrusion : intrusions) {
+    intrusion.notified = true;
+
     if (!first) {
       json += ",";
     } else {
       first = false;
     }
-
     json += intrusion.toString();
-    intrusion.notified = true;
   }
 
   json += "]";
@@ -81,14 +81,14 @@ void WebApi::getIntrusionsUnread(const Request *request, Response *response) {
   bool first = true;
   for (auto &&intrusion : intrusions) {
     if (!intrusion.notified) {
+      intrusion.notified = true;
+
       if (!first) {
         json += ",";
       } else {
         first = false;
       }
-
       json += intrusion.toString();
-      intrusion.notified = true;
     }
   }
 
