@@ -27,5 +27,8 @@
     <string name="button_AcceptOnBoarding_4">CONTINUA</string>
     <string name="button_BackOnBoarding_4">INDIETRO</string>
     <string name="title_OnBoarding_4">Addomestica il Doge</string>
+    <string name="description_OnBoarding_4">
+        Immetti il codice visualizzato nel display del sistema EV3 per completare la connessione
+    </string>
 
 </resources>

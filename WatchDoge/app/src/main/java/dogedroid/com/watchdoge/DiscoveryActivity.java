@@ -79,7 +79,7 @@ public class DiscoveryActivity extends AppCompatActivity {
     // Ritorna TRUE se ha trovato il token
     private boolean getToken() {
         SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
-        token = pref.getString("authToken", "PorcoDio");
+        token = pref.getString("authToken", "");
         return !(token.equals(""));
 
     }
