@@ -1,6 +1,8 @@
 package dogedroid.com.watchdoge;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,9 +16,14 @@ import android.widget.Toast;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.MemoryPolicy;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -56,16 +63,8 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(this, LiveFeedActivity.class))
         );
 
-        alarmSwitch.setOnClickListener((v) -> {
-            if(alarmSwitch.isChecked()){
-                Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_SHORT).show();
-                toggleAlarm("on");
-            }
-            else {
-                Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_SHORT).show();
-                toggleAlarm("off");
-            }
-        });
+        setupAlarm();
+
 
         //Storico Intrusioni
         historyText.setOnClickListener((v) ->
@@ -77,16 +76,57 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     // Prevent Back Button
-    public void onBackPressed() { return; }
+    public void onBackPressed() {
+        return;
+    }
 
-    private void toggleAlarm(String add){
+    private void setupAlarm() {
+        String url = DiscoveryActivity.getUrl("/alarm/status");
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                (response) -> {
+                    try {
+                        alarmSwitch.setEnabled(true);
+                        alarmSwitch.setText("Allarme");
+                        alarmSwitch.setChecked(response.getBoolean("active"));
+                        alarmSwitch.setOnClickListener((v) -> {
+                            if (alarmSwitch.isChecked()) {
+                                Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_SHORT).show();
+                                toggleAlarm("on");
+                            } else {
+                                Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_SHORT).show();
+                                toggleAlarm("off");
+                            }
+                        });
+                    } catch (JSONException e) {
+                        Log.d("DASHBOARD", "setupAlarm: errore json");
+                    }
+                },
+                (err) -> {
+                    Log.d("DASHBOARD", "setupAlarm: errore get");
+                }
+        ){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/json; charset=UTF-8");
+                params.put("Authorization", "Bearer " + DiscoveryActivity.token);
+                return params;
+            }
+        };
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        queue.add(request);
+
+    }
+
+    private void toggleAlarm(String add) {
         String url = DiscoveryActivity.getUrl("/alarm/" + add);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
-                (response) -> {},
+                (response) -> {
+                },
                 (error) -> {
                     Log.d("DASHBOARD", "toggleAlarm: errore toggle");
-                }){
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();

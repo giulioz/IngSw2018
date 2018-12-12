@@ -2,6 +2,8 @@ package dogedroid.com.watchdoge.utility;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
@@ -24,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +36,7 @@ import dogedroid.com.watchdoge.R;
 public class DogeLogAdapter extends RecyclerView.Adapter<DogeLogAdapter.ViewHolder> {
 
     private ArrayList<String> id = new ArrayList<>();
-    private ArrayList<String> date = new ArrayList<>();
+    private ArrayList<Long> date = new ArrayList<>();
 
     private String addedLink;
     private Context myContex;
@@ -56,8 +59,8 @@ public class DogeLogAdapter extends RecyclerView.Adapter<DogeLogAdapter.ViewHold
                     for(int i = 0 ; i < response.length() ; i++){
                         try {
                             JSONObject obj = response.getJSONObject(i);
-                            id.add(obj.get("id").toString());
-                            date.add(obj.get("time").toString());
+                            id.add(obj.getString("id"));
+                            date.add(obj.getLong("time"));
                         } catch (JSONException e) {
                             Log.d("LISTALOG", "fetchListe2: errore json");
                             e.printStackTrace();
@@ -96,7 +99,17 @@ public class DogeLogAdapter extends RecyclerView.Adapter<DogeLogAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull DogeLogAdapter.ViewHolder viewHolder, final int i) {
-        viewHolder.data.setText(date.get(i));
+        Log.d("PORCODIO", "onBindViewHolder: " + date.get(i));
+
+        Date data = new Date(date.get(i) * 1000);
+        //Date data = new Date((long) 999999000);
+
+        DateFormat dataFormat = new SimpleDateFormat("d/M/y");
+        DateFormat oraFormat = new SimpleDateFormat("H:m");
+
+        viewHolder.data.setText(dataFormat.format(data));
+        viewHolder.ora.setText(oraFormat.format(data));
+
         CircularProgressDrawable progressCircle = new CircularProgressDrawable(myContex);
         progressCircle.setStrokeWidth(20f);
         progressCircle.setColorFilter(ContextCompat.getColor(myContex, R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
@@ -114,12 +127,14 @@ public class DogeLogAdapter extends RecyclerView.Adapter<DogeLogAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView data;
+        TextView ora;
         ImageView image;
         ConstraintLayout containerLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             data = itemView.findViewById(R.id.log_date);
+            ora = itemView.findViewById(R.id.log_ora);
             image = itemView.findViewById(R.id.logo);
             containerLayout = itemView.findViewById(R.id.log_layout);
         }
