@@ -16,7 +16,6 @@
 static const char *infoString = "Doge Server (Mock)";
 
 int _main() {
-<<<<<<< HEAD
   try {
     bool running = true;
 
@@ -34,21 +33,6 @@ int _main() {
     }
   } catch (const std::exception &ex) {
     std::cout << ex.what() << std::endl;
-=======
-  bool running = true;
-
-  MockHardwareInterface mockHardwareInterface;
-  ImageCapturer imageCapturer;
-  SDLFrameBuffer sdlFrameBuffer;
-  DBConnector dbC("test.db");
-  Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer, &dbC,
-            infoString);
-
-  while (running) {
-    mockHardwareInterface.poll();
-    sdlFrameBuffer.poll(&running);
-    comm.poll();
->>>>>>> 3c14791c31c2d68b3cf537331eb0e20425c46b16
   }
 
   return 0;
