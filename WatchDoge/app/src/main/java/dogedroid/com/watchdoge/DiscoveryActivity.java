@@ -55,15 +55,12 @@ public class DiscoveryActivity extends AppCompatActivity {
 
     private void creaPicasso() {
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-                        String authString = "Bearer " + token;
-                        Request newRequest = chain.request().newBuilder()
-                                .addHeader("Authorization", authString)
-                                .build();
-                        return chain.proceed(newRequest);
-                    }
+                .addInterceptor(chain -> {
+                    String authString = "Bearer " + token;
+                    Request newRequest = chain.request().newBuilder()
+                            .addHeader("Authorization", authString)
+                            .build();
+                    return chain.proceed(newRequest);
                 })
                 .build();
 
@@ -79,7 +76,7 @@ public class DiscoveryActivity extends AppCompatActivity {
     // Ritorna TRUE se ha trovato il token
     private boolean getToken() {
         SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
-        token = pref.getString("authToken", "PorcoDio");
+        token = pref.getString("authToken", "");
         return !(token.equals(""));
 
     }

@@ -99,10 +99,9 @@ public class DogeLogAdapter extends RecyclerView.Adapter<DogeLogAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull DogeLogAdapter.ViewHolder viewHolder, final int i) {
-        Log.d("PORCODIO", "onBindViewHolder: " + date.get(i));
 
         Date data = new Date(date.get(i) * 1000);
-        //Date data = new Date((long) 999999000);
+        //Date data = new Date(1544626713 * 1000);
 
         DateFormat dataFormat = new SimpleDateFormat("d/M/y");
         DateFormat oraFormat = new SimpleDateFormat("H:m");

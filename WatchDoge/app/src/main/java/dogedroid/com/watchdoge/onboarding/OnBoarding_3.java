@@ -28,7 +28,7 @@ public class OnBoarding_3 extends AppCompatActivity {
     TextView description;
     TextView ipDoge;
     ImageView logo;
-    String ip;
+    public static String ip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
