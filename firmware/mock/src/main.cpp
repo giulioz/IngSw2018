@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include <iostream>
 #include <string>
 
 #include "Comm.hpp"
@@ -15,19 +16,23 @@
 static const char *infoString = "Doge Server (Mock)";
 
 int _main() {
-  bool running = true;
+  try {
+    bool running = true;
 
-  SDLFrameBuffer sdlFrameBuffer;
-  MockHardwareInterface mockHardwareInterface;
-  ImageCapturer imageCapturer;
-  DBConnector dbC("test.db");
-  Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer, &dbC,
-            infoString);
+    SDLFrameBuffer sdlFrameBuffer;
+    MockHardwareInterface mockHardwareInterface;
+    ImageCapturer imageCapturer;
+    DBConnector dbC("test.db");
+    Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer, &dbC,
+              infoString);
 
-  while (running) {
-    mockHardwareInterface.poll();
-    sdlFrameBuffer.poll(&running);
-    comm.poll();
+    while (running) {
+      mockHardwareInterface.poll();
+      sdlFrameBuffer.poll(&running);
+      comm.poll();
+    }
+  } catch (const std::exception &ex) {
+    std::cout << ex.what() << std::endl;
   }
 
   return 0;
@@ -37,10 +42,8 @@ int _main() {
 #ifdef WIN32
 #include <windows.h>
 int CALLBACK WinMain(HINSTANCE a, HINSTANCE b, LPSTR c, int d) {
-	return _main();
+  return _main();
 }
 #else
-int main(int argc, char **argv) {
-	return _main();
-}
+int main(int argc, char **argv) { return _main(); }
 #endif
