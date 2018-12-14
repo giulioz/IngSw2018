@@ -65,6 +65,9 @@ public class OnBoarding_4 extends AppCompatActivity {
 
             StringRequest request = new StringRequest(Request.Method.POST, url,
                     (response) -> {
+                        Intent i = new Intent(getApplicationContext(), OnBoarding_5.class);
+                        i.putExtra("token", response);
+                        startActivity(i);
                     },
                     (error) -> {
                         Log.d("PAIRKEY", "sendKey: errore send");
@@ -75,7 +78,6 @@ public class OnBoarding_4 extends AppCompatActivity {
                     Map<String, String> params = new HashMap<>();
                     params.put("clientKey", clientKey);
                     params.put("pairKey", input.getText().toString());
-
                     return params;
                 }
 

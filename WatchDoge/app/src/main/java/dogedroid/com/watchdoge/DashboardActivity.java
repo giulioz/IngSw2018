@@ -106,8 +106,8 @@ public class DashboardActivity extends AppCompatActivity {
                 }
         ){
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<>();
                 params.put("Content-Type", "application/json; charset=UTF-8");
                 params.put("Authorization", "Bearer " + DiscoveryActivity.token);
                 return params;
@@ -128,7 +128,7 @@ public class DashboardActivity extends AppCompatActivity {
                     Log.d("DASHBOARD", "toggleAlarm: errore toggle");
                 }) {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
+            public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Content-Type", "application/json; charset=UTF-8");
                 params.put("Authorization", "Bearer " + DiscoveryActivity.token);

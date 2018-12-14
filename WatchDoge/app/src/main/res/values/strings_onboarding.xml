@@ -31,4 +31,11 @@
         Immetti il codice visualizzato nel display del sistema EV3 per completare la connessione
     </string>
 
+    <string name="button_OnBoarding_5">INIZIA</string>
+    <string name="title_OnBoarding_5">Complimenti</string>
+    <string name="description_OnBoarding_5">
+        Hai completato l\'addestramento del tuo Doge.\n
+        Il collegamento è avvenuto con successo.
+    </string>
+
 </resources>
