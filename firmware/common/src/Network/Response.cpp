@@ -186,7 +186,7 @@ void Response::send(const char* content) {
 
   std::string tmp;
   tmp += "Content-Length: ";
-  tmp += strlen(content);
+  tmp += std::to_string(strlen(content));
   tmp += "\r\n";
   mg_send(connection, tmp.c_str(), tmp.length());
   mg_printf(connection, "Connection: close\r\n\r\n");
