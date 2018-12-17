@@ -27,7 +27,7 @@ public class LiveFeed extends AsyncTask<Void, Bitmap, Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         while (run) {
-            Bitmap mIcon11 = null;
+            Bitmap mIcon11;
             try {
                 mIcon11 = DiscoveryActivity.picasso
                         .load(DiscoveryActivity.getUrl("/shoot"))

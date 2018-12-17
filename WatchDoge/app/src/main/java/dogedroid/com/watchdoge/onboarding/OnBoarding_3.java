@@ -87,11 +87,12 @@ public class OnBoarding_3 extends AppCompatActivity {
                 sendData = sentence.getBytes();
 
                 DatagramPacket packet = new DatagramPacket(sendData, sendData.length,
-                        serverAddr, DiscoveryActivity.port);
+                        serverAddr, DiscoveryActivity.UDPport);
                 DatagramPacket receivePacket;
 
                 while (run) {
                     try {
+                        Log.d("PORCODIO", "doInBackground: prova ");
                         udpSocket.send(packet);
                         receivePacket = new DatagramPacket(message, message.length);
                         udpSocket.setSoTimeout(1500);
@@ -128,6 +129,7 @@ public class OnBoarding_3 extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        thread.stopThread();
+        if(thread.getStatus() == AsyncTask.Status.RUNNING)
+            thread.stopThread();
     }
 }

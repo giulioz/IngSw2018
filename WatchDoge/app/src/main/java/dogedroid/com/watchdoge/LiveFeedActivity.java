@@ -1,5 +1,6 @@
 package dogedroid.com.watchdoge;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -51,7 +52,8 @@ public class LiveFeedActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        liveThread.stopLive();
+        if(liveThread.getStatus() == AsyncTask.Status.RUNNING)
+            liveThread.stopLive();
     }
 
     private void sendCommand(String add) {

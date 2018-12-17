@@ -20,27 +20,26 @@ import java.net.SocketException;
 import java.net.SocketTimeoutException;
 
 import dogedroid.com.watchdoge.onboarding.OnBoarding_1;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
 
 
 public class DiscoveryActivity extends AppCompatActivity {
     public static String dogeAddress = "";
-    public static final int port = 8001;
+    public static final int port = 8000;
+    public static final int UDPport = 8001;
     public static String token = "";
     public static Picasso picasso;
 
-    private TextView connectedText;
 
+    private TextView connectedText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (getToken()) {
+        if (getToken() && OnBoarding_1.ini) {
             connectedText = findViewById(R.id.connectedText);
             creaPicasso();
             new DiscoverDoge().execute();
@@ -50,7 +49,7 @@ public class DiscoveryActivity extends AppCompatActivity {
     }
 
     public static String getUrl(String add) {
-        return "http:/" + DiscoveryActivity.dogeAddress + ":8000" + add;
+        return "http:/" + DiscoveryActivity.dogeAddress + ":" + DiscoveryActivity.port + add;
     }
 
     private void creaPicasso() {
@@ -75,7 +74,7 @@ public class DiscoveryActivity extends AppCompatActivity {
 
     // Ritorna TRUE se ha trovato il token
     private boolean getToken() {
-        SharedPreferences pref = getSharedPreferences("watchdoge",Context.MODE_PRIVATE);
+        SharedPreferences pref = getSharedPreferences("watchdoge", Context.MODE_PRIVATE);
         token = pref.getString("authToken", "");
         return !(token.equals(""));
 
@@ -104,7 +103,7 @@ public class DiscoveryActivity extends AppCompatActivity {
                 sendData = sentence.getBytes();
 
                 DatagramPacket packet = new DatagramPacket(sendData, sendData.length,
-                        serverAddr, DiscoveryActivity.port);
+                        serverAddr, DiscoveryActivity.UDPport);
                 DatagramPacket receivePacket;
 
                 while (run) {

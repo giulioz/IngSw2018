@@ -25,6 +25,7 @@ import java.util.Map;
 import dogedroid.com.watchdoge.R;
 
 public class OnBoarding_4 extends AppCompatActivity {
+    private final String TAG = "ONBOARDING 4";
     Button nextBtn;
     Button backBtn;
     TextView ipDoge;
@@ -47,7 +48,6 @@ public class OnBoarding_4 extends AppCompatActivity {
         nextBtn = findViewById(R.id.button_AcceptOnBoarding_4);
         backBtn = findViewById(R.id.button_BackOnBoarding_4);
         ipDoge = findViewById(R.id.ip_dogefound);
-        ipDoge.setText(OnBoarding_3.ip.substring(1));
         logo = findViewById(R.id.doge_logofound);
         input = findViewById(R.id.input_pin);
         waitingText = findViewById(R.id.waiting_text);
@@ -62,12 +62,22 @@ public class OnBoarding_4 extends AppCompatActivity {
         getThread.execute();
     }
 
+    private void showError() {
+        ipDoge.setText(R.string.waiting_OnBoarding_4);
+        nextBtn.setVisibility(View.GONE);
+        waitingText.setVisibility(View.VISIBLE);
+        input.setVisibility(View.GONE);
+        getThread = new GetClientKey();
+        sendThread = new SendKey();
+        getThread.execute();
+    }
+
     private class SendKey extends AsyncTask<Void, Void, Void> {
-        private boolean run;
+        private boolean waiting;
         private boolean succeded;
 
         public void stopThread() {
-            this.run = false;
+            this.waiting = false;
         }
 
         @Override
@@ -82,7 +92,7 @@ public class OnBoarding_4 extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            run = true;
+            waiting = true;
             succeded = false;
             String url = "http:/" + OnBoarding_3.ip + ":8000/pair";
 
@@ -93,18 +103,17 @@ public class OnBoarding_4 extends AppCompatActivity {
 
             JSONObject json = new JSONObject(params);
 
-            Log.d("PORCODIO", "SendKey params: " + json);
-            Log.d("PORCODIO", "SendKey: " + url);
 
-            while (run) {
-                Log.d("PORCODIO", "doInBackground: LOOP");
+            while (waiting) {
                 StringRequest request = new StringRequest(Request.Method.POST, url,
                         (response) -> {
                             succeded = true;
-                            run = false;
+                            waiting = false;
                         },
                         (error) -> {
-                            Log.d("PAIRKEY", "sendKey: errore send");
+                            Log.d(TAG, "sendKey: errore send");
+                            showError();
+                            waiting = false;
                         }) {
                     @Override
                     public Map<String, String> getHeaders() {
@@ -131,28 +140,28 @@ public class OnBoarding_4 extends AppCompatActivity {
     }
 
     private class GetClientKey extends AsyncTask<Void, Void, Void> {
-        private boolean run;
+        private boolean waiting;
 
         public void stopThread() {
-            this.run = false;
+            this.waiting = false;
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
-            run = true;
+            waiting = true;
             String url = "http:/" + OnBoarding_3.ip + ":8000/pair";
-            while (run) {
+            while (waiting) {
                 StringRequest request = new StringRequest(Request.Method.GET, url,
                         (response) -> {
                             clientKey = response.substring(1, response.length() - 1);
-                            Log.d("PORCODIO", "GET client key: " + clientKey);
+                            ipDoge.setText(OnBoarding_3.ip.substring(1));
                             nextBtn.setVisibility(View.VISIBLE);
                             waitingText.setVisibility(View.GONE);
                             input.setVisibility(View.VISIBLE);
-                            run = false;
+                            waiting = false;
                         },
                         (err) -> {
-                            Log.d("ONBOARDING 4", "getClientKey: errore fetch");
+                            Log.d(TAG, "getClientKey: errore fetch");
                         }
                 ) {
                 };
@@ -171,7 +180,9 @@ public class OnBoarding_4 extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        sendThread.stopThread();
-        getThread.stopThread();
+        if (sendThread.getStatus() == AsyncTask.Status.RUNNING)
+            sendThread.stopThread();
+        if (getThread.getStatus() == AsyncTask.Status.RUNNING)
+            getThread.stopThread();
     }
 }
