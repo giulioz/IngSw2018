@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Button;
 
@@ -31,10 +32,8 @@ public class OnBoarding_5 extends AppCompatActivity {
 
         // Saving token
         String token = getIntent().getStringExtra("token");
-        SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor e = pref.edit();
-        e.putString("authToken",token);
-        e.commit();
+        SharedPreferences pref = getSharedPreferences("watchdoge",Context.MODE_PRIVATE);
+        pref.edit().putString("authToken",token).commit();
 
     }
 }

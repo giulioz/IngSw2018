@@ -1,6 +1,5 @@
 package dogedroid.com.watchdoge;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
@@ -48,9 +46,6 @@ public class LiveFeedActivity extends AppCompatActivity {
             sendCommand("left");
         }));
 
-//        moveLeftButton.setOnClickListener(v -> );
-//        moveRightButton.setOnClickListener(v -> sendCommand("right"));
-
     }
 
     @Override
@@ -69,8 +64,8 @@ public class LiveFeedActivity extends AppCompatActivity {
                     Log.d("LIVEFEED", "sendCommand: errore send");
                 }) {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<>();
                 params.put("Content-Type", "application/json; charset=UTF-8");
                 params.put("Authorization", "Bearer " + DiscoveryActivity.token);
                 return params;

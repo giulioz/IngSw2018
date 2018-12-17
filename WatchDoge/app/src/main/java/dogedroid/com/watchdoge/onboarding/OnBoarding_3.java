@@ -2,8 +2,8 @@ package dogedroid.com.watchdoge.onboarding;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.awt.font.TextAttribute;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -29,6 +28,7 @@ public class OnBoarding_3 extends AppCompatActivity {
     TextView ipDoge;
     ImageView logo;
     public static String ip;
+    DiscoverDoge thread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +43,15 @@ public class OnBoarding_3 extends AppCompatActivity {
         ipDoge = findViewById(R.id.ip_dogefound);
         logo = findViewById(R.id.doge_logo);
 
-        new DiscoverDoge().execute();
+        thread = new DiscoverDoge();
+        thread.execute();
 
         nextBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_4.class)));
 
         backBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_2.class)));
     }
 
-    private void founded(){
+    private void founded() {
         description.setText(R.string.description_OnBoarding_3_found);
         ipDoge.setText(ip.substring(1));
         logo.setVisibility(View.VISIBLE);
@@ -58,14 +59,21 @@ public class OnBoarding_3 extends AppCompatActivity {
     }
 
     private class DiscoverDoge extends AsyncTask<Void, Void, String> {
+        private boolean run;
+        private boolean success = false;
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
         }
 
+        public void stopThread() {
+            run = false;
+        }
+
         protected String doInBackground(Void... params) {
-            boolean run = true;
             try {
+                run = true;
                 byte adr = (byte) 255;
                 byte[] address = {adr, adr, adr, adr};
                 byte[] sendData;
@@ -87,9 +95,10 @@ public class OnBoarding_3 extends AppCompatActivity {
                         udpSocket.send(packet);
                         receivePacket = new DatagramPacket(message, message.length);
                         udpSocket.setSoTimeout(1500);
-                        udpSocket.receive(receivePacket);
 
+                        udpSocket.receive(receivePacket);
                         run = false;
+                        success = true;
                         udpSocket.close();
                         ip = receivePacket.getAddress().toString();
                         return "";
@@ -111,7 +120,14 @@ public class OnBoarding_3 extends AppCompatActivity {
         @Override
         protected void onPostExecute(final String s) {
             super.onPostExecute(s);
-            founded();
+            if(success)
+                founded();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        thread.stopThread();
     }
 }

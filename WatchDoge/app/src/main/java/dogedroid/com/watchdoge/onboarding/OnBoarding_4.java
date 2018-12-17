@@ -14,20 +14,17 @@ import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import dogedroid.com.watchdoge.DiscoveryActivity;
 import dogedroid.com.watchdoge.R;
 
 public class OnBoarding_4 extends AppCompatActivity {
-
     Button nextBtn;
     Button backBtn;
     TextView ipDoge;
@@ -35,6 +32,10 @@ public class OnBoarding_4 extends AppCompatActivity {
     ImageView logo;
     EditText input;
     String clientKey;
+
+    RequestQueue queue;
+    SendKey sendThread;
+    GetClientKey getThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,76 +52,126 @@ public class OnBoarding_4 extends AppCompatActivity {
         input = findViewById(R.id.input_pin);
         waitingText = findViewById(R.id.waiting_text);
 
-        nextBtn.setOnClickListener(v -> new SendKey().execute());
+        nextBtn.setOnClickListener(v -> sendThread.execute());
         backBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_3.class)));
 
-        new GetClientKey().execute();
+        queue = Volley.newRequestQueue(getApplicationContext());
+
+        sendThread = new SendKey();
+        getThread = new GetClientKey();
+        getThread.execute();
     }
 
-    private class SendKey extends AsyncTask<Void,Void,Void>{
+    private class SendKey extends AsyncTask<Void, Void, Void> {
+        private boolean run;
+        private boolean succeded;
 
-        @Override
-        protected Void doInBackground(Void... voids) {
-            String url = DiscoveryActivity.getUrl("/pair");
-
-            StringRequest request = new StringRequest(Request.Method.POST, url,
-                    (response) -> {
-                        Intent i = new Intent(getApplicationContext(), OnBoarding_5.class);
-                        i.putExtra("token", response);
-                        startActivity(i);
-                    },
-                    (error) -> {
-                        Log.d("PAIRKEY", "sendKey: errore send");
-                    }) {
-
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("clientKey", clientKey);
-                    params.put("pairKey", input.getText().toString());
-                    return params;
-                }
-
-
-            };
-            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-            queue.add(request);
-            return null;
+        public void stopThread() {
+            this.run = false;
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            startActivity(new Intent(getApplicationContext(), OnBoarding_5.class));
+            if (succeded) {
+                Intent i = new Intent(getApplicationContext(), OnBoarding_5.class);
+                i.putExtra("token", clientKey);
+                startActivity(i);
+            }
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            run = true;
+            succeded = false;
+            String url = "http:/" + OnBoarding_3.ip + ":8000/pair";
+
+
+            Map<String, String> params = new HashMap<>();
+            params.put("clientKey", clientKey);
+            params.put("pairKey", input.getText().toString());
+
+            JSONObject json = new JSONObject(params);
+
+            Log.d("PORCODIO", "SendKey params: " + json);
+            Log.d("PORCODIO", "SendKey: " + url);
+
+            while (run) {
+                Log.d("PORCODIO", "doInBackground: LOOP");
+                StringRequest request = new StringRequest(Request.Method.POST, url,
+                        (response) -> {
+                            succeded = true;
+                            run = false;
+                        },
+                        (error) -> {
+                            Log.d("PAIRKEY", "sendKey: errore send");
+                        }) {
+                    @Override
+                    public Map<String, String> getHeaders() {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("Content-Type", "application/json");
+                        return params;
+                    }
+
+                    @Override
+                    public byte[] getBody() {
+                        return json.toString().getBytes();
+                    }
+                };
+                queue.add(request);
+                Thread.currentThread();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            return null;
         }
     }
 
     private class GetClientKey extends AsyncTask<Void, Void, Void> {
+        private boolean run;
+
+        public void stopThread() {
+            this.run = false;
+        }
 
         @Override
         protected Void doInBackground(Void... voids) {
-            String url = DiscoveryActivity.getUrl("/pair");
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                    (response) -> {
-                        try {
-                            clientKey = response.getString("clientKey");
+            run = true;
+            String url = "http:/" + OnBoarding_3.ip + ":8000/pair";
+            while (run) {
+                StringRequest request = new StringRequest(Request.Method.GET, url,
+                        (response) -> {
+                            clientKey = response.substring(1, response.length() - 1);
+                            Log.d("PORCODIO", "GET client key: " + clientKey);
                             nextBtn.setVisibility(View.VISIBLE);
                             waitingText.setVisibility(View.GONE);
                             input.setVisibility(View.VISIBLE);
-
-                        } catch (JSONException e) {
-                            Log.d("ONBOARDING 4", "getClientKey: errore json");
-                            e.printStackTrace();
+                            run = false;
+                        },
+                        (err) -> {
+                            Log.d("ONBOARDING 4", "getClientKey: errore fetch");
                         }
-                    },
-                    (err) -> {
-                        Log.d("ONBOARDING 4", "getClientKey: errore fetch");
-                    }
-            ) {
-            };
-            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-            queue.add(request);
+                ) {
+                };
+                queue.add(request);
+                Thread.currentThread();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
             return null;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sendThread.stopThread();
+        getThread.stopThread();
     }
 }
