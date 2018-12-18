@@ -3,5 +3,10 @@
     <string name="title_activity_discovery">Doge Finder</string>
     <string name="title_activity_live_feed">LiveFeed</string>
     <string name="title_activity_dogelog">DogeLog - History</string>
+    <string name="title_activity_credits">Crediti</string>
+
+    <string name="settings_unpair">Disaccoppia Doge</string>
+    <string name="settings_credits">Crediti</string>
 
 </resources>
+

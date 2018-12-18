@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="credits_title">Questo progetto é stato sviluppato da:</string>
+
+    <string name="credits_description">
+        Applicazione Android:\n
+        - Baccega Sandro\n
+        - Lazzaro Dario\n
+        \n
+        Firmware Doge:\n
+        - Zausa Giulio\n
+        - Scodeller Giovanni\n
+        - Casarin Samuele\n
+    </string>
+</resources>

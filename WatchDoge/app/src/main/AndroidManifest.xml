@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DiscoveryActivity"
+        <activity
+            android:name=".DiscoveryActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,25 +20,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".onboarding.OnBoarding_1"
+        <activity
+            android:name=".onboarding.OnBoarding_1"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".onboarding.OnBoarding_2"
+        <activity
+            android:name=".onboarding.OnBoarding_2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".onboarding.OnBoarding_3"
+        <activity
+            android:name=".onboarding.OnBoarding_3"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".onboarding.OnBoarding_4"
+        <activity
+            android:name=".onboarding.OnBoarding_4"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".onboarding.OnBoarding_5"
+        <activity
+            android:name=".onboarding.OnBoarding_5"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LiveFeedActivity"
             android:label="@string/title_activity_live_feed"
-            android:parentActivityName=".DashboardActivity"
-            />
+            android:parentActivityName=".DashboardActivity" />
         <activity
             android:name=".DogeLogActivity"
             android:label="@string/title_activity_dogelog"
             android:parentActivityName=".DashboardActivity" />
+
+        <activity android:name=".CreditsActivity"
+            android:label="@string/title_activity_credits"
+            android:parentActivityName=".DashboardActivity"></activity>
 
         <activity android:name=".DashboardActivity"></activity>
     </application>

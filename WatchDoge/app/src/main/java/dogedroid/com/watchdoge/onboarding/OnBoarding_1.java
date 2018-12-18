@@ -10,7 +10,7 @@ import android.widget.Button;
 import dogedroid.com.watchdoge.R;
 
 public class OnBoarding_1 extends AppCompatActivity {
-    public static boolean ini = false;
+    public static boolean ini = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
