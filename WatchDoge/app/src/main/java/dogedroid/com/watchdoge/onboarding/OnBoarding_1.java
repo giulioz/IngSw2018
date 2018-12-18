@@ -10,7 +10,6 @@ import android.widget.Button;
 import dogedroid.com.watchdoge.R;
 
 public class OnBoarding_1 extends AppCompatActivity {
-    public static boolean ini = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +18,6 @@ public class OnBoarding_1 extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        ini = true;
         Button onBoardBtn = findViewById(R.id.button_OnBoarding_1);
         onBoardBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_2.class)));
     }

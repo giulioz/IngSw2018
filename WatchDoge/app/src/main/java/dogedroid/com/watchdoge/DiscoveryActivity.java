@@ -39,7 +39,7 @@ public class DiscoveryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (getToken() && OnBoarding_1.ini) {
+        if (getToken()) {
             connectedText = findViewById(R.id.connectedText);
             creaPicasso();
             new DiscoverDoge().execute();
