@@ -5,27 +5,24 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import dogedroid.com.watchdoge.R;
+import dogedroid.com.watchdoge.utility.GetPairingKey;
+import dogedroid.com.watchdoge.utility.SendPairingKey;
 
 public class OnBoarding_4 extends AppCompatActivity {
-    private final String TAG = "ONBOARDING 4";
+    private final String TAG = "PORCODIO";
     Button nextBtn;
     Button backBtn;
     TextView ipDoge;
@@ -35,8 +32,8 @@ public class OnBoarding_4 extends AppCompatActivity {
     String clientKey;
 
     RequestQueue queue;
-    SendKey sendThread;
-    GetClientKey getThread;
+    SendPairingKey sendThread;
+    GetPairingKey getThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,131 +47,57 @@ public class OnBoarding_4 extends AppCompatActivity {
         ipDoge = findViewById(R.id.ip_dogefound);
         logo = findViewById(R.id.doge_logofound);
         input = findViewById(R.id.input_pin);
+        input.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId==EditorInfo.IME_ACTION_DONE)
+                executeSendThread();
+            return false;
+        });
         waitingText = findViewById(R.id.waiting_text);
 
-        nextBtn.setOnClickListener(v -> sendThread.execute());
+        nextBtn.setOnClickListener(v -> executeSendThread());
         backBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_3.class)));
 
         queue = Volley.newRequestQueue(getApplicationContext());
 
-        sendThread = new SendKey();
-        getThread = new GetClientKey();
-        getThread.execute();
+        executeGetThread();
     }
 
-    private void showError() {
-        ipDoge.setText(R.string.waiting_OnBoarding_4);
-        nextBtn.setVisibility(View.GONE);
-        waitingText.setVisibility(View.VISIBLE);
-        input.setVisibility(View.GONE);
-        getThread = new GetClientKey();
-        sendThread = new SendKey();
-        getThread.execute();
-    }
-
-    private class SendKey extends AsyncTask<Void, Void, Void> {
-        private boolean waiting;
-        private boolean succeded;
-
-        public void stopThread() {
-            this.waiting = false;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
+    private void initSendThread() {
+        Log.d(TAG, "initSendThread: SEND INIZIATO");
+        sendThread = new SendPairingKey((succeded) -> {
             if (succeded) {
+                Log.d(TAG, "initSendThread: SUCCEDED SEND");
                 Intent i = new Intent(getApplicationContext(), OnBoarding_5.class);
+
                 i.putExtra("token", clientKey);
                 startActivity(i);
+            } else {
+                Log.d(TAG, "initSendThread: FAILED SEND");
+                ipDoge.setText(R.string.waiting_OnBoarding_4);
+                nextBtn.setVisibility(View.GONE);
+                waitingText.setVisibility(View.VISIBLE);
+                input.setVisibility(View.GONE);
+                executeGetThread();
             }
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            waiting = true;
-            succeded = false;
-            String url = "http:/" + OnBoarding_3.ip + ":8000/pair";
-
-
-            Map<String, String> params = new HashMap<>();
-            params.put("clientKey", clientKey);
-            params.put("pairKey", input.getText().toString());
-
-            JSONObject json = new JSONObject(params);
-
-
-            while (waiting) {
-                StringRequest request = new StringRequest(Request.Method.POST, url,
-                        (response) -> {
-                            succeded = true;
-                            waiting = false;
-                        },
-                        (error) -> {
-                            Log.d(TAG, "sendKey: errore send");
-                            showError();
-                            waiting = false;
-                        }) {
-                    @Override
-                    public Map<String, String> getHeaders() {
-                        Map<String, String> params = new HashMap<>();
-                        params.put("Content-Type", "application/json");
-                        return params;
-                    }
-
-                    @Override
-                    public byte[] getBody() {
-                        return json.toString().getBytes();
-                    }
-                };
-                queue.add(request);
-                Thread.currentThread();
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
+        }, queue, clientKey, input);
     }
 
-    private class GetClientKey extends AsyncTask<Void, Void, Void> {
-        private boolean waiting;
+    public void executeSendThread(){
+        sendThread.execute();
+    }
 
-        public void stopThread() {
-            this.waiting = false;
-        }
+    private void executeGetThread() {
+        getThread = new GetPairingKey(response -> {
+            Log.d(TAG, "executeGetThread: RISPOSTA GET: " + response);
+            clientKey = response.substring(1, response.length() - 1);
+            ipDoge.setText(OnBoarding_3.ip.substring(1));
+            nextBtn.setVisibility(View.VISIBLE);
+            waitingText.setVisibility(View.GONE);
+            input.setVisibility(View.VISIBLE);
+            initSendThread();
+        }, queue);
 
-        @Override
-        protected Void doInBackground(Void... voids) {
-            waiting = true;
-            String url = "http:/" + OnBoarding_3.ip + ":8000/pair";
-            while (waiting) {
-                StringRequest request = new StringRequest(Request.Method.GET, url,
-                        (response) -> {
-                            clientKey = response.substring(1, response.length() - 1);
-                            ipDoge.setText(OnBoarding_3.ip.substring(1));
-                            nextBtn.setVisibility(View.VISIBLE);
-                            waitingText.setVisibility(View.GONE);
-                            input.setVisibility(View.VISIBLE);
-                            waiting = false;
-                        },
-                        (err) -> {
-                            Log.d(TAG, "getClientKey: errore fetch");
-                        }
-                ) {
-                };
-                queue.add(request);
-                Thread.currentThread();
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
+        getThread.execute();
     }
 
     @Override
@@ -186,3 +109,104 @@ public class OnBoarding_4 extends AppCompatActivity {
             getThread.stopThread();
     }
 }
+
+//private class SendKey1 extends AsyncTask<Void, Void, Void> {
+//        private boolean waiting;
+//        private boolean succeded;
+//
+//        public void stopThread() {
+//            this.waiting = false;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void aVoid) {
+//            super.onPostExecute(aVoid);
+//
+//        }
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            waiting = true;
+//            succeded = false;
+//            String url = "http:/" + OnBoarding_3.ip + ":8000/pair";
+//
+//
+//            Map<String, String> params = new HashMap<>();
+//            params.put("clientKey", clientKey);
+//            params.put("pairKey", input.getText().toString());
+//
+//            JSONObject json = new JSONObject(params);
+//
+//
+//            while (waiting) {
+//                StringRequest request = new StringRequest(Request.Method.POST, url,
+//                        (response) -> {
+//                            succeded = true;
+//                            waiting = false;
+//                        },
+//                        (error) -> {
+//                            Log.d(TAG, "sendKey: errore send");
+//                            showError();
+//                            waiting = false;
+//                        }) {
+//                    @Override
+//                    public Map<String, String> getHeaders() {
+//                        Map<String, String> params = new HashMap<>();
+//                        params.put("Content-Type", "application/json");
+//                        return params;
+//                    }
+//
+//                    @Override
+//                    public byte[] getBody() {
+//                        return json.toString().getBytes();
+//                    }
+//                };
+//                queue.add(request);
+//                Thread.currentThread();
+//                try {
+//                    Thread.sleep(2000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            return null;
+//        }
+//    }
+
+//    private class GetClientKey1 extends AsyncTask<Void, Void, Void> {
+//        private boolean waiting;
+//
+//        public void stopThread() {
+//            this.waiting = false;
+//        }
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            waiting = true;
+//            String url = "http:/" + OnBoarding_3.ip + ":8000/pair";
+//            while (waiting) {
+//                StringRequest request = new StringRequest(Request.Method.GET, url,
+//                        (response) -> {
+//                            clientKey = response.substring(1, response.length() - 1);
+//                            ipDoge.setText(OnBoarding_3.ip.substring(1));
+//                            nextBtn.setVisibility(View.VISIBLE);
+//                            waitingText.setVisibility(View.GONE);
+//                            input.setVisibility(View.VISIBLE);
+//                            waiting = false;
+//                        },
+//                        (err) -> {
+//                            Log.d(TAG, "getClientKey: errore fetch");
+//                        }
+//                ) {
+//                };
+//                queue.add(request);
+//                Thread.currentThread();
+//                try {
+//                    Thread.sleep(2000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            return null;
+//        }
+//    }

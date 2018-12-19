@@ -20,6 +20,8 @@ import okhttp3.Request;
 
 public class OnBoarding_5 extends AppCompatActivity {
 
+    private final String TAG = "PORCODIO";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class OnBoarding_5 extends AppCompatActivity {
         // Saving token
         String token = getIntent().getStringExtra("token");
         SharedPreferences pref = getSharedPreferences("watchdoge",Context.MODE_PRIVATE);
+        Log.d(TAG, "onCreate: SALVATO : " + token);
         pref.edit().putString("authToken",token).commit();
 
     }
