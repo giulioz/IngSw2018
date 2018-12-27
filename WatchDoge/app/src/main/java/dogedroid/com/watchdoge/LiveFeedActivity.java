@@ -21,6 +21,7 @@ import java.util.Map;
 import dogedroid.com.watchdoge.utility.LiveFeed;
 
 public class LiveFeedActivity extends AppCompatActivity {
+    private final String TAG = "LIVEFEED";
     private ImageView liveImage;
     private Button moveLeftButton;
     private Button moveRightButton;
@@ -63,7 +64,7 @@ public class LiveFeedActivity extends AppCompatActivity {
                 (response) -> {
                 },
                 (error) -> {
-                    Log.d("LIVEFEED", "sendCommand: errore send");
+                    Log.d(TAG, "sendCommand: errore send");
                 }) {
             @Override
             public Map<String, String> getHeaders() {

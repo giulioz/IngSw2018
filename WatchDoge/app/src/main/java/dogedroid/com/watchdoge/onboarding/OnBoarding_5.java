@@ -20,7 +20,7 @@ import okhttp3.Request;
 
 public class OnBoarding_5 extends AppCompatActivity {
 
-    private final String TAG = "PORCODIO";
+    private final String TAG = "OnBoarding_5";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

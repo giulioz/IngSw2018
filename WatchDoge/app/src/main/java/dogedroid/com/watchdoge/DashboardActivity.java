@@ -35,6 +35,7 @@ import dogedroid.com.watchdoge.onboarding.OnBoarding_1;
 import dogedroid.com.watchdoge.utility.DogeLogAdapter;
 
 public class DashboardActivity extends AppCompatActivity {
+    private final String TAG = "DASHBOARD";
     TextView connectedText;
     ImageView liveFeedImage;
     RecyclerView unreadLog;
@@ -102,11 +103,11 @@ public class DashboardActivity extends AppCompatActivity {
                             }
                         });
                     } catch (JSONException e) {
-                        Log.d("DASHBOARD", "setupAlarm: errore json");
+                        Log.d(TAG, "setupAlarm: errore json");
                     }
                 },
                 (err) -> {
-                    Log.d("DASHBOARD", "setupAlarm: errore get");
+                    Log.d(TAG, "setupAlarm: errore get");
                 }
         ){
             @Override
@@ -129,7 +130,7 @@ public class DashboardActivity extends AppCompatActivity {
                 (response) -> {
                 },
                 (error) -> {
-                    Log.d("DASHBOARD", "toggleAlarm: errore toggle");
+                    Log.d(TAG, "toggleAlarm: errore toggle");
                 }) {
             @Override
             public Map<String, String> getHeaders() {

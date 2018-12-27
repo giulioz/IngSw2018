@@ -18,7 +18,7 @@ import okhttp3.Request;
 
 
 public class DiscoveryActivity extends AppCompatActivity {
-    private final String TAG = "PORCODIO";
+    private final String TAG = "DiscoveryActivity";
     public static String dogeAddress = "";
     public static final int port = 8000;
     public static final int UDPport = 8001;
