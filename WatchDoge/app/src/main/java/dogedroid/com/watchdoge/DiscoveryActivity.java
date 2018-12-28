@@ -33,11 +33,11 @@ public class DiscoveryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         if (getToken()) {
             Log.d(TAG, "onCreate: TOKEN: " + token);
             connectedText = findViewById(R.id.connectedText);
             creaPicasso();
+
             thread = new DiscoverDoge(new DiscoverDoge.DiscoverInterface() {
                 @Override
                 public void onPre() {
