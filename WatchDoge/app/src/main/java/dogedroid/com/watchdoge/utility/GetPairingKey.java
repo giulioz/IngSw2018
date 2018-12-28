@@ -2,7 +2,6 @@ package dogedroid.com.watchdoge.utility;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
