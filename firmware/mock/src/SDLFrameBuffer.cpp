@@ -5,8 +5,9 @@
 #include <stdexcept>
 
 SDLFrameBuffer::SDLFrameBuffer() {
-  if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-    throw SDL_GetError();
+  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    printf("SDL_Init failed: %s\n", SDL_GetError());
+    throw std::invalid_argument("SDL_INIT failed!");
   }
 
   this->window = SDL_CreateWindow("WatchDoge", SDL_WINDOWPOS_UNDEFINED,
