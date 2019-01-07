@@ -5,29 +5,24 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import dogedroid.com.watchdoge.DiscoveryActivity;
 import dogedroid.com.watchdoge.R;
+import dogedroid.com.watchdoge.utility.GetPairingKey;
+import dogedroid.com.watchdoge.utility.SendPairingKey;
 
 public class OnBoarding_4 extends AppCompatActivity {
-
+    private final String TAG = "OnBoarding_4";
     Button nextBtn;
     Button backBtn;
     TextView ipDoge;
@@ -35,6 +30,10 @@ public class OnBoarding_4 extends AppCompatActivity {
     ImageView logo;
     EditText input;
     String clientKey;
+
+    RequestQueue queue;
+    SendPairingKey sendThread;
+    GetPairingKey getThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,79 +45,67 @@ public class OnBoarding_4 extends AppCompatActivity {
         nextBtn = findViewById(R.id.button_AcceptOnBoarding_4);
         backBtn = findViewById(R.id.button_BackOnBoarding_4);
         ipDoge = findViewById(R.id.ip_dogefound);
-        ipDoge.setText(OnBoarding_3.ip.substring(1));
         logo = findViewById(R.id.doge_logofound);
         input = findViewById(R.id.input_pin);
+        input.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId==EditorInfo.IME_ACTION_DONE)
+                executeSendThread();
+            return false;
+        });
         waitingText = findViewById(R.id.waiting_text);
 
-        nextBtn.setOnClickListener(v -> new SendKey().execute());
+        nextBtn.setOnClickListener(v -> executeSendThread());
         backBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_3.class)));
 
-        new GetClientKey().execute();
+        queue = Volley.newRequestQueue(getApplicationContext());
+
+        executeGetThread();
     }
 
-    private class SendKey extends AsyncTask<Void,Void,Void>{
+    private void initSendThread() {
+        Log.d(TAG, "initSendThread: SEND INIZIATO");
+        sendThread = new SendPairingKey((succeded) -> {
+            if (succeded) {
+                Log.d(TAG, "initSendThread: SUCCEDED SEND");
+                Intent i = new Intent(getApplicationContext(), OnBoarding_5.class);
 
-        @Override
-        protected Void doInBackground(Void... voids) {
-            String url = DiscoveryActivity.getUrl("/pair");
-
-            StringRequest request = new StringRequest(Request.Method.POST, url,
-                    (response) -> {
-                    },
-                    (error) -> {
-                        Log.d("PAIRKEY", "sendKey: errore send");
-                    }) {
-
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("clientKey", clientKey);
-                    params.put("pairKey", input.getText().toString());
-
-                    return params;
-                }
-
-
-            };
-            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-            queue.add(request);
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            startActivity(new Intent(getApplicationContext(), OnBoarding_5.class));
-        }
+                i.putExtra("token", clientKey);
+                startActivity(i);
+            } else {
+                Log.d(TAG, "initSendThread: FAILED SEND");
+                ipDoge.setText(R.string.waiting_OnBoarding_4);
+                nextBtn.setVisibility(View.GONE);
+                waitingText.setVisibility(View.VISIBLE);
+                input.setVisibility(View.GONE);
+                executeGetThread();
+            }
+        }, queue, clientKey, input);
     }
 
-    private class GetClientKey extends AsyncTask<Void, Void, Void> {
+    public void executeSendThread(){
+        sendThread.execute();
+    }
 
-        @Override
-        protected Void doInBackground(Void... voids) {
-            String url = DiscoveryActivity.getUrl("/pair");
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                    (response) -> {
-                        try {
-                            clientKey = response.getString("clientKey");
-                            nextBtn.setVisibility(View.VISIBLE);
-                            waitingText.setVisibility(View.GONE);
-                            input.setVisibility(View.VISIBLE);
+    private void executeGetThread() {
+        getThread = new GetPairingKey(response -> {
+            Log.d(TAG, "executeGetThread: RISPOSTA GET: " + response);
+            clientKey = response.substring(1, response.length() - 1);
+            ipDoge.setText(OnBoarding_3.ip.substring(1));
+            nextBtn.setVisibility(View.VISIBLE);
+            waitingText.setVisibility(View.GONE);
+            input.setVisibility(View.VISIBLE);
+            initSendThread();
+        }, queue);
 
-                        } catch (JSONException e) {
-                            Log.d("ONBOARDING 4", "getClientKey: errore json");
-                            e.printStackTrace();
-                        }
-                    },
-                    (err) -> {
-                        Log.d("ONBOARDING 4", "getClientKey: errore fetch");
-                    }
-            ) {
-            };
-            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-            queue.add(request);
-            return null;
-        }
+        getThread.execute();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (sendThread.getStatus() == AsyncTask.Status.RUNNING)
+            sendThread.stopThread();
+        if (getThread.getStatus() == AsyncTask.Status.RUNNING)
+            getThread.stopThread();
     }
 }

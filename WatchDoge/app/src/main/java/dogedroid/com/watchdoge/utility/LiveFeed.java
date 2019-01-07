@@ -1,14 +1,11 @@
 package dogedroid.com.watchdoge.utility;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
 import com.squareup.picasso.MemoryPolicy;
-
-import java.io.InputStream;
 
 import dogedroid.com.watchdoge.DiscoveryActivity;
 
@@ -18,19 +15,19 @@ public class LiveFeed extends AsyncTask<Void, Bitmap, Void> {
     private ImageView image;
     private boolean run;
 
-    public LiveFeed(ImageView im){
+    public LiveFeed(ImageView im) {
         this.image = im;
         this.run = true;
     }
 
-    public void stopLive(){
+    public void stopLive() {
         this.run = false;
     }
 
     @Override
     protected Void doInBackground(Void... voids) {
-        while (run){
-            Bitmap mIcon11 = null;
+        while (run) {
+            Bitmap mIcon11;
             try {
                 mIcon11 = DiscoveryActivity.picasso
                         .load(DiscoveryActivity.getUrl("/shoot"))
@@ -57,6 +54,7 @@ public class LiveFeed extends AsyncTask<Void, Bitmap, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
+        // if(run)
         //image.setImageIcon();
     }
 }

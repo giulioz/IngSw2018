@@ -13,4 +13,4 @@ mg_connection *Server::bind(const char *address,
   return mg_bind_opt(&this->mgr, address, handler, opts);
 }
 
-void Server::poll() { mg_mgr_poll(&mgr, 1000); }
+void Server::poll() { mg_mgr_poll(&mgr, 10); }

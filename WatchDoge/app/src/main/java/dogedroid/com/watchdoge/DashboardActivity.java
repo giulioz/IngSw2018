@@ -4,10 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -28,9 +31,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import dogedroid.com.watchdoge.onboarding.OnBoarding_1;
 import dogedroid.com.watchdoge.utility.DogeLogAdapter;
 
 public class DashboardActivity extends AppCompatActivity {
+    private final String TAG = "DASHBOARD";
     TextView connectedText;
     ImageView liveFeedImage;
     RecyclerView unreadLog;
@@ -98,16 +103,16 @@ public class DashboardActivity extends AppCompatActivity {
                             }
                         });
                     } catch (JSONException e) {
-                        Log.d("DASHBOARD", "setupAlarm: errore json");
+                        Log.d(TAG, "setupAlarm: errore json");
                     }
                 },
                 (err) -> {
-                    Log.d("DASHBOARD", "setupAlarm: errore get");
+                    Log.d(TAG, "setupAlarm: errore get");
                 }
         ){
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<>();
                 params.put("Content-Type", "application/json; charset=UTF-8");
                 params.put("Authorization", "Bearer " + DiscoveryActivity.token);
                 return params;
@@ -125,10 +130,10 @@ public class DashboardActivity extends AppCompatActivity {
                 (response) -> {
                 },
                 (error) -> {
-                    Log.d("DASHBOARD", "toggleAlarm: errore toggle");
+                    Log.d(TAG, "toggleAlarm: errore toggle");
                 }) {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
+            public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Content-Type", "application/json; charset=UTF-8");
                 params.put("Authorization", "Bearer " + DiscoveryActivity.token);
@@ -138,5 +143,29 @@ public class DashboardActivity extends AppCompatActivity {
         };
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(request);
+    }
+
+    //Menu stuff:
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.dashboard_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_unpair:
+                SharedPreferences pref = getSharedPreferences("watchdoge",Context.MODE_PRIVATE);
+                pref.edit().putString("authToken","").commit();
+                startActivity(new Intent(this, OnBoarding_1.class));
+                return true;
+
+            case R.id.action_credits:
+                startActivity(new Intent(this, CreditsActivity.class));
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

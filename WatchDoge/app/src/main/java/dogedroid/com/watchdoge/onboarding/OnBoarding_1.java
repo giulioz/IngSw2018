@@ -18,7 +18,6 @@ public class OnBoarding_1 extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
         Button onBoardBtn = findViewById(R.id.button_OnBoarding_1);
         onBoardBtn.setOnClickListener(v -> startActivity(new Intent(this, OnBoarding_2.class)));
     }

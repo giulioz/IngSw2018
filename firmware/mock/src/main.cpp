@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include <iostream>
 #include <string>
 
 #include "Comm.hpp"
@@ -15,19 +16,23 @@
 static const char *infoString = "Doge Server (Mock)";
 
 int _main() {
-  bool running = true;
+  try {
+    bool running = true;
 
-  MockHardwareInterface mockHardwareInterface;
-  ImageCapturer imageCapturer;
-  SDLFrameBuffer sdlFrameBuffer;
-  DBConnector dbC("test.db");
-  Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer, &dbC,
-            infoString);
+    SDLFrameBuffer sdlFrameBuffer;
+    MockHardwareInterface mockHardwareInterface;
+    ImageCapturer imageCapturer;
+    DBConnector dbC("test.db");
+    Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer, &dbC,
+              infoString);
 
-  while (running) {
-    mockHardwareInterface.poll();
-    sdlFrameBuffer.poll(&running);
-    comm.poll();
+    while (running) {
+      mockHardwareInterface.poll();
+      sdlFrameBuffer.poll(&running);
+      comm.poll();
+    }
+  } catch (const std::exception &ex) {
+    std::cout << ex.what() << std::endl;
   }
 
   return 0;

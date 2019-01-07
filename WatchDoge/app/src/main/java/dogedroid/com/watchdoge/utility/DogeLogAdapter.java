@@ -101,7 +101,6 @@ public class DogeLogAdapter extends RecyclerView.Adapter<DogeLogAdapter.ViewHold
     public void onBindViewHolder(@NonNull DogeLogAdapter.ViewHolder viewHolder, final int i) {
 
         Date data = new Date(date.get(i) * 1000);
-        //Date data = new Date(1544626713 * 1000);
 
         DateFormat dataFormat = new SimpleDateFormat("d/M/y");
         DateFormat oraFormat = new SimpleDateFormat("H:m");
@@ -110,8 +109,8 @@ public class DogeLogAdapter extends RecyclerView.Adapter<DogeLogAdapter.ViewHold
         viewHolder.ora.setText(oraFormat.format(data));
 
         CircularProgressDrawable progressCircle = new CircularProgressDrawable(myContex);
-        progressCircle.setStrokeWidth(20f);
-        progressCircle.setColorFilter(ContextCompat.getColor(myContex, R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
+        progressCircle.setStrokeWidth(30f);
+        progressCircle.setColorFilter(ContextCompat.getColor(myContex, R.color.colorAccent), PorterDuff.Mode.SRC_IN);
 
         DiscoveryActivity.picasso
                 .load(generateUrl(i))

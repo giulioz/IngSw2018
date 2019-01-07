@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
@@ -22,6 +21,7 @@ import java.util.Map;
 import dogedroid.com.watchdoge.utility.LiveFeed;
 
 public class LiveFeedActivity extends AppCompatActivity {
+    private final String TAG = "LIVEFEED";
     private ImageView liveImage;
     private Button moveLeftButton;
     private Button moveRightButton;
@@ -48,15 +48,13 @@ public class LiveFeedActivity extends AppCompatActivity {
             sendCommand("left");
         }));
 
-//        moveLeftButton.setOnClickListener(v -> );
-//        moveRightButton.setOnClickListener(v -> sendCommand("right"));
-
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        liveThread.stopLive();
+        if(liveThread.getStatus() == AsyncTask.Status.RUNNING)
+            liveThread.stopLive();
     }
 
     private void sendCommand(String add) {
@@ -66,11 +64,11 @@ public class LiveFeedActivity extends AppCompatActivity {
                 (response) -> {
                 },
                 (error) -> {
-                    Log.d("LIVEFEED", "sendCommand: errore send");
+                    Log.d(TAG, "sendCommand: errore send");
                 }) {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<>();
                 params.put("Content-Type", "application/json; charset=UTF-8");
                 params.put("Authorization", "Bearer " + DiscoveryActivity.token);
                 return params;
