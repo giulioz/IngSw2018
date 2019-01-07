@@ -6,6 +6,8 @@
 #include <vector>
 using json = nlohmann::json;
 
+static const char *PAIR_KEY = "2435";
+
 /* ==================================
     Alarm
   ================================== */
@@ -181,11 +183,11 @@ void WebApi::postPair(const Request *request, Response *response) {
   auto clientKey = inputJson["clientKey"].get<std::string>();
   auto pairKey = inputJson["pairKey"].get<std::string>();
 
-  auto pairEntry = authPairs[clientKey];
-  if (pairEntry == pairKey) {
-    auto authKey = genKey(20, alphanum, sizeof(alphanum) - 1);
-    root->getAuthKeys()[clientKey] = authKey;
-    db->store(*root);
+  // auto pairEntry = authPairs[clientKey];
+  if (strcmp(PAIR_KEY, pairKey.c_str()) == 0) {
+    // auto authKey = genKey(20, alphanum, sizeof(alphanum) - 1);
+    // root->getAuthKeys()[clientKey] = authKey;
+    // db->store(*root);
 
     std::string json = "\"";
     json += clientKey;
