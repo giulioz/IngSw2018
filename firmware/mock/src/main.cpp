@@ -13,15 +13,17 @@
 #include "DB/Entity/TimeSpan.hpp"
 #include "DB/Entity/WeekDay.hpp"
 
+#include <iostream>
+
 static const char *infoString = "Doge Server (Mock)";
 
 int _main() {
-  try {
-    bool running = true;
+  bool running = true;
 
-    SDLFrameBuffer sdlFrameBuffer;
+  try {
     MockHardwareInterface mockHardwareInterface;
-    ImageCapturer imageCapturer;
+    ImageCapturer imageCapturer("/dev/video0");
+    SDLFrameBuffer sdlFrameBuffer;
     DBConnector dbC("test.db");
     Comm comm(&mockHardwareInterface, &imageCapturer, &sdlFrameBuffer, &dbC,
               infoString);
@@ -31,8 +33,8 @@ int _main() {
       sdlFrameBuffer.poll(&running);
       comm.poll();
     }
-  } catch (const std::exception &ex) {
-    std::cout << ex.what() << std::endl;
+  } catch (const char *ex) {
+    std::cout << ex << std::endl;
   }
 
   return 0;
