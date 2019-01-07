@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -30,6 +31,7 @@ public class OnBoarding_3 extends AppCompatActivity {
     ImageView logo;
     public static String ip;
     DiscoverDoge thread;
+    ProgressBar pr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class OnBoarding_3 extends AppCompatActivity {
         description = findViewById(R.id.description_OnBoarding_3);
         ipDoge = findViewById(R.id.ip_dogefound);
         logo = findViewById(R.id.doge_logo);
+        pr = findViewById(R.id.onboarding3_progressBar);
 
         thread = new DiscoverDoge(new DiscoverDoge.DiscoverInterface() {
             @Override
@@ -53,6 +56,7 @@ public class OnBoarding_3 extends AppCompatActivity {
                     OnBoarding_3.ip = ip;
                     description.setText(R.string.description_OnBoarding_3_found);
                     ipDoge.setText(ip.substring(1));
+                    pr.setVisibility(View.GONE);
                     logo.setVisibility(View.VISIBLE);
                     nextBtn.setVisibility(View.VISIBLE);
                 }
