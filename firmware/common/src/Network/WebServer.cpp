@@ -1,5 +1,7 @@
 #include "Network/WebServer.hpp"
 
+#include <iostream>
+
 static void wrapperHandler(struct mg_connection *nc, int ev, void *p) {
   WebServer *_this = static_cast<WebServer *>(nc->user_data);
   _this->handler(nc, ev, p);
@@ -25,6 +27,7 @@ void WebServer::handler(struct mg_connection *c, int ev, void *p) {
       Response response(c);
       response.status(500);
       response.send(ex.what());
+      std::cout << ex.what() << std::endl;
     }
   }
 }
