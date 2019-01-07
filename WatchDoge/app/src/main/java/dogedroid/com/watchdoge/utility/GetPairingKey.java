@@ -52,7 +52,7 @@ public class GetPairingKey extends AsyncTask<Void, Void, Void> {
                         clientKey = response;
                     },
                     (err) -> {
-                        Log.d(TAG, "getClientKey: errore fetch");
+                        Log.d(TAG, "getClientKey: errore fetch " + err.getMessage());
                     }
             ) {
             };
