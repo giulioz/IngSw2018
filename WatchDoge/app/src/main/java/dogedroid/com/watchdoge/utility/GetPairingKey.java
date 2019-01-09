@@ -60,6 +60,7 @@ public class GetPairingKey extends AsyncTask<Void, Void, Void> {
             Thread.currentThread();
             try {
                 Thread.sleep(2000);
+                request.cancel();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
