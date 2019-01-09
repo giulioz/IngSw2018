@@ -24,7 +24,7 @@ import dogedroid.com.watchdoge.utility.GetPairingKey;
 import dogedroid.com.watchdoge.utility.SendPairingKey;
 
 public class OnBoarding_4 extends AppCompatActivity {
-    private final String TAG = "PORCODIO";
+    private final String TAG = "OnBoarding_4";
     Button nextBtn;
     Button backBtn;
     TextView ipDoge;

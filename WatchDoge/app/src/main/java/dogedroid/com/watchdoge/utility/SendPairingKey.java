@@ -18,7 +18,7 @@ import dogedroid.com.watchdoge.onboarding.OnBoarding_3;
 public class SendPairingKey extends AsyncTask<Void, Void, Void> {
 
 
-    private static final String TAG = "PORCODIO";
+    private static final String TAG = "SendPairingKey";
 
     public interface SendInterface {
         void onPost(boolean succeded);
