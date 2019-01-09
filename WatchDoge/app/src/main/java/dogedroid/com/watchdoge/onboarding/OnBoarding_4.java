@@ -1,5 +1,6 @@
 package dogedroid.com.watchdoge.onboarding;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -30,6 +32,7 @@ public class OnBoarding_4 extends AppCompatActivity {
     ImageView logo;
     EditText input;
     String clientKey;
+    ProgressBar progressBar;
 
     RequestQueue queue;
     SendPairingKey sendThread;
@@ -46,6 +49,7 @@ public class OnBoarding_4 extends AppCompatActivity {
         backBtn = findViewById(R.id.button_BackOnBoarding_4);
         ipDoge = findViewById(R.id.ip_dogefound);
         logo = findViewById(R.id.doge_logofound);
+        progressBar = findViewById(R.id.progressBarOnboarding4);
         input = findViewById(R.id.input_pin);
         input.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId==EditorInfo.IME_ACTION_DONE)
@@ -74,7 +78,10 @@ public class OnBoarding_4 extends AppCompatActivity {
             } else {
                 Log.d(TAG, "initSendThread: FAILED SEND");
                 ipDoge.setText(R.string.waiting_OnBoarding_4);
+
                 nextBtn.setVisibility(View.GONE);
+                nextBtn.setText(R.string.button_AcceptOnBoarding_4);
+                nextBtn.setBackgroundResource(R.color.colorPrimary);
                 waitingText.setVisibility(View.VISIBLE);
                 input.setVisibility(View.GONE);
                 executeGetThread();
@@ -83,10 +90,15 @@ public class OnBoarding_4 extends AppCompatActivity {
     }
 
     public void executeSendThread(){
-        sendThread.execute();
+        if(sendThread.getStatus() == AsyncTask.Status.PENDING){
+            nextBtn.setBackgroundResource(R.color.colorDisabled);
+            nextBtn.setText(R.string.button_AcceptOnBoarding_4_waiting);
+            sendThread.execute();
+        }
     }
 
     private void executeGetThread() {
+        progressBar.setVisibility(View.VISIBLE);
         getThread = new GetPairingKey(response -> {
             Log.d(TAG, "executeGetThread: RISPOSTA GET: " + response);
             clientKey = response.substring(1, response.length() - 1);
@@ -94,6 +106,7 @@ public class OnBoarding_4 extends AppCompatActivity {
             nextBtn.setVisibility(View.VISIBLE);
             waitingText.setVisibility(View.GONE);
             input.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
             initSendThread();
         }, queue);
 

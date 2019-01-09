@@ -10,7 +10,7 @@ import com.android.volley.toolbox.StringRequest;
 import dogedroid.com.watchdoge.onboarding.OnBoarding_3;
 
 public class GetPairingKey extends AsyncTask<Void, Void, Void> {
-    private static final String TAG = "PORCODIO";
+    private static final String TAG = "GetPairingKey";
 
     public interface GetInterface {
         void onPost(String response);
@@ -60,6 +60,7 @@ public class GetPairingKey extends AsyncTask<Void, Void, Void> {
             Thread.currentThread();
             try {
                 Thread.sleep(2000);
+                request.cancel();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

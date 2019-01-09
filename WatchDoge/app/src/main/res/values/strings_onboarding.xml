@@ -3,8 +3,9 @@
     <string name="button_OnBoarding_1">FIND YOUR DOGE</string>
     <string name="title_OnBoarding_1">Benvenuto</string>
     <string name="description_OnBoarding_1">
-        Attraverso questo menu potrai facilmente ricercare e configurare il tuo Doge domestico.\n
-        Per cominciare clicca su: FIND YOUR DOGE
+        Attraverso questo menu potrai facilmente ricercare e configurare il tuo Doge.\n
+        Per cominciare clicca su:\n
+        FIND YOUR DOGE
     </string>
 
     <string name="button_AcceptOnBoarding_2">ACCETTO</string>
@@ -25,6 +26,7 @@
     </string>
 
     <string name="button_AcceptOnBoarding_4">CONTINUA</string>
+    <string name="button_AcceptOnBoarding_4_waiting">ATTENDI</string>
     <string name="button_BackOnBoarding_4">INDIETRO</string>
     <string name="title_OnBoarding_4">Addomestica il Doge</string>
     <string name="description_OnBoarding_4">

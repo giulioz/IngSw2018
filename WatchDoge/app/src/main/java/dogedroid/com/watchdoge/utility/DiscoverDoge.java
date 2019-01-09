@@ -13,7 +13,7 @@ import java.net.SocketTimeoutException;
 import dogedroid.com.watchdoge.DiscoveryActivity;
 
 public class DiscoverDoge extends AsyncTask<Void, Void, Void> {
-    private final String TAG = "PORCODIO";
+    private final String TAG = "DiscoverDoge";
     
     public interface DiscoverInterface{
         void onPre();

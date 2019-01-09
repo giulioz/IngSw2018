@@ -18,7 +18,7 @@ import dogedroid.com.watchdoge.onboarding.OnBoarding_3;
 public class SendPairingKey extends AsyncTask<Void, Void, Void> {
 
 
-    private static final String TAG = "PORCODIO";
+    private static final String TAG = "SendPairingKey";
 
     public interface SendInterface {
         void onPost(boolean succeded);
@@ -77,6 +77,7 @@ public class SendPairingKey extends AsyncTask<Void, Void, Void> {
                     (error) -> {
                         Log.d(TAG, "sendKey: errore send",error);
                         waiting = false;
+                        succeded = false;
                     }) {
                 @Override
                 public Map<String, String> getHeaders() {
@@ -94,6 +95,7 @@ public class SendPairingKey extends AsyncTask<Void, Void, Void> {
             Thread.currentThread();
             try {
                 Thread.sleep(2000);
+                request.cancel();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
