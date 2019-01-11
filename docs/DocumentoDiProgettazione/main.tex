@@ -1,0 +1,604 @@
+\documentclass{article}
+\usepackage[a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\title{Piano di Progetto}
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\usepackage{adjustbox}
+\usepackage{lastpage}
+\usepackage{tcolorbox}
+\usepackage[table]{xcolor}
+\definecolor{ProcessBlue}{HTML}{00B0F0}
+
+%% Pandoc
+\usepackage{ifxetex,ifluatex}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[utf8]{inputenc}
+    \usepackage{eurosym}
+  \fi
+\fi
+\usepackage{color}
+\usepackage{fancyvrb}
+\DefineShortVerb[commandchars=\\\{\}]{\|}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex,
+              colorlinks=true,
+              linkcolor=blue]{hyperref}
+\else
+  \usepackage[unicode=true,
+              colorlinks=true,
+              linkcolor=blue]{hyperref}
+\fi
+\hypersetup{breaklinks=true, pdfborder={0 0 0}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+%\EndDefineVerbatimEnvironment{Highlighting}
+
+%% HEADER
+\usepackage[sfdefault,lf]{carlito}
+%% The 'lf' option for lining centers
+%% The 'sfdefault' option to make the base font sans serif
+\usepackage[parfill]{parskip}
+\renewcommand*\oldstylenums[1]{\carlitoOsF #1}
+\usepackage{fancyhdr}
+%\usepackage{natbib}
+%\usepackage{authblk}
+\setlength{\headheight}{41pt}
+
+\fancyhead[L]{WatchDoge: Documento di Progettazione}
+\fancyhead[R]{
+\includegraphics[width=4cm]{gfx/logo.pdf}
+}
+\fancyfoot[C]{\sffamily\fontsize{9pt}{9pt}\selectfont{\thepage/\pageref{LastPage}}}
+\pagestyle{fancy}
+
+\makeatletter
+
+\newcommand{\spacedlowsmallcaps}[1]{\textbf{#1}}
+\newcommand{\titleColor}{}
+\makeatother
+
+\usepackage{graphicx}
+\usepackage[absolute]{textpos}
+\definecolor{lightgray}{gray}{0.9}
+\begin{document}
+%\rowcolors{1}{}{lightgray}
+\thispagestyle{empty}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+\begingroup
+\fontsize{11pt}{11pt}\selectfont
+\linespread{1.05}
+
+\begin{textblock}{50}(0,0)
+\noindent \includegraphics{gfx/00_cafoscari}
+\noindent \end{textblock}
+~
+\begin{textblock}{143}(47,42)
+
+\noindent {\LARGE{}Progetto per\\Ingegneria del Software \emph{(CT0090)}}\\
+\vspace{30pt}
+
+%\vspace{30pt}
+
+
+\noindent %
+\begin{minipage}[t]{1\columnwidth}%
+\leavevmode
+\titleColor
+\raggedright
+\Huge
+\includegraphics[width=12cm]{gfx/logo.pdf}
+\vspace{10pt}
+
+WatchDoge:
+Documento di Progettazione \\
+\LARGE{Versione 1.0 - 10 dicembre 2018}
+\end{minipage}
+
+\vspace{150pt}
+
+
+\noindent {\large{}\spacedlowsmallcaps{{\large{}Redazione}}}{\large \par}
+\begin{itemize}
+\item   Dario Lazzaro
+\item   Giovanni Scodeller
+\item   Giulio Zausa
+\item   Samuele Casarin
+\item   Sandro Baccega
+\end{itemize}
+
+\vspace{20pt}
+
+
+\noindent {\large{}\spacedlowsmallcaps{{\large{}Approvazione}}}{\large \par}
+\begin{itemize}
+\item   Dario Lazzaro
+\item   Samuele Casarin
+\item   Sandro Baccega
+\end{itemize}
+\end{textblock}
+\endgroup
+\pagebreak
+
+%
+%	inizio roba vera e propria
+%
+
+\tableofcontents
+
+\pagebreak
+  
+\section{Introduzione}
+
+\subsection{Scopo del documento}
+
+Lo scopo del presente documento è quello di definire la struttura globale del sistema WatchDoge attraverso l'utilizzo di diversi tipi di modello architetturale e, per ogni componente di alto livello, specificarne le modalità di implementazione.
+
+\subsection{Struttura del documento}
+
+Il presente documento è diviso nelle seguenti sezioni:
+\begin{itemize}
+    \item \textbf{Glossario}: in questa sezione sono riportate le definizioni dei termini tecnici utilizzati nella redazione del presente documento; tale sezione è orientata a garantire la comprensione del testo da parte di utenti non necessariamente esperti;
+    \item \textbf{Struttura del Sistema}: in questa sezione sono definiti i componenti di alto livello del sistema e le interazioni tra di essi;
+    \item \textbf{Modello di Controllo}: in questa sezione è definito il modello di controllo per stabilire le relazioni tra le diverse componenti del sistema;
+    \item \textbf{Diagramma delle Classi}: in questa sezione sono rappresentati i tipi di entità del sistema con i loro attributi e le relazioni tra i diversi tipi;
+    \item \textbf{Diagramma delle Attività}: in questa sezione sono rappresentati i flussi di lavoro per le attività più significative del sistema;
+    \item \textbf{Diagramma di Sequenza}: in questa sezione sono rappresentate le interazioni tra oggetti nel tempo per le attività più significative del sistema;
+    \item \textbf{Interfaccia Utente}: in questa sezione sono illustrati i prototipi dell'interfaccia grafica per l'applicazione Android;
+    \item \textbf{REST API}: in questa sezione sono descritti i servizi remoti offerti da EV3.
+\end{itemize}
+
+\section{Glossario}
+
+\begin{center}
+\centering
+\def\arraystretch{1.5}
+\begin{tabular}{l p{12cm}}
+\textbf{Doge} & Il nome scelto per il dispositivo che realizzeremo con EV3. \\
+\textbf{WatchDoge} & Il nome scelto per il sistema e l'applicazione Android. \\
+\textbf{Client-Server} & Architettura che prevede una comunicazione tra due sistemi distinti. \\
+\textbf{Wi-Fi} & Protocollo di comunicazione di rete senza fili. \\
+\textbf{UDP} & Protocollo di trasporto di rete non affidabile che supporta il broadcasting. \\
+\textbf{HTTP} & Protocollo di rete a livello applicazione basato su risorse identificabili tramite URL. \\
+\textbf{REST API} & Pattern di sviluppo di API HTTP che prevede un mapping logico degli endpoint. \\
+\textbf{WebSocket} & Protocollo di comunicazione full-duplex basato su HTTP. \\
+\textbf{Discovery} & Processo che permette all'applicazione di collegarsi in maniera automatica con il dispositivo senza la necessità di configurazione esplicita degli indirizzi IP. \\
+\end{tabular}
+\end{center}
+
+\section{Struttura del Sistema}
+
+Il sistema sarà composto principalmente da due sottosistemi:
+
+\begin{itemize}
+    \item il device di Doge;
+    \item l'applicazione Android.
+\end{itemize}
+
+Le due parti comunicheranno tra di loro secondo il modello \textbf{client-server}, dove il device funzionerà come server e l'applicazione come client. Il protocollo scelto per la comunicazione sarà Wi-Fi, dal momento che il device sarà dotato di un'apposita scheda di rete.
+
+In particolare:
+
+\begin{itemize}
+    \item il device sarà continuamente in ascolto sulla porta 8001 in UDP per permettere il \textbf{Discovery};
+    \item il device fornirà una API di tipo \textbf{REST} in HTTP sulla porta 8000 per fornire i dati relativi alle intrusioni;
+    \item il device sarà in grado di fornire uno stream video dalla videocamera e notifiche push per le intrusioni via \textbf{WebSocket}.
+\end{itemize}
+
+\subsection{Device}
+
+Il device sarà a tutti gli effetti un tradizionale server su Debian, un sistema operativo basato su Linux, fornito da EV3DEV. Il software che andremo a realizzare per il server sarà un'applicazione realizzata in linguaggio C++.
+
+L'applicazione sarà composta da varie componenti (ad oggetti), le quali collaboreranno tra di loro attraverso uno scheduler cooperativo per fornire i servizi ai client. Usando uno scheduler cooperativo personalizzato saremo in grado di programmare in stile event-driven e di controllare al meglio possibile le (limitate) risorse hardware di EV3.
+
+\begin{center}
+\includegraphics[width=12cm]{schema-be.pdf}
+\end{center}
+
+Le componenti principali da cui sarà composto il backend saranno:
+
+\begin{itemize}
+    \item Un \textit{Web Server} che fornirà le \textbf{REST API} e le connessioni \textit{WebSocket};
+    \item Un \textit{Server UDP} che controllerà il \textbf{Discovery};
+    \item Un \textit{Engine} di \textbf{allarme} che utilizzerà i sensori per riconoscere le intrusioni;
+    \item Una \textbf{Persistenza} utilizzando un database ad oggetti interno.
+\end{itemize}
+
+\subsection{Applicazione Android}
+
+L'applicazione Android sarà un semplice client per i servizi del device e non necessita di alcuna persistenza. Di conseguenza, sarà formata da due componenti:
+
+\begin{itemize}
+    \item \textbf{Interfaccia utente}, che utilizzerà i servizi web del device per visualizzare all'utente le intrusioni e il feed video;
+    \item \textbf{Servizio Notifiche}, che riceverà eventuali notifiche di intrusioni dal device e le notificherà all'utente.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=10cm]{schema-android.pdf}
+\end{center}
+
+\section{Modello di Controllo}
+
+Il modello di controllo utilizzato per il sistema WatchDoge è un modello \textbf{event-driven} di tipo \textbf{broadcast}. \\
+Con tale modello, ogni sottosistema rimane in attesa di eventi specifici e, quando questi occorrono, il controllo viene trasferito ai sottosistemi che possono gestirlo. \\
+La scelta di utilizzare questo modello deriva dal fatto che il sistema è composto principalmente da due sottosistemi, quali l'applicazione Android e EV3, che devono poter comunicare da remoto attraverso una rete, dunque questi non possono prevedere se e quando l'evento sarà gestito.
+
+\section{Diagramma delle Classi}
+
+\begin{center}
+\includegraphics[width=16cm,page=1]{Class_diagram.pdf}
+\end{center}
+
+\subsection{Doge}
+
+Questo tipo di entità rappresenta EV3 come una macchina astratta e ne riporta lo stato, tra cui l'attributo \textit{Active}, il cui valore indica se l'antifurto è attivo oppure no.
+
+\subsection{AuthKey}
+
+Un'entità di questo tipo contiene le informazioni relative ai dispositivi accoppiati con Doge (l'attributo \textit{DeviceID} identifica uno ed un solo dispositivo), in particolare la chiave di autenticazione (attributo \textit{AuthKey}), concordata tra il Doge e l'applicazione Android al momento dell'avvenuto accoppiamento, utilizzata dall'applicazione Android per poter usufruire dei servizi del Doge.
+
+\subsection{Intrusion}
+
+Un'entità di questo tipo rappresenta un'avvenuta intrusione, con un codice univoco (attributo \textit{ID}), la data dell'evento (attributo \textit{Date}) e un valore che indica se l'utente è stato notificato di tale intrusione (attributo \textit{Notified}).
+
+\section{Diagramma delle Attività}
+
+\begin{center}
+\includegraphics[width=10cm]{Primo_avvio_Activity.png}
+\end{center}
+
+\section{Diagramma di Sequenza}
+
+\subsection{Avvio}
+\begin{center}
+\includegraphics[width=13cm]{1_Avvio.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=13cm]{2_avvio.png}
+\end{center}
+
+\subsection{Consultazione Storico}
+\begin{center}
+\includegraphics[width=13cm]{Consultazione_storico.png}
+\end{center}
+
+\subsection{Live Feed}
+\begin{center}
+\includegraphics[width=13cm]{LiveFeed_Dsequenza.png}
+\end{center}
+
+\subsection{Rilevazione Intruso}
+\begin{center}
+\includegraphics[width=13cm]{Rilevazione_intrusione_DSequenza.png}
+\end{center}
+
+\section{Interfaccia utente}
+
+\subsection{Accoppiamento}
+
+\begin{center}
+\includegraphics[width=5cm,page=1]{Pair_mock.pdf}
+\end{center}
+Al primo avvio dell'applicazione avremo la fase di connessione al Doge. La seguente schermata darà all'utente il benvenuto e avvierà la fase guidata per l'accoppiamento.
+
+\begin{center}
+\includegraphics[width=5cm,page=2]{Pair_mock.pdf}
+\end{center}
+La seconda schermata di accoppiamento chiederà all'utente di accettare le varie condizioni per permettere l'utilizzo del sistema (applicazione e device). Se l'utente non intende accettare le condizioni (tappando su RIFIUTA) verrà rimandato direttamente alla schermata di BENVENUTO. Se l'utente intende accettare le condizioni, verrà guidato alla fase successiva di accoppiamento.
+
+\begin{center}
+\includegraphics[width=5cm,page=3]{Pair_mock.pdf}
+\end{center}
+La terza schermata di accoppiamento avvierà la fase di DISCOVERY per permettere la ricerca nelle vicinanze di device supportati. Sarà quindi l'utente a scegliere il DOGE desiderato (distinguendo l'uno dall'altro attraverso il proprio nome in rete).
+
+\begin{center}
+\includegraphics[width=5cm,page=4]{Pair_mock.pdf}
+\end{center}
+La quarta schermata di accoppiamento obbligherà l'utente ad inserire il codice d'autenticazione (visualizzato nel display di EV3) per consentire l'accoppiamento fra Doge e l'applicazione Android, permettendo a quest'ultima di interagire con il sistema di sicurezza.
+
+\begin{center}
+\includegraphics[width=5cm,page=5]{Pair_mock.pdf}
+\end{center}
+La quinta schermata di accoppiamento verrà visualizzata solamente nel caso in cui l'utente inserisca un codice di autenticazione non corretto rispetto a quello mostrato nel display dell'EV3 selezionato. L'utente sarà quindi invitato a reinserire il codice. Se anch'esso risulterà non corretto, verrà visualizzata di nuovo questa schermata, altrimenti verrà portato alla schermata successiva di accoppiamento. L'utente avrà inoltre la possibilità di tornare alla schermata precedente (tappando su INDIETRO) per poter scegliere un altro Doge.
+
+\begin{center}
+\includegraphics[width=5cm,page=6]{Pair_mock.pdf}
+\end{center}
+La sesta schermata di accoppiamento informerà l'utente dell'avvenuto collegamento fra l'applicazione Android e Doge. Tappando su INIZIA sarà dunque possibile cominciare ad utilizzare tutte le funzionalità offerte all'utente in merito al controllo di Doge.
+
+\subsection{Main}
+
+\begin{center}
+\includegraphics[width=9cm,page=1]{Main_mock.pdf}
+\end{center}
+
+Il Main Activity dell'applicazione permetterà all'utente una visione rapida di tutte le principali funzionalità offerte in merito al controllo a distanza del sistema di sicurezza. Questa schermata sarà formata da più componenti:
+
+\begin{itemize}
+    \item Live Feed: questa schermata visualizzerà un video in diretta dell'ambiente da Doge. L'utente sarà quindi in grado di vedere dal vivo l'area puntata dalla videocamera collegata a EV3;
+    \item Sistema di controllo: mediante le frecce "SINISTRA" e "DESTRA", l'utente sarà in grado di spostare la videocamera, permettendo quindi di cambiare l'area di interesse del Live Feed;
+    \item ON/OFF: attraverso questo pulsante, l'utente sarà in grado di attivare o disattivare il sistema di sicurezza, abilitando o disabilitando il sensore Sonar di EV3 che permette di intercettare il passaggio di intrusi nell'area di interesse.
+    \item Ultime Intrusioni: questa porzione di schermata offrirà all'utente un sistema di notifiche veloce per le ultime intrusioni non ancora visualizzate; attraverso un tap su questo campo, l'utente verrà reindirizzato alla schermata STORICO INTRUSIONI.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=5cm,page=2]{Main_mock.pdf}
+\end{center}
+Con un tap sul campo Impostazioni (icona con tre punti allineati verticalmente), l'utente può scegliere di disaccoppiare il sistema di sicurezza precedentemente selezionato (tornando alla prima schermata della fase di accoppiamento) oppure le informazioni relative al sistema, quali per esempio i nomi degli sviluppatori.
+
+\begin{center}
+\includegraphics[width=5cm,page=3]{Main_mock.pdf}
+\end{center}
+In questa schermata, l'utente può consultare in dettaglio la cronologia di tutte le intrusioni rilevate dal sistema di sicurezza, comprese la data e l'ora.
+
+\pagebreak
+
+\section{REST API}
+
+Di seguito, verranno elencati gli endpoint che consentono di interagire con il device, in ascolto sulla porta \textbf{HTTP 8000}. Tutte le richieste richiedono il token di autenticazione di tipo \textit{Bearer Token}, altrimenti restituiscono lo stato \textit{403 Unauhorized}.
+
+\subsection{Alarm}
+
+\begin{tcolorbox}[colback=ProcessBlue!5,colframe=ProcessBlue!40!black,title=\textbf{GET} /alarm/status]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Ritorna lo stato attuale dell'antifurto.\\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{Informazioni sullo stato} \\
+    & \begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\{}
+    \DataTypeTok{active}\OperatorTok{:}\NormalTok{ boolean}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black,title=\textbf{POST} /alarm/on]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Attiva l'antifurto.\\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{Antifurto attivato} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black,title=\textbf{POST} /alarm/off]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Disattiva l'antifurto.\\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{Antifurto disattivato} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\subsection{Data}
+
+\begin{tcolorbox}[colback=ProcessBlue!5,colframe=ProcessBlue!40!black,title=\textbf{GET} /intrusions]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Restituisce tutte le intrusioni e le imposta come notificate.\\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{Tutte le intrusioni} \\
+    & \begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{[}
+    \OperatorTok{\{}
+        \DataTypeTok{id}\OperatorTok{:}\NormalTok{ number}\OperatorTok{,}
+        \DataTypeTok{date}\OperatorTok{:}\NormalTok{ number}\OperatorTok{,}
+        \DataTypeTok{notified}\OperatorTok{:}\NormalTok{ boolean}
+    \OperatorTok{\}}
+\OperatorTok{]}
+\end{Highlighting}
+\end{Shaded} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=ProcessBlue!5,colframe=ProcessBlue!40!black,title=\textbf{GET} /intrusions/unread]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Restituisce solo le intrusioni non ancora notificate e le imposta come notificate.\\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{Le intrusioni non ancora notificate} \\
+    & \begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{[}
+    \OperatorTok{\{}
+        \DataTypeTok{id}\OperatorTok{:}\NormalTok{ number}\OperatorTok{,}
+        \DataTypeTok{date}\OperatorTok{:}\NormalTok{ number}\OperatorTok{,}
+        \DataTypeTok{notified}\OperatorTok{:}\NormalTok{ boolean}
+    \OperatorTok{\}}
+\OperatorTok{]}
+\end{Highlighting}
+\end{Shaded} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=ProcessBlue!5,colframe=ProcessBlue!40!black,title=\textbf{GET} /intrusions/time/\{start\}/\{end\}]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Restituisce le intrusioni che si sono verificate nell'intervallo di tempo specificato (in secondi a partire dall'epoca UNIX) e le imposta come notificate.\\
+  \textbf{Parametri:} & Tempo d'inizio e tempo di fine in secondi a partire dall'epoca UNIX \\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{Le intrusioni che rispettano i criteri sopra indicati} \\
+    & \begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{[}
+    \OperatorTok{\{}
+        \DataTypeTok{id}\OperatorTok{:}\NormalTok{ number}\OperatorTok{,}
+        \DataTypeTok{date}\OperatorTok{:}\NormalTok{ number}\OperatorTok{,}
+        \DataTypeTok{notified}\OperatorTok{:}\NormalTok{ boolean}
+    \OperatorTok{\}}
+\OperatorTok{]}
+\end{Highlighting}
+\end{Shaded} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=ProcessBlue!5,colframe=ProcessBlue!40!black,title=\textbf{GET} /intrusions/\{id\}/shoot]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Restituisce la foto allegata dell'intrusione specificata.\\
+  \textbf{Parametri:} & ID dell'intrusione \\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{L'immagine} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\subsection{Hardware}
+
+\begin{tcolorbox}[colback=ProcessBlue!5,colframe=ProcessBlue!40!black,title=\textbf{GET} /shoot]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Restituisce un frame catturato dalla videocamera.\\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{L'immagine} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black,title=\textbf{POST} /move/left
+]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Ruota la videocamera a sinistra.\\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{OK} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black,title=\textbf{POST} /move/right
+]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Ruota la videocamera a destra.\\
+  \textbf{Authorization:} & Bearer token \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{OK} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\subsection{Authentication}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black,title=\textbf{POST} /pair ]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Richiede un nuovo token di autenticazione.\\
+  \textbf{Body:} &
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\{}
+  \DataTypeTok{clientKey}\OperatorTok{:}\NormalTok{ string}\OperatorTok{,}
+  \DataTypeTok{pairKey}\OperatorTok{:}\NormalTok{ string}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded} \\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{Il token di autenticazione come stringa in formato JSON} \\
+    \textbf{403} & \textit{Credenziali invalide}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+\subsection{Misc}
+
+\begin{tcolorbox}[colback=ProcessBlue!5,colframe=ProcessBlue!40!black,title=\textbf{GET} /info]
+\begin{tabular}{ r p{10cm} }
+  \textbf{Descrizione:} & Restituisce le informazioni relative a EV3.\\
+  \textbf{Response:} &
+  \begin{tabular}{ r p{10cm} }
+    \textbf{200} & \textit{Le informazioni}
+  \end{tabular}
+\end{tabular}
+\end{tcolorbox}
+
+
+\end{document}
+
