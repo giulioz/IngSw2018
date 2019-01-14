@@ -39,7 +39,7 @@ public class LiveFeedActivity extends AppCompatActivity {
 
         liveThread = new LiveFeed(liveImage);
         liveThread.execute();
-        stopButton.setOnClickListener(v -> liveThread.stopLive());
+        stopButton.setOnClickListener(v -> stopLiveButton());
 
         moveRightButton.setOnTouchListener(new RepeatListener(400, 100, view -> {
             sendCommand("right");
@@ -53,8 +53,22 @@ public class LiveFeedActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(liveThread.getStatus() == AsyncTask.Status.RUNNING)
+        if (liveThread.getStatus() == AsyncTask.Status.RUNNING)
             liveThread.stopLive();
+    }
+
+    private void stopLiveButton() {
+        //Resume
+        if (liveThread.getStatus() == AsyncTask.Status.FINISHED) {
+            liveThread = new LiveFeed(liveImage);
+            liveThread.execute();
+            stopButton.setText(R.string.livefeed_stop);
+        }
+        //Stop
+        else {
+            liveThread.stopLive();
+            stopButton.setText(R.string.livefeed_resume);
+        }
     }
 
     private void sendCommand(String add) {
@@ -63,9 +77,7 @@ public class LiveFeedActivity extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 (response) -> {
                 },
-                (error) -> {
-                    Log.d(TAG, "sendCommand: errore send");
-                }) {
+                (error) -> Log.d(TAG, "sendCommand: errore send")) {
             @Override
             public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<>();
@@ -91,11 +103,10 @@ public class LiveFeedActivity extends AppCompatActivity {
         private Runnable handlerRunnable = new Runnable() {
             @Override
             public void run() {
-                if(touchedView.isEnabled()) {
+                if (touchedView.isEnabled()) {
                     handler.postDelayed(this, normalInterval);
                     clickListener.onClick(touchedView);
                 } else {
-                    // if the view was disabled by the clickListener, remove the callback
                     handler.removeCallbacks(handlerRunnable);
                     touchedView.setPressed(false);
                     touchedView = null;

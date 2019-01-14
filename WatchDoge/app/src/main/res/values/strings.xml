@@ -8,5 +8,11 @@
     <string name="settings_unpair">Disaccoppia Doge</string>
     <string name="settings_credits">Crediti</string>
 
+
+    <string name="livefeed_stop">Ferma Streaming</string>
+    <string name="livefeed_resume">Riprendi Streaming</string>
+    <string name="livefeed_movel">Muovi a Sinistra</string>
+    <string name="livefeed_mover">Muovi a Destra</string>
+
 </resources>
 

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.squareup.picasso.MemoryPolicy;
 
 import dogedroid.com.watchdoge.DiscoveryActivity;
+import dogedroid.com.watchdoge.R;
 
 public class LiveFeed extends AsyncTask<Void, Bitmap, Void> {
     public final long frameRate = 0;
@@ -54,7 +55,6 @@ public class LiveFeed extends AsyncTask<Void, Bitmap, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        // if(run)
-        //image.setImageIcon();
+        image.setImageResource(R.drawable.doge_logo);
     }
 }
